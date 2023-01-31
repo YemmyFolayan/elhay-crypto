@@ -1,0 +1,60 @@
+@import "../../../variables.scss";
+
+.singlefry-container{
+    width: 100%;
+    height: fit-content;
+
+    @include rowflex(center,center);
+    .singlefry-inner{
+        width: 70%;
+        height: 80%;
+        margin-top: 100px;
+
+        @include breakpoint(phablet){
+            width: 80%;
+            height: 80%;
+        }
+
+        @include breakpoint(mobileonly){
+            width: 80%;
+            height: 80%;
+        }
+
+        @include colflex(flex-start,center);
+        .singlefry-title{
+            width: 60%;
+            margin: 0;
+            
+            @include fontBold(3em, 1.2em, $vesti-700);
+
+            @include breakpoint(phablet){
+                @include fontBold(2em, 1.2em, $vesti-700);
+            }
+
+            @include breakpoint(mobileonly){
+                @include fontBold(2em, 1.2em, $vesti-700);
+            }
+
+        }
+        .singlefry-content {
+            // width: 80%;
+            margin: 0;
+            margin: 0 auto;
+            margin-top: 50px;
+            @include fontNormal(1.4em,2em, $vesti-901);
+
+            @include breakpoint(phablet){
+                @include fontNormal(1.2em,2em, $vesti-901);
+            }
+
+            @include breakpoint(mobileonly){
+                @include fontNormal(1.2em,2em, $vesti-901);
+            }
+            img {
+                // width: auto !important;
+                border-radius: 5px !important;
+            }
+        }
+    }
+    
+}

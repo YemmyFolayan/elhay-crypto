@@ -1,0 +1,115 @@
+@import "../../variables.scss";
+
+.fundcard-container {
+    width: 90%;
+    height: 90%;
+    @include rowflex(center,center);
+
+    .fundcard-inner {
+        width: 100%;
+        height: 100%;
+        @include colflexx(flex-start);
+
+        &.top {
+            @include colflexx(flex-start);
+            p:nth-child(1){
+                margin:0;
+                @include fontBold(2em, 1em, $gray-300);
+
+                strong {
+                    color: $gray-400;
+                }
+            }
+            p:nth-child(2){
+                margin-top: 10px;
+                @include fontNormal(1.2em, 1.4em, $vesti-901);
+            }
+        }
+
+        &.center {
+            width: 100%;
+            margin-top: 20px;
+            @include colflexx(flex-start);
+            .fundoption-container:not(:first-child){
+                margin-top: 20px;
+            }
+            .fundoption-container {
+                width: 100%;
+                height: fit-content;
+                padding: 10px 20px 10px 20px;
+                border-radius: 10px;
+                border: 1px solid $gray-300;
+                background-color: $vesti-100;
+                cursor: pointer;
+                transition: all .5s ease;
+                
+                &:hover {
+                    border-color: $vesti-700;
+                }
+                .fundoption-inner {
+                    @include rowflex(center,center);
+                    height: 100%;
+
+
+                    img {
+                        width: auto;
+                        margin-right: 20px;
+                    }
+
+                    &.right {
+                        @include colflexx(flex-start);
+                        height: 100%;
+                        p:nth-child(1){
+                            margin: 0;
+                            @include fontBold(1.2em, 1em, $vesti-700);
+                        }
+                        p:nth-child(2){
+                            margin-top:10px;
+                            @include fontNormal(1.1em, 1em, $vesti-902);
+                        }
+                    }
+                }
+            }
+
+        }
+
+        &.bottom-btn {
+            width: 100%;
+            margin-top: 30px;
+            @include rowflexx(center);
+
+            .fundcard-back-btn{
+                outline: none;
+                height: 50px;
+                width: fit-content;
+                border-radius: 10px !important;
+                background-color: transparent;
+                border: 1px solid $vesti-700 !important;
+                transition: all .5s ease;
+                @include rowflex(center,center);
+                @include fontNormal(1em,1em, $vesti-700);
+                
+                &:hover {
+                    border-color: $vesti-800;
+                }
+
+            }
+
+            .fundcard-finish-btn{
+                outline: none;
+                height: 50px;
+                width: fit-content;
+                border-radius: 10px !important;
+                background-color: $vesti-700;
+                margin-left: 5px ;
+                transition: all .5s ease;
+                @include rowflex(center,center);
+                @include fontNormal(1em,1em, #fff);
+
+                &:hover {
+                    background-color: $vesti-800;
+                }
+            }
+        }
+    }
+}

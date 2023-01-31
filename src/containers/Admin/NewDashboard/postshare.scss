@@ -1,0 +1,143 @@
+@import "../../../variables.scss";
+
+.single-postshare-container {
+    background-color: $gray-100;
+    width: 70%;
+    height: fit-content;
+    // margin-left: 50px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin: 0 auto;
+    margin-top: 100px;
+    @include rowflex(center,center);
+
+    @include breakpoint(mobileonly){
+        width: 110% !important;
+        padding-bottom: 30px;
+        padding-right: 10px;
+    }
+    .single-postshare-inner {
+        width: 90%;
+        height: 100%;
+        @include rowflexx(flex-start);
+
+        img {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            border-radius: 100% ;
+
+            @include breakpoint(mobileonly){
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        &.right {
+            width: 90%;
+            @include colflexx(flex-start);
+
+
+            @include breakpoint(mobileonly){
+                width: 90%;
+            }
+            .top {
+                width: 100%;
+                p:nth-child(1) {
+                    margin: 0;
+                    @include fontMedium(1.5em, 1em, $vesti-901);
+
+                    @include breakpoint(mobileonly){
+                        @include fontMedium(1.2em, 1em, $vesti-901);
+                    }
+                }
+                p:nth-child(2) {
+                    margin-top: 15px;
+                    @include fontNormal(1.3em, 1em, $gray-400);
+
+                    @include breakpoint(mobileonly){
+                        @include fontNormal(1em, 1em, $gray-400);
+                    }
+                }
+            }
+            .post-share-content {
+                width: 100%;
+                height: fit-content;
+                padding: 0;
+                margin-top: 10px;
+                @include colflexx(flex-start);
+                .desc {
+                    p:nth-child(1) {
+                        margin: 0;
+                        @include fontNormal(1.3em, 1.4em, $vesti-902);
+                        text-align: justify;
+                        text-justify: inter-word;
+
+                        @include breakpoint(mobileonly){
+                            @include fontNormal(1.1em, 1.7em, $vesti-902);
+                        }
+                    }
+                }
+                
+
+                &.bottom {
+                    width: fit-content;
+                    margin-top: 50px;
+                    @include rowflexx(center);
+                    
+                    @include breakpoint(mobileonly){
+                        @include colflexx(flex-start);
+                    }
+                    p {
+                        max-width: 100px;
+                        width: 90px;
+                        margin: 0;
+                        cursor: pointer;
+                        transition: all .5s ease;
+                        @include fontNormal(1.2em, 1em, $gray-500);
+
+                        &:hover {
+                            @include fontBold(1.2em, 1em, $vesti-700);
+                        }
+                    }
+
+                    i {
+                        margin-right: 5px;
+                    }
+
+                    .post-share-btn {
+                        height: 55px;
+                        width: fit-content;
+                        padding-left: 10px;
+                        padding-right: 10px; 
+                        @include rowflexx(center);
+                        @include fontBold(1.2em, 1em, $vesti-100);
+                        outline: none;
+                        margin-left: 20px;
+                        border-radius: 5px !important;
+                        background-color: $vesti-700;
+                        transition: all .5s ease;
+
+
+                        &:hover {
+                            background-color: $vesti-800;
+                            color: #fff;
+                        }
+
+                        @include breakpoint(mobileonly){
+                            margin-top: 15px;
+                            width: 100% !important;
+                            margin-left: 0px;
+                            @include fontNormal(1em, 1.4em, #fff);
+                        }
+                        
+                    }
+                }
+
+            }
+        }
+
+    }
+}

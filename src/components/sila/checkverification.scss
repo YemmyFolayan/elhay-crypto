@@ -1,0 +1,23 @@
+@import "../../variables.scss";
+
+.kycverify {
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    @include colflexx(center);
+    &__top {
+        @include colflexx(center);
+        img {
+            margin-bottom: 20px;
+        }
+        .error {
+            @include fontNormal(1em,1em,red);
+        }
+        .confirm {
+            @include fontNormal(1em,1em,$vesti-700);
+        }
+        .pending {
+            @include fontNormal(1em,1em,#BB8211);
+        }
+    }
+}

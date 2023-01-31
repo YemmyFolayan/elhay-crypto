@@ -1,0 +1,73 @@
+@import "../../variables.scss";
+
+.twofa {
+    width:100%;
+    height: fit-content;
+    padding: 20px 0px 20px 20px;
+    background-color: #fff;
+    border: 1px solid $gray-300;
+    border-radius: 10px;
+    transition: all .5s ease;
+    @include rowflexx(flex-start);
+    
+    @include breakpoint(mobileonly){
+        width: 100%;
+    }
+    &.--active {
+        background-color: $vesti-100;
+        border: 1px solid $vesti-700;
+        .twofa__right{
+            span {
+                p:nth-child(1){
+                    color: $vesti-700;
+                }
+
+                p:nth-child(2){
+                    background-color: $vesti-200;
+                    border: 1px solid $vesti-700;
+                    @include fontMedium(1em, 1em, $vesti-700);
+                }
+            }
+
+            p:nth-child(2){
+                @include fontNormal(1em, 1.4em, $vesti-901);
+            }
+    
+            
+        }
+    }   
+
+    &__right{
+        @include colflexx(flex-start);
+        margin-right: 10px;
+
+        span {
+            margin: 0;
+            @include rowflex(center,center);
+            p:nth-child(1){
+                margin: 0;
+                transition: all .5s ease;
+                @include fontMedium(1.2em, 1em, $gray-800);
+            }
+
+            p:nth-child(2){
+                margin: 0;
+                margin-left: 10px;
+                padding: 5px;
+                background-color:  rgb(245, 231, 231);
+                border: 1px solid red;
+                border-radius: 5px;
+                transition: all .5s ease;
+                @include fontMedium(1em, 1em, red);
+                
+            }
+        }
+        p:nth-child(2){
+            margin-top: 10px;
+            transition: all .5s ease;
+            @include fontNormal(1em, 1.4em, $gray-700);
+        }
+
+        
+    }
+}

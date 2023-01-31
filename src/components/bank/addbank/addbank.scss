@@ -1,0 +1,95 @@
+@import "../../../variables.scss";
+ 
+.addbank-container{
+    width: 100%;
+    height: fit-content;
+    @include rowflex(center,center);
+
+    .addbank-inner-container{
+        width: 100%;
+        height: fit-content;
+       
+        form {
+            width: 100% !important;
+            height: fit-content;
+            @include colflexx(flex-start);
+
+            .form-input:not(:first-child){
+                margin-top: 50px;
+
+                @include breakpoint(mobileonly){
+                    margin-top: 20px;
+                }
+            }
+
+            .account-number.--nolabel {
+                width: 100%;
+                @include breakpoint(mobileonly){
+                    width: 100%;
+                }
+                @include breakpoint(phablet){
+                    width: 100%;
+                }
+                @include breakpoint(tablet){
+                    width: 100%;
+                }
+            }
+
+            .inputfloat {
+                width: 100%;
+            }
+
+            .account-name.--nolabel {
+
+                margin-top: 10px;
+                margin-bottom: 10px;
+                width: 100%;
+                @include colflexx(flex-start);
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontMedium(1.2em, 1em, $vesti-901);
+                }
+                :nth-child(2){
+                    margin-top: 0px;
+                }
+            }
+            .mybanks-box.--nolabel{
+                @include colflexx(flex-start);
+                width: 100%;
+                height: fit-content;
+                margin-bottom: 50px;
+                margin-top: 10px;
+                .mybanks-big-container {
+                    width: 100%;
+                    margin-top: 10px;
+                    height: fit-content;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: flex-start;
+                    gap: 10px;
+                    justify-content: flex-start;
+    
+                   @include breakpoint(mobileonly){
+                       @include rowflexx(flex-start);
+
+                   }
+                }
+            }
+
+            .updateprofile-btn-box {
+                width: fit-content;
+                margin-top: 0px;
+                margin-bottom: 0px !important;
+            }
+        }
+
+    }
+}   
+
+.withdrawal {
+    width: 350px;
+
+    @include breakpoint(mobileonly){
+        width: 70vw;
+    }
+  }

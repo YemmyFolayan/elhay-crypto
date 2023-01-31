@@ -1,0 +1,77 @@
+@import "../../../variables.scss";
+
+.ngnwithdrawal {
+    width: 100%;
+    @include colflexx(flex-start);
+
+    @include breakpoint(mobileonly){
+        width: 75vw;
+    }
+
+    @include breakpoint(phablet){
+        width: 100%;
+    }
+    @include breakpoint(tablet){
+        width: 100%;
+    }
+    &__col{
+        width: 100%;
+        @include colflexx(flex-start);
+        gap: 25px;
+    }
+    &__smallcol{
+        width: 100%;
+        @include colflexx(flex-start);
+        gap: 5px;
+
+        p:nth-child(1){
+            @include fontMedium(1em,1em,$vesti-901);
+        }
+    }
+    &__get {
+        @include fontNormal(1.2em, 1em, $vesti-800);
+        width: fit-content;
+        height: fit-content;
+        padding: 5px 10px 5px 10px;
+        border-radius: 10px;
+        background-color: $vesti-200;
+        border: .5px solid $vesti-700;
+
+        &.--error {
+            @include fontNormal(1.2em, 1em, red);
+            background-color: rgb(255, 190, 190);
+            border: .5px solid red;
+        }
+    }
+  
+    .select-input{
+        *{
+            margin-bottom: 0px !important;
+        }
+    }
+    .inputfloat, .amountfloat, &__review{
+        width: 400px !important;
+        @include breakpoint (mobileonly){
+            width: 100% !important;
+        }
+    }
+
+    &__update {
+        width: fit-content;
+        height: fit-content;
+        padding: 5px 10px 5px 10px;
+        border-radius: 10px;
+        &.ngnwithdrawal__update_success {
+            @include fontNormal(1.2em, 1em, $vesti-800);
+            
+            background-color: $vesti-200;
+            border: .5px solid $vesti-700;
+        }
+        &.ngnwithdrawal__update_error {
+            @include fontNormal(1.2em, 1em, red);
+            background-color: rgb(255, 190, 190);
+            border: .5px solid red;
+        }
+    }
+    
+}

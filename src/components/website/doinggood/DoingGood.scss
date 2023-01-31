@@ -1,0 +1,327 @@
+@import "../../../variables.scss";
+
+.doinggood-container{
+    width: 100%;
+    height: fit-content;
+    background-color: #F8FEF5;   
+    margin-bottom: 100px;
+    border-radius: 50px;
+    padding-bottom: 50px;
+    @include rowflex(center,center);
+
+    .doinggood-inner {
+        width: 90%;
+        height: fit-content;
+        @include colflexx(center);
+
+        &.top{
+            width: 50%;
+            p:nth-child(1){
+                margin: 0;
+                @include fontBold(2.25em, 1em, $vesti-902);
+            }
+            p:nth-child(2){
+                margin-top: 10px;
+                @include fontNormal(1.2em, 1.5em, $vesti-902);
+            }
+        }
+        &.bottom {
+            width: 100%;
+            margin-top: 50px;
+            @include colflexx(center);
+
+            .single-started-container, .single-reverse-container {
+                width: 100% !important;
+                &.right, &.left {
+                    @include colflexx(flex-start);
+                    width: 40% !important;
+                    p:nth-child(1) {
+                        margin: 0;
+                        @include fontBold(1.8em, 1.2em, $vesti-902);
+                    }
+                    p:nth-child(2) {
+                        margin-top: 10px;
+                        @include fontNormal(1.25em, 1.5em, $vesti-902);
+                    }
+                    p:nth-child(3) {
+                        @include fontNormal(1.25em, 1.5em, $vesti-901);
+                    }
+
+                    .list__item{
+                        list-style-type: none;
+                        display: flex;
+                        gap: 12px;
+                    }
+                    a:nth-child(4){
+                        @include fontMedium(1.25em, 1.5em, $vesti-700);  
+                    }
+                }
+            }
+
+            .single-started-container {
+                @include rowflex(flex-start, space-between);
+                &.right { 
+                    margin-right: 50px;
+                }
+            }
+            .single-reverse-container {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                margin-top: 30px;
+
+                &.right {
+                    width: fit-content !important;
+                    margin-left: 50px;
+                    width: 40% !important;
+
+                }
+            }
+
+        }
+
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 600px){
+    .doinggood-container{
+        width: 100%;
+        height: fit-content;
+        background-color: #F8FEF5;
+        margin-bottom: 100px;
+        border-radius: 20px;
+        padding-bottom: 30px;
+        @include colflex(center,center);
+    
+        .doinggood-inner {
+            // width: 100%;
+            height: fit-content;
+            @include colflexx(center);
+            margin-top: -53px;
+            font-size: 11px;
+    
+            &.top{
+                width: 90%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(1.45em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1em, 1.5em, $vesti-902);
+                }
+            }
+            &.bottom {
+                width: 85%;
+                margin-top: 50px;
+                @include colflexx(center);
+    
+                .single-started-container, .single-reverse-container {
+                    width: 100%;
+                    img{
+                        max-width: 100%;
+                        margin-bottom: 10px;
+                    }
+    
+                    &.right, &.left {
+                        @include colflexx(flex-start);
+                        p:nth-child(1) {
+                            margin: 0;
+                            @include fontBold(1.8em, 1.2em, $vesti-902);
+                        }
+                        p:nth-child(2) {
+                            margin-top: 10px;
+                            @include fontNormal(1.25em, 1.5em, $vesti-902);
+                        }
+                        p:nth-child(3) {
+                            @include fontNormal(1.25em, 1.5em, $vesti-901);
+                        }
+                    }
+                }
+    
+                .single-started-container {
+                    @include colflexxx(flex-start);
+                    &.right {
+                        @include colflexx(flex-start);
+                        width: 80% !important;
+                        margin-right: 50px;
+                    }
+                    &.left {
+                        @include colflexx(flex-start);
+                        width: 100% !important;
+                        margin-top: 40px;
+                        margin-right: 50px;
+                    }
+                }
+                .single-reverse-container {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    margin-top: 30px;
+    
+                    &.right {
+
+                        width: 100% !important;
+                        margin-left: 0px;
+                    }
+                }
+    
+            }
+    
+        }
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 800px){
+    .doinggood-container{
+        width: 100%;
+        height: fit-content; 
+        background-color: #F8FEF5;      
+        margin-bottom: 100px;
+        border-radius: 20px;
+        padding-bottom: 30px;
+        @include colflex(center,center);
+    
+        .doinggood-inner {
+            width: 100%;
+            height: fit-content;
+            @include colflexx(center);
+    
+            &.top{
+                width: 80%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(2em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.5em, 1.5em, $vesti-902);
+                }
+            }
+            &.bottom {
+                width: 100%;
+                margin-top: 20px;
+                @include colflexx(center);
+    
+                .single-started-container, .single-reverse-container {
+                    width: 100%;
+                    img{
+                        max-width: 100%;
+                        margin-bottom: 10px;
+                    }
+    
+                    &.right, &.left {
+                        @include colflexx(flex-start);
+                        p:nth-child(1) {
+                            margin: 0;
+                            @include fontBold(1.8em, 1.2em, $vesti-902);
+                            align-items: center;
+                        }
+                        p:nth-child(2) {
+                            margin-top: 10px;
+                            @include fontNormal(1.25em, 1.5em, $vesti-902);
+                        }
+                        p:nth-child(3) {
+                            @include fontNormal(1.25em, 1.5em, $vesti-901);
+                        }
+                    }
+                }
+    
+                .single-started-container {
+                    @include colflexxx(center);
+                    &.right {
+                        
+                        margin-right: 50px;
+                    }
+                    &.left {
+                        margin-top: 40px;
+                    }
+                }
+                .single-reverse-container {
+                    margin-top: 30px;
+                    @include colflexxx(center);
+    
+                    &.left {
+                        
+                        margin-left: 0px;
+                    }
+                }
+    
+            }
+    
+        }
+    }
+}
+@media only screen and (min-width: 800px) and (max-width: 1224px){
+    .doinggood-container{
+        width: 100%;
+        height: fit-content; 
+        background-color: #F8FEF5;  
+        margin-bottom: 100px;
+        border-radius: 50px;
+        padding-bottom: 50px;
+        @include rowflex(center,center);
+    
+        .doinggood-inner {
+            width: 90%;
+            height: fit-content;
+            @include colflexx(center);
+    
+            &.top{
+                width: 50%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(2.25em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.2em, 1.5em, $vesti-902);
+                }
+            }
+            &.bottom {
+                width: 100%;
+                margin-top: 50px;
+                @include colflexx(center);
+    
+                .single-started-container, .single-reverse-container {
+                    width: 100% !important;
+                    &.right, &.left {
+                        @include colflexx(flex-start);
+                        width: 40% !important;
+                        p:nth-child(1) {
+                            margin: 0;
+                            @include fontBold(1.8em, 1.2em, $vesti-902);
+                        }
+                        p:nth-child(2) {
+                            margin-top: 10px;
+                            @include fontNormal(1.25em, 1.5em, $vesti-902);
+                        }
+                        p:nth-child(3) {
+                            @include fontNormal(1.25em, 1.5em, $vesti-901);
+                        }
+                    }
+                }
+    
+                .single-started-container {
+                    @include rowflex(flex-start, space-between);
+                    &.right {
+                        
+                        margin-right: 50px;
+                    }
+                }
+                .single-reverse-container {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    justify-content: space-between;
+                    margin-top: 30px;
+    
+                    &.right {
+                        width: fit-content !important;
+                        margin-left: 50px;
+                        width: 40% !important;
+    
+                    }
+                }
+    
+            }
+    
+        }
+    } 
+}

@@ -1,0 +1,121 @@
+@import "../../variables.scss";
+
+.createstripe, .createstripe__waitlist {
+    width: 100% ;
+    @include colflexx(flex-start);
+    gap: 20px;
+    @include breakpoint(mobileonly){
+        width: 70vw;
+    }
+    @include breakpoint(phablet){
+        width: 70vw;
+
+    }
+    @include breakpoint(tablet){
+        width: 50vw !important;
+    }
+  
+    // .select-input:nth-child(2){
+    //     margin-bottom: 15px;
+    // }
+    // .inputfloat:nth-child(2){
+    //     margin-bottom: 15px;
+    // }
+
+    &__phone {
+        width: 100%;
+    }
+
+    .titlesubtitle{
+        margin-bottom: 20px;
+    }
+    
+    &__location {
+        width: 100%;
+        @include colflexx(flex-start);
+        gap: 20px;
+        // margin-top: 20px;
+        // margin-bottom: 15px;
+
+        @include breakpoint(desktop){
+            @include rowflexx(flex-start);
+        gap: 10px;
+        }
+    }
+
+    &.--error {
+        padding: 10px;
+        background-color:  rgb(255, 234, 234);
+        border: .5px solid red;
+        border-radius: 5px;
+        @include fontMedium(1em, 1.2em, red);
+
+        @include breakpoint(mobileonly){
+            padding: 5px;
+            @include fontMedium(.8em, 1.2em, red);
+        }
+    }
+
+    .inputfloat {
+
+        width: 100% !important;
+
+        @include breakpoint(mobileonly){
+            width: 100% !important;
+        }
+        @include breakpoint(phablet){
+            width: 100% !important;
+        }
+        @include breakpoint(tablet){
+            width: 100% !important;
+        }
+        .inputfloat__box {
+            input {
+                @include breakpoint(mobileonly) {
+                    // width: 65vw!important;
+                }
+            }
+            .shortinfo{
+                margin-top: 10px !important;
+            }
+    
+            .apto-error{
+                margin: 0;
+                @include fontNormal(1em, 1em , red);
+            }
+        }
+        
+    }
+    &__btn {
+        width: 100%;
+        height: 50px;
+        margin-top: 30px;
+        background-color:  $vesti-700;
+        color: #fff;
+        transition: all .5s ease;
+
+        i {
+            margin-left: 10px;
+        }
+
+        &:hover {
+            background-color:  $vesti-900;
+        }
+
+        &:disabled{
+            background-color: $gray-500;
+            color: #fff;
+            cursor: not-allowed;
+        }
+    }
+}
+
+.createstripe__waitlist{
+    .inputfloat:nth-child(3){
+        margin-bottom: 15px;
+    }
+    .inputfloat {
+
+        width: 350px;
+    }
+}

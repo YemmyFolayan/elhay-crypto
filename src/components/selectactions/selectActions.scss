@@ -1,0 +1,66 @@
+@import "../../variables.scss";
+
+
+.selected-box {
+    margin-top: 10px;
+    width: fit-content;
+    @include rowflexx(center);
+    .single-selected-container:not(:first-child){
+        margin-left: 5px;
+    }
+    .single-selected-container {
+        width: fit-content;
+        height: 20px;
+        padding: 10px;
+        background-color:  $vesti-700;
+        border-radius: 5px;
+        margin: 0 auto;
+        @include rowflex(center, center);
+
+        @include breakpoint(mobileonly){
+            width: fit-content;
+            height: 20px;
+            padding: 5px;
+        }
+    
+        @include breakpoint(phablet){
+            width: fit-content;
+            height: 20px;
+            padding: 5px;
+        }
+    
+        &.active {
+            @include rowflex(center, center);
+        }
+        
+        &.closed {
+            display: none;
+        }
+    
+        .single-selected-inner {
+            @include rowflex(center,center);
+            height: 100%;
+    
+            p{
+                margin: 0;
+                @include rowflex(center,center);
+                @include fontNormal(.9em, 1em, #fff);
+                i {
+                    margin-left: 10px;
+                }
+
+                @include breakpoint(mobileonly){
+                    width: 100%;
+                    @include fontNormal(.8em, 1em, #fff);
+                }
+            
+                @include breakpoint(phablet){
+                    width: 100%;
+                    @include fontNormal(.8em, 1em, #fff);
+                }
+            }
+        }
+    
+    }
+}
+

@@ -1,0 +1,144 @@
+@import "../../variables.scss";
+
+.portfolio-top{
+    width: 70%;
+    height: fit-content;
+
+    @include colflexx(flex-start);
+    &__top {
+        @include rowflexx(flex-start);
+        width: 100%;
+        height: fit-content;
+
+        @include breakpoint(mobileonly){
+            @include colflexx(flex-start);
+        }
+        @include breakpoint(phablet){
+            @include colflexx(flex-start);
+        }
+        .my-image {
+            background-color: $gray-200;
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            margin-right: 20px;
+
+            @include breakpoint(mobileonly){
+                width: 100px;
+                height: 100px;
+            }
+            &.--circle {
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+
+                @include breakpoint(mobileonly){
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+        }
+
+        &.__top-left {
+            width: 80%;
+            @include rowflex(flex-start,space-between);
+            .left-details {
+                @include colflexx(flex-start);
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontSemiBold(2.5em, 1em, $vesti-902);
+
+                    @include breakpoint(mobileonly){
+                        @include fontSemiBold(2em, 1em, $vesti-902);
+                    }
+                }
+                p:nth-child(2){
+                    margin-top: 5px;
+                    width: fit-content;
+                    @include fontNormal(1.5em, 1.4em, $vesti-901);
+
+                    @include breakpoint(mobileonly){
+                        @include fontNormal(1.2em, 1.4em, $vesti-901);
+                    }
+                }
+            }
+            .asset-button{
+                width: fit-content;
+                height: 50px;
+                padding:  20px;
+                background-color: $vesti-700;
+                color: #fff;
+                transition: all .5s ease;
+    
+                &:hover {
+    
+                    background-color:  $vesti-800;
+                }
+            }
+           
+        }
+        
+    }
+
+    &__bottom {
+        @include rowflexx(center);
+        height: fit-content;
+        margin-top: 20px;
+
+        @include breakpoint(mobileonly){
+            @include colflexx(flex-start);
+        }
+
+        .detail {
+            @include colflexx(flex-start);
+            p:nth-child(1){
+                @include fontMedium(1em, 1em, $gray-400);
+            }
+
+            div:not(:first-child){
+                margin-right: 70px;
+                // background-color: tomato
+                @include breakpoint (mobileonly){
+                    margin-right: 0px;
+                }
+                @include breakpoint (phablet){
+                    margin-right: 0px;
+                }
+            }
+        }
+        .risklevel{
+            width: fit-content;
+            margin-top: 10px;
+            @include rowflexx(center);
+            @include breakpoint (mobileonly){
+                @include colflexx(flex-start);
+            }
+            img {
+                width: 80px;
+                margin-right: 10px;
+
+                @include breakpoint (mobileonly){
+                    width: 50px;
+                    margin-right: 0px;
+                }
+
+                @include breakpoint (phablet){
+                    width: 50px;
+                    margin-right: 0px;
+                }
+            }
+
+            p:nth-child(2){
+                @include fontSemiBold(1em,1em, $vesti-901);
+            }
+        }
+    }
+    hr {
+        width: 100%;
+        border-width: 1px;
+        border-color: $gray-100 !important;
+        opacity: 1;
+        background-color: $gray-100;
+        margin-top: 50px;
+    }
+}

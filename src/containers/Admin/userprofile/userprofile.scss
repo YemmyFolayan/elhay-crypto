@@ -1,0 +1,87 @@
+@import "../../../variables.scss";
+
+.userprofile-container {
+    height: 150vh;
+    width: 100%;
+    overflow: scroll;
+    
+    @include rowflex(center,center);
+    // display: grid;
+    // grid-template-columns: 100p;
+    .userprofile-inner-container{
+        width: 90%;
+        height: 90%;
+        position: relative;
+        @include colflexx(flex-start);
+
+        @include breakpoint(mobileonly){
+            @include colflexx(flex-start);
+        }
+
+        @include breakpoint(desktop){
+            @include rowflexx(flex-start);
+        }
+
+        .userprofile-left{
+            width: 95%;
+            margin-right: 0px;
+            position: fixed;
+            margin: 0 auto;
+            left:0;
+            right: 0;
+            background-color: #fff;
+            border: 1px solid $gray-300;
+            border-radius: 20px;
+            box-shadow: 0px 4px 30px rgba(157, 157, 157, 0.2) !important;
+            bottom: 127px;
+            z-index: 1;
+            @include rowflexx(center);
+            
+            @include breakpoint(mobileonly){
+                width: 95%;
+                margin-right: 0px;
+                position: fixed;
+                margin: 0 auto;
+                left:0;
+                right: 0;
+                background-color: #fff;
+                border: 1px solid $gray-300;
+                border-radius: 20px;
+                box-shadow: 0px 4px 30px rgba(157, 157, 157, 0.2) !important;
+                bottom: 127px;
+                z-index: 1;
+
+            }
+
+            @include breakpoint(desktop){
+                width: fit-content;
+                height: fit-content;
+                margin-right: 50px;
+                flex: 1;
+                position: relative;
+                bottom: 0px;
+                border: none;
+                background-color: transparent;
+                box-shadow: none !important;
+            }
+    
+        }
+        .userprofile-right{
+            flex: 4;
+            width: 100%;
+            
+            // background-color: rebeccapurple;
+
+            @include breakpoint(mobileonly){
+                flex: 4;
+                width: 100%;
+            }
+            @include breakpoint(desktop){
+                width: fit-content;
+                height: fit-content;
+                flex: 3;
+            }
+        }
+    }
+    
+}

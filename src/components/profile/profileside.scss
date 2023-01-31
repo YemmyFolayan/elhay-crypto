@@ -1,0 +1,113 @@
+@import "../../variables.scss";
+ 
+.profileside-container {
+    width: fit-content;
+    height: fit-content;
+    @include rowflex(center,center);
+    margin: 0 auto;
+    width: 100%;
+    .profileside-inner-container{
+        width: 100%;
+        height: fit-content;
+        @include rowflex(center,center);
+
+        @include breakpoint(mobileonly){
+            @include rowflexx(flex-start);
+        }
+
+        @include breakpoint(desktop){
+            @include colflexx(flex-start);
+        }
+
+        .singleside-container:not(:first-child){
+            margin-top: 0px;
+            margin-left: 0px;
+            @include breakpoint(desktop){
+                margin-top: 20px;
+            }
+        }
+
+        .singleside-container {
+            background-color: transparent;
+            width: fit-content;
+            height: fit-content;
+            padding: 10px 50px 10px 30px;
+            border: none;
+            transition: all .5s ease;
+
+            @include breakpoint(mobileonly){
+                padding: 10px 10px 10px 10px;
+            }
+
+            @include breakpoint(desktop){
+                width: 100%;
+                padding: 10px 50px 10px 30px;
+            }
+
+            &.active {
+                background-color: $vesti-100;
+                border-style: solid;
+                border-width: 10px 0px 0px 0px;
+                border-color: $vesti-700;
+
+                @include breakpoint(desktop){
+                    
+                    border-width: 0px 10px 0px 0px;
+                }
+
+                img {
+                    filter: invert(58%) sepia(36%) saturate(640%) hue-rotate(57deg) brightness(95%) contrast(88%);
+                }
+                p{
+                    @include fontMedium(1.2em, 1em, $vesti-700);
+                }
+            }
+
+            .singleside-inner-container{
+                width: fit-content;
+                cursor: pointer;
+                @include colflexx(center);
+               
+
+                @include breakpoint(desktop){
+                    @include rowflex(center,center);
+                }
+                img {
+                    margin-right: 0px;
+
+                    @include breakpoint(desktop){
+                        margin-right: 20px;
+                    }
+                }
+
+                p{
+                    margin: 0;
+                    @include fontNormal(1.2em, 1em, $vesti-901);
+
+                    @include breakpoint(mobileonly){
+                        margin-top: 10px;
+                        text-align: center;
+                        width: 100%;
+                        @include fontNormal(1em, 1em, $vesti-901);
+                    }
+                    @include breakpoint(phablet){
+                        margin-top: 10px;
+                        white-space: nowrap;
+                        width: 100%;
+                        text-align: center;
+                        @include fontNormal(1em, 1em, $vesti-901);
+                    }
+                    @include breakpoint(tablet){
+                        margin-top: 10px;
+                        white-space: nowrap;
+                        width: 100%;
+                        text-align: center;
+                        @include fontNormal(1.2em, 1em, $vesti-901);
+                    }
+                }
+            }
+
+        }
+    }
+
+}

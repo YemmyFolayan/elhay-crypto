@@ -1,0 +1,93 @@
+@import "../../variables.scss";
+
+.depositoptions{
+    width: 100%;
+    height: 100%;
+    @include rowflex(center,center);
+
+    &__inner {
+        width: 100%;
+        height: 90%;
+        @include colflexx(flex-start);
+
+        &.top {
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            @include colflex(flex-start, flex-start);
+
+            p:nth-child(1){
+                margin: 0;
+                @include fontBold(1.2em, 1em, $gray-400);
+            }
+            p:nth-child(2){
+                width: 90%;
+                margin-top: 10px;
+                @include fontNormal(1em, 1.5em, $vesti-901);
+            }
+        }
+
+        &.center {
+            width: 100%;
+            height: fit-content;
+            @include colflexx(flex-start);
+        }
+       
+
+        &__btn {
+            width: 100%;
+            height: 50px;
+            background-color:  $vesti-700;
+            color: #fff;
+            transition: all .5s ease;
+
+            i {
+                margin-left: 10px;
+            }
+
+            &:hover {
+                background-color:  $vesti-900;
+            }
+
+            &:disabled{
+                background-color: $gray-500;
+                color: #fff;
+                cursor: not-allowed;
+            }
+        }
+
+    }
+}
+
+.depositoptions__btn {
+    width: 100%;
+        height: 60px !important;
+        margin-top: 0px;
+        border-radius: 10px;
+        background-color:  $vesti-700;
+        color: #fff;
+        transition: all .5s ease;
+
+        i {
+            margin-left: 10px;
+        }
+
+        &:hover {
+            background-color:  $vesti-900;
+        }
+        &:disabled {
+            background-color: $gray-500;
+            color: #fff;
+            cursor: not-allowed;
+        }
+}
+
+.inputfloat, .amountfloat{
+    width: 400px !important;
+    @include breakpoint(mobileonly){
+        width: 75vw !important;
+    }
+    @include breakpoint(phablet){
+        width: 350px !important;
+    }
+}

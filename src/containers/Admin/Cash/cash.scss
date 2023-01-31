@@ -1,0 +1,142 @@
+@import "../../../variables.scss";
+
+.balancecard{
+    width: 350px;
+
+
+    @include breakpoint(mobileonly){
+       width: 350px !important;
+    }
+
+    @include breakpoint(tablet){
+        width: 50vw;
+    }
+
+    .balance-account {
+        width: fit-content;
+        margin-top: -5px;
+        height: fit-content;
+        cursor: pointer;
+        transition: all .5s ease;
+        p:nth-child(1){
+            margin: 0;
+            @include fontNormal(1em, 1em, $vesti-902);
+        }
+        &__subtitle{
+            margin-top: 10px;
+            @include fontMedium(1.5em, 1em, $vesti-900);
+            transition: all .5s ease;
+        }
+
+        &:hover {
+           
+
+            .balance-account__subtitle{
+                transform-origin: center center;
+                transform: scale(1.1);
+                color: $vesti-700;
+            }
+        }
+
+        // div:nth-child(3){
+        //     margin-top: -10px;
+        // }
+    }
+}
+.bank__trbtns {
+    @include rowflexx(flex-start);
+    width: 100%;
+    flex-wrap: wrap;
+        gap: 10px;
+        // a:not(:first-child){
+        //     margin-left: 10px;
+        // }
+    
+        a {
+            height: 60px;
+            min-width: 30px !important;
+            width: fit-content;
+            padding: 20px 20px 20px 20px;
+            font-size: 1em;
+
+            img {
+                width: 10px !important;
+                margin-right: 10px;   
+            }
+        }
+    
+    @include breakpoint(mobileonly){
+        flex-wrap: wrap;
+        gap: 10px;
+
+        
+        a:not(:last-child){
+
+            margin-right: 10px;
+        }
+
+        a:last-child{
+            margin-top: 10px;
+        }
+    }
+
+    @include breakpoint(tablet){
+
+    }
+
+    @include breakpoint(laptop){
+
+    }
+}
+
+.uploadbankform {
+    width: 400px;
+
+    @include breakpoint(mobileonly){
+        width:70vw;
+    }
+    @include breakpoint(phablet){
+        width: 100%;
+    }
+}
+
+.bank-cont {
+    @include breakpoint(mobileonly){
+        @include colflexx(flex-start);
+    }
+    @include breakpoint(phablet){
+        @include colflexx(flex-start);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start !important;
+        align-items:  flex-start !important;
+    }
+    @include breakpoint(tablet){
+        @include colflexx(flex-start);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start !important;
+        align-items:  flex-start !important;
+    }
+    @media only screen 
+  and (min-width: 1014px) 
+  and (max-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    @include colflexx(flex-start);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start !important;
+        align-items:  flex-start !important;
+    }
+    
+}
+
+.bank_form {
+    margin-bottom: 30px;
+    cursor: pointer;
+    @include fontMedium(1em,1em, $vesti-900);
+
+    strong {
+        color: $vesti-700;
+    }
+}

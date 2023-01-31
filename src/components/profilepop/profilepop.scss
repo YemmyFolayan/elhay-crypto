@@ -1,0 +1,255 @@
+@import "../../variables.scss";
+ 
+.profilepop-container {
+    width: 100%;
+    height: 100%;
+    @include rowflex(center,center);
+
+    .profilepop-inner {
+        width: 100%;
+        height:90%;
+        @include colflexx(center);
+
+        &.top {
+            width: 100%;
+            @include colflexx(center);
+
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 100%;
+            }
+
+            .profile-top-content {
+                margin-top: 20px;
+                @include colflexx(center);
+
+                .details {
+                    @include colflexx(center);
+                    text-align: center;
+                    p:nth-child(1){
+                        margin: 0;
+                        @include fontBold(1.5em, 1.4em, $vesti-700);
+
+                        @include breakpoint(mobileonly){
+                            @include fontBold(1.2em, 1.4em, $vesti-700);
+                        }
+                    }
+                    p:nth-child(2){
+                        margin-top: 5px;
+                        @include fontMedium(1em, 1.4em, $gray-400);
+
+                        @include breakpoint(mobileonly){
+                            @include fontMedium(1em, 1.4em, $gray-400);
+                        }
+                    }
+                }
+                .socials {
+                    width: fit-content;
+                    @include rowflexx(center);
+                    i:not(:first-child){
+                        margin-left: 10px;
+                    }
+                    i {
+                        width: fit-content;
+                        height: fit-content;
+                        padding: 5px;
+                        background-color: $gray-200;
+                        color: $gray-400;
+                        transition: all .5s ease;
+
+                        &:hover {
+                            background-color: $vesti-200;
+                            color: $vesti-700;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.bottom {
+            margin-top: 30px;
+            width: 100%;
+            @include colflexx(center);
+
+            .send-money {
+                width: 100%;
+                padding: 20px;
+                background-color: $vesti-700;
+                border-radius: 10px;
+                cursor: pointer;
+                @include rowflex(center,center);
+
+                .send-money-inner {
+                    width: 100%;
+                    height: 100%;
+                    
+                    @include rowflex(flex-start,space-between);
+
+                    img {
+                        width: 100px;
+                    }
+
+                    .send-money-left {
+                        @include colflexx(flex-start);
+
+                        p:nth-child(1){
+                            margin: 0;
+                            @include fontMedium(1em, 1em, $vesti-902);
+
+                            strong {
+                                color: #fff;
+                            }
+
+                        }
+                        p:nth-child(2){
+                            margin-top: 10px;
+                            @include fontNormal(.8em,1em, #fff);
+
+                        }
+                    }
+                }
+
+            }
+            .recipient-bottom {
+                width: 100%;
+                margin-top: 30px;
+                @include colflexx(center);
+                .recipient-input{
+                    @include colflexx(center);
+                    
+                    width: 100%;
+        
+                    span{
+                        width: 100%;
+                        display: flex;
+                        flex-direction:row;
+                        select {
+                            background: #000000;
+                            // width: 100px;
+                            padding: 10px;
+                            flex: 1;
+                            outline: none;
+                            height: 60px;
+                            color: #fff;
+                            border: none;
+                            border-radius: 5px 0px 0px 5px;
+                        }
+                        input[type='text'], input[type='number'] {
+                            // width: 100% !important;
+                            flex: 3;
+                            height: 60px;
+                            border: none;
+                            padding: 0;
+                            margin: 0;
+                            // margin-top: 10px;
+                            border-radius: 0px 5px 5px 0px;
+                            box-sizing: border-box;
+                            outline: none;
+                            padding-left: 20px;
+                            background-color: $gray-200;
+                            border: 1px solid $gray-300;
+                            @include fontNormal(1em, 1em, $gray-600);
+            
+                            @include breakpoint(tablet) {
+                                height: 60px;
+                            }
+        
+                            &:focus {
+                                background-color: $vesti-100;
+                                color: $vesti-901;
+                                border: 1px solid $vesti-700;
+                            }
+                        }
+                    }
+                }
+                .recipient-btn{
+                    width: 100%;
+                    height: 60px;
+                    margin-top: 30px;
+                    border-radius: 10px;
+                    background-color:  $vesti-700;
+                    color: #fff;
+                    transition: all .5s ease;
+        
+                    i {
+                        margin-left: 10px;
+                    }
+        
+                    &:hover {
+                        background-color:  $vesti-900;
+                    }
+                    &:disabled {
+                        background-color: $gray-500;
+                        color: #fff;
+                        cursor: not-allowed;
+                    }
+                }
+            }
+        }
+    }
+}
+.profile-send-form{
+    width: 100% !important;
+    @include colflexx(flex-start);
+
+    .btn-container {
+        width: 100%;
+        margin-top: 30px;
+        @include rowflexx(center);
+    
+        @include breakpoint(mobileonly){
+            @include colflex(center,center);
+        }
+    
+        .btn-left {
+            width: fit-content !important;
+            height: 50px;
+            padding: 10px 30px 10px 30px !important;
+            background-color: transparent;
+            border: 1px solid $vesti-700 !important;
+            @include fontNormal(1em, 1em, $vesti-700);
+            outline: none;
+            margin-right: 20px;
+            @include rowflex(center,center);
+            border-radius: 10px !important;
+    
+            transition: all 0.5s ease;
+    
+            &:hover {
+                background-color: $vesti-700;
+                color: #fff;
+            }
+    
+            
+            @include breakpoint(mobileonly){
+                width: 100% !important;
+                margin: 0;
+                padding: 0px;
+            }
+        }
+    
+        .btn-right {
+            width: fit-content !important;
+            height: 50px;
+            // margin-left: 20px;
+            background-color: $vesti-700;
+            @include fontNormal(1em, 1em, #fff);
+            padding: 10px 15px 10px 15px !important;
+            @include rowflex(center,center);
+            border-radius: 10px !important;
+            outline: none;
+            transition: all 0.5s ease;
+    
+            @include breakpoint(mobileonly){
+                width: 100% !important;
+                margin-top: 20px;
+            }
+    
+            &:hover {
+                background-color: $vesti-900;
+            }
+        }
+    
+    }
+}

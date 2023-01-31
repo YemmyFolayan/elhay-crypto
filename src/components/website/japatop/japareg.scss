@@ -1,0 +1,34 @@
+@import "../../../variables.scss";
+.japareg-cont {
+    width: 100%;
+    @include colflexx(flex-start);
+    p:nth-child(1){
+        @include fontBold(2em, 1em, $vesti-700);
+        @include breakpoint(mobileonly){
+            @include fontBold(1.5em, 1em, $vesti-700);
+        }
+    }
+}
+.japareg{
+    // background-color: red;
+    margin-top: 20px !important;
+    width: 80% !important;
+    button {
+        width: 100%;
+        height: 50px;
+        margin-top: 20px;
+        background-color: $vesti-700;
+        transition: all .5s ease;
+        color: #fff;
+
+        &:hover {
+            background-color: $vesti-800;
+        }
+
+        &:disabled {
+            background-color: $gray-600;
+            cursor: not-allowed;
+        }
+
+    }
+}

@@ -1,0 +1,23 @@
+@import "../../../variables.scss";
+
+.billpayment-container{
+
+    .page_title {
+        @include fontBold(1.8em, 1.5em, $vesti-902);
+        
+        @include breakpoint(mobileonly){
+            @include fontBold(1.5em, 1.5em, $vesti-902);
+
+        }
+    }
+    .arrangement{
+        @include rowflex(center,flex-start);
+        flex-wrap: wrap;
+        gap: 1rem;
+    
+        @include breakpoint(mobileonly){
+            @include colflex(center, space-around);
+        }
+    
+    }
+}

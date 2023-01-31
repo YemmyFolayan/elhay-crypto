@@ -1,0 +1,109 @@
+@import "../../variables.scss";
+
+.reason-container {
+    width: 100%;
+    height: 100vh;
+    @include colflex(flex-start,flex-start);
+
+    .reason-title{
+        margin: 0;
+        font-size: 1.5em !important;
+        color: $vesti-901 !important;
+        font-display: 300 !important;
+        @include fontMedium(1.3em, 1em, $vesti-901);
+    }
+    .reason-inner-container {
+        width: 100%;
+        height: fit-content;
+        margin-top: 50px;
+        @include rowflexx(center);
+
+        ul {
+            width: 100%;
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            @include colflexx(flex-start);
+
+            li:not(:first-child){
+                margin-top: 10px;
+            }
+            li {
+                display: inline-block;
+                // margin-right: 15px;
+                input {
+                    visibility:hidden;
+                    display: none;
+                    &:checked + label {
+                        
+                        .singlereason-container{
+                            background: $vesti-200;
+                            border: 1px solid $vesti-700;
+                            .singlereason-inner{
+                                p:nth-child(1){
+                                    color: $vesti-700;
+                                }
+                            }
+                        }
+                    }
+                }
+                label {
+                    cursor: pointer;
+                    .singlereason-container {
+                        width: 600px;
+                        height: fit-content;
+                        padding: 30px 50px 20px 30px;
+                        border-radius: 10px;
+                        border: 1px solid $gray-300;
+                        background-color: #fff;
+                        cursor: pointer;
+                        transition: all .5s ease;
+
+                        @include breakpoint(mobileonly){
+                            width: 350px;
+                        }
+                        @include breakpoint(phablet){
+                            width: 400px;
+                        }
+                        
+                        &:hover {
+                            border-color: $vesti-700;
+                            .singlereason-inner{
+                                &.right {
+                                    p:nth-child(1){
+                                        color: $vesti-700;
+                                    }
+                                }
+                            }
+                        }
+                        .singlereason-inner {
+                            @include rowflex(center,space-between);
+                            width: 100%;
+                            height: 100%;
+                            &.right {
+                                @include colflexx(flex-start);
+                                height: 100%;
+                                p:nth-child(1){
+                                    margin: 0;
+                                    transition: all .5s ease;
+                                    @include fontBold(1.2em, 1em, $vesti-902);
+                                }
+                                p:nth-child(2){
+                                    margin-top:10px;
+                                    @include fontNormal(1.1em, 1em, $vesti-902);
+                                }
+                            }
+    
+                            i {
+                                margin-left: 50px;
+                                color: $gray-400;
+                                font-size: 1.5em;
+                            }
+                        }
+                    }
+                }
+               
+            }
+        }
+    }
+}

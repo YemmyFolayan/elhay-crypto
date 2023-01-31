@@ -1,0 +1,301 @@
+@import "../../../../variables.scss";
+
+.mywallet{
+    width: 100%;
+    @include colflexx(flex-start);
+    padding: 50px;
+
+    @include breakpoint(mobileonly){
+        width: 100%;
+        padding: 20px;
+    }
+    &__inner {
+        width: 100%;
+        @include rowflex(flex-start, space-between);
+        flex-wrap: wrap;
+        gap: 50px;
+
+        &__left{
+            width: fit-content;
+            height: fit-content;
+            padding: 40px;
+            background-color: $gray-100;
+            border-radius: 20px;
+            @include colflexx(flex-start);
+            
+            @include breakpoint(mobileonly){
+                width: 100%;
+                padding: 20px;
+            }
+
+            &__btns {
+                width: 100%;
+                margin-top: 20px;
+                @include rowflexx(center);
+                flex-wrap: wrap;
+                gap: 10px;
+                &__btn:not(:first-child){
+                    margin-left: 10px;
+
+                    @include breakpoint(mobileonly){
+                        margin-left: 0px;
+                    }
+                }
+                &__btn {
+                    width: fit-content !important;
+                    padding: 10px 30px 10px 30px !important;
+                    height: 50px !important;
+                    background-color: $vesti-700;
+                    color: #fff;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    transition: all .5s ease;
+                    @include fontMedium(1em,1em,#fff);
+                    @include rowflex(center,center);
+
+                    @include breakpoint(mobileonly){
+                        @include fontMedium(1.2em,1em,#fff);
+                    }
+                    img {
+                        margin-right: 10px;
+                    }
+
+                    &:hover {
+                        color: #fff;
+                        background-color: $vesti-800;
+                    }
+                }
+            }
+
+            .walletdetail{
+                margin-top: 20px;
+                width: 100%;
+                height: fit-content;
+                padding: 30px 0px 30px 30px;
+                background-color: #fff;
+                border: 1px solid $gray-300;
+                border-radius: 15px;
+                @include colflexx(flex-start);
+                
+                @include breakpoint(mobileonly){
+                    width: 100%;
+                    padding: 20px;
+                }
+
+                &__bottom {
+                    @include colflexx(flex-start);
+                    margin-top: 10px;
+                    width: 100%;
+                    div:not(:first-child){
+                        margin-top: 10px;
+                    }
+                    &__single {
+                        @include colflexx(flex-start);
+
+                        width: 100%;
+                        p:nth-child(1){
+                            margin: 0;
+                            @include fontMedium(1em, 1em, $vesti-700);
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                        }
+                        p:nth-child(2){
+                            margin-top: 10px;
+                            letter-spacing: 1px;
+                            // width: 90%;
+                            @include fontMedium(1.2em, 1.4em, $gray-500);
+
+                            @include breakpoint(mobileonly){
+                                width: 90% !important;
+                                @include fontMedium(1em, 1.4em, $gray-500);
+                            }
+                        }
+                    }
+                    &__btn {
+                        @include rowflex(center,center);
+
+                        margin-top: 20px;
+
+                        @include breakpoint(mobileonly){
+                            @include colflexx(flex-start);
+                        }
+                        @include breakpoint(phablet){
+                            @include colflexx(flex-start);
+                        }
+                        &--normal {
+                            
+                            outline: none;
+                            border: none;
+                            background-color: $vesti-700;
+                            @include fontMedium(1em,1em, #fff);
+                            transition: all .5s ease;
+                            &:hover {
+                                background-color: $vesti-800;
+                            }
+                            &:disabled {
+                                background-color: $gray-500;
+                                color: $gray-100;
+                                cursor: not-allowed;
+                            }
+                        }
+
+                        &--nobg {
+                            margin: 0;
+                            margin-left: 0px;
+                            width: fit-content;
+                            height: fit-content;
+                            background-color: transparent;
+                            @include fontMedium(1.3em,1em, $vesti-700);
+                            transition: all .5s ease;
+                            &:hover {
+                                @include fontMedium(1.4em,1em, $vesti-900);
+                            }
+                        }
+                        
+                    }
+                }
+            }
+        }
+        &__right {
+            width: 50%;
+            height: 700px;
+            overflow-y: scroll;
+            // padding: 40px;
+            border: .5px solid #EAEAEA;
+            box-shadow: 0px 0px 5px rgba(245, 245, 245, 0.7);
+            border-radius: 20px;
+            position: relative;
+            scrollbar-width: thin;
+            @include colflex(flex-start,space-between);
+
+            @include breakpoint(mobileonly){
+                width: 100%;
+            }
+            @include breakpoint(tablet){
+                width: 90%;
+            }
+            @include breakpoint(phablet){
+                width: 98%;
+            }
+            &::-webkit-scrollbar {
+                width: 4px;
+
+              }
+            &::-webkit-scrollbar-track {
+            background: $vesti-200;
+            }
+            &::-webkit-scrollbar-thumb {
+            background-color: $vesti-700 ;
+            border-radius: 6px;
+            border: $vesti-900;
+            }
+            &__title {
+                width: 100%;
+                height: fit-content;
+                padding: 40px 0px 50px 40px;
+                border-bottom: 1.5px solid $gray-200;
+                box-shadow: 0px 4px 30px rgba(216, 216, 216, 0.199) !important;
+                z-index: 2;
+                position: -webkit-sticky !important;
+                position: sticky !important;
+                top: 0;
+                background-color: #fff;
+
+
+            }
+            &__pagination {
+                width: 100%;
+                height: 100px;
+                padding: 0px 0px 20px 10px;
+                border-bottom: 1.5px solid $gray-200;
+                box-shadow: 0px 4px 30px rgba(216, 216, 216, 0.199) !important;
+                z-index: 2;
+                position: -webkit-sticky !important;
+                position: sticky !important;
+                // top: 0;
+                background-color: #fff;
+                // position: absolute;
+                bottom: 0px !important;
+
+                @include rowflex(center,center);
+
+            }
+            &__transactions{
+                padding: 0px 40px 0px 40px;
+                width: 100%;
+                // height: 100%;
+                margin: 0 auto;
+                margin-top: 30px;
+                @include colflex(flex-start,center);
+
+                hr:last-child{
+                    display: none;
+                }
+                .singletransaction {
+                    width: 100%;
+                    height: fit-content;
+                    @include rowflex(center,space-between);
+                    &__left {
+                        @include rowflexx(flex-start);
+                        text-transform: capitalize;
+                        img {
+                            width: auto;
+                            margin-right: 15px;
+                        }
+    
+                        p{
+                            // margin: 0;
+                            width: 70%;
+                            @include fontNormal(1.2em, 1.4em, $vesti-901);
+    
+                            strong{
+                                color: $vesti-700;
+                            }
+                            .pending {
+                                color: $yellow-600;
+                            }
+                        }
+                    }
+    
+                    &__amount {
+                        // margin: 0;
+                        width: fit-content;
+                        @include fontBold(1.2em,1em, $vesti-700);
+                        &.--debit {
+                            color: red;
+                        }
+    
+                        &.--credit {
+                            color: $vesti-700;
+                        }
+                        &.--pending {
+                            color: $yellow-600;
+                        }
+                    }
+
+                    
+                }
+                hr{
+                    width: 100%;
+                    background-color: $gray-300;
+                    margin-bottom: 30px;
+                }
+            }
+
+          
+        }
+    }
+   
+
+    
+}
+
+.title {
+    margin: 0;
+    margin-bottom: 20px;
+    @include fontBold(2.5em, 1em, $gray-500);
+
+    @include breakpoint(mobileonly){
+        @include fontBold(1.5em, 1em, $gray-500);
+    }
+}

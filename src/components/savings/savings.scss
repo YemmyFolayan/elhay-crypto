@@ -1,0 +1,89 @@
+@import "../../variables.scss";
+
+.savings-container{
+    width: 21em;
+    height: fit-content;
+    @include rowflex(center,center);
+    text-align: center;
+
+    .savings-inner {
+        @include colflexx(center);
+
+        img {
+            width: auto;
+
+        }
+        p:nth-child(2){
+            margin: 0;
+            margin-top: 30px;
+            @include fontBold(1.5em, 1em, $vesti-800);
+        }
+        p:nth-child(3){
+
+            width: 90%;
+            margin-top: 10px;
+            @include fontNormal(1.1em, 1.7em, $vesti-901);
+        }
+
+        .form-control {
+            @include fontNormal(1.2em, 1em, $vesti-902);
+            width: fit-content;
+            line-height: 1.1;
+            border: none !important;
+            @include rowflexx(center);
+            
+            
+            input[type="checkbox"] {
+                // margin-left: 20px;
+                appearance: none;
+                background-color: #fff;
+                margin: 0;
+                font: inherit;
+                color: $vesti-901;
+                width: 1.15em;
+                height: 1.15em;
+                border: 0.15em solid $vesti-901;
+                border-radius: 0.15em;
+                transform: translateY(-0.075em);
+                display: grid;
+                place-content: center;
+                margin-right: 10px;
+                transition: all 0.5s ease;
+
+                &:checked {
+                    border: 0.15em solid $vesti-700;
+                }
+                &::before {
+                    content: "";
+                    width: 0.65em;
+                    height: 0.65em;
+                    transform: scale(0);
+                    transition: 120ms transform ease-in-out;
+                    box-shadow: inset 1em 1em $vesti-700;
+                }
+            }
+            input[type="checkbox"]:checked::before {
+                transform: scale(1);
+                
+            }
+        }
+
+        .create-new-savings-btn {
+            background-color: $vesti-700;
+            height: 50px;
+            color: #fff;
+            transition: all 0.5s ease;
+            border-radius: 5px !important;
+    
+            &:hover {
+                background-color: $vesti-800;
+                color: #fff;
+            }
+            &:disabled {
+                background-color: $gray-600;
+                color: $gray-100;
+                cursor: not-allowed;
+            }
+        }
+    }
+}

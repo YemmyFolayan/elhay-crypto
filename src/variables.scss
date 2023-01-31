@@ -1,0 +1,700 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+  font-size: 16px !important;
+}
+// Colors
+
+$vesti-100: #f0f3ee;
+$vesti-200: #000000;
+$vesti-300: #000080;
+$vesti-400: #B0FF8B;
+$vesti-500: #97E373;
+$vesti-600: #7EC65C;
+$vesti-700: #000000;
+$vesti-800: #518C36;
+$vesti-900: #3E6F26;
+$vesti-901: #000080;
+$vesti-902: #121243;
+
+$vpurp-100: #FBF3FF;
+$vpurp-200: #F0D1FF;
+$vpurp-300: #E5AEFF;
+$vpurp-400: #D98BFF;
+$vpurp-500: #BE73E2;
+$vpurp-600: #A35CC5;
+$vpurp-700: #8948A8;
+$vpurp-800: #6F368B;
+$vpurp-900: #57266E;
+$vpurp-901: #3F1951;
+$vpurp-902: #20082B;
+
+$gray-100 : #F9F8F9;
+$gray-200 : #F8F6F5;
+$gray-300 : #EAEAEA;
+$gray-400 : #CCCCCC;
+$gray-500 : #8B8C8C;
+$gray-600 : #4F4F4F;
+$gray-700 : #2D2F30;
+$gray-800 : #151617;
+
+$green-100 : #F0FFF6;
+$green-200 : #CEFFE3;
+$green-300 : #ADFFD0;
+$green-400 : #8CFFBD;
+$green-500 : #69FCA8;
+$green-600 : #4DDA89;
+$green-700 : #35B86D;
+$green-800 : #219653;
+$green-900 : #12743C;
+$green-901 : #075227;
+
+$yellow-100 : #FFFAED;
+$yellow-200 : #FFF1C6;
+$yellow-300 : #FFE79F;
+$yellow-400 : #FFDD77;
+$yellow-500 : #F2C94C;
+$yellow-600 : #D0AA38;
+$yellow-700 : #AE8C26;
+$yellow-800 : #8C6F18;
+$yellow-900 : #6A530D;
+$yellow-901 : #483806;
+
+$sila-100 : #F0F2FF;
+$sila-200 : #E5EAFF;
+$sila-300 : #B8C4FF;
+$sila-400 : #A3AFFA;
+$sila-500 : #6F7FFF;
+$sila-600 : #4C5FF7;
+$sila-700 : #4751D1;
+$sila-800 : #4D58B2;
+$sila-900 : #2C3684;
+
+$red-100: #FFF5F5;
+$red-200: #FDE7E8;
+$red-300: #FFC2C5;
+$red-400: #FAA3A7;
+$red-500: #F7787E;
+$red-600: #EC575E;
+$red-700: #D1474E;
+$red-800: #C43138;
+$red-900: #66191D;
+$red-901: #430A0C;
+$red-902: #2E0507;
+
+$cyan-100 : #EDFDFF;
+$cyan-200 : #C4F8FF;
+$cyan-300 : #9CF4FF;
+$cyan-400 : #74EFFF;
+$cyan-500 : #4AE7FA;
+$cyan-600 : #34C6D8;
+$cyan-700 : #22A6B6;
+$cyan-800 : #138694;
+$cyan-900 : #096672;
+$cyan-901 : #011c20;
+
+//flex
+
+@mixin rowflex ($align, $just){
+  display: flex;
+  flex-direction: row;
+  align-items: $align;
+  justify-content: $just;
+}
+
+@mixin rowRevflex ($align, $just){
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: $align;
+  justify-content: $just;
+}
+
+@mixin colflex ($align, $just){
+  display: flex;
+  flex-direction: column;
+  align-items: $align;
+  justify-content: $just;
+}
+@mixin revcolflex ($align, $just){
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: $align;
+  justify-content: $just;
+}
+
+@mixin rowflexx ($align){
+  display: flex;
+  flex-direction: row;
+  align-items: $align;
+  
+}
+@mixin rowflexxx ($align){
+  display: flex;
+  flex-direction: row;
+  align-items: $align;
+  justify-content: space-between;
+  
+}
+
+@mixin colflexx ($align){
+  display: flex;
+  flex-direction: column;
+  align-items: $align;
+  
+}
+@mixin colflexxx ($align){
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: $align;
+  
+}
+
+
+
+
+
+// font styles
+
+@mixin font($fs, $lh, $color) {
+  font-size: $fs;
+  line-height: $lh;
+  color: $color;
+  font-style: normal;
+  font-family: 'lato', sans-serif;
+    
+}
+
+@mixin fontMain($fs, $lh, $color) {
+  font-size: $fs;
+  line-height: $lh;
+  color: $color;
+  font-style: normal;
+  font-family: 'Khand', sans-serif;
+  
+}
+@mixin fontLight($fs, $lh, $color) {
+  @include font($fs, $lh, $color);
+  font-weight: 100;
+}
+
+@mixin fontNormal($fs, $lh, $color) {
+  @include font($fs, $lh, $color);
+  font-weight: 300;
+}
+
+@mixin fontMedium($fs, $lh, $color) {
+  @include font($fs, $lh, $color);
+  font-weight: 400;
+}
+
+@mixin fontSemiBold($fs, $lh, $color) {
+  @include font($fs, $lh, $color);
+  font-weight: 600;
+}
+
+
+@mixin fontBold($fs, $lh, $color) {
+  @include font($fs, $lh, $color);
+  font-weight: 700;
+}
+
+@mixin fontBlack($fs, $lh, $color) {
+  @include font($fs, $lh, $color);
+  font-weight: 900;
+}
+
+@mixin fontTitleMedium($fs, $lh, $color) {
+  @include fontMain($fs, $lh, $color);
+  font-weight: 400;
+}
+@mixin fontTitleBold($fs, $lh, $color) {
+  @include fontMain($fs, $lh, $color);
+  font-weight: 500;
+}
+
+@mixin fontTitleBlack($fs, $lh, $color) {
+  @include fontMain($fs, $lh, $color);
+  font-weight: 700;
+}
+
+
+
+
+// keyframes
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+      @content;
+    }
+    @-moz-keyframes #{$animationName} {
+      @content;
+    }
+    @-o-keyframes #{$animationName} {
+      @content;
+    }
+    @keyframes #{$animationName} {
+      @content;
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+@include keyframes(slide-in) {
+  0% { 
+    opacity: 0;
+    padding-top: 20px;
+    @include animation('fade 0.7s 1'); 
+  }
+
+  100% { 
+    padding-top: 0px; 
+    @include animation('fade 0.7s 1'); 
+  }
+}
+
+@include keyframes(fade) {
+  0% { 
+    opacity: 0; 
+  }
+
+  90% { 
+    padding-top: 1; 
+  }
+}
+
+
+
+
+@mixin animate($name, $duration, $iteration, $direction) {
+  -webkit-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -o-animation-duration: $duration;
+  animation-duration: $duration;
+  -webkit-animation-iteration-count: $iteration;
+  -moz-animation-iteration-count: $iteration;
+  -o-animation-iteration-count: $iteration;
+  animation-iteration-count: $iteration;
+  -webkit-animation-name: $name;
+  -moz-animation-name: $name;
+  -o-animation-name: $name;
+  animation-name: $name;
+  -webkit-animation-direction: $direction;
+  -moz-animation-direction: $direction;
+  -o-animation-direction: $direction;
+  animation-direction: $direction;
+}
+
+
+/*********************
+BREAKPOINTS
+*********************/
+
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 70em) { @content ; }
+  }
+  @else if $point == laptop {
+    @media (min-width: 64em) { @content ; }
+    // @media (max-width: 56em) { @content ; }
+  }
+   @else if $point == tablet {
+    // @media (min-width: 50em) { @content ; }
+    @media (min-width: 800px) and (max-width: 1224px) {@content;}
+    // @media (min-width: 768px) and (max-width: 1024px) {@content;} 
+  }
+  @else if $point == phablet {
+    // @media (min-width: 37.5em)  { @content ; }
+    // @media (min-width: 480px) and (max-width: 768px) { @content; }
+    @media (min-width: 600px) and (max-width: 800px) { @content; }
+  }
+ @else if $point == mobileonly {
+    // @media (max-width: 37.5em)  { @content ; }
+    // @media (min-width: 320px) and (max-width: 480px) { @content; }
+    @media (min-width: 300px) and (max-width: 600px) { @content; }
+  }
+}
+
+// wallet mixin
+@mixin wallet($primary, $light, $medium, $semidark, $dark ) {
+  border: 1px solid $primary;
+  background-color: $light;
+  @include colflex(flex-start,space-between);
+  .singlewallet__top{
+    height: 100px;
+    
+    @include colflex(flex-start,space-between);
+
+    &__title {
+      text-transform: uppercase;
+      margin: 0;
+      @include fontNormal(1em, 1em, $dark);
+    }
+    &__amount {
+      margin-top: 10px;
+      @include rowflexx(flex-start);
+
+      span {
+        margin-right: 20px;
+        @include rowflexx(flex-end);
+
+        p:nth-child(1){
+          margin: 0;
+          margin-bottom: 2px;
+          @include fontSemiBold(1.5em,1em, $medium)
+        }
+        p:nth-child(2){
+          margin: 0;
+          margin-left: 10px;
+          @include fontBold(3.5em,1em, $semidark)
+        }
+      }
+      i{
+        font-size: 2em;
+        color: $primary;
+        transition: all .5s ease;
+      }
+    }
+
+  }
+  .singlewallet__link{
+    @include rowflexx(center);
+    @include fontMedium(1em,1em, $primary);
+    cursor: pointer;
+
+    &:hover {
+      @include fontMedium(1em,1em, $semidark);
+    }
+    i {
+        margin-left: 5px;
+        font-size: 1.5em;
+    }
+  }
+}
+
+@mixin wallets($bkg,$primary, $btn, $btncolor ) {
+  border: 1px solid $primary;
+  background-color: $bkg;
+  // @include colflex(flex-start,space-between);
+
+  .wallet{
+      // height: 310px;
+      height: 252px;
+      @include colflexx(flex-start);
+      gap: 40px;
+      border: 1px solid $primary;
+      // background-color: $bkg;
+      padding: 30px 40px;
+
+      &__top{
+        @include colflex(flex-start,space-between);
+        gap: 10px;
+      }
+      &__title{
+        @include fontNormal(1em,1em ,#fff );
+        text-transform: uppercase;
+        margin: 0px;
+
+        @include breakpoint(desktop){
+          font-size: 1.25em;
+        }
+      }
+      &__balance{
+        margin: 0;
+        @include rowflexx(center);
+        gap: 10px;
+
+        p:nth-child(1){
+          margin: 0;
+          margin-bottom: 2px;
+          @include fontSemiBold(2em,1em, #fff);
+          @include breakpoint(mobileonly){
+            font-size: 1.5em;
+          }
+          @include breakpoint(desktop){
+            font-size: 3em;
+          }
+        }
+        i{
+          color: #fff;
+          transition: all .5s ease;
+          font-size: 1.5em;
+          
+          @include breakpoint(mobileonly){
+            font-size: 1em;
+          }
+          @include breakpoint(desktop){
+            font-size: 2em;
+          }
+        }
+      }
+      &__details{
+        margin: 0px;
+        @include rowflexx(center);
+        gap: 10px;
+        @include fontMedium(1.1em,1em, #fff);
+        font-style: italic;
+        cursor: pointer;
+        height: 20px;
+        i {
+            font-size: 1.3em;
+            color: #fff;
+        }
+      }
+
+      &__bottom {
+        @include colflex(flex-start,space-between);
+        gap: 20px;
+        height: 109px;
+      }
+      &__btns {
+        @include rowflexx(center);
+        gap: 20px;
+      }
+      &__btn {
+        min-width: 30px !important;
+        width: fit-content !important;
+        // padding: 0px 20px 0px 20px !important; 
+        height: 50px !important;
+        border-radius: 5px !important;
+        background-color:  $btn;
+        color: $btncolor;
+        font-size: 1em;
+        white-space: nowrap;
+        @include rowflex(center,center);
+        gap: 10px;
+        @include breakpoint(mobileonly){
+          @include fontSemiBold (0.7em, 1em, $btncolor);
+        }
+      }
+  }
+  
+}
+
+@mixin  card ($bkg, $color, $btn) {
+  height: 270px;
+  cursor: pointer;
+  @include colflex(flex-start, space-between);
+
+  @include breakpoint(mobileonly){
+    // height: 260px;
+    @include colflexx(flex-start);
+  }
+  .singlecard{
+    position: relative;
+    *p{
+      margin: 0px !important;
+    }
+    &__top, &__bottom {
+      z-index: 10;
+      width: 100%;
+      @include rowflex(flex-end,space-between);
+      img {
+        width: 50px;
+      }
+    } 
+    &__top{
+      @include rowflex(flex-start,space-between);
+      i{
+        font-size:2em;
+        color: #fff;
+      }
+    }
+
+    &__name,  &__balance{
+      @include colflexx(flex-start);
+      gap: 10px;
+      
+      p{
+        margin-bottom: 0px !important;
+        letter-spacing: .1em;
+      }
+
+      p:nth-child(1){
+        text-transform: uppercase;
+        @include fontMedium(1em,1em ,$color );
+
+      }
+      p:nth-child(2){
+        @include fontSemiBold(1.2em,1em, $color );
+        @include rowflexx(center);
+        gap: 10px;
+        i{
+          font-size: 1em;
+          color: #fff;
+        }
+      }
+    }
+
+    &__balance{
+      p:nth-child(2){
+        @include fontSemiBold(1.5em,1em, $color );
+      }
+    }
+
+    &__gg{
+      z-index: 1;
+      position: absolute;
+      top: -50px;
+      bottom: 0;
+      margin: 0 auto;
+      left: 0;
+      right: -200px;
+      width: 500px;
+      opacity: .5;
+    }
+    &__btns {
+      @include rowflexx(center);
+      gap: 10px;
+    }
+
+    &__link{
+      margin: 0;
+      @include rowflexx(center);
+      gap: 10px;
+      @include fontMedium(1em,1em,$color);
+      cursor: pointer;
+      z-index: 1;
+      i {
+          font-size: 1.4em;
+      }
+      &.--fund{
+          opacity: 0;
+          color: $color;
+          animation-name: bounce;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+          font-size: 1em !important;
+          font-weight: 500;
+          padding: 10px;
+          border-radius: 10px;
+          background-color: $btn;
+          transition: all .5s ease;
+  
+          @include breakpoint(mobileonly){
+            font-size: .9em !important;
+          }
+          &:hover {
+            opacity: 1;
+            animation: none;
+          }
+      }
+    }
+  }
+}
+
+@mixin transreview($light, $border, $btn){
+  .transfinancreview {
+
+    width: 400px !important;
+
+    @include breakpoint(mobileonly){
+        width: 70vw !important;
+    }
+
+    @include breakpoint(desktop){
+        width: 100% !important;
+    }
+    *.backcontinue {
+        width: 100% !important;
+        .platform{
+            &.platform_mainbtn {
+                background-color: $btn;
+                &:disabled{
+                    background-color: $gray-800 !important;
+                }
+            }
+            &.platform_secbtn {
+                border-color: $btn !important;
+                color: $btn;
+            }
+        }
+    }
+    .transreview {
+        background-color: $light;
+        border: .5px solid $border;
+        &__single:not(:last-child){
+            // background-color: red;
+            padding: 10px 0px;
+            border-bottom: 1px dashed $border;
+        }
+        &__single {
+           
+            p:nth-child(1){
+                @include fontNormal(1em,1em,$border);
+            }
+            p:nth-child(2){
+                @include fontBold(1em,1em,$border);
+            }
+        }
+    }
+    
+  }
+}
+
+@mixin radiooption ($active, $light){
+  .radiooption{
+    &.--active {
+        border: 1px solid $active;
+        background-color: $light;
+        .radiooption__left {
+            p:nth-child(1){
+                @include fontBold(1.1em, 1em, $active);
+
+                @include breakpoint(desktop){
+                    @include fontBold(1.3em, 1em, $active);
+                }
+            }
+        }
+    }
+    input[type="radio"] {
+        &:checked + label:before {
+            border-color: $active;  
+        }
+        &:checked +label+ div.paymentoption-detail {
+            p:nth-child(1){
+                color: $active;
+            }
+        }
+    }
+    label {
+        &:after {
+            background:$active;            
+        }
+    }
+    
+}
+}
+
+@mixin platform ($pry, $sec){
+  .platform{
+    &.platform_mainbtn {
+        background-color: $pry;
+        &:disabled{
+            background-color: $sec !important;
+        }
+    }
+    &.platform_secbtn {
+        border-color: $pry !important;
+        color: $pry;
+    }
+  }
+}
+@mixin overflowScroll ($track, $thumb){
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+      background: $track;
+  }
+  &::-webkit-scrollbar-thumb {
+      background-color: $thumb;
+      border-radius: 6px;
+  }
+}

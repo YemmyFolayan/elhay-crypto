@@ -1,0 +1,85 @@
+@import "../../../variables.scss";
+
+
+
+.action-pathway-container {
+   
+    overflow: scroll !important;
+    padding: 10px;
+    margin: 0;
+    margin-left: 50px;
+    position: relative;
+    height: fit-content;
+    width: 90%;
+    overflow-y: scroll;
+
+    @include breakpoint(mobileonly){
+        // margin-left: 20px;
+        margin: 0 auto;
+    }
+
+    &.top {
+        width: 80%;
+        height: fit-content;
+        margin: 0;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        @include colflexx(flex-start);
+
+        @include breakpoint(phablet){
+            width: 100%;
+        }
+
+        @include breakpoint(mobileonly){
+            width: 100%;
+        }
+        .action-header {
+            margin: 0;
+            @include fontBold(3em, 1em, $gray-300);
+
+            @include breakpoint(phablet){
+                @include fontBold(2.5em, 1em, $gray-300);
+            }
+
+            @include breakpoint(mobileonly){
+                @include fontBold(2.5em, 1em, $gray-300);
+            }
+        }
+
+        p:nth-child(2) {
+            width: 60%;
+            margin-top: 20px;
+            @include fontNormal(1.2em, 2em, $vesti-902);
+
+            @include breakpoint(phablet){
+                width: 90%;
+                @include fontNormal(1.2em, 2em, $vesti-902);
+            }
+
+            @include breakpoint(mobileonly){
+                width: 100%;
+                @include fontNormal(1.2em, 2em, $vesti-902);
+            }
+        }
+    }
+    .action-header {
+        margin: 0;
+        margin-bottom: 50px;
+        @include fontBold(3em, 1em, $gray-300);
+    }
+    
+    .content-stages-bottom {
+        width: 50%;
+        padding-left: 30px;
+        padding-bottom: 30px;
+
+        height: fit-content;
+        // div{
+        //     background-color: red;
+        // }
+        // .singlepathway-container {
+        //     margin-bottom: 0px;
+        // }
+    }
+}
+

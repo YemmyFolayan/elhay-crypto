@@ -1,0 +1,158 @@
+@import "../../variables.scss";
+
+.singleportfolio{
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 100px;
+    @include colflex(flex-start,center);
+    // padding: 40px;
+    &__inner{
+        width: 100%;
+        .singleportfolio-top{
+            width: fit-content;
+            height: fit-content;
+            @include colflexx(flex-start);
+            // &__inner {
+            //     @include rowflexx(flex-start);
+            // }
+            &__top {
+                @include rowflexx(flex-start);
+                .my-image {
+                    background-color: $gray-200;
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 10px;
+                    margin-right: 20px;
+                }
+
+                &.__top-left {
+                    @include colflexx(flex-start);
+                    p:nth-child(1){
+                        margin: 0;
+                        @include fontSemiBold(2.5em, 1em, $vesti-902);
+                    }
+                    p:nth-child(2){
+                        margin-top: 5px;
+                        width: 70%;
+                        @include fontNormal(1.5em, 1.4em, $vesti-901);
+                    }
+                }
+            }
+
+            &__bottom {
+                @include rowflexx(center);
+                height: fit-content;
+                margin-top: 20px;
+
+                .detail {
+                    @include colflexx(flex-start);
+                    p:nth-child(1){
+                        @include fontMedium(1em, 1em, $gray-400);
+                    }
+
+                    div:not(:first-child){
+                        margin-right: 70px;
+                        // background-color: tomato
+                    }
+                    .percentage {
+                        margin-top: 10px;
+                        @include rowflex(center,center);
+                        // background-color: red;
+                        width: fit-content;
+                        border-radius: 5px;
+                        padding: 10px 20px 10px 20px;
+                        &.--active {
+                            background-color: $green-700;
+                        }
+                        &.--drop {
+                            background-color: #DD2323;
+                        }
+                        &__inner {
+                            @include rowflexx(center);
+                            i{
+                                margin-right: 10px;
+                                font-size: 2em;
+                                color: #fff;
+                            }
+                            p:nth-child(2){
+                                margin: 0;
+                                @include fontSemiBold(2em,1em, #fff);
+                            }
+                        }
+                    }
+                    
+                }
+                .risklevel{
+                    width: fit-content;
+                    margin-top: 10px;
+                    @include rowflexx(center);
+                    img {
+                        width: 80px;
+                        margin-right: 10px;
+                    }
+
+                    p:nth-child(2){
+
+                        @include fontSemiBold(1em,1em, $vesti-901);
+                    }
+                }
+            }
+            hr {
+                width: 100%;
+                // border: 10px solid $gray-200 !important;
+                border-width: 1px;
+                border-color: $gray-100 !important;
+                opacity: 1;
+                background-color: $gray-100;
+                margin-top: 50px;
+            }
+        }
+        .singleportfolio__graph{
+            width: 80%;
+            height: 300px;
+        }
+        .about-portfolio {
+            width: 60%;
+
+            p:nth-child(1){
+                margin: 0;
+                @include fontSemiBold(1.5em,1em, $vesti-700);
+
+                @include breakpoint(mobileonly){
+                    @include fontSemiBold(1em,1em, $vesti-700);
+                }
+                @include breakpoint(phablet){
+                    @include fontSemiBold(1em,1em, $vesti-700);
+                }
+            }
+            p:nth-child(2){
+                margin-top: 10px;
+                @include fontNormal(1.2em,1.7em, $vesti-901);
+
+                @include breakpoint(mobileonly){
+                    @include fontNormal(1em,1.7em, $vesti-901);
+                }
+                @include breakpoint(phablet){
+                    @include fontNormal(1em,1.7em, $vesti-901);
+                }
+            }
+        }
+        .singleportfolio__btn {
+            height: 70px;
+            width: 250px;
+            background-color: $vesti-300;
+            color: $vesti-700;
+            cursor: pointer;
+            transition: all .5s ease;
+            display: inline-block;
+            border-radius: 10px;
+            @include rowflex(center,center);
+            @include fontSemiBold(1.2em,1em, $vesti-700);
+
+            &:hover {
+                color: #fff;
+                background-color: $vesti-700;
+            }
+        }
+    }   
+}

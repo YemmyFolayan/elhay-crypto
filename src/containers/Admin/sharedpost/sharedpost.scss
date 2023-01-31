@@ -1,0 +1,15 @@
+@import "../../../variables.scss";
+
+.sharedpost-container{
+    width: 100%;
+    height: 100%;
+    
+    @include colflex(flex-start,center);
+    .sharedpost-inner{
+        width: 80%;
+        height: 80%;
+        margin: 0 auto;
+        @include colflex(flex-start,center);
+    }
+    
+}

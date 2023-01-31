@@ -1,0 +1,100 @@
+@import "../../../variables.scss";
+
+.form-inputrow{
+    @include colflex(flex-start,space-between);
+    height:fit-content;
+    width: 50% !important;
+    @include breakpoint(mobileonly) {
+        height:fit-content;
+        @include colflex(flex-start, space-between);
+    }
+    @include breakpoint(phablet) {
+        width: 100%!important;
+        
+    }
+    @include breakpoint(tablet) {
+        width: 100%!important;
+        
+    }
+    .label {
+        height: auto;
+        // width: 100%;
+        flex: 1;
+
+        p:nth-child(1){
+            margin: 0;
+            @include fontBold(1.2em,1em, $vesti-902);
+        }
+        p:nth-child(2){
+            margin-top: 10px;
+            @include fontMedium(1.2em,1em, $vesti-700);
+        }
+        @include breakpoint(mobileonly) {
+            height: 20px;
+            margin-bottom: 5px;
+            @include fontMedium(.8em,1em, $vesti-902);
+        }
+    }
+
+    .input-box {
+        // width: 100%;
+        flex: 3;
+    }
+    
+   
+    input[type='text'], input[type='password'], input[type='number'], input[type='url'] {
+        width: 100% !important;
+        // margin-top: 30px;
+        height: 40px !important;
+        background: #F9F8F9;
+        border: 1px solid $gray-400;
+        box-sizing: border-box;
+        border-radius: 5px;
+        outline: none;
+        padding-left: 20px;
+        position: relative;
+        
+        @include fontNormal(1em, 1em, $gray-600);
+
+        @include breakpoint(mobileonly) {
+            width: 100%!important;
+            height: 55px !important;
+        }
+        @include breakpoint(tablet) {
+            width: 100% !important;
+            height: 60px !important;
+        }
+
+        @include breakpoint(phablet) {
+            width: 100% !important; //250PX
+            // height: 50px;
+        }
+        
+
+        &:focus {
+            border: 1px solid $vesti-700;
+            background-color: $vesti-100;
+            color: $vesti-901;
+        }
+        &:disabled {
+            cursor: not-allowed;
+            color: $gray-800;
+        }
+
+       
+
+        // &:valid {
+        //     border: 1px solid $blue-500;
+        //     background-color: $blue-100;
+        //     color: $blue-901;
+        // }
+    }
+}
+.eyes{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 20;
+    height: 20;
+    color: $gray-600;
+}

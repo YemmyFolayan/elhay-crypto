@@ -1,0 +1,95 @@
+@import "../../../variables.scss";
+// .carousel {
+//     width: 500px;
+//     height: 100%;
+//     overflow: hidden;
+//     .inner {
+//         white-space: nowrap;
+//         transition: transform 0.3s;
+//       }
+      
+//       .carousel-item {
+//         display: inline-flex;
+//         align-items: center;
+//         justify-content: center;
+//         height: 500px;
+//         // background-color: green;
+//         color: #fff;
+//         width: fit-content;
+//       }
+      
+//       .indicators {
+//         // margin-top: 100px;
+//         position: relative;
+//         display: flex;
+//         // justify-content: center;
+//         background-color: rebeccapurple;
+//         // height: 100px;
+//       }
+      
+//       .indicators > button {
+//         margin: 5px;
+//       }
+      
+//       .indicators > button.active {
+//         background-color: green;
+//         color: #fff;
+//       }
+
+//   }
+  
+.carousel {
+    width: 100%;
+    height:fit-content;
+    overflow: hidden;
+    position: relative;
+    // @include colflexx(flex-start);
+    // background-color: red;.
+  }
+  
+  .inner {
+    white-space: nowrap;
+    transition: transform 0.3s;
+  }
+  
+  .carousel-itemm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    width: fit-content;
+    // color: #fff;
+  }
+  
+  .indicators {
+    width: 100%;
+    // background-color: red;
+    top: 25%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    @include rowflex(center,space-between);
+
+    @include breakpoint(mobileonly){
+        top: 15%;
+    }
+    p{
+        font-size: 2.5em;
+        color: $gray-300;
+
+        @include breakpoint(mobileonly){
+            font-size: 2em;
+        }
+    }
+  }
+  
+//   .indicators > button {
+//     margin: 5px;
+//   }
+  
+//   .indicators > button.active {
+//     background-color: green;
+//     color: #fff;
+//   }
+  
+  

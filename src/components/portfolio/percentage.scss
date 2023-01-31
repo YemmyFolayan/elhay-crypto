@@ -1,0 +1,37 @@
+@import "../../variables.scss";
+
+
+.percentage {
+    margin-top: 10px;
+    @include rowflex(center,center);
+    // background-color: red;
+    width: fit-content;
+    border-radius: 5px;
+    padding: 10px 15px 10px 15px;
+    &.--active {
+        background-color: $green-700;
+    }
+    &.--drop {
+        background-color: #DD2323;
+    }
+    &__inner {
+        @include rowflexx(center);
+        i{
+            margin-right: 10px;
+            font-size: 2em;
+            color: #fff;
+
+            @include breakpoint(mobileonly){
+                font-size: 1.5em;
+            }
+        }
+        p:nth-child(2){
+            margin: 0;
+            @include fontSemiBold(1.5em,1em, #fff);
+
+            @include breakpoint(mobileonly){
+                @include fontSemiBold(1em,1em, #fff);
+            }
+        }
+    }
+}

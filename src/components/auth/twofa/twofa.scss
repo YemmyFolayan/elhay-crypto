@@ -1,0 +1,99 @@
+@import "../../../variables.scss";
+
+.twofalogin {
+    @include colflexx(flex-start);
+    width: 100;
+
+    .resend {
+        cursor: pointer !important;
+    }
+
+    &__top {
+        @include rowflexx(flex-start);
+        margin-bottom: 10px;
+        width: 100%;
+
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            margin-right: 10px;
+        }
+
+        span {
+            @include colflexx(flex-start);
+
+            span:nth-child(1){
+                margin: 0px;
+                @include fontNormal(1.2em, 1em , $vesti-901);
+            }
+
+            p:nth-child(2){
+                margin: 0;
+                margin-top: 10px;
+                @include fontMedium(1.2em, 1em , $vesti-700);
+            }
+        }
+    }
+    &__col{
+        @include colflexx(flex-start);
+        gap: 20px;
+    }
+    .titlesubtitle {
+        // margin-bottom: 30px;
+
+        @include breakpoint(mobileonly){
+            margin-bottom: 0px;
+        }
+    }
+    &__btns {
+        margin-top: 20px;
+        width: 100%;
+    }
+    .inputfloat {
+        width: 400px;
+        input {
+            text-align: center;
+            padding-left: 50%;
+        }
+        @include breakpoint(mobileonly){
+            width: 70vw;
+        }
+        @include breakpoint(desktop){
+            width: 100%;
+        }
+    }
+    form {
+        margin-top: -20px;
+        div {
+            
+            .pincode-input-container
+            {
+                
+                @include breakpoint(mobileonly){
+                    max-width: 300px !important;
+                    width: fit-content !important;
+                    display: row !important;
+                    flex-wrap: wrap !important;
+                }
+                
+                gap: 10px !important;
+
+                .pincode-input-text{
+                    width: 50px !important;
+                    height: 50px !important;
+                    
+                }
+                .pincode-input-text:nth-child(5){
+
+                    @include breakpoint(mobileonly){
+                        margin-top: 20px !important;
+                    }
+                    
+                }
+
+            }
+        }
+    }
+   
+}

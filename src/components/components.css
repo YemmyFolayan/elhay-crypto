@@ -1,0 +1,102 @@
+/* .side_box_content .download_ico:before {
+    background: url("../assets/files.svg") no-repeat;
+} */
+.side_box {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 0px;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #222;
+  transition: all 0.5s ease;
+  background-color: white;
+  border-right: 1px solid rgba(0, 0, 0, 0.1) !important;
+  /* padding: 1em 1.5em !important;
+  padding-left: 2em !important;
+  padding-right: 3.5em !important; */
+}
+.side_box p {
+  padding: 1em 0;
+  color: rgba(0, 0, 0, 1);
+  opacity: 0.3;
+}
+
+.side_box .active p {
+  /* identical to box height */
+  opacity: 1 !important;
+}
+
+.side_box_content {
+  padding: 1em 1.5em !important;
+  padding-left: 2em !important;
+  padding-right: 3.5em !important;
+}
+
+.side_box_content .svg_ico:before {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 25px;
+  float: left;
+  margin: 0 10px 0 0;
+  padding: 20px;
+}
+
+.side_box_content .i5_ico:before {
+  background: url('../assets/side1.svg') no-repeat;
+}
+.side_box_content .activities_ico:before {
+  background: url('../assets/side2.svg') no-repeat;
+}
+.side_box_content .i7x_ico:before {
+  background: url('../assets/side3.svg') no-repeat;
+}
+
+.side_box_content .i7c_ico:before {
+  background: url('../assets/side4.svg') no-repeat;
+}
+
+.side_box_content .i7_ico:before {
+  background: url('../assets/side5.svg') no-repeat;
+}
+.side_box_content .vehi_ico:before {
+  background: url('../assets/side6.svg') no-repeat;
+}
+
+.header_box {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 10px 10px 24px 20px !important;
+}
+
+.notif_cont {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background: #F0F3EE;
+  border-radius: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.search_cont_auto {
+  max-width: 50%;
+}
+
+
+/* .toggle-menu{
+  z-index: 15 !important;
+  background-color: pink !important;
+} */
+/* .header_box {
+  z-index: 15 !important;
+} */

@@ -1,0 +1,70 @@
+@import "../../variables.scss";
+
+.fundusd {
+    width: 100% !important;
+    @include colflexx(flex-start);
+    .titlesubtitle{
+        &__steps{
+            color: $cyan-700;
+        }
+    }
+    .inputfloat, .amountfloat{
+        width: 400px !important;
+        @include breakpoint(mobileonly){
+            width: 75vw !important;
+        }
+        @include breakpoint(phablet){
+            width: 350px !important;
+        }
+        // @include breakpoint(desktop){
+        //     width: 100% !important;
+        // }
+        &__box__label{
+            color: $cyan-700 !important;
+        }
+        input {
+            &:focus {
+                border: 1px solid $cyan-700 !important;
+                background-color: $cyan-100 !important;
+                color: $cyan-901 !important;
+            }
+        }
+    }
+    // &__btn {
+    //     outline: none;
+    //     border: none;
+    //     margin-top: 50px;
+    //     background-color: $vesti-700;
+    //     @include fontMedium(1em,1em, #fff);
+    //     transition: all .5s ease;
+    //     &:hover {
+    //         background-color: $vesti-800;
+    //     }
+    //     &:disabled {
+    //         background-color: $gray-500;
+    //         color: $gray-100;
+    //         cursor: not-allowed;
+    //     }
+    // }
+    @include platform($cyan-800, $cyan-901);
+    &__get {
+        line-height: 1.4em !important;
+        @include fontNormal(1em, 1.4em, $cyan-800);
+        width: fit-content;
+        height: fit-content;
+        padding: 5px 10px 5px 10px;
+        border-radius: 10px;
+        background-color: $cyan-200;
+        border: .5px solid $cyan-700;
+    }
+
+    .radiooption{
+        width: 100%;
+    }
+
+    @include radiooption($cyan-800, $cyan-100);
+}
+
+.transrev{
+    @include transreview($cyan-100, $cyan-901, $cyan-800);
+}

@@ -1,0 +1,28 @@
+@import "../../variables.scss";
+
+.singleasset{
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 100px;
+    @include colflex(flex-start,center);
+    // padding: 40px;
+    &__inner{
+        width: 100%;
+        .singleasset__graph{
+            width: 80%;
+            height: 300px;
+        }
+        .about-singleasset {
+            width: 60%;
+
+            p:nth-child(1){
+                margin: 0;
+                @include fontSemiBold(1.5em,1em, $vesti-700);
+            }
+            p:nth-child(2){
+                margin-top: 10px;
+                @include fontNormal(1.2em,1.7em, $vesti-901);
+            }
+        }
+    }
+}

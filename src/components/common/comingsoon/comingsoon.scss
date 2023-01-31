@@ -1,0 +1,59 @@
+@import "../../../variables.scss";
+
+.comingsoon-container {
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    // padding: 10px;
+    // @include rowflex(center,center);
+     @include breakpoint(mobileonly){
+         width: 70vw;
+     }
+    @include colflex(flex-start,flex-start);
+    .comingsoon-inner {
+        width: 85%;
+        height: 90%;
+        margin: 0 auto;
+        @include colflexx(center);
+
+        img {
+            width:  auto;
+        }
+        &.c-content {
+            width: 90%;
+            margin-top: 30px;
+            @include colflex(center,center);
+
+            p:nth-child(1){
+                text-align: center;
+                margin: 0;
+                width: 100%;
+                @include fontBold(1.5em, 1em, $vesti-700);
+            }
+
+            p:nth-child(2){
+                text-align: center;
+                margin-top: 10px;
+                width: 100%;
+                @include fontNormal(1em, 1.7em, $vesti-901);
+            }
+
+            .comingsoon-btn {
+                outline: none;
+                border: none;
+                background-color: $vesti-700;
+                @include fontMedium(1em,1em, #fff);
+                transition: all .5s ease;
+                &:hover {
+                    background-color: $vesti-800;
+                }
+                &:disabled {
+                    background-color: $gray-500;
+                    color: $gray-100;
+                    cursor: not-allowed;
+                }
+            }
+        }
+
+    }
+}

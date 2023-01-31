@@ -1,0 +1,24 @@
+@import "../../variables.scss";
+
+.singlewallet {
+    width: 500px;
+    height: 230px;
+    padding: 30px;
+    border-radius: 20px;
+    transition: all 1s ease;
+    @include colflexx(flex-start);
+
+    @include breakpoint(mobileonly){
+        width: 350px;
+    }
+    &.--vesti {
+        @include wallet($vesti-700, $vesti-100, $vesti-900, $vesti-800 , $vesti-901);
+        
+    }
+    &.--sila {
+        @include wallet($sila-600, $sila-100, $sila-700, $sila-800,$sila-900);
+    }
+    &.--third {
+        @include wallet($yellow-600, $yellow-100, $yellow-700, $yellow-800,$yellow-900);
+    }
+}

@@ -1,0 +1,82 @@
+@import "../../../variables.scss";
+
+.container{
+
+    margin-bottom: 100px;
+    .testimonial-inner-container{
+
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        max-height: 80em;
+        gap: 10px;
+        margin: 0 auto;
+        // .masonry{
+        //     background-color: red;
+        //     width: fit-content;
+	    //     transition: .8s opacity;
+        // }
+
+        @include breakpoint(mobileonly){
+            height: fit-content;
+            max-height: fit-content;
+            @include colflexx(flex-start);
+        }
+        @include breakpoint(phablet){
+            height: fit-content;
+            max-height: fit-content;
+            @include colflexx(flex-start);
+        }
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 600px){
+    .container{
+        
+        .testimonial-inner-container{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            height: auto;
+            gap: 1rem;
+            margin-bottom: 5rem;
+    
+            .masonry{
+                width: 50%;
+                transition: .8s opacity;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 800px){
+    .container{
+
+        .testimonial-inner-container{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 200vw;
+            margin-bottom: 5rem;
+    
+            .masonry{
+                width: 50%;
+                transition: .8s opacity;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1224px){
+    .container{
+
+        .testimonial-inner-container{
+            height: 100vw;
+    
+            .masonry{
+                width: 33.3%;
+                transition: .8s opacity;
+            }
+        }
+    }
+}

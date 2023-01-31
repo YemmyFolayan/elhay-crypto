@@ -1,0 +1,178 @@
+@import "../../../variables.scss";
+
+.about-pathway-container {
+    // width: 80%;
+    overflow: scroll !important;
+    padding: 0;
+    margin: 0;
+    margin-left: 50px;
+    position: relative;
+    height: fit-content;
+    width: 90%;
+    overflow-y: scroll;
+
+    @include breakpoint(mobileonly){
+
+        margin-left: 20px;
+        width: 100%;
+    }
+    // @include rowflex(center,center);
+
+    .aboutpathway-inner {
+        width: 100%;
+        height: fit-content;
+        @include colflexx(flex-start);
+
+        .pathway-header {
+            margin: 0;
+            // text-transform: capitalize !important;
+            @include fontBold(3em, 1em, $gray-300);
+
+            @include breakpoint(mobileonly){
+                text-transform: capitalize;
+                @include fontBold(2.5em, 1.2em, $gray-300);
+            }
+        }
+
+        &.content {
+            // margin-top: 30px;
+            @include colflexx(flex-start);
+            width: 100%;
+
+            .content-link {
+                width: fit-content;
+                position: relative;
+                margin-bottom: 50px;
+                @include colflexx(flex-start);
+
+                
+                .aboutpathway-link {
+                    width: fit-content;
+                    @include rowflexx(center);
+
+                    p:nth-child(1), p:nth-child(2){
+                        margin: 0;
+                        z-index: 10;
+                        transition: all .5s ease-out;
+                        @include fontMedium(1.5em, 3em, $gray-300);
+                        cursor: pointer;
+                        &.active {
+                            color: $vesti-700;
+                            @include fontBold(1.5em, 3em, $vesti-700);
+                            border-bottom: 5px solid $vesti-700;
+                        }
+                    }
+                    p:nth-child(2){
+                        margin-left: 50px;
+                    }
+                }
+                .hr {
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    border: 3px solid $gray-200;
+                }
+            }
+
+            .content-description {
+                width: 80%;
+                height: fit-content;
+
+                @include breakpoint(mobileonly){
+                    width: 100%;
+                }
+                .pathway-img-box {
+                    width: 80%;
+                    height: 300px;
+                    border-radius: 20px;
+                    overflow: hidden;
+
+                    img {
+                        width:100%;
+                    }
+                }
+
+                .created-by{
+                    margin-top: 10px;
+                    @include fontMedium(1em,1.4em, $gray-400);
+                    strong {
+                        color: $vesti-700;
+                    }
+                    
+                }
+                
+
+                .bottom {
+                    margin-top: 50px;
+                    width: 80%;
+                    height: fit-content;
+
+                    @include breakpoint(mobileonly){
+                        width: 90%;
+                    }
+
+                    .bottom-title{
+                        margin: 0;
+                        @include fontBold(2em, 1em, $vesti-902);
+
+                        @include breakpoint(mobileonly){
+                            @include fontBold(1.5em, 1em, $vesti-902);
+                        }
+
+                    }
+                    .bottom-content{
+                        margin-top: 20px;
+                        @include fontNormal(1.2em, 1.7em, $vesti-901);
+                    }
+                    .pathway-btn {
+                        margin-top: 30px;
+                        width: fit-content;
+                        padding: 20px;
+                        padding-left: 30px;
+                        padding-right: 30px;
+                        height: 60px;
+                        border-radius: 5px;
+                        background-color:  $vesti-700;
+                        @include fontMedium(1em, 1em, #fff);
+                        @include rowflex(center,center);
+                        transition: all 0.5s ease;
+                
+                        &:hover {
+                            background-color:  $vesti-900;
+                        }
+                
+                    }
+                
+                }
+            }
+
+            .content-stages-bottom {
+                width: 50%;
+                padding: 30px;
+                height: fit-content;
+
+                div:not(:first-child) {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+.pathwaysubscription__button {
+    background-color: $vesti-700;
+    height: 50px;
+    color: #fff;
+    transition: all 0.5s ease;
+    border-radius: 5px !important;
+
+    &:hover {
+        background-color: $vesti-800;
+        color: #fff;
+    }
+    &:disabled {
+        background-color: $gray-600;
+        color: $gray-100;
+        cursor: not-allowed;
+    }
+}

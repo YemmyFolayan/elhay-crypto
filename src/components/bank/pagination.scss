@@ -1,0 +1,50 @@
+@import "../../variables.scss";
+
+.pagination {
+    margin-top: 50px;
+    width: fit-content;
+    float: right;
+    // margin: 0 auto;
+    @include rowflex(center,flex-start);
+    flex-wrap: wrap;
+    @include breakpoint(mobileonly){
+        width: 90%;
+        margin: 50px auto;
+        @include rowflex(center,center);
+    }
+    @include breakpoint(phablet){
+        width: 100%;
+        margin: 50px auto;
+        @include rowflex(center,center);
+    }
+    p{
+        cursor: pointer;
+    }
+    p:not(:first-child){
+        margin-left: 20px;
+    }
+    &__previous, &__next {
+        @include fontMedium(1.2em, 1em, $gray-400);
+
+        &.--disabled{
+            cursor: not-allowed;
+            opacity: .5;
+        }
+    }
+
+    &__single-page {
+        padding: 10px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: transparent;
+        transition: 1ll .5s ease;
+        color: $gray-400;
+        @include rowflex(center,center);
+        
+        &:hover, &.active {
+            background-color: $vesti-700;
+            color: #fff;
+        }
+    }
+
+}

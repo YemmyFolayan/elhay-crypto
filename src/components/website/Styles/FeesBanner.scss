@@ -1,0 +1,145 @@
+@import "../../../variables.scss";
+
+
+.back-ground{
+  padding-top: 10rem;
+  height: 100vh; 
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.body-height{
+  padding-top: 10rem;
+}
+
+.vesti-fees{
+  padding-top: 10rem;
+  color: #121243;
+}
+.downloadvesti{
+  background-color: #000000;
+  padding: 20px;
+  border-radius:15px;
+  width: 100%;
+  height: 400px;
+  margin-top: 10rem;
+}
+.downloadimage {
+  padding-bottom: 12.3rem!important;
+}
+.bigfont{
+  color: #121243;
+  padding-bottom: 2rem;
+  @include fontBold(1.5em, 1.5em, $vesti-902);
+    
+}
+ol li {
+  color: #000000;
+  padding-bottom: 2rem;
+  @include fontNormal(1.2em, 1.5em, $vesti-901);
+}
+.fee p {
+  padding-bottom: 2rem;
+  // line-height: 2rem;
+  // font-size: 18px;
+  // color: #000080;
+  @include fontNormal(1.2em, 1.5em, $vesti-901);
+}
+.fee p a {
+  text-decoration: none;
+  color: #000000;
+}
+.fee p a:hover {
+  text-decoration: none;
+  color: #000000;
+}
+.downloadimage {
+  padding-bottom: 12.3rem!important;
+}
+.vertical-line{
+  border-left: thin solid lightgrey;
+  height: 200px;
+}
+
+
+
+.container {
+  margin-top: 100px;
+}
+@media (min-width: 320px) and (max-width: 600px){
+  .container {
+    margin-top: 210px;
+  }
+  
+  .vesti-fees{
+    padding-top: 10rem;
+    color: #121243;
+  }
+  
+  .bigfont{
+    color: #121243;
+    padding-bottom: 1rem;
+    @include fontBold(1.2em, 1.5em, $vesti-902);   
+  }
+  ol li {
+    color: #000000;
+    padding-bottom: 1rem;
+    @include fontNormal(1em, 1.5em, $vesti-901);
+  }
+  .fee p {
+    padding-bottom: 3rem;
+    @include fontNormal(1em, 1.5em, $vesti-901);
+  }
+  .fee p a {
+    text-decoration: none;
+    color: #000000;
+  }
+  .fee p a:hover {
+    text-decoration: none;
+    color: #000000;
+  }
+  .fee p .author{
+    padding-bottom: 10px !important;
+  }
+  
+  
+  
+}
+@media (min-width: 600px) and (max-width: 800px){
+  .container {
+    margin-top: 210px;
+  }
+  
+  .vesti-fees{
+    padding-top: 10rem;
+    color: #121243;
+  }
+  
+  .bigfont{
+    color: #121243;
+    padding-bottom: 1rem;
+    @include fontBold(1.3em, 1.5em, $vesti-902);   
+  }
+  ol li {
+    color: #000000;
+    padding-bottom: 1rem;
+    @include fontNormal(1.1em, 1.5em, $vesti-901);
+  }
+  .fee p {
+    padding-bottom: 3rem;
+    @include fontNormal(1.1em, 1.5em, $vesti-901);
+  }
+  .fee p a {
+    text-decoration: none;
+    color: #000000;
+  }
+  .fee p a:hover {
+    text-decoration: none;
+    color: #000000;
+  }
+  .fee p .author{
+    padding-bottom: 10px !important;
+  }
+  
+  
+  
+}

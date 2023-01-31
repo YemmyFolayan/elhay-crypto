@@ -1,0 +1,201 @@
+@import "../../../variables.scss";
+
+.download-container {
+    width: fit-content;
+    height: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: $vesti-900;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    @include rowflex(center,center);
+
+    
+    @include breakpoint(phablet){
+        padding-left: 20px;
+        padding-right: 20px;
+       
+    }
+    // @include breakpoint(mobileonly){
+    //     padding-left: 20px !important;
+    //     padding-right: 20px !important;
+        
+    // }
+    &:hover {
+        background-color: $vesti-700;
+        color: #fff;
+    }
+    .download-inner-container{
+        width: fit-content;
+        height: 90%;
+        @include rowflexx(center);
+
+        &.left {
+            width: 40px;
+
+            @include breakpoint(mobileonly){
+                width: 31px;
+                
+            }
+            @include breakpoint(phablet){
+                width: 31px;
+               
+            }
+            img {
+                @include breakpoint(mobileonly){
+                    width: 30px;
+                    
+                }
+                @include breakpoint(phablet){
+                    width: 30px;
+                   
+                }
+
+            }
+        }
+
+        &.right {
+            margin-left: 5px;
+            width: 80%;
+            height: fit-content !important;
+            @include colflexx(flex-start);
+
+            
+            @include breakpoint(phablet){
+                margin-left: 1px;
+                width: 90%;
+               
+            }
+            @include breakpoint(mobileonly){
+                margin-left: 5px !important;
+                width: fit-content !important;
+            }
+            p:nth-child(1) {
+                margin: 0;
+                letter-spacing: 0.05em;
+                @include fontBold(1em,1em, $vesti-100);
+            }
+            p:nth-child(2) {
+                margin: 0;
+                width: 100%;
+                
+                @include fontBold(1.5em,1em, $vesti-100);
+                
+                
+                @include breakpoint(tablet){
+                    @include fontBold(1.4em, 1.4em, $vesti-100);
+                   
+                }
+                @include breakpoint(phablet){
+                    @include fontBold(1.2em, 1.4em, $vesti-100);
+                   
+                }
+                @include breakpoint(mobileonly){
+                    width: fit-content !important;
+                    @include fontBold(1.3em, 1.4em, $vesti-100);
+                    
+                }
+            }
+
+        }
+
+    }
+}
+
+@media (min-width: 600px) and (max-width: 800px){
+    .download-container {
+        width: fit-content;
+        height: 70px;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        background-color: $vesti-900;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        @include rowflexx(center);
+    
+        &:hover {
+            background-color: $vesti-700;
+            color: #fff;
+        }
+        .download-inner-container{
+            width: 100%;
+            height: 90%;
+            @include rowflexx(center);
+    
+            &.left {
+                width: 31px;
+                img {
+                    width: 30px;
+                }
+            }
+    
+            &.right {
+                margin-left: 0px;
+                width: 100%;
+                @include colflexx(flex-start);
+                p:nth-child(1) {
+                    margin: 0;
+                    letter-spacing: 0.05em;
+                    @include fontBold(0.9em,1em, $vesti-100);
+                }
+                p:nth-child(2) {
+                    margin: 0;
+                    width: 100%;
+                    @include fontBold(1.4em,1.4em, $vesti-100);
+                }
+    
+            }
+    
+        }
+    }
+}
+@media (min-width: 800px) and (max-width: 1224px){
+    .download-container {
+        width: fit-content;
+        height: 70px;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        background-color: $vesti-900;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        @include rowflexx(center);
+    
+        &:hover {
+            background-color: $vesti-700;
+            color: #fff;
+        }
+        .download-inner-container{
+            width: 100%;
+            height: 90%;
+            @include rowflexx(center);
+    
+            &.left {
+                width: 31px;
+                img {
+                    width: 30px;
+                }
+            }
+    
+            &.right {
+                margin-left: 0px;
+                width: 100%;
+                @include colflexx(flex-start);
+                p:nth-child(1) {
+                    margin: 0;
+                    letter-spacing: 0.05em;
+                    @include fontBold(.5em,1em, $vesti-100);
+                }
+                p:nth-child(2) {
+                    margin: 0;
+                    width: 100%;
+                    @include fontBold(1.4em,1.4em, $vesti-100);
+                }
+    
+            }
+    
+        }
+    }
+}

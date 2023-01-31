@@ -1,0 +1,155 @@
+@import "../../../variables.scss";
+.footer{
+  margin-top: 5rem;
+  .featured-container {
+    border-radius: 0px !important;
+    // padding: 0 !important;
+    padding: 50px;
+    background-color: #F8FEF5;
+    // @include rowflex(center,center);
+    width: 100%;
+    height: 200px;
+    // height: fit-content;
+    .featured-iner {
+      width: 90%;
+      // height: 90%;
+      // gap: 2rem;
+      // @include rowflex(flex-end, flex-start);
+      @include colflexx(center);
+      gap: 30px;
+
+      p:nth-child(1){
+        margin: 0;
+        @include fontSemiBold(2.5em, 1em, $vesti-902);
+      }
+      .company-logos {
+        width: 60%;
+        width: fit-content;
+        @include rowflexx(center);
+        gap: 30px;
+        .bloomberg{
+          margin-bottom: 17px;
+        }
+
+        img {
+          width: auto;
+        }
+
+        // img:not(:first-child) {
+        //   margin-left: 30px;
+        // }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+  .footer{
+    margin-top: 8rem;
+    .featured-container {
+      
+      @include rowflex(center,center);
+
+      .featured-iner {
+        @include colflexx(center);
+
+        p:nth-child(1){
+          margin: 0;
+          text-align: center;
+          @include fontMedium(1.5em, 1em, $vesti-902);
+        }
+        .company-logos {
+          @include colflexx(center);
+          flex-wrap: wrap;
+          gap: 30px;
+
+          img {
+            // width: auto;
+            width: 200px;
+          }
+
+        }
+      }
+    }
+  }
+
+}
+@media screen and (min-width: 600px) and (max-width: 800px) {
+  .footer{
+    margin-top: 8rem;
+    .featured-container {
+      
+      @include rowflex(center,center);
+      padding: 30px;
+      
+      .featured-iner {
+        @include colflex(center,center);
+
+        p:nth-child(1){
+          margin: 0;
+          text-align: center;
+          @include fontMedium(1.5em, 1em, $vesti-902);
+        }
+        .company-logos {
+          @include colflexx(center);
+          gap: 30px;
+
+          // flex-wrap: wrap;
+
+          img {
+            width: auto;
+          }
+
+          img:not(:first-child) {
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+  }
+  
+}
+// @media screen and (min-width: 800px) and (max-width: 1224px) {
+//   .featured-container {
+//     border-radius: 0px !important;
+//     // padding: 0 !important;
+//     padding: 50px;
+//     background-color: #F8FEF5;
+//     // @include rowflex(center,center);
+//     width: 100%;
+//     height: 200px;
+//     // height: fit-content;
+//     .featured-iner {
+//       width: 90%;
+//       // height: 90%;
+//       // gap: 2rem;
+//       // @include rowflex(flex-end, flex-start);
+//       @include colflexx(center);
+//       gap: 30px;
+  
+//       p:nth-child(1){
+//         margin: 0;
+//         @include fontSemiBold(2.5em, 1em, $vesti-902);
+//       }
+//       .company-logos {
+//         width: 60%;
+//         width: fit-content;
+//         @include rowflexx(center);
+//         gap: 30px;
+//         .bloomberg{
+//           margin-bottom: 17px;
+//         }
+  
+//         img {
+//           width: auto;
+//         }
+  
+//         // img:not(:first-child) {
+//         //   margin-left: 30px;
+//         // }
+//       }
+//     }
+//   }
+  
+// }
+

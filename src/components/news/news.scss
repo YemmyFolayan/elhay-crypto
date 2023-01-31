@@ -1,0 +1,65 @@
+@import "../../variables.scss";
+
+.news {
+    width: fit-content;
+    margin-top: 50px;
+    @include colflexx(flex-start);
+
+    .news__title{
+        margin: 0;
+        font-size: 1.3em !important;
+        color: $vesti-700 !important;
+        @include fontSemiBold(1.5em, 1em, $vesti-700);
+    }
+
+    &__inner {
+        width: fit-content;
+        @include rowflexx(flex-start);
+        margin-top: 20px;
+        flex-wrap: wrap;
+        gap: 50px;
+
+        .singlenews {
+            width: 280px;
+            cursor: pointer;
+            @include colflexx(flex-start);
+
+            &:hover {
+                .singlenews__top {
+                    p:nth-child(2){
+                        color: $vesti-700;
+                    }
+                    
+                }
+            }
+
+            &__top {
+                @include colflexx(flex-start);
+
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontNormal(1em, 1em, $gray-500);
+
+                    strong {
+                        color: $vesti-700;
+                    }
+                }
+
+                p:nth-child(2){
+                    margin-top: 10px;
+                    transition: all .5s ease;
+                    @include fontMedium(1.25em, 1.4em, $vesti-901);
+                }
+            }
+
+            &__link {
+                margin-top: 5px;
+                @include fontSemiBold(1em,1em, $vesti-700);
+
+                i {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}

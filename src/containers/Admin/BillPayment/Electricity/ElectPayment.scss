@@ -1,0 +1,104 @@
+@import "../../../../variables.scss";
+.elect-payment-cont {
+    width: 100%;
+    @include colflexx(flex-start);
+    .transaction-summary{
+        // border: 0.5px solid $vesti-700;
+        background-color: $vesti-100;
+        border-radius: 10px;
+        padding: 1rem;
+        .bits{
+            @include rowflex(space-between, space-between);
+            border-bottom: 0.5px dotted $vesti-902;
+            margin-top: 1rem;
+            p:nth-child(1){
+                @include fontBold(1.32em, 1em, $vesti-901);
+                @include breakpoint(mobileonly){
+                    margin-top: 1rem;
+                    @include fontBold(1.3em, 1em, $vesti-901);
+                }
+            }
+            p:nth-child(2){
+                @include fontBold(1.32em, 1em, $vesti-700);
+                @include breakpoint(mobileonly){
+                    margin-top: 1rem;
+                    @include fontBold(1.3em, 1em, $vesti-700);
+                }
+            }
+        }
+    }
+
+    .pin-body{
+        width: 100%;
+        @include colflex(center,center);
+        p:nth-child(1){
+            @include fontBold(1.32em, 1em, $vesti-700);
+            @include breakpoint(mobileonly){
+                margin-top: 1rem;
+                @include fontBold(1.3em, 1em, $vesti-700);
+            }
+        }
+    }
+    .button-container{
+        margin-top: 3rem;
+        gap: 1rem;
+        @include rowflex(space-around, space-around);
+        @include breakpoint(mobileonly){
+            gap: 1rem;
+        }
+
+        .btn-left{
+            min-width: 40%;
+            background-color: $vesti-100;
+            border: 1px solid $vesti-700 !important;
+            border-radius: 5px !important;
+            @include fontMedium(1.2em,1.4em, $vesti-700);
+            @include breakpoint(mobileonly){
+                min-width: 50%;
+            }
+        }
+        .btn-right{
+            min-width: 40%;
+            background-color: $vesti-700;
+            border: 1px solid $vesti-700 !important;
+            border-radius: 5px !important;
+            @include fontMedium(1.2em,1.4em, $vesti-100);
+            @include breakpoint(mobileonly){
+                min-width: 50%;
+            }
+        }
+        button:disabled{
+            background-color: $gray-500 !important;
+        }
+    }
+}
+.elect-payment{
+    margin-top: 20px !important;
+    width: 100% !important;
+    button {
+        width: 100%;
+        height: 50px;
+        margin-top: 20px;
+        background-color: $vesti-700;
+        transition: all .5s ease;
+        color: #fff;
+
+        &:hover {
+            background-color: $vesti-800;
+        }
+
+        &:disabled {
+            background-color: $gray-600;
+            cursor: not-allowed;
+        }
+
+    }
+}
+
+button.ant-modal-close{
+    margin-right: 0 !important;
+    .ant-modal-close-x {
+        width: 43px !important;
+        height: 43px !important;
+    }
+}

@@ -1,0 +1,185 @@
+@import "../../../variables.scss";
+
+.onboardthree {
+    width: fit-content;
+    height: fit-content;
+
+    // @include rowflex(flex-start, flex-start); 
+    
+
+    &__content{
+        max-width: 850px;
+        // height: 200px;
+        // margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+
+        @include breakpoint(mobileonly){
+            max-height: 420px;
+            justify-content: flex-start;
+            overflow: scroll;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            scrollbar-width: thin;
+            margin-bottom: 20px;
+            &::-webkit-scrollbar {
+                width: 4px;
+
+              }
+            &::-webkit-scrollbar-track {
+            background: $vesti-200;
+            }
+            &::-webkit-scrollbar-thumb {
+            background-color: $vesti-700 ;
+            border-radius: 6px;
+            border: $vesti-900;
+            }
+        }
+        @media screen and (min-width: 600px) and (max-width: 800px) {
+            max-height: 40vw;
+            justify-content: flex-start;
+            overflow: scroll;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            scrollbar-width: thin;
+            margin-bottom: 20px;
+            &::-webkit-scrollbar {
+                width: 4px;
+
+              }
+            &::-webkit-scrollbar-track {
+            background: $vesti-200;
+            }
+            &::-webkit-scrollbar-thumb {
+            background-color: $vesti-700 ;
+            border-radius: 6px;
+            border: $vesti-900;
+            }
+        }
+        .useraction {
+            width: 200px;
+            height: fit-content !important;
+            @include colflexx(center);
+            background-color: $gray-200;
+            border-radius: 10px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all .5s ease;
+            &:hover{
+                background-color: $vesti-700;
+                p{
+                    color: #fff !important;
+                }
+            }
+            @include breakpoint(mobileonly){
+                @include colflexx(flex-start);
+                text-align: left;
+                padding: 15px 20px 0px 20px;
+                width: 95%;
+                img {
+                    height: 40px;
+                    display: none;
+                }
+            }
+
+            @media screen and (min-width: 600px) and (max-width: 800px) {
+                @include colflexx(flex-start);
+                text-align: left;
+                padding: 15px 20px 0px 20px;
+                width: 95%;
+                img {
+                    height: 40px;
+                    display: none;
+                }
+            }
+            &.--active {
+                background-color: $vesti-700;
+
+
+                p{
+                    color: #fff !important;
+                }
+            }
+            img {
+                // width: fit-content;
+                height: 40px;
+                margin-bottom: 10px;
+            }
+    
+            &__details {
+                margin: 0;
+                @include colflexx(center);
+                text-align: center;
+                @include breakpoint(mobileonly){
+                    @include colflexx(flex-start);
+                    text-align: left;
+
+                    p:nth-child(1){
+                        margin: 0;
+                        @include fontMedium(1em,1em, $vesti-902);
+                    }
+                    p:nth-child(2){
+                        margin-top: 8px;
+                        @include fontNormal(.8em, 1.7em, $vesti-901);
+                    }
+
+                }
+                @media screen and (min-width: 600px) and (max-width: 800px) {
+                    @include colflexx(flex-start);
+                    text-align: left;
+
+                    p:nth-child(1){
+                        margin: 0;
+                        @include fontMedium(1em,1em, $vesti-902);
+                    }
+                    p:nth-child(2){
+                        margin-top: 8px;
+                        @include fontNormal(.8em, 1.7em, $vesti-901);
+                    }
+                }
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontMedium(1.2em,1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(.9em, 1.7em, $vesti-901);
+                }
+            }
+    
+        }
+    }
+
+    &__button {
+        width: 100%;
+        height: 60px !important;
+        cursor: pointer;
+        background-color: $vesti-700;
+        color: #fff;
+        margin-top: 10px;
+        border-radius: 10px !important;
+        @include rowflex(center,center);
+        @include fontBold(1.2em, 1em, #fff);
+        transition: all .5s ease;
+        outline: none;
+        &:hover {
+            background-color: $vesti-900;
+        }
+
+        &:disabled{
+            cursor: not-allowed;
+            background-color: $gray-600;
+
+        }
+
+        @include breakpoint(mobileonly){
+            font-size: 16px;
+        }
+        @include breakpoint(phablet){
+            font-size: 12px;
+        }
+    }
+   
+}

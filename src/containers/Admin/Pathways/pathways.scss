@@ -1,0 +1,21 @@
+@import "../../../variables.scss";
+
+.pathway-card {
+    background-color: #fff !important;
+    border: 1px solid $gray-300 !important;
+    border-radius: 10px !important;
+    transition: all .5s ease;
+    cursor: pointer;
+    &:hover {
+        
+        filter: drop-shadow(0px 4px 30px rgba(157, 157, 157, 0.2)) !important;
+    }
+
+    .pathway-title {
+        @include fontBold(1.5em,1.5em, $vesti-901);
+        height: 50px;
+    }
+    .pathway-amount {
+        @include fontBold(1.5em,1.4em, $vesti-700);
+    }
+}

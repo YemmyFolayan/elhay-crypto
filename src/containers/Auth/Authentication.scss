@@ -1,0 +1,189 @@
+@import "../../variables.scss";
+
+/* New Login */
+/* split gradient background */
+body.bg-darkgreen{
+  background: -webkit-linear-gradient(left, #ffffff, #ffffff 50%, #000000 50%);
+  background: -o-linear-gradient(left, #ffffff, #ffffff 50%, #000000 50%);
+  background: -moz-linear-gradient(left, #ffffff, #ffffff 50%, #000000 50%);
+  background: linear-gradient(to right, #ffffff, #ffffff 50%, #000000 50%);
+}
+/* 768px min width break point */
+@media screen and (min-width: 768px) {
+  .min-vh-md-100{
+      min-height: 100vh;
+  }
+}
+.contain-img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.h-500{
+  height: 500px;
+}
+.mw-500{
+  max-width: 500px;
+}
+
+input:not(:last-child){
+  margin-bottom: 5px;
+
+}
+
+input[type="email"], .password{
+
+  width: 100% !important;
+  height: 60px !important;
+  background: #F9F8F9;
+  border: 1px solid $gray-400;
+  box-sizing: border-box;
+  border-radius: 5px !important;
+  outline: none !important;
+  padding-left: 20px;
+  position: relative;
+  
+  @include fontNormal(1em, 1em, $gray-600);
+
+  @include breakpoint(mobileonly) {
+      width: 100%!important;
+      height: 50px;
+  }
+  @include breakpoint(tablet) {
+      width: 100% !important;
+      height: 50px;
+  }
+
+  @include breakpoint(phablet) {
+      width: 100% !important; //250PX
+      // height: 50px;
+  }
+  
+
+  &:focus {
+      border: 1px solid $vesti-700;
+      background-color: $vesti-100;
+      color: $vesti-901;
+      
+      -webkit-box-shadow: none;
+      box-shadow: none;
+  }
+  &:disabled {
+      cursor: not-allowed;
+      color: $gray-800;
+  }
+
+  
+}
+.form-input .shortinfo {
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+.form-ctrl {
+  @include fontNormal(1.2em, 1em, $vesti-902);
+  width: fit-content;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  border: none !important;
+  display: flex;
+  flex-direction: row !important;
+  
+  .signup-agree {
+    width: 100% !important;
+    @include breakpoint(mobileonly){
+      // @include colflexx(flex-start);
+      gap: 0px;
+    }
+    a,p {
+      font-size: 1em;
+      line-height: 1.4em;
+    }
+  }
+  input[type="checkbox"] {
+      // margin-left: 20px;
+      appearance: none;
+      background-color: #fff;
+      margin: 0;
+      font: inherit;
+      color: $vesti-901;
+      width: 1.15em;
+      height: 1.15em;
+      border: 0.15em solid $vesti-901;
+      border-radius: 0.15em;
+      transform: translateY(-0.075em);
+      display: grid;
+      place-content: center;
+      margin-right: 10px;
+      transition: all 0.5s ease;
+
+      &:checked {
+          border: 0.15em solid $vesti-700;
+      }
+      &::before {
+          content: "";
+          width: 0.65em;
+          height: 0.65em;
+          transform: scale(0);
+          transition: 120ms transform ease-in-out;
+          box-shadow: inset 1em 1em $vesti-700;
+      }
+  }
+  input[type="checkbox"]:checked::before {
+      transform: scale(1);
+      
+  }
+
+  .link {
+    margin-left: 5px;
+    @include fontMedium(1em,1.1em,$vesti-700);
+    &::before{
+      content: '    ';
+    }
+  }
+}
+
+button {
+  transition: all .5s ease;
+  &:disabled{
+    cursor: not-allowed;
+    background-color: $gray-500;
+    color: #fff;
+  }
+}
+.titlesubtitle{
+  @include breakpoint(mobileonly){
+    width: 70vw !important;
+  }
+}
+
+.regcard {
+  .card-body {
+
+    @include breakpoint(mobileonly){
+      padding: 24px !important;
+    }
+  }
+}
+
+.card-body{
+  width: 100%;
+  form {
+    width: 100%;
+    position: relative;
+   
+    .inputfloat{
+      width: 100% !important;
+    }
+  }
+}
+.card-body{
+  width: 100%;
+  form {
+    width: 100%;
+    position: relative;
+   
+    .inputfloat{
+      width: 100% !important;
+    }
+  }
+}

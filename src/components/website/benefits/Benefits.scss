@@ -1,0 +1,242 @@
+@import "../../../variables.scss";
+
+.benefits-container{
+    width: 100%;
+    height: fit-content;
+    border-radius: 50px;
+    padding-bottom: 50px;
+    @include colflex(center,center);
+
+    .benefits-inner {
+        width: 80%;
+        height: fit-content;
+        @include colflexx(center);
+
+        &.top{
+            width: 50%;
+            p:nth-child(1){
+                margin: 0;
+                @include fontBold(2.25em, 1em, $vesti-902);
+            }
+            p:nth-child(2){
+                margin-top: 10px;
+                @include fontNormal(1.2em, 1.5em, $vesti-901);
+            }
+        }
+        &.bottom {
+            width: 95%;
+            margin-top: 50px;
+            @include rowflexx(flex-start);
+            flex-wrap: wrap;
+            gap: 0px;
+            .card{
+                border: 1px solid #EAEAEA;
+                background-color: transparent;
+                height: 270px;
+                cursor: pointer;
+                transition: all .5s ease;
+                img{
+                    margin-bottom: 20px;
+                }
+                &:hover{
+                    // background-color: $vesti-100;
+                    .card-title{
+                        color: $vesti-700;
+                    }
+                }
+
+                .card-title{
+                    @include fontSemiBold(1.5em, 1.5em, $vesti-902);
+                    transition: all .5s ease;
+                }
+                .card-text{
+                    @include fontNormal(1.25em, 1.5em, $vesti-901);
+                
+                }
+
+            }
+
+            
+
+        }
+        
+    }
+    .button{
+        width: fit-content;    
+        margin-top: 5rem;
+        background-color: $vesti-700;
+        height: 50px !important;
+        padding: 20px 30px 20px 30px !important;
+        border: none !important;
+        border-radius: 15px !important;
+        cursor: pointer;
+        @include fontMedium(1.2em, 0.7em, #fff);    
+        @include rowflex(center,center);
+        transition: all 0.3s ease;
+        &:hover{
+          background: $vesti-900;
+        }
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 600px){
+    .benefits-container{
+        width: 80%;
+        margin: 0 auto;
+        height: fit-content;
+        border-radius: 20px;
+        padding-bottom: 30px;
+        @include colflex(center,center);
+    
+        .benefits-inner {
+            width: 100%;
+            height: fit-content;
+            @include colflexx(center);
+            margin-top: -53px;
+            font-size: 11px;
+    
+            &.top{
+                width: 90%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(1.45em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.2em, 1.5em, $vesti-902);
+                }
+            }
+            &.bottom {
+                width: 100%;
+                margin-top: 30px;
+                margin: 0 auto;
+                padding: 0px !important;
+                @include colflexx(flex-start);
+                
+                .card{
+                    width: 100% !important;
+                    background-color: transparent;
+            
+    
+                    .card-title{
+                        @include fontSemiBold(1.5em, 1.5em, $vesti-902);
+                    
+                    }
+                    .card-text{
+                        @include fontNormal(1.25em, 1.5em, $vesti-901);
+                    
+                    }
+    
+                }
+    
+            }
+    
+        }
+        .button{
+            width: 85%;
+            height: 50px;
+        }
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 800px){
+    .benefits-container{
+        width: 80%;
+        height: fit-content;
+        margin-bottom: 100px;
+        border-radius: 20px;
+        margin-left: 80px;
+        padding-bottom: 30px;
+        @include colflex(center,center);
+    
+        .benefits-inner {
+            width: 100%;
+            height: fit-content;
+            @include colflexx(center);
+            margin-top: -53px;
+    
+            &.top{
+                width: 100%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(1.8em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.35em, 1.5em, $vesti-902);
+                }
+            }
+            &.bottom {
+                width: 100%;
+                margin-top: 20px;
+                @include colflexx(center);
+    
+                .card{
+                    background-color: transparent;
+                    // margin-left: -56px;
+                    width: 25rem;
+                    
+                    .card-title{
+                        @include fontSemiBold(1.5em, 1.5em, $vesti-902);
+                    
+                    }
+                    .card-text{
+                        @include fontNormal(1.25em, 1.5em, $vesti-901);
+                    
+                    }
+    
+                }
+    
+            }
+    
+        }
+    }
+}
+@media only screen and (min-width: 800px) and (max-width: 1224px){
+    .benefits-container{
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 100px;
+        border-radius: 50px;
+        padding-bottom: 50px;
+        @include colflex(center,center);
+    
+        .benefits-inner {
+            width: 90%;
+            height: fit-content;
+            @include colflexx(center);
+    
+            &.top{
+                width: 100%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(2.25em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.2em, 1.5em, $vesti-902);
+                }
+            }
+            &.bottom {
+                width: 100%;
+                margin-top: 50px;
+                padding: 0px;
+                .card{
+                    margin: 0;
+                    background-color: transparent;
+                    
+                    .card-title{
+                        @include fontSemiBold(1.5em, 1.5em, $vesti-902);
+                    
+                    }
+                    .card-text{
+                        @include fontNormal(1.25em, 1.5em, $vesti-901);
+                    
+                    }
+    
+                }
+                
+    
+            }
+    
+        }
+    }  
+}

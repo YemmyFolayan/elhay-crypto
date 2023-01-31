@@ -1,0 +1,19 @@
+@import "../../../variables.scss";
+
+.credithistory {
+    padding-left: 40px;
+
+    @include breakpoint(mobileonly){
+        padding-left: 30px;
+    }
+    .titlesubtitle{
+        width: 500px;
+    }
+
+    .success{
+        width: 400px;
+    }
+    // &__container {
+
+    // }
+}

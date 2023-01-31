@@ -1,0 +1,300 @@
+@import "../../../variables.scss";
+
+.japatop-container {
+    width: 100%;
+    height: 100%;
+    margin-top: 5rem;
+    @include rowflex(center,center);
+
+    .japatop-inner-container {
+        width: 80%;
+        height: 100%;
+        @include colflex(center, space-between);
+
+        &.left {
+            width: 78%;
+            height: 100%;
+            margin-bottom: 2rem;
+            text-align: center;
+            @include colflexx(center);
+
+            .top {
+                width: 80%;
+                @include colflex(center,baseline);
+                // display: flex;
+                // flex-wrap: wrap;
+                // justify-content: center;
+                // align-items: baseline;                
+                height: fit-content;
+                span {
+                    width: 70%;
+                    @include rowflex(center,center);
+                    margin:0;
+                    height: fit-content;
+                    p:nth-child(1) {
+                        @include fontBlack(3.25em,1.3em, $vesti-901);
+                    }
+                    strong {
+                        color: $vesti-700;
+                        // @include fontBlack(3em,1.2em, $vesti-700);
+                    }
+
+                    @include breakpoint(mobileonly) {
+                        width: 80%;
+                    }
+                }
+                p:nth-child(2) {
+                    width: 60%;
+                    margin: 0;
+                    margin-top: -2rem;
+                    @include fontNormal(1.2em,1.5em, $vesti-901);
+                }
+                button {
+                    width: fit-content;
+                    padding: 30px !important;
+                    height: 50px;
+                    background-color: $vesti-700;
+                    transition: all .5s ease;
+                    color: #fff;
+                    font-size: 18px;
+                    margin-top: 30px;
+            
+                    &:hover {
+                        background-color: $vesti-800;
+                    }
+            
+                    &:disabled {
+                        background-color: $gray-600;
+                        cursor: not-allowed;
+                    }
+            
+                }
+            }
+
+            .bottom {
+                width: fit-content;
+                @include rowflexx(center);
+                margin-top: 30px;
+                div:nth-child(2) {
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        &.right {
+            width: 600px;
+            // height: 500px;
+            margin-bottom: 2rem;
+            
+            img {
+                width: 900px;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 600px)  {
+    .japatop-container {
+        width: 100%;
+        height: fit-content;
+        @include colflex(center,center);
+    
+        .japatop-inner-container {
+            width: 90%;
+            height: 80%;
+            @include colflex(center, space-between);
+    
+            &.left {
+                width: 100%;
+                height: 100%;
+                @include colflexx(center);
+    
+                .top {
+                    width: 100%;
+                    height: fit-content;
+                    margin-left: 0; 
+                    margin: 0 auto;
+                    span {
+                        width: 80%;
+                        @include colflex(center,center);
+                        margin:0 auto;
+                        height: fit-content;
+                        p:nth-child(1) {
+                            @include fontBlack(1.5em,1.4em, $vesti-901);
+                        }
+                        strong {
+                            color: $vesti-700;
+                            // @include fontBlack(3em,1.2em, $vesti-700);
+                        }
+                    }
+                    p:nth-child(2) {
+                        width: 100%;
+                        margin: 0;
+                        margin-bottom: 30px;
+                        @include fontNormal(1em,1.5em, $vesti-901);
+                    }
+                    button {
+                        margin-bottom: 2rem; 
+                        font-size: 12px;               
+                    }
+                }
+    
+                .bottom {
+                    width: 100% !important;
+                    margin-top: 0;
+                    @include rowflexx(center);
+
+                    .download-container{
+                        width: 100%;
+                        height: 55px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                    }
+    
+                    div:nth-child(2) {
+                        font-size: 7px;
+                    }
+                }
+            }
+            &.right {
+                width: 600px;
+                img {
+                    width: 300px;
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
+    
+}
+@media (min-width: 600px) and (max-width: 800px){
+    .japatop-container {
+        width: 100%;
+        height: 100%;
+        @include colflex(center,center);
+    
+        .japatop-inner-container {
+            width: 100%;
+            height: 100%;
+            @include colflex(center, center);
+    
+            &.left {
+                height: 100%;
+                margin-top: 2rem;
+                @include colflexx(center);
+    
+                .top {
+                    width: 100%;
+                    height: fit-content;
+                    margin-left: 0;
+                    span {
+                        width: 100%;
+                        @include colflex(center,center);
+                        margin:0;
+                        height: fit-content;
+                        p:nth-child(1) {
+                            @include fontBlack(2em,1.3em, $vesti-901);
+                        }
+                        strong {
+                            color: $vesti-700;
+                            // @include fontBlack(3em,1.2em, $vesti-700);
+                        }
+                    }
+                    p:nth-child(2) {
+                        width: 100%;
+                        margin: 0;
+                        margin-bottom: 10px;
+                        @include fontNormal(1.3em,1.5em, $vesti-901);
+                    }
+                }
+    
+                .bottom {
+                    width: 100%;
+                    @include rowflex(center,center);
+
+                    .download-container{
+                        height: 55px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                    }
+    
+                    div:nth-child(2) {
+                        margin-left: 20px;
+                        font-size: 10px;
+                    }
+                }
+            }
+            &.right {
+                max-width: 100%;
+                img {
+                    max-width: 100%;
+                    margin-top: 55px;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 800px) and (max-width: 1224px){
+    .japatop-container {
+        width: 100%;
+        height: 100%;
+        @include colflex(center,center);
+    
+        .japatop-inner-container {
+            width: 100%;
+            height: 100%;
+            @include colflex(center, space-between);
+    
+            &.left {
+                height: 100%;
+                @include colflexx(center);
+    
+                .top {
+                    width: 100%;
+                    height: fit-content;
+                    span {
+                        width: 75%;
+                        @include colflex(center,center);
+                        margin:0;
+                        height: fit-content;
+                        p:nth-child(1) {
+                            @include fontBlack(2.25em,1.3em, $vesti-901);
+                        }
+                        strong {
+                            color: $vesti-700;
+                            // @include fontBlack(3em,1.2em, $vesti-700);
+                        }
+                    }
+                    p:nth-child(2) {
+                        width: 80%;
+                        margin: 0;
+                        margin-bottom: 30px;
+                        @include fontNormal(1.8em,1.5em, $vesti-901);
+                    }
+                }
+    
+                .bottom {
+                    width: 100%;
+                    @include rowflex(center,center);
+
+                    .download-container{
+                        height: 55px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                    }
+    
+                    div:nth-child(2) {
+                        margin-left: 20px;
+                        font-size: 10px;
+                    }
+                }
+            }
+            &.right {
+                max-width: 100%;
+                img {
+                    max-width: 100%;
+                    margin-top: 55px;
+                }
+            }
+        }
+    }
+}

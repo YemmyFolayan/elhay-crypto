@@ -1,0 +1,44 @@
+@import "../../../variables.scss";
+
+.my-input-class input   {
+    width: 100% !important;
+    // margin-top: 30px;
+    height: 60px;
+    background: #F9F8F9;
+    border: 1px solid $gray-400;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none !important;
+    padding-left: 20px;
+    position: relative;
+    
+    @include fontNormal(1em, 1em, $gray-600);
+
+    @include breakpoint(mobileonly) {
+        width: 100%!important;
+        height: 50px;
+    }
+    @include breakpoint(tablet) {
+        width: 100% !important;
+        height: 50px;
+    }
+
+    @include breakpoint(phablet) {
+        width: 100% !important; //250PX
+        // height: 50px;
+    }
+    
+
+    &:focus {
+        border: 1px solid $vesti-700;
+        background-color: $vesti-100;
+        color: $vesti-901;
+        
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    &:disabled {
+        cursor: not-allowed;
+        color: $gray-800;
+    }
+}

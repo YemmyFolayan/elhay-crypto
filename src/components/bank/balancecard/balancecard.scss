@@ -1,0 +1,424 @@
+@import "../../../variables.scss";
+
+.balancecontainer, .wallets {
+    @include colflexx('center');
+    width: 32vw;
+    height: 270px;
+    // height: fit-content;
+    position: relative;
+
+    @include breakpoint(mobileonly){
+        margin-bottom: 30px;
+    }
+    
+    
+    @include breakpoint(mobileonly){
+        width: 90vw;
+        height: 350px;
+    }
+    // @media (max-width: 300px){
+    //     height: 480px;
+    // }
+
+    @include breakpoint(phablet){
+        width: 70vw;
+    }
+    @include breakpoint(tablet){
+        width: 70vw;
+    }
+    
+    &__row {
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+        @include rowflexx(center);
+
+        .newbalance, .loanbalance {
+            top: 0;
+            position: absolute;
+            width: 32vw;
+            height: 257px;
+            background-color: #FCFFFA;
+            padding: 30px;
+            border: 1px solid $vesti-901;
+            border-radius: 20px;
+            @include colflexx(flex-start);
+        
+            @include breakpoint(mobileonly){
+                width: 90vw;
+                // height: fit-content;
+                height: 320px;
+            }
+            @include breakpoint(phablet){
+                width: 70vw;
+                // height: fit-content;
+            }
+            @include breakpoint(tablet){
+                width: 70vw;
+            }
+            &.--founders {
+                // height: 255px;
+                background-color: #8948a8;
+                background-image: url('../../../assets/founderssvg.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: bottom right;
+                border: 1px solid #4c275c;
+                .newbalance__balance{
+                    gap: 10px;
+                    *{
+                        color: #fff;
+                        // color: $sila-800;
+                    }
+                }
+                .newbalance__seedetails{
+                    color: #fff !important;
+                    *{
+                        color: #fff;
+                    }
+                }
+                
+                button {
+                    background-color: #fff;
+                    color: #8948a8;
+                }
+
+            }
+            &__seedetails {
+                margin: 0;
+                // background-color: red;
+                // height: 60px;
+                cursor: pointer;
+                margin-top: -17px;
+                text-transform: none;
+                // @include rowflex(center,center);
+                @include fontBold(1.2em,1em,$vesti-700);
+                font-weight: 700 !important;
+                color: $vesti-800 !important;
+    
+                @include breakpoint(mobileonly){
+                    font-size: 1em !important;
+                    @include fontBold(.8em,1em,$vesti-700);
+                }
+    
+                i{
+                    margin-left: 10px;
+                }
+            }
+            &__top {
+                width: 100%;
+                @include rowflex(flex-start, space-between);
+                @include breakpoint(mobileonly){
+                    @include colflex(flex-start,space-between);
+                    display: flex;
+                    flex-direction: column-reverse;
+                }
+                .tab{
+                    margin-bottom: 0px;
+                }
+            }
+            &__balance {
+                @include colflexx(flex-start);
+                @include breakpoint(mobileonly){
+                    margin-top: 20px;
+                }
+                p:nth-child(1){
+                    margin: 0;
+                    text-transform: uppercase;
+                    @include fontNormal(1em, 1em, $vesti-901);
+                }
+    
+                span {
+                    margin-top: 10px;
+                    @include rowflexx(center);
+    
+                    
+                    .currency{
+                        margin: 0;
+                        font-weight: 100 !important;
+                        margin-right: 5px;
+                        @include fontLight(3em, 1em, $vesti-901);
+    
+                        @include breakpoint(mobileonly){
+                            font-size: 2.5em;
+                        }
+                    }
+                    p:nth-child(2){
+                        margin: 0;
+                        @include fontBold(3em, 1em, $vesti-901);
+                        @include breakpoint(mobileonly){
+                            font-size: 2.5em;
+                        }
+                    }
+
+                    i {
+                        margin-left: 10px;
+                        font-size: 1.4em;
+                        color: $vesti-700;
+                    }
+                    
+                }
+    
+            }
+            &__mid {
+                // margin-top:-10px;
+                margin-top:20px;
+                height: 40px;
+                // @include colflexx(center);
+                @include colflex(flex-start,flex-end);
+                
+                @include breakpoint(mobileonly){
+                    margin-top: 20px;
+                }
+
+                p:nth-child(1){
+                    margin: 0;
+                    text-transform: uppercase;
+                    @include fontNormal(1em, 1em, $vesti-901);
+                }
+                p:nth-child(2){
+                    margin: 0;
+                    margin-top: 5px;
+                    @include fontBold(1.2em, 1em, $vesti-901);
+                }
+
+            }
+            &__request {
+                margin: 0;
+                cursor: pointer;
+                // margin-top: 20px;
+                text-transform: none;
+                @include fontBold(1.2em,1em,$vesti-700);
+                font-weight: 700 !important;
+                color: $vesti-800 !important;
+    
+                @include breakpoint(mobileonly){
+                    font-size: 1em !important;
+                    @include fontBold(.8em,1em,$vesti-700);
+                }
+    
+                i{
+                    margin-left: 10px;
+                }
+            }
+        
+            &__more {
+                margin-top: 20px;
+                @include colflexx(flex-start);
+                @include fontMedium(1.2em, 1em, $vesti-700);
+                i{
+                    margin-left: 10px;
+                }
+            }
+        
+            &__btns {
+                margin-top: 20px;
+                width: 100%;
+                // height: 50px;
+                @include rowflexx(flex-start);
+                gap: 10px;
+                flex-wrap: wrap;
+
+                @include breakpoint(mobileonly){
+                    gap: 10px;
+                }
+        
+                // &__btn:not(:first-child){
+                //     margin-left: 10px;
+                // }
+                &__btn {
+                    min-width: 30px !important;
+                    width: fit-content !important;
+                    padding: 0px 20px 0px 20px !important; 
+                    height: 50px !important;
+                    border-radius: 5px !important;
+                    background-color:  $vesti-300;
+                    color: $vesti-901;
+                    transition: all .5s ease;
+                    font-size: 1.2em;
+                    white-space: nowrap;
+                    @include rowflex(center,center);
+                    @include breakpoint(mobileonly){
+                        @include fontSemiBold (0.7em, 1em, $gray-800);
+                    }
+                    i {
+                        margin-right: 10px;
+                    }
+        
+                    &:hover {
+                        color: #fff;
+                        background-color:  $vesti-700;
+                    }
+        
+                    &:disabled{
+                        background-color: $gray-500;
+                        color: #fff;
+                        cursor: not-allowed;
+                    }
+
+                    &.--no-bkg {
+                        background-color: transparent;
+                    }
+                }
+        
+            }
+        }
+
+        .loanbalance{
+
+            
+            &__top {
+                width: fit-content;
+                @include rowflexx(flex-start);
+
+                @include breakpoint(mobileonly){
+                    @include colflexx(flex-start);
+                }
+
+                &__balance {
+                    
+                    &.--left{
+                        margin-right: 20px;
+                        padding-right: 20px;
+                        border-right: 1px solid $vesti-901;
+
+                        @include breakpoint(mobileonly){
+                            border: none;
+                            margin-bottom: 10px;
+                        }
+                    }
+                    &.--right{
+                        @include breakpoint(mobileonly){
+                            border: none;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+
+                
+                
+                &:nth-child(2){
+                    margin-left: 20px;
+                }
+            }
+            &__mid {
+                @include breakpoint(mobileonly){
+                    height: 0px;
+                }
+            }
+        }
+    }
+    &.--transfer {
+        .balancecontainer__row {
+            .newbalance{
+                height: 200px;
+            }
+            
+        }
+    }
+    &__boxes {
+        z-index: 1 !important;
+        margin: 0 auto;
+        // position: relative;
+        @include rowflexx(flex-start);
+        width: fit-content;
+        margin-top: 25px;
+        transition: all .5s ease;
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        right: 0;
+
+        @include breakpoint(mobileonly){
+            // bottom: -59px;wal
+            bottom: -10px;
+            
+        }
+        &__box:not(:first-child){
+            margin-left: 10px;
+        }
+        &__box {
+            width: 15px;
+            height: 15px;
+            background-color: $vesti-400;
+            border-radius: 50%;
+            transition: all .5s ease;
+
+            &.--active {
+                background-color: $vesti-700;
+                width: 50px;
+                border-radius: 10px;
+            }
+
+            &:hover {
+                background-color: $vesti-700;
+            }
+        }
+    }
+}
+
+.wallets{
+    width: 100%;
+    height: fit-content;
+
+    @include breakpoint(desktop){
+        width: 100%;
+    }
+    @include breakpoint(mobileonly){
+        margin-bottom: 30px;
+    }
+    &__row{
+        width: 100%;
+    }
+    *.wallet {
+        overflow: hidden;
+        position: relative;
+        // width: 500px;
+        width: 100%;
+        height: 270px;
+        @include colflexx(flex-start);
+        gap: 40px;
+        border-radius: 20px;
+        padding: 30px 40px;
+        &.--Founders {
+            @include wallets($vpurp-901, $vpurp-800, $vpurp-300, $vpurp-901);
+        }
+        &.--Naira {
+            @include wallets($vesti-902, $vesti-901, $vesti-300, $vesti-902);
+        }
+        &.--Usd {
+            @include wallets(#024750, #9CF4FF, #9CF4FF, #024750);
+        }
+
+        @include breakpoint(mobileonly){
+            width: 90vw;
+        }
+        @include breakpoint(phablet){
+            width: 90vw;
+        }
+    }
+
+    img {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 80px;
+        @include breakpoint(mobileonly){
+            width: 60px;
+        }
+        @include breakpoint(phablet){
+            width: 80px;
+        }
+        @include breakpoint(tablet){
+            width: 80px !important;
+        }
+        @include breakpoint(desktop){
+            width: 100px;
+        }
+       
+    }
+    &__boxes {
+        bottom: -30px;
+
+    }
+}

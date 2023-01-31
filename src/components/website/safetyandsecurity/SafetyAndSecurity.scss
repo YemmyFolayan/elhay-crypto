@@ -1,0 +1,298 @@
+@import "../../../variables.scss";
+
+.safetyAndsecurity-container {
+    width: 100%;
+    height: 100%;
+    @include rowflex(center,center);
+
+    .safetyAndsecurity-inner-container {
+        width: 80%;
+        height: 80%;
+        @include rowflex(flex-start, space-between);
+        gap: 1rem;
+
+        &.left {
+            width: 60%;
+            height: 100%;
+            @include colflexx(flex-start);
+
+            .top {
+                width: 80%;
+                height: fit-content;
+                span {
+                    @include rowflexx(center);
+                    margin:0;
+                    height: fit-content;
+                    p:nth-child(1) {
+                        @include fontBlack(2em,1.3em, $vesti-902);
+                    }
+                    
+                    @include breakpoint(mobileonly) {
+                        width: 80%;
+                    }
+                }
+                p:nth-child(2) {
+                    width: 100%;
+                    margin: 0;
+                    @include fontNormal(1.35em,1.5em, $vesti-901);
+                }
+                p:nth-child(3) {
+                    width: 100%;
+                    margin: 0;
+                    @include fontNormal(1.25em,1.5em, $vesti-901);
+                }
+
+                ul {
+                    list-style: none;
+                    padding: 0px;
+
+                    li:not(:first-child){
+                        margin-top: 30px;
+                    }
+                    li {
+                        @include rowflexx(flex-start);
+
+                        .singlelist-div{
+                            margin-left: 10px;
+                            strong{
+                                @include fontBold(1.5em,1.5em, $vesti-902);
+                            }
+                        }
+                        img{
+                            margin-top: 0.5rem;
+                        }
+                    }
+                }
+                li p:nth-child(4) {
+                    width: 100%;
+                    margin: 0;
+                    list-style-type: none;
+                    @include fontNormal(1.2em,1.5em, $vesti-901);
+                }
+                li p:nth-child(2) {
+                    width: 100%;
+                    margin: 0;
+                    list-style-type: none;
+                    @include fontNormal(1.2em,1.5em, $vesti-901);
+                }
+                
+            }
+
+            .bottom {
+                width: fit-content;
+                @include rowflexx(center);
+                margin-top: 30px;
+                cursor: pointer;
+                @include fontSemiBold(1.5em,1.5em, $vesti-700);
+                div:nth-child(1) {
+                    margin-left: 20px;
+                }
+
+            }
+        }
+
+        &.right {
+            width: 600px;
+            img {
+                width: 500px;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 600px)  {
+    .safetyAndsecurity-container {
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 50px;
+        @include colflex(center,center);
+    
+        .safetyAndsecurity-inner-container {
+            // width: 90%;
+            height: 80%;
+            @include colflex(center, space-between);
+    
+            &.left {
+                width: 100%;
+                height: 100%;
+                @include colflexx(flex-start);
+    
+                .top {
+                    width: 100%;
+                    height: fit-content;
+                    span {
+                        @include colflex(center,center);
+                        margin:0;
+                        height: fit-content;
+                        p:nth-child(1) {
+                            margin-top: 30px;
+                            @include fontBlack(1.3em,1.4em, $vesti-901);
+                        }
+                    }
+                    p:nth-child(2) {
+                        width: 100%;
+                        margin: 0;
+                        margin-bottom: 30px;
+                        @include fontNormal(1.1em,1.5em, $vesti-901);
+                    }
+                    p:nth-child(3) {
+                        width: 100%;
+                        margin: 0;
+                        margin-bottom: 30px;
+                        @include fontNormal(1.1em,1.5em, $vesti-901);
+                    }
+                }
+    
+                .bottom {
+                    width: 100% !important;
+                    @include rowflexx(center);
+                    cursor: pointer;
+                    @include fontSemiBold(1em,1.5em, $vesti-901);
+    
+                    div:nth-child(1) {
+                        margin-left: 20px;
+                        font-size: 10px;
+                        
+                    }
+                }
+            }
+            &.right {
+                width: 600px;
+                img {
+                    width: 250px;
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
+    
+}
+@media (min-width: 600px) and (max-width: 800px){
+    .safetyAndsecurity-container {
+        width: 100%;
+        height: 100%;
+        margin-top: -64px;
+        @include colflex(center,center);
+    
+        .safetyAndsecurity-inner-container {
+            width: 100%;
+            height: 100%;
+            @include colflex(center, space-between);
+    
+            &.left {
+                height: 100%;
+                @include colflexx(flex-start);
+    
+                .top {
+                    width: 100%;
+                    height: fit-content;
+                    span {
+                        @include colflex(center,center);
+                        margin:0;
+                        height: fit-content;
+                        p:nth-child(1) {
+                            width: 383px;
+                            @include fontBlack(1.9em,1.3em, $vesti-901);
+                        }
+                        strong {
+                            color: $vesti-700;
+                            // @include fontBlack(3em,1.2em, $vesti-700);
+                        }
+                    }
+                    p:nth-child(2) {
+                        width: 110%;
+                        margin: 0;
+                        margin-bottom: 10px;
+                        @include fontNormal(1.2em,1.5em, $vesti-901);
+                    }
+                    p:nth-child(3) {
+                        width: 110%;
+                        margin: 0;
+                        @include fontNormal(1.2em,1.5em, $vesti-901);
+                    }
+                }
+    
+                .bottom {
+                    width: 100%;
+                    @include rowflexx(center);
+                    cursor: pointer;
+                    @include fontSemiBold(1.5em,1.5em, $vesti-700);
+    
+                    div:nth-child(2) {
+                        margin-left: 20px;
+                        font-size: 10px;
+                    }
+                }
+            }
+            &.right {
+                max-width: 100%;
+                img {
+                    max-width: 50%;
+                    margin-top: 55px;
+                }
+            }
+        }
+    }
+}
+// @media (min-width: 800px) and (max-width: 1224px){
+//     .safetyAndsecurity-container {
+//         width: 100%;
+//         height: 100%;
+//         @include colflex(center,center);
+    
+//         .safetyAndsecurity-inner-container {
+//             width: 100%;
+//             height: 100%;
+//             @include colflex(center, space-between);
+    
+//             &.left {
+//                 height: 100%;
+//                 @include colflexx(flex-start);
+    
+//                 .top {
+//                     width: 100%;
+//                     height: fit-content;
+//                     span {
+//                         @include colflex(center,center);
+//                         margin:0;
+//                         width: 100%;
+//                         height: fit-content;
+//                         p:nth-child(1) {
+//                             @include fontBlack(2.25em,1.3em, $vesti-901);
+//                         }
+//                         strong {
+//                             color: $vesti-700;
+//                             // @include fontBlack(3em,1.2em, $vesti-700);
+//                         }
+//                     }
+//                     p:nth-child(2) {
+//                         width: 100%;
+//                         margin: 0;
+//                         margin-bottom: 30px;
+//                         @include fontNormal(1.8em,1.5em, $vesti-901);
+//                     }
+//                 }
+    
+//                 .bottom {
+//                     width: 100%;
+//                     @include rowflexxx(center);
+//                     justify-content: flex-start;
+//                     cursor: pointer;
+//                     @include fontSemiBold(1em,1.5em, $vesti-901);
+
+    
+//                     div:nth-child(2) {
+//                         margin-left: 20px;
+//                         font-size: 10px;
+//                     }
+//                 }
+//             }
+//             &.right {
+//                 max-width: 100%;
+//                 img {
+//                     max-width: 100%;
+//                     margin-top: 55px;
+//                 }
+//             }
+//         }
+//     }
+// }

@@ -1,0 +1,147 @@
+@import "../../../variables.scss";
+
+
+.testimonial {
+    padding-top: 100px;
+    &__top {
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;                
+        height: fit-content;
+        margin-bottom: 2rem;
+        span {
+            width: 70%;
+            @include colflex(center,center);
+            margin:0;
+            height: fit-content;
+            p:nth-child(1) {
+                @include fontBlack(3.25em,.3em, $vesti-901);
+            }
+            p:nth-child(2) {
+                margin-top: -2rem;
+                margin-bottom: 0;
+                @include fontBlack(3em,1.3em, $vesti-700);
+            }
+    
+            // @include breakpoint(mobileonly) {
+            //     width: 50%;
+            // }
+        }
+        p:nth-child(2) {
+            width: 75%;
+            margin: 0;
+            margin-top: 1rem;
+            margin-bottom: 7rem;
+            text-align: center;
+            @include fontNormal(1.5em,1.5em, $vesti-901);
+        }
+    }
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 600px){
+    .testimonial{
+        padding-top: 60px;
+        &__top {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;                
+            height: fit-content;
+            margin-bottom: 2rem;
+            span {
+                width: 100%;
+                @include colflex(center,center);
+                margin:0;
+                height: fit-content;
+                p:nth-child(1) {
+                    @include fontBlack(1.5em,1.3em, $vesti-901);
+                }
+                p:nth-child(2) {
+                    margin-top: -1rem;
+                    margin-bottom: 0;
+                    @include fontBlack(1.5em,1.3em, $vesti-700);
+                }
+            }
+            p:nth-child(2) {
+                width: 100%;
+                margin: 0;
+                margin-top: 1rem;
+                margin-bottom: 7rem;
+                text-align: center;
+                @include fontNormal(1.2em,1.5em, $vesti-901);
+            }
+        } 
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 800px){
+    .testimonial{
+        padding-top: 60px;
+        &__top {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;                
+            height: fit-content;
+            margin-bottom: 2rem;
+            span {
+                width: 100%;
+                @include colflex(center,center);
+                margin:0;
+                height: fit-content;
+                p:nth-child(1) {
+                    @include fontBlack(2em,1.3em, $vesti-901);
+                }
+                p:nth-child(2) {
+                    margin-top: -1rem;
+                    margin-bottom: 0;
+                    @include fontBlack(2em,1.3em, $vesti-700);
+                }
+            }
+            p:nth-child(2) {
+                width: 100%;
+                margin: 0;
+                margin-top: 1rem;
+                margin-bottom: 7rem;
+                text-align: center;
+                @include fontNormal(1.5em,1.5em, $vesti-901);
+            }
+        } 
+    }
+}
+@media only screen and (min-width: 800px) and (max-width: 1224px){
+    .testimonial{
+        padding-top: 60px;
+        &__top {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;                
+            height: fit-content;
+            margin-bottom: 2rem;
+            span {
+                width: 100%;
+                @include colflex(center,center);
+                margin:0;
+                height: fit-content;
+                p:nth-child(1) {
+                    @include fontBlack(3em,1.3em, $vesti-901);
+                }
+                p:nth-child(2) {
+                    margin-top: -2rem;
+                    margin-bottom: 0;
+                    @include fontBlack(3em,1.3em, $vesti-700);
+                }
+            }
+            p:nth-child(2) {
+                width: 100%;
+                margin: 0;
+                margin-top: 1rem;
+                margin-bottom: 7rem;
+                text-align: center;
+                @include fontNormal(1.8em,1.5em, $vesti-901);
+            }
+        } 
+    }
+}

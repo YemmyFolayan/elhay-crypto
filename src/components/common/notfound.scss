@@ -1,0 +1,90 @@
+@import "../../variables.scss";
+
+.error404 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: #FAFCFF;
+    @include rowflex(center,center);
+
+    &__inner {
+        width: 60%;
+        height: 80%;
+        @include rowflex(flex-start,center);
+
+        @include breakpoint(mobileonly) {
+            width: 80%;
+            height: 90%;
+        }
+
+        @include breakpoint(phablet) {
+            width: 80%;
+            height: 90%;
+        }
+    }
+    &__content {
+        width: 90%;
+        height: 90%;
+        text-align: center;
+        @include colflex(center, center);
+        gap: 30px;
+    }
+    &__svg {
+        width: 400px;
+
+        @include breakpoint(mobileonly) {
+            width: 250px;
+        }
+    }
+    &__body {
+        @include colflexx(center);
+        gap: 10px;
+
+        width: 400px;
+        @include breakpoint(mobileonly){
+            width: 90vw;
+        }
+    }
+    &__title {
+        margin: 0;
+        @include fontSemiBold(2.5em, 1em, $vesti-902);
+        @include breakpoint(mobileonly) {
+            @include fontSemiBold(2em, 1em, $vesti-902);
+        }
+    }
+
+    &__subtitle {
+        @include fontNormal(1.5em, 1.7em, $vesti-901);
+        @include breakpoint(mobileonly) {
+            @include fontNormal(1em, 1.4em, $vesti-901);
+        }
+        @include breakpoint(tablet) {
+            @include fontNormal(1.3em, 1.4em, $vesti-901);
+        }
+    }
+    &__btn {
+        width: 250px;
+        height: 65px;
+        min-height: 50px;
+        font-size: 1em;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        border: none;
+        color: #fff;
+        background-color: $vesti-700;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+        text-decoration: none;
+        @include rowflex(center, center);
+
+        @include breakpoint(mobileonly) {
+            width: 100%;
+            height: 50px;
+        }
+
+        &:hover {
+            background-color: $vesti-900;
+        }
+    }
+}

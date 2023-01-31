@@ -1,0 +1,160 @@
+@import "../../../variables.scss";
+
+// $md-radio-checked-color: $vesti-700;
+$md-radio-border-color: rgba(0, 0, 0, 0.54);
+$md-radio-size: 20px;
+$md-radio-checked-size: 10px; 
+$md-radio-ripple-size: 15px;
+
+@keyframes ripple {
+  
+  0% {
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.0);
+  }
+  
+  50% { 
+    box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0.1);
+  }
+  
+  100% {
+    box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0);
+  }
+}
+
+.RadioButton, .radiooption {
+    margin: 10px 0;
+    width: 420px;
+
+    @include breakpoint(mobileonly){
+        width: 300px;
+    }
+    @include rowflexx(flex-start);
+    input[type="radio"] {
+        display: none;
+      
+        &:checked + label:before {
+            border-color: $vesti-700;
+            animation: ripple 0.2s linear forwards;   
+        }
+      
+        &:checked + label:after {
+            transform: scale(1);
+        }
+
+        &:checked +label+ div.paymentoption-detail {
+            p:nth-child(1){
+                color: $vesti-700;
+            }
+        }
+    }
+    
+    label {
+        display: inline-block;
+        height:$md-radio-size;
+        position: relative;
+        padding: 0 ($md-radio-size + 10px);
+        margin-bottom: 0;
+        cursor: pointer;
+        vertical-align: bottom;
+      
+        &:before, &:after {
+            position: absolute;            
+            content: '';  
+            border-radius: 50%;
+            transition: all .3s ease;
+            transition-property: transform, border-color;
+        }
+      
+        &:before {
+            left: 0;
+            top: 0;
+            width: $md-radio-size;
+            height: $md-radio-size;
+            border: 2px solid $md-radio-border-color;
+        }
+      
+        &:after {
+            top: $md-radio-size / 2 - $md-radio-checked-size / 2;
+            left: $md-radio-size / 2 - $md-radio-checked-size / 2;
+            width:$md-radio-checked-size;
+            height:$md-radio-checked-size;
+            transform: scale(0);
+            background:$vesti-700;
+
+            
+        }
+    }
+
+    .paymentoption-detail {
+        margin-left: -25px;
+        @include colflexx(flex-start);
+        transition: all .5s ease;
+        p:nth-child(1){
+            margin: 0;
+            @include fontBold(1.5em, 1em, $vesti-901);
+        }
+        p:nth-child(2){
+           
+            margin-top: 10px;
+            @include fontNormal(1em, 1em, $vesti-901);
+        }
+    }
+}
+
+.radiooption{
+    // width: 100%;
+    height: fit-content;
+    padding: 20px 20px;
+    border-radius: 10px;
+    border: 1px solid $gray-300;
+    // background-color: $gray-100;
+    background-color: #fff;
+    box-shadow: 0px 4px 20px rgba(224, 224, 224, 0.2);
+    margin: 0 !important;
+    @include rowflex(flex-start, space-between);
+
+    label {
+        width: fit-content;
+        padding-right: 0px !important;
+    }
+    &.--active {
+        border: 1px solid $vesti-700;
+        background-color: $vesti-100;
+        .radiooption__left {
+            p:nth-child(1){
+                @include fontBold(1.1em, 1em, $vesti-700);
+
+                @include breakpoint(desktop){
+                    @include fontBold(1.3em, 1em, $vesti-700);
+                }
+            }
+        }
+    }
+    &__left {
+        @include rowflexx(flex-start);
+        gap: 10px
+    }
+    &__titlesub {
+        // margin-left: -25px;
+        @include colflex(flex-start, space-between);
+        transition: all .5s ease;
+        gap: 10px;
+        p:nth-child(1){
+            margin: 0;
+            @include fontBold(1.1em, 1em, $vesti-901);
+
+            @include breakpoint(desktop){
+                @include fontBold(1.3em, 1em, $vesti-901);
+            }
+        }
+        p:nth-child(2){
+            margin-top: 10px;
+            margin-bottom: 0px;
+            @include fontNormal(.85em,1.2em, $vesti-901);
+
+            @include breakpoint(desktop){
+                @include fontNormal(1em, 1.2em, $vesti-901);
+            }
+        }
+    }
+}

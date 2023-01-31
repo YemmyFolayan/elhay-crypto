@@ -1,0 +1,47 @@
+.pic_btn {
+  background-image: url('../../assets/and_btn.svg');
+  width: 170px;
+  height: 54px;
+  cursor: pointer;
+}
+.android_btn {
+  background-image: url('../../assets/and_btn.svg');
+}
+.ios_btn {
+  background-image: url('../../assets/ios_.svg');
+}
+
+.home_nav {
+  padding-left: 1em;
+}
+.home_nav li {
+  margin: 1.5em;
+}
+.home_nav a:link,
+.home_nav a:visited {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000 !important;
+  transition: 250ms ease-in;
+}
+
+.home_nav a:active,
+.home_nav a:hover {
+  color: #62943b !important;
+  transition: 50ms ease-out;
+  border-bottom: 2px solid #62943b;
+  padding-bottom: 0.3em;
+}
+
+.low_txt {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+
+  color: #a0a0a0;
+}

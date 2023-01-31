@@ -1,0 +1,15 @@
+@import "../../variables.scss";
+
+.ceonnectplaid{
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+    padding: 100px;
+    margin: 0 auto;
+    &__wrap {
+        width: 100%;
+        position: relative !important;
+        padding: 20px;
+        margin-top: 50px;
+    }
+}

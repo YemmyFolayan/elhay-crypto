@@ -1,0 +1,39 @@
+@import "../../variables.scss";
+
+.wallets {
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 30px;
+    @include colflexx(center);
+
+    &__boxes {
+        @include rowflexx(flex-start);
+        width: fit-content;
+        margin-top: 15px;
+        
+        transition: all .5s ease;
+
+        &__box:not(:first-child){
+            margin-left: 10px;
+        }
+        &__box {
+            width: 15px;
+            height: 15px;
+            background-color: $vesti-400;
+            border-radius: 50%;
+            transition: all .5s ease;
+
+            &.--active {
+                background-color: $vesti-700;
+                width: 50px;
+                border-radius: 10px;
+            }
+
+            &:hover {
+                background-color: $vesti-700;
+            }
+        }
+    }
+
+   
+}

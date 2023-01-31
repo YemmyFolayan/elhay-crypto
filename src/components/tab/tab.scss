@@ -1,0 +1,68 @@
+@import "../../variables.scss";
+
+.tab {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    margin-bottom: 50px;
+    @include colflexx(flex-start);
+    background-color: $vesti-100;
+    border-radius: 10px;
+    // padding: 3px;
+    // padding-right: 10px !important;
+    padding: 2px;
+    border: 1px solid $vesti-700;
+
+    &--small{
+        .tab__links{
+            gap: 5px;
+        }
+        .tab__link{
+            padding:  3px 10px;
+            @include fontMedium(.9em, 2em, $vesti-900);
+
+            &.active {
+                @include fontMedium(.9em, 2em, #fff);
+            }
+        }
+    }
+    &__links {
+        width: fit-content;
+        @include rowflexx(center);
+        gap: 5px;
+    }
+    &__link{
+        margin: 0;
+        z-index: 10;
+        transition: all .5s ease-out;
+        @include rowflexx(center);
+        gap: 5px;
+        @include fontMedium(1em, 3em, $vesti-900);
+        cursor: pointer;
+        width: fit-content;
+        padding:  3px 20px;
+        &.active {
+            color: $vesti-700;
+            @include fontMedium(1em, 3em, #fff);
+            // @include fontBold(1.5em, 3em, $vesti-700);
+            // border-bottom: 5px solid $vesti-700;
+            background-color: $vesti-700;
+            // color: #fff;
+            // padding:  5px 30px;
+            border-radius: 8px;
+        }
+    }
+    &__new {
+        @include fontMedium(12px, 1em, $vesti-100);
+        padding: 3px 10px;
+        background-color: $vesti-901;
+        border-radius: 10px;
+        margin: 0px !important;
+    }
+    .hr {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        // border: 3px solid $gray-200;
+    }
+}

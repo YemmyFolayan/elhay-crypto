@@ -1,0 +1,60 @@
+@import "../../../variables.scss";
+
+.textarea {
+    width: 100%;
+    p{
+        margin: 0;
+        @include fontNormal(1em, 1em, $vesti-901);
+    }
+
+    label{
+        margin: 0;
+        @include fontNormal(1em, 1em, $vesti-901);
+    }
+
+    input[type='text'] {
+        width: 100% !important;
+
+        height: 50px;
+        border: none;
+        padding: 0;
+        margin: 0;
+        margin-top: 10px;
+        border-radius: 5px;
+        box-sizing: border-box;
+        outline: none;
+        padding-left: 20px;
+        background-color: $gray-200;
+        @include fontNormal(1em, 1em, $gray-600);
+
+        @include breakpoint(tablet) {
+            height: 60px;
+        }
+    }
+
+    &__input{
+        width: 100% !important;
+
+        height: 100px;
+        border: none;
+        padding: 0;
+        margin: 0;
+        margin-top: 10px;
+        border-radius: 5px;
+        box-sizing: border-box;
+        outline: none;
+        padding: 20px;
+        background-color: $gray-200;
+        @include fontNormal(1em, 1em, $gray-600);
+
+        @include breakpoint(tablet) {
+            height: 60px;
+        }
+
+        &:focus {
+            border: 1px solid $vesti-700;
+            background-color: $vesti-100;
+            color: $vesti-901;
+        }
+    }
+}

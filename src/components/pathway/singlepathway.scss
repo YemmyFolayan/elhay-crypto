@@ -1,0 +1,89 @@
+@import "../../variables.scss";
+
+.singlepathway-container {
+    width: 450px;
+    height: fit-content;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid $gray-300;
+    position: relative;
+    transition: all .5s ease-out;
+    @include rowflex(center,center);
+
+    @include breakpoint(mobileonly){
+        width: 300px;
+    }
+
+    @include breakpoint(phablet){
+        width: 300px;
+    }
+
+    &:hover {
+        background-color: $vesti-100;
+        border:1px solid $vesti-700;
+        filter: drop-shadow(0px 4px 30px rgba(157, 157, 157, 0.2));
+        .singlepathway-number {
+            background-color: $vesti-100;
+            border:1px solid $vesti-700;
+        }
+    }
+
+    .singlepathway-number {
+        width: 50px;
+        height: 50px;
+        padding: 10px 10px 10px 10px;
+        border-radius: 50%;
+        background-color: #fff;
+        border: 1px solid $gray-300;
+        position: absolute;
+        left: -25px;
+        transition: all .5s ease-out;
+        @include rowflex(center,center);
+        @include fontNormal(1.1em, 1.4em, $vesti-901);
+    }
+    .singlepathway-inner {
+        width: 80%;
+        height: 80%;
+        position: relative;
+        @include colflexx(flex-start);
+
+        &.singlepathway-content {
+            margin: 0;
+            width: 100%;
+            // height: fit-content !important;
+            @include colflexx(flex-start);
+            p:nth-child(1){
+                margin: 0;
+                @include fontBold(1.5em, 1em, $vesti-902);
+            }
+            p:nth-child(2){
+                margin-top: 10px;
+                text-overflow: ellipsis;
+                width: 100%;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                @include fontNormal(1.1em, 1.7em, $vesti-901);
+            }
+        }
+        &.link{
+            text-decoration: none;
+            cursor: pointer;
+            transition: all .5s ease-out;
+            width: fit-content;
+            @include rowflexx(center);
+            @include fontBold(1.1em, 1em, $vesti-901);
+
+            i {
+                margin-left: 10px;
+            }
+
+            &:hover {
+                color: $vesti-700;
+            }
+        }
+    }
+}

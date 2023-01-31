@@ -1,0 +1,218 @@
+@import "../../../variables.scss";
+
+.download-vesti-container {
+    height: fit-content;
+    width: 100%;
+    position: relative;
+    margin-top: 100px;
+    @include rowflex(center, center);
+    
+    .download-vestii-inner {
+        width: 80%;
+        height: 100%;
+        background-color: $vesti-700;
+        border-radius: 30px;
+        padding: 20px;
+        @include rowflex(center,center);
+
+        &.vesti-left {
+            width: 100%;
+            @include colflex(flex-start,center);
+            p {
+                width: 100%;
+                text-align: left;
+                margin: 0;
+                @include fontBold(4em, 1.2em, $vesti-900);
+                span {
+                    color: $vesti-100;
+                }
+            }
+            .downloadlinks {
+                margin-top:50px;
+                div:nth-child(2) {
+                    margin-left: 20px;
+                }
+            }
+        }
+        &.right {
+            
+            img {
+                position: absolute;
+                bottom: 0;
+                height: 480px;
+                right: 155px;
+            }
+            
+        }
+        
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+    .download-vesti-container {
+        height: fit-content;
+        width: 100%;
+        position: relative;
+        margin-top: -50px;
+        @include colflexx(center);
+        
+        .download-vestii-inner {
+            width: 95%;
+            height: 100%;
+            background-color: $vesti-700;
+            border-radius: 10px;
+            padding: 10px;
+            @include colflex(center,center);
+    
+            &.vesti-left {
+                width: 100%;
+                @include colflex(flex-start,center);
+                p {
+                    width: 100%;
+                    text-align: left;
+                    margin: 0;
+                    @include fontBold(2em, 1.2em, $vesti-900);
+                    span {
+                        color: $vesti-100;
+                    }
+                }
+                .downloadlinks {
+                    margin-top:50px;
+                    width: 100%;
+                    .download-container {
+                        width: 50%;
+                        height: 60px;
+                        padding-left: 1px !important;
+                        padding-right: 2px !important;
+                        border-radius: 5px;
+                        font-size: 9px;
+                        
+                    }
+                }
+            }
+            &.right {
+                
+                img {
+                    display: none;
+                }
+                
+            }
+            
+        }
+    }
+}
+@media screen and (min-width:600px) and (max-width: 800px) {
+    .download-vesti-container {
+        height: fit-content;
+        width: 100%;
+        position: relative;
+        @include colflexx(center);
+        
+        .download-vestii-inner {
+            width: 98%;
+            height: 100%;
+            background-color: $vesti-700;
+            border-radius: 10px;
+            padding: 10px;
+            @include colflex(center,center);
+    
+            &.vesti-left {
+                width: 95%;
+                @include colflex(flex-start,center);
+                p {
+                    width: 100%;
+                    text-align: left;
+                    margin: 0;
+                    @include fontBold(2em, 1.2em, $vesti-900);
+                    span {
+                        color: $vesti-100;
+                    }
+                }
+                .downloadlinks {
+                    margin-top:50px;
+                    // div:nth-child(2) {
+                    //     margin-left: 12px;
+                    // }
+                    .download-container {
+                        width: 50%;
+                        height: 60px;
+                        padding-left: 5px !important;
+                        padding-right: 5px !important;
+                        border-radius: 5px;
+                        font-size: 10px;
+                        
+                    }
+                }
+            }
+            &.right {
+                
+                img {
+                    max-width: 100%;
+                    position: absolute;
+                    right: 10px;
+                    height: 365px;
+                }
+                
+            }
+            
+        }
+    }
+}
+@media (min-width: 800px) and (max-width: 1224px){
+    .download-vesti-container {
+        height: fit-content;
+        width: 100%;
+        position: relative;
+        @include colflexx(center);
+        
+        .download-vestii-inner {
+            width: 100%;
+            height: 100%;
+            background-color: $vesti-700;
+            border-radius: 10px;
+            padding: 10px;
+            @include colflex(center,center);
+    
+            &.vesti-left {
+                width: 100%;
+                @include colflex(flex-start,center);
+                p {
+                    width: 100%;
+                    text-align: left;
+                    margin: 0;
+                    @include fontBold(2em, 1.2em, $vesti-900);
+                    span {
+                        color: $vesti-100;
+                    }
+                }
+                .downloadlinks {
+                    margin-top:50px;
+                    // div:nth-child(2) {
+                    //     margin-left: 12px;
+                    // }
+                    // .download-container {
+                    //     width: 50%;
+                    //     height: 60px;
+                    //     padding-left: 0px !important;
+                    //     padding-right: 0px !important;
+                    //     border-radius: 5px;
+                    //     font-size: 12px;
+                        
+                    // }
+                }
+            }
+            &.right {
+                
+                img {
+                    max-width: 100%;
+                    position: absolute;
+                    right: 35px;
+                    height: 400px;
+                }
+                
+            }
+            
+        }
+    }
+}
+    

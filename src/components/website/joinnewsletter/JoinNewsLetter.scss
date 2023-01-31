@@ -1,0 +1,252 @@
+@import "../../../variables.scss";
+
+.newsletter-vesti-container {
+    height: fit-content;
+    width: 100%;
+    position: relative;
+    margin-top: 100px;
+    @include rowflex(center, center);
+    
+    .newsletter-vestii-inner {
+        width: 80%;
+        height: 100%;
+        background-color: $vesti-900;
+        border-radius: 30px;
+        padding: 20px;
+        @include rowflex(center,center);
+
+        &.vesti-top {
+            width: 100%;
+            @include colflex(center,center);
+            p:nth-child(1) {
+                text-align: center;
+                margin: 0;
+                @include fontBold(2.4em, 1.5em, $gray-100);
+            }
+            p:nth-child(2) {
+                text-align: center;
+                margin: 0;
+                @include fontNormal(1.5em, 1.5em, $gray-100);
+                width: 75%;
+            }
+            .redirect-link {
+                text-align: center;
+                margin: 0;
+                margin-top: 1rem;
+                @include fontSemiBold(1.2em, 1.5em, $gray-100);
+                cursor: pointer;
+            }
+            .newsletter-input {
+                width: 65%;
+
+                .newsletter-button{
+                    @include fontSemiBold(1.2em, 1.5em, $gray-100);
+                    background-color: $vesti-700;
+                    height: 60px !important;
+                    margin-top: 1rem;
+                }
+            }
+        }
+        .circletop{
+            position: relative;
+            bottom: 5rem;
+            right: 1.2rem;
+        }
+        .circlebottom{
+            position: relative;
+            top: 5.1rem;
+            left: 1.2rem;
+        }
+        
+        
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+    .newsletter-vesti-container {
+        margin-top: 1rem !important;
+        height: fit-content;
+        width: 100%;
+        position: relative;
+        margin-top: -50px;
+        @include colflexx(center);
+        
+        .newsletter-vestii-inner {
+            width: 95%;
+            height: 100%;
+            border-radius: 10px;
+            padding: 10px;
+            @include colflex(center,center);
+    
+            &.vesti-top {
+                width: 100%;
+                @include colflex(center,center);
+                p:nth-child(1) {
+                    text-align: center;
+                    margin: 0;
+                    @include fontBold(1.2em, 1.5em, $gray-100);
+                }
+                p:nth-child(2) {
+                    text-align: center;
+                    margin: 0;
+                    @include fontNormal(1em, 1.5em, $gray-100);
+                    width: 75%;
+                }
+                .redirect-link {
+                    text-align: center;
+                    margin: 0;
+                    margin-top: 1rem;
+                    @include fontSemiBold(1em, 1.5em, $gray-100);
+                    cursor: pointer;
+                }
+                .newsletter-input {
+                    width: 65%;
+    
+                    .newsletter-button{
+                        @include fontSemiBold(1.2em, 1.5em, $gray-100);
+                        background-color: $vesti-700;
+                        height: 60px !important;
+                    }
+                }
+            }
+            .circletop{
+                display: none;
+            }
+            .circlebottom{
+                display: none;
+            }
+            
+        }
+    }
+    
+   iframe{
+    width: 100% !important;
+   }
+}
+@media screen and (min-width:600px) and (max-width: 800px) {
+    .newsletter-vesti-container {
+        height: fit-content;
+        width: 100%;
+        position: relative;
+        @include colflexx(center);
+        
+        .newsletter-vestii-inner {
+            width: 98%;
+            height: 100%;
+            border-radius: 10px;
+            padding: 10px;
+            @include colflex(center,center);
+    
+            &.vesti-top {
+                width: 100%;
+                @include colflex(center,center);
+                p:nth-child(1) {
+                    text-align: center;
+                    margin: 0;
+                    @include fontBold(1.5em, 1.5em, $gray-100);
+                }
+                p:nth-child(2) {
+                    text-align: center;
+                    margin: 0;
+                    @include fontNormal(1em, 1.5em, $gray-100);
+                    width: 75%;
+                }
+                .redirect-link {
+                    text-align: center;
+                    margin: 0;
+                    margin-top: 1rem;
+                    @include fontSemiBold(1em, 1.5em, $gray-100);
+                    cursor: pointer;
+                }
+                .newsletter-input {
+                    width: 65%;
+                    form{
+                        .inputfloat{
+                            margin-bottom: 1rem;
+                        }
+                    }
+    
+                    .newsletter-button{
+                        @include fontSemiBold(1.2em, 1.5em, $gray-100);
+                        background-color: $vesti-700;
+                        height: 60px !important;
+                    }
+                }
+            }
+            .circletop{
+                position: relative;
+                bottom: 0.6rem;
+                right: 18.3rem;
+            }
+            .circlebottom{
+                position: relative;
+                top: 0.6rem;
+                left: 17.9rem;
+            }
+            
+        }
+    }
+}
+@media (min-width: 800px) and (max-width: 1224px){
+    .newsletter-vesti-container {
+        height: fit-content;
+        width: 100%;
+        position: relative;
+        margin-top: 100px;
+        @include rowflex(center, center);
+        
+        .newsletter-vestii-inner {
+            width: 80%;
+            height: 100%;
+            background-color: $vesti-900;
+            border-radius: 30px;
+            padding: 20px;
+            @include rowflex(center,center);
+    
+            &.vesti-top {
+                width: 100%;
+                @include colflex(center,center);
+                p:nth-child(1) {
+                    text-align: center;
+                    margin: 0;
+                    @include fontBold(2em, 1.5em, $gray-100);
+                }
+                p:nth-child(2) {
+                    text-align: center;
+                    margin: 0;
+                    margin-top: 1rem;
+                    @include fontNormal(1.2em, 1.5em, $gray-100);
+                }
+                
+                
+                .newsletter-input {
+                    width: 100%;    
+    
+                    .newsletter-button{
+                        @include fontSemiBold(1.5em, 1.5em, $gray-100);
+                        background-color: $vesti-700;
+                    }
+                }
+                .redirect-link {
+                    text-align: center;
+                    margin: 0;
+                    margin-top: 1rem;
+                    @include fontSemiBold(1.2em, 1.5em, $gray-100);
+                }
+            }
+            .circletop{
+                position: relative;
+                bottom: 6.5rem;
+                right: 1.3rem;
+            }
+            .circlebottom{
+                position: relative;
+                top: 6.5rem;
+                left: 1.3rem;
+            }
+            
+            
+        }
+    }
+}
+    

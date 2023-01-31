@@ -1,0 +1,448 @@
+@import '../../../variables.scss';
+
+.footer-container {
+  width: 100%;
+  //height: 100%;
+  background-color: $vesti-700;
+  @include rowflex(center,center);
+
+  .white-footer { 
+   
+    color: white;
+  }
+  .footer-inner{
+    width: 90%;
+    height: 85%;
+    @include colflexx(flex-start);
+
+    &.top {
+      width: 100%;
+      .footer-top {
+        width: 100%;
+        @include rowflexx(flex-start);
+
+        img {
+          width: auto;
+        }
+        .right {
+          margin-left: 50px;
+          width: 80%;
+          @include rowflexx(flex-start);
+
+          ul {
+            list-style: none;
+            padding: 0;
+            width: 30%;
+            li:nth-child(1) {
+              @include fontSemiBold(1.4em, 1em, $vesti-100);
+            }
+
+            li {
+              text-decoration: none;
+              .footer-link {
+                text-decoration: none;
+                @include fontNormal(1.2em, 1.5em, $vesti-100);
+                cursor: pointer;
+                transition: all .5s ease;
+
+                &:hover {
+                  @include fontNormal(1.2em, 1.5em, $vesti-900);
+                }
+              }
+              a{
+                @include fontNormal(1.2em, 1.5em, $vesti-100);
+              }
+            }
+
+            li:not(:first-child){
+              width: 80%;
+              margin-top: 20px;
+              @include fontNormal(1.2em, 1.5em, $vesti-100);
+            }
+
+            li {
+              .footer-link {
+                @include fontNormal(1.2em, 1.5em, $vesti-100);
+                text-decoration: none;
+                transition: all .5s ease;
+
+                &:hover {
+                  @include fontNormal(1.2em, 1.5em, $vesti-800);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .footer-body-text{
+        margin: 0;
+        margin-top: 50px;
+        width: 100%;
+        @include fontNormal(1.2em, 1.8em, $vesti-100);
+      } 
+    }
+      hr {
+        width: 100%;
+        border: 1px solid $vesti-100;
+        margin-top: 40px !important;
+        margin-bottom: 30px !important;
+      }
+    &.bottom {
+      width: 100%;
+      @include rowflex(center, space-between);
+
+      .social-media-links {
+        width: fit-content;
+
+        a{
+          text-decoration: none;
+          img {
+            width: auto;
+          }
+        }
+        a:not(:first-child) {
+          margin-left: 15px;
+        }
+      }
+
+      .doc-links {
+        width: fit-content;
+
+        a{
+          text-decoration: none;
+          @include fontSemiBold(1.2em, 1em, $vesti-100);
+
+        }
+        a:not(:first-child) {
+          margin-left: 15px;
+        }
+      }
+      .copyright-text {
+
+        @include fontLight(1.20em, 1em, $vesti-100);
+
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+  
+  .footer-container {
+    width: 100%;
+    height: 100%;
+    margin-top: 6rem;
+    background-color: $vesti-700;
+    @include rowflex(center,center);
+
+    .footer-inner{
+      width: 90%;
+      height: 100%;
+      @include colflexx(flex-start);
+      
+
+      &.top {
+        width: 100%;
+        .footer-top {
+          width: 100%;
+          margin-top: 20px;
+          @include colflexx(flex-start);
+          gap: 50px;
+          .white-logo{
+            margin-top: 0px; 
+            width: 150px;           
+          }          
+          img {
+            max-width: 100%;
+            margin-top: 0;
+          }
+          .right {
+            margin-left: 0px;
+            width: 80%;
+            @include colflexx(flex-start);
+
+            ul {
+              list-style: none;
+              padding: 0;
+              width: 100%;
+              margin-top: 20px;
+              li:nth-child(1) {
+                @include fontSemiBold(1.4em, 1em, $vesti-100);
+              }
+
+              li {
+                text-decoration: none;
+                .footer-link {
+                  text-decoration: none;
+                  @include fontNormal(1.2em, 1.5em, $vesti-100);
+                  cursor: pointer;
+                  transition: all .5s ease;
+  
+                  &:hover {
+                    @include fontNormal(1.2em, 1.5em, $vesti-900);
+                  }
+                }
+              }
+
+              li:not(:first-child){
+                width: 90%;
+                margin-top: 20px;
+                @include fontNormal(1.2em, 1.5em, $vesti-100);
+              }
+            }
+          }
+        }
+
+        .footer-body-text{
+          margin: 0;
+          margin-top: 30px;
+          width: 100%;
+          @include fontNormal(1em, 1.8em, $vesti-100);
+        } 
+      }
+       hr {
+         width: 100%;
+         border: 1px solid $vesti-100;
+         margin-top: 40px !important;
+         margin-bottom: 30px !important;
+       }
+      &.bottom {
+        width: 100%;
+        height: 200px;
+        @include colflex(center, space-between);
+
+        .social-media-links {
+          width: fit-content;
+
+          a{
+            text-decoration: none;
+            img {
+              width: auto;
+            }
+          }
+          a:not(:first-child) {
+            margin-left: 15px;
+          }
+        }
+
+        .doc-links {
+          width: fit-content;
+          @include rowflex(center,center);
+          gap: 20px;
+          flex-wrap: wrap;
+          a{
+            width: fit-content !important;
+            text-decoration: none;
+            text-align: center;
+            @include fontSemiBold(0.8em, 1em, $vesti-100);
+
+          }
+        }
+        .copyright-text {
+          @include fontLight(0.8em, 1em, $vesti-100);
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 800px) {
+ 
+  .footer-container {
+    width: 100%;
+    height: 100%;
+    margin-top: 6rem;
+    background-color: $vesti-700;
+    @include rowflex(center,center);
+
+    .footer-inner{
+      width: 90%;
+      height: 85%;
+      @include colflexx(flex-start);
+
+      &.top {
+        width: 100%;
+        .footer-top {
+          width: 100%;
+          margin-top: 20px;
+          @include colflexxx(flex-start);
+          .white-logo{
+            margin-top: 20px;            
+          } 
+          img {
+            max-width: 100%;
+            margin-top: 0;
+          }
+          .right {
+            margin-left: 0px;
+            width: 100%;
+            @include rowflexx(flex-start);
+
+            ul {
+              list-style: none;
+              padding: 0;
+              width: 100%;
+              margin-top: 20px;
+              li:nth-child(1) {
+                @include fontSemiBold(1.2em, 1em, $vesti-100);
+              }
+
+              li:not(:first-child){
+                width: 100%;
+                margin-top: 20px;
+                @include fontNormal(1em, 1.5em, $vesti-100);
+              }
+            }
+          }
+        }
+
+        .footer-body-text{
+          margin: 0;
+          margin-top: 30px;
+          width: 100%;
+          @include fontNormal(1em, 1.8em, $vesti-100);
+        } 
+      }
+       hr {
+         width: 100%;
+         border: 1px solid $vesti-100;
+         margin-top: 40px !important;
+         margin-bottom: 30px !important;
+       }
+      &.bottom {
+        width: 100%;
+        @include colflex(center, space-between);
+
+        .social-media-links {
+          width: fit-content;
+
+          a{
+            text-decoration: none;
+            img {
+              width: auto;
+            }
+          }
+          a:not(:first-child) {
+            margin-left: 15px;
+          }
+        }
+
+        .doc-links {
+          width: fit-content;
+
+          a{
+            text-decoration: none;
+            @include fontSemiBold(0.8em, 1em, $vesti-100);
+
+          }
+          a:not(:first-child) {
+            margin-left: 10px;
+          }
+        }
+        .copyright-text {
+          @include fontLight(0.8em, 1em, $vesti-100);
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1224px) {
+ 
+  .footer-container {
+    width: 100%;
+    height: 100%;
+    background-color: $vesti-700;
+    @include rowflex(center,center);
+
+    .footer-inner{
+      width: 90%;
+      height: 85%;
+      @include colflexx(flex-start);
+
+      &.top {
+        width: 100%;
+        .footer-top {
+          width: 100%;
+          margin-top: 20px;
+          @include colflexxx(flex-start);
+
+          img {
+            max-width: 100%;
+            margin-top: 20px;
+          }
+          .right {
+            margin-left: 0px;
+            width: 100%;
+            @include rowflexx(flex-start);
+
+            ul {
+              list-style: none;
+              padding: 0;
+              width: 100%;
+              margin-top: 20px;
+              li:nth-child(1) {
+                @include fontSemiBold(1.5em, 1em, $vesti-100);
+              }
+
+              li:not(:first-child){
+                width: 100%;
+                margin-top: 20px;
+                @include fontNormal(1.3em, 1.5em, $vesti-100);
+              }
+            }
+          }
+        }
+
+        .footer-body-text{
+          margin: 0;
+          margin-top: 30px;
+          width: 100%;
+          @include fontNormal(1.5em, 1.8em, $vesti-100);
+        } 
+      }
+       hr {
+         width: 100%;
+         border: 1px solid $vesti-100;
+         margin-top: 40px !important;
+         margin-bottom: 30px !important;
+        }
+      &.bottom {
+        width: 100%;
+        @include colflex(center, space-between);
+
+        .social-media-links {
+          width: fit-content;
+
+          a{
+            text-decoration: none;
+            img {
+              width: auto;
+            }
+          }
+          a:not(:first-child) {
+            margin-left: 15px;
+          }
+        }
+
+        .doc-links {
+          width: fit-content;
+
+          a{
+            text-decoration: none;
+            @include fontSemiBold(1.1em, 1em, $vesti-100);
+
+          }
+          a:not(:first-child) {
+            margin-left: 10px;
+          }
+        }
+     
+        .copyright-text {
+          @include fontLight(0.8em, 1em, $vesti-100);
+        }
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,24 @@
+@import "../../../variables.scss";
+
+.advisor-container {
+    width: 100%;
+    padding-left: 100px;
+    height: fit-content;
+    margin-bottom: 100px;
+    @include colflexx(flex-start);
+
+    @include breakpoint(mobileonly){
+        padding-left: 0;
+    }
+    p:nth-child(1){
+        margin: 0;
+        @include fontBold(2.5em, 1em, $gray-300);
+    }
+    .advisor-inner-container{
+        width: fit-content;
+        margin-top: 50px;
+        @include colflexx(flex-start);
+
+        
+    }
+}

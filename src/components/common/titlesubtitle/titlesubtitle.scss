@@ -1,0 +1,77 @@
+@import "../../../variables.scss";
+
+.titlesubtitle {
+    @include colflexx(flex-start);
+    width: 90%;
+    margin-bottom: 20px;
+    height: fit-content;
+    gap: 5px;
+    @include breakpoint(mobileonly){
+        width: 75vw;
+    }
+    &__steps{
+        margin: 0;
+        margin-bottom: 10px;
+        @include fontMedium(1.2em, 1em , $vesti-700);
+    }
+
+    
+    span{
+        @include rowflexx(center);
+        gap: 10px;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    &__title{
+        @include fontBold(1.5em, 1em , $vesti-902);
+        margin-bottom: 0px !important;
+        @include breakpoint(mobileonly){
+            width: 90%;
+            @include fontBold(1.3em, 1.1em , $vesti-902);
+        }
+        @media screen and (min-width: 600px) and (max-width: 800px) {
+            width: 90%;
+            @include fontBold(1.3em, 1.1em , $vesti-902);
+        }
+    }
+
+    h6.titlesubtitle__subtitle{
+        // margin-top: -5px !important;
+        margin-top: 5px !important;
+        @include fontNormal(1.2em, 1.4em, $vesti-901);
+
+        @include breakpoint(mobileonly){
+            @include fontNormal(1em, 1.4em, $vesti-901);
+        }
+        @media screen and (min-width: 600px) and (max-width: 800px) {
+            @include fontNormal(1em, 1.4em, $vesti-901);
+        }
+        
+    }
+
+    &.--small {
+        margin-bottom: 0px;
+        .titlesubtitle__title{
+            @include fontBold(.8em, 1em , $vesti-700);
+            margin: 0px;
+        }
+    
+        h6.titlesubtitle__subtitle{
+            margin-top: 5px !important;
+            margin: 0px;
+            @include fontNormal(1em, 1.4em, $vesti-901);
+            
+        }
+    }
+    p:nth-child(4){
+        // width: 80%;
+        margin-top: 10px;
+        @include fontNormal(1.2em, 1.4em, $vesti-901);
+        strong {
+            color: $vesti-700;
+        }
+    }
+}

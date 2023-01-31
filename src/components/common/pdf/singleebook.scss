@@ -1,0 +1,62 @@
+@import "../../../variables.scss";
+
+.singleebook-container {
+    width: 350px;
+    height: fit-content;
+    border-radius: 10px;
+    border: 1px solid $gray-300;
+    cursor: pointer;
+    transition: all .5s ease;
+    @include rowflex(center,center);
+
+    &:hover {
+        border: 1px solid $vesti-700;
+        box-shadow: 0px 4px 30px rgba(157, 157, 157, 0.2) !important;
+    }
+
+    .singleebook-inner-container {
+        width: 90%;
+        height: fit-content;
+        @include colflex(center,center);
+
+        &.top {
+            width: 105%;
+            height: 150px;
+            overflow: hidden;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 1px solid $gray-300;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &.bottom {
+            width: 100%;
+            @include colflexx(flex-start);
+            .ebook-title{
+                margin: 0;
+                margin-top: 10px;
+                width: 70%;
+                @include fontBold(1.5em, 1.4em, $vesti-700);
+            }
+    
+            p:nth-child(2){
+                margin-top: 10px;
+                
+                @include fontMedium(1em, 1.4em, $gray-400)
+            }
+    
+            p:nth-child(3){
+                margin-top: 10px;
+                padding: 10px;
+                border-radius: 10px;
+                background-color: $vesti-100;
+                border: 1px solid $vesti-700;
+                @include fontMedium(.6em, 1.4em, $vesti-700);
+            }
+        }
+        
+    }
+}

@@ -1,0 +1,40 @@
+@import "../../../variables.scss";
+
+
+.newpost-notification-container {
+    width: fit-content;
+    height: 30px;
+    padding: 20px;
+    background-color:  $vesti-700;
+    border-radius: 10px;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 60%;
+    z-index: 150;
+    margin: 0 auto;
+    bottom: 20%;
+    @include rowflex(center, center);
+
+    &.active {
+        @include rowflex(center, center);
+    }
+    
+    &.closed {
+        display: none;
+    }
+
+    .newpost-notification-inner {
+        @include rowflex(center,center);
+        height: 100%;
+
+        p{
+            margin: 0;
+            @include rowflex(center,center);
+            @include fontNormal(1em, 1em, #fff);
+            i {
+                margin-left: 10px;
+            }
+        }
+    }
+
+}

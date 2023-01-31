@@ -1,0 +1,35 @@
+@import "../../../../variables.scss";
+
+.cardlimit {
+    width: 100% !important;
+    @include colflexx(flex-start);
+    .shortinfo {
+        margin-top: 10px;
+    }
+    &__btn {
+        outline: none;
+        border: none;
+        margin-top: 30px;
+        background-color: $vesti-700;
+        @include fontMedium(1em,1em, #fff);
+        transition: all .5s ease;
+        &:hover {
+            background-color: $vesti-800;
+        }
+        &:disabled {
+            background-color: $gray-500;
+            color: $gray-100;
+            cursor: not-allowed;
+        }
+    }
+
+    &__get {
+        @include fontNormal(1em, 1em, $vesti-800);
+        width: fit-content;
+        height: fit-content;
+        padding: 5px 10px 5px 10px;
+        border-radius: 10px;
+        background-color: $vesti-200;
+        border: .5px solid $vesti-700;
+    }
+}

@@ -1,0 +1,389 @@
+@import "../../../variables.scss";
+
+.Causestop-container {
+    width: 100%;
+    height: 100%;
+    margin-top: 5rem;
+    @include rowflex(center,center);
+
+    .Causestop-inner-container {
+    width: 80%;
+    height: 100%;
+    @include colflex(center, space-between);
+
+        .top {
+            width: 100%;
+            @include colflex(center,baseline);             
+            height: fit-content;
+            span {
+                width: 70%;
+                @include rowflex(center,center);
+                margin:0;
+                height: fit-content;
+                p:nth-child(1) {
+                    @include fontBlack(3.25em,1.3em, $vesti-901);
+                }
+                strong {
+                    color: $vesti-700;
+                }
+                @include breakpoint(mobileonly) {
+                    width: 80%;
+                }
+            }
+            p:nth-child(2) {
+                width: 60%;
+                margin: 0;
+                text-align: center;
+                margin-bottom: 2rem;
+                @include fontNormal(1.2em,1.5em, $vesti-902);
+            }
+            .joinCause__button__container{
+                @include colflexx(center);
+                .joinCause__button{
+                    background-color: $vesti-700;
+                    width: 20rem;
+                    height: 50px;
+                    border: none !important;
+                    border-radius: 10px !important;
+                    cursor: pointer;
+                    @include fontMedium(1.2em, 0.7em, #fff);    
+                    @include rowflex(center,center);
+                    transition: all 0.3s ease;
+                    &:hover{
+                        background: $vesti-900;
+                    }
+                }
+            }
+            .photo__grouping{
+                gap: 1rem;
+                margin-top: 3rem;
+                @include rowflex(center,space-between); 
+            }
+        }
+
+        .bottom {
+            width: 100%;
+            @include rowflexx(flex-start);
+            margin-top: 5rem;
+            gap: 2rem;
+            
+    
+            .bottom-left{
+                width: 50%;
+                p:nth-child(1) {
+                    @include fontMedium(1.35em,1.5em, $vesti-902);
+                }
+                .founders{
+                    @include rowflex(flex-start, flex-start);
+                    gap: 2.5rem;
+                    .single-founder a {
+                        @include fontMedium(1.5em,1.5em, $vesti-700); 
+                    }
+                }
+            }
+            .bottom-right{
+                width: 50%;
+                p:nth-child(1) {
+                    @include fontSemiBold(1.25em,1.3em, $vesti-700);
+                }
+                p:nth-child(2) {
+                    @include fontNormal(1.25em,1.3em, $vesti-700);
+                }
+                p:nth-child(3) {
+                    @include fontSemiBold(1.25em,1.3em, $vesti-700);
+                }
+                p:nth-child(4) {
+                    @include fontNormal(1.25em,1.3em, $vesti-700);
+                }
+            }
+        }
+    }
+    
+}
+@media only screen and (min-width: 320px) and (max-width: 600px)  {
+    .Causestop-container {
+        width: 100%;
+        height: fit-content;
+        @include colflex(center,center);
+    
+        .Causestop-inner-container {
+            width: 90%;
+            height: 80%;
+            @include colflex(center, space-between);
+    
+            .top {
+                width: 100%;
+                height: fit-content;
+                margin-left: 0; 
+                margin: 0 auto;
+                span {
+                    width: 80%;
+                    @include colflex(center,center);
+                    margin:0 auto;
+                    height: fit-content;
+                    p:nth-child(1) {
+                        @include fontBlack(1.5em,1.4em, $vesti-901);
+                    }
+                    strong {
+                        color: $vesti-700;
+                    }
+                }
+                p:nth-child(2) {
+                    width: 100%;
+                    margin: 0;
+                    margin-bottom: 30px;
+                    @include fontNormal(1em,1.5em, $vesti-901);
+                }
+
+
+                .joinCause__button__container{
+                    .joinCause__button{
+                        width: 15rem;
+                    }
+                }
+
+                .photo__grouping{
+                    gap: 1rem;
+                    margin-top: 3rem;
+                    @include colflex(center,space-between); 
+                }
+            }
+    
+            .bottom {
+                width: 100% !important;
+                margin-top: 0;
+                @include colflexx(center);
+
+                .bottom-left{
+                    width: 100%;
+                    p:nth-child(1) {
+                        margin-top: 1.5rem;
+                        @include fontMedium(1em,1.5em, $vesti-902);
+                    }
+                    .founders{
+                        @include rowflex(flex-start, space-between);
+                        gap: 2.5rem;
+                        .single-founder a {
+                            @include fontMedium(1.1em,1.5em, $vesti-700); 
+                        }
+                    }
+                }
+                .bottom-right{
+                    width: 100%;
+                    p:nth-child(1) {
+                        text-align: center;
+                        @include fontSemiBold(1.25em,1.3em, $vesti-700);
+                    }
+                    p:nth-child(2) {
+                        @include fontNormal(1.1em,1.3em, $vesti-700);
+                    }
+                    p:nth-child(3) {
+                        text-align: center;
+                        @include fontSemiBold(1.25em,1.3em, $vesti-700);
+                    }
+                    p:nth-child(4) {
+                        @include fontNormal(1.1em,1.3em, $vesti-700);
+                    }
+                }
+
+
+            }
+            
+        }
+    }
+    
+}
+@media (min-width: 600px) and (max-width: 800px){
+    .Causestop-container {
+        width: 100%;
+        height: fit-content;
+        @include colflex(center,center);
+    
+        .Causestop-inner-container {
+            width: 90%;
+            height: 80%;
+            @include colflex(center, space-between);
+    
+            .top {
+                width: 100%;
+                height: fit-content;
+                margin-left: 0; 
+                margin: 0 auto;
+                span {
+                    width: 80%;
+                    @include colflex(center,center);
+                    margin:0 auto;
+                    height: fit-content;
+                    p:nth-child(1) {
+                        @include fontBlack(2.25em,1.4em, $vesti-901);
+                    }
+                    strong {
+                        color: $vesti-700;
+                    }
+                }
+                p:nth-child(2) {
+                    width: 100%;
+                    margin: 0;
+                    margin-bottom: 30px;
+                    @include fontNormal(1.5em,1.5em, $vesti-901);
+                }
+
+                .joinCause__button__container{
+                    .joinCause__button{
+                        width: 25rem;
+                    }
+                }
+
+                .photo__grouping{
+                    gap: 1rem;
+                    margin-top: 3rem;
+                    @include colflex(center,space-between); 
+                }
+            }
+    
+            .bottom {
+                width: 100% !important;
+                margin-top: 0;
+                @include colflexx(center);
+
+                .bottom-left{
+                    width: 100%;
+                    p:nth-child(1) {
+                        margin-top: 1.5rem;
+                        @include fontMedium(1.3em,1.5em, $vesti-902);
+                    }
+                    .founders{
+                        @include rowflex(flex-start, flex-start);
+                        gap: 2.5rem;
+                        .single-founder a {
+                            @include fontMedium(1.3em,1.5em, $vesti-700); 
+                        }
+                    }
+                }
+                .bottom-right{
+                    width: 100%;
+                    p:nth-child(1) {
+                        text-align: center;
+                        @include fontSemiBold(1.5em,1.3em, $vesti-700);
+                    }
+                    p:nth-child(2) {
+                        @include fontNormal(1.35em,1.3em, $vesti-700);
+                    }
+                    p:nth-child(3) {
+                        text-align: center;
+                        @include fontSemiBold(1.5em,1.3em, $vesti-700);
+                    }
+                    p:nth-child(4) {
+                        @include fontNormal(1.35em,1.3em, $vesti-700);
+                    }
+                }
+
+
+            }
+            
+        }
+    }
+}
+@media (min-width: 800px) and (max-width: 1224px){
+    .Causestop-container {
+        width: 100%;
+        height: 100%;
+        margin-top: 5rem;
+        @include rowflex(center,center);
+    
+        .Causestop-inner-container {
+        width: 90%;
+        height: 100%;
+        @include colflex(center, space-between);
+    
+            .top {
+                width: 100%;
+                @include colflex(center,baseline);             
+                height: fit-content;
+                span {
+                    width: 70%;
+                    @include rowflex(center,center);
+                    margin:0;
+                    height: fit-content;
+                    p:nth-child(1) {
+                        @include fontBlack(3.25em,1.3em, $vesti-901);
+                    }
+                    strong {
+                        color: $vesti-700;
+                    }
+                    @include breakpoint(mobileonly) {
+                        width: 80%;
+                    }
+                }
+                p:nth-child(2) {
+                    width: 60%;
+                    margin: 0;
+                    text-align: center;
+                    margin-bottom: 2rem;
+                    @include fontNormal(1.2em,1.5em, $vesti-902);
+                }
+                .joinCause__button__container{
+                    @include colflexx(center);
+                    .joinCause__button{
+                        background-color: $vesti-700;
+                        width: 20rem;
+                        height: 50px;
+                        border: none !important;
+                        border-radius: 10px !important;
+                        cursor: pointer;
+                        @include fontMedium(1.2em, 0.7em, #fff);    
+                        @include rowflex(center,center);
+                        transition: all 0.3s ease;
+                        &:hover{
+                            background: $vesti-900;
+                        }
+                    }
+                }
+                .photo__grouping{
+                    gap: 1rem;
+                    margin-top: 3rem;
+                    width: 19rem;
+                    @include rowflex(center,center); 
+                }
+            }
+    
+            .bottom {
+                width: 100%;
+                @include rowflexx(flex-start);
+                margin-top: 5rem;
+                gap: 2rem;
+                
+        
+                .bottom-left{
+                    width: 50%;
+                    p:nth-child(1) {
+                        @include fontMedium(1.35em,1.5em, $vesti-902);
+                    }
+                    .founders{
+                        @include rowflex(flex-start, flex-start);
+                        gap: 2.5rem;
+                        .single-founder a {
+                            @include fontMedium(1.5em,1.5em, $vesti-700); 
+                        }
+                    }
+                }
+                .bottom-right{
+                    width: 50%;
+                    p:nth-child(1) {
+                        @include fontSemiBold(1.25em,1.3em, $vesti-700);
+                    }
+                    p:nth-child(2) {
+                        @include fontNormal(1.25em,1.3em, $vesti-700);
+                    }
+                    p:nth-child(3) {
+                        @include fontSemiBold(1.25em,1.3em, $vesti-700);
+                    }
+                    p:nth-child(4) {
+                        @include fontNormal(1.25em,1.3em, $vesti-700);
+                    }
+                }
+            }
+        }
+        
+    }
+}

@@ -1,0 +1,217 @@
+@import "../../../variables.scss";
+
+.greenband-container{
+    width: 100%;
+    height: fit-content;
+    border-radius: 50px;
+    padding-bottom: 50px;
+    @include rowflex(center,center);
+
+    .greenband-inner {
+        width: 100%;
+        height: fit-content;
+        background-color: $vesti-700;
+        @include rowflex(center, flex-end);
+        padding: 10px;
+
+        .contents {
+            height: 95%;
+            @include rowflex(center, space-between);
+            // gap: 25rem;
+            width: 90%;
+
+            .left{
+                // flex: 1;
+                // margin-left: 5rem;
+                width: 35%;
+                height: fit-content;
+
+                @include breakpoint(mobileonly){
+                    width: 100%;
+                }
+                p:nth-child(1){
+                    margin: 0;
+                    // width: 50%;
+                    @include fontBold(2.5em, 1.2em, $gray-100);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    // width: 60%;
+                    @include fontNormal(1.5em, 1.5em, $gray-100);
+                }
+                
+                a:nth-child(3){
+                    @include fontMedium(1.2em, 1.5em, $gray-100);
+                }
+            }
+            .right {
+                // flex: 1;
+                // background-color: $gray-300;
+                // width: 100%;
+                // height: 100%;
+                // border-radius: 20px;
+                height: fit-content;
+                img {
+                    width: 600px;
+                }
+
+            }
+        }          
+
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 600px){
+    .greenband-container{
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 16rem;
+        @include colflex(center,center);
+    
+        .greenband-inner {
+            width: 100%;
+            height: fit-content;
+            background-color: $vesti-700;
+            @include colflex(center, space-between);
+            padding: 20px 20px 20px 20px;
+    
+            .contents {
+                @include colflex(center, space-between);
+                gap: 2rem;
+    
+                .left{
+                    flex: 1;
+                    margin-left: 0;
+                    p:nth-child(1){
+                        margin: 0;
+                        width: 80%;
+                        @include fontBold(1.5em, 1.2em, $gray-100);
+                    }
+                    p:nth-child(2){
+                        margin-top: 10px;
+                        @include fontNormal(1.2em, 1.5em, $gray-100);
+                    }
+                    
+                    a:nth-child(3){
+                        @include fontMedium(1.2em, 1.5em, $gray-100);
+                    }
+                } 
+                .right{
+                    display: none;
+                }
+            }          
+    
+        }
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 800px){
+    .greenband-container{
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 100px;
+        margin-top: -8rem;
+        border-radius: 50px;
+        padding-bottom: 0;
+        @include rowflex(center,center);
+    
+        .greenband-inner {
+            width: 100%;
+            height: fit-content;
+            background-color: $vesti-700;
+            @include rowflex(center, space-between);
+            padding: 50px 10px 10px 10px;
+    
+            .contents {
+                @include colflex(center, space-between);
+                gap: 2rem;
+                height: 95%;
+                width: 100%;
+
+                .left{
+                    margin-left: 0;
+                    width: 100%;
+                    // flex: 1;
+                    p:nth-child(1){
+                        margin: 0;
+                        width: 80%;
+                        @include fontBold(2em, 1.2em, $gray-100);
+                    }
+                    p:nth-child(2){
+                        margin-top: 10px;
+                        @include fontNormal(1.5em, 1.5em, $gray-100);
+                    }
+                    
+                    a:nth-child(3){
+                        @include fontMedium(1.2em, 1.5em, $gray-100);
+                    }
+                } 
+                .right{
+                    // flex: 1;
+                    margin-top: 50px;
+                    width: 100%;
+                    height: 100%;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }          
+    
+        }
+    }
+}
+@media only screen and (min-width: 800px) and (max-width: 1024px){
+    .greenband-container{
+        width: 100%;
+        height: fit-content;
+        margin-top: -5rem;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        @include rowflex(center,center);
+    
+        .greenband-inner {
+            width: 100%;
+            height: fit-content;
+            background-color: $vesti-700;
+            @include rowflex(center, space-between);
+            padding: 50px 10px 10px 10px;
+    
+            .contents {
+                width: 100%;
+                height: 95%;
+                @include colflex(center, space-between);
+                gap: 0;
+    
+                .left{
+                    margin-left: 0;
+                    width: 100%;
+                    // flex: 1;
+                    p:nth-child(1){
+                        margin: 0;
+                        width: 80%;
+                        @include fontBold(2em, 1.2em, $gray-100);
+                    }
+                    p:nth-child(2){
+                        margin-top: 10px;
+                        width: 80%;
+                        @include fontNormal(1.5em, 1.5em, $gray-100);
+                    }
+                    
+                    a:nth-child(3){
+                        @include fontMedium(1.2em, 1.5em, $gray-100);
+                    }
+                } 
+                .right{
+                    // flex: 1;
+                    margin-top: 50px;
+                    width: 100%;
+                    height: 100%;
+                    img {
+                        width: 100%;
+                    }
+                }
+                
+            }          
+    
+        }
+    }
+}

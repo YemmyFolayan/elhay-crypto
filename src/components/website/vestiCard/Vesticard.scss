@@ -1,0 +1,282 @@
+@import "../../../variables.scss";
+
+.vesticard-container {
+    width: 100%;
+    height: 37em;
+    @include rowflex(center,center);
+
+    .vesticard-inner-container {
+        width: 80%;
+        height: fit-content;
+        @include rowflex(flex-start, space-between);
+
+        &.left {
+            width: 60%;
+            height: 100%;
+            @include colflexx(flex-start);
+
+            .top {
+                width: 80%;
+                height: fit-content;
+                span {
+                    width: 70%;
+                    @include rowflex(center,center);
+                    margin:0;
+                    height: fit-content;
+                    p:nth-child(1) {
+                        @include fontBlack(3.25em,1.3em, $vesti-901);
+                    }
+                    strong {
+                        color: $vesti-700;
+                        // @include fontBlack(3em,1.2em, $vesti-700);
+                    }
+
+                    @include breakpoint(mobileonly) {
+                        width: 80%;
+                    }
+                }
+                p:nth-child(2) {
+                    width: 80%;
+                    // margin: 0;
+                    margin-top: -20px;
+                    @include fontNormal(1.2em,1.5em, $vesti-901);
+                }
+            }
+
+            .bottom {
+                width: fit-content;
+                @include rowflexx(center);
+                margin-top: 30px;
+                div:nth-child(2) {
+                    margin-left: 20px;
+                }
+            }
+            .button{
+                background-color: $vesti-700;
+                height: 60px !important;
+                padding: 1em !important;
+                border: none !important;
+                border-radius: 15px !important;
+                cursor: pointer;
+                @include fontMedium(1.2em, 0.7em, #fff);    
+                @include rowflex(center,center);
+                transition: all 0.3s ease;
+                &:hover{
+                  background: $vesti-900;
+                }
+                @include breakpoint(mobileonly){
+                    @include fontMedium(1em, 0.7em, #fff); 
+                }
+            }
+        }
+
+        &.right {
+            width: 600px;
+            img {
+                width: 600px;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 600px)  {
+    .vesticard-container {
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 50px;
+        @include colflex(center,center);
+    
+        .vesticard-inner-container {
+            width: 86%;
+            height: 80%;
+            @include revcolflex(center, space-between);
+    
+            &.left {
+                width: 100%;
+                height: 100%;
+                margin-top: 1.5rem;
+                @include colflexx(center);
+    
+                .top {
+                    width: 100%;
+                    height: fit-content;
+                    span {
+                        @include colflex(center,center);
+                        margin:0;
+                        height: fit-content;
+                        p:nth-child(1) {
+                            @include fontBlack(1.8em,1.4em, $vesti-901);
+                        }
+                        strong {
+                            color: $vesti-700;
+                            // @include fontBlack(3em,1.2em, $vesti-700);
+                        }
+                    }
+                    p:nth-child(2) {
+                        width: 100%;
+                        margin: 0;
+                        margin-bottom: 30px;
+                        @include fontNormal(1.2em,1.5em, $vesti-901);
+                    }
+                }
+    
+                .bottom {
+                    width: 75% !important;
+                    @include rowflexx(center);
+
+                    .download-container{
+                        width: 100%;
+                        height: 55px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                    }
+    
+                    div:nth-child(2) {
+                        margin-left: 20px;
+                        font-size: 10px;
+                    }
+                }
+            }
+            &.right {
+                width: 600px;
+                img {
+                    width: 290px !important;
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
+    
+}
+@media (min-width: 600px) and (max-width: 800px){
+    .vesticard-container {
+        width: 100%;
+        height: 100%;
+        @include colflex(center,center);
+    
+        .vesticard-inner-container {
+            width: 90%;
+            height: 100%;
+            @include rowflex(center, center);
+            gap: 2rem;
+    
+            &.left {
+                width: 100%;
+                height: 100%;
+                margin-top: 2rem;
+                @include colflexx(flex-start);
+    
+                .top {
+                    width: 90%;
+                    height: fit-content;
+                    span {
+                        @include colflex(center,center);
+                        margin:0;
+                        height: fit-content;
+                        p:nth-child(1) {
+                            @include fontBlack(2em,1.3em, $vesti-901);
+                        }
+                        strong {
+                            color: $vesti-700;
+                            // @include fontBlack(3em,1.2em, $vesti-700);
+                        }
+                    }
+                    p:nth-child(2) {
+                        width: 110%;
+                        margin: 0;
+                        margin-bottom: 10px;
+                        @include fontNormal(1.3em,1.5em, $vesti-901);
+                    }
+                }
+    
+                .bottom {
+                    width: 100%;
+                    @include rowflexx(center);
+                    margin-top: 0px;
+
+                    .download-container{
+                        height: 55px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                    }
+    
+                    div:nth-child(2) {
+                        margin-left: 20px;
+                        font-size: 10px;
+                    }
+                }
+            }
+            &.right {
+                max-width: 100%;
+                img {
+                    max-width: 100%;
+                    margin-top: 55px;
+                }
+            }
+        }
+    }
+}
+// @media (min-width: 800px) and (max-width: 1224px){
+//     .vesticard-container {
+//         width: 100%;
+//         height: 100%;
+//         @include colflex(center,center);
+    
+//         .vesticard-inner-container {
+//             width: 100%;
+//             height: 100%;
+//             @include colflex(center, space-between);
+    
+//             &.left {
+//                 height: 100%;
+//                 @include colflexx(flex-start);
+    
+//                 .top {
+//                     width: 100%;
+//                     height: fit-content;
+//                     span {
+//                         @include colflex(center,center);
+//                         margin:0;
+//                         height: fit-content;
+//                         p:nth-child(1) {
+//                             @include fontBlack(2.25em,1.3em, $vesti-901);
+//                         }
+//                         strong {
+//                             color: $vesti-700;
+//                             // @include fontBlack(3em,1.2em, $vesti-700);
+//                         }
+//                     }
+//                     p:nth-child(2) {
+//                         width: 100%;
+//                         margin: 0;
+//                         margin-bottom: 30px;
+//                         @include fontNormal(1.8em,1.5em, $vesti-901);
+//                     }
+//                 }
+    
+//                 .bottom {
+//                     width: 100%;
+//                     @include rowflexxx(center);
+//                     justify-content: flex-start;
+
+//                     .download-container{
+//                         height: 55px;
+//                         padding-left: 12px;
+//                         padding-right: 12px;
+//                     }
+    
+//                     div:nth-child(2) {
+//                         margin-left: 20px;
+//                         font-size: 10px;
+//                     }
+//                 }
+//             }
+//             &.right {
+//                 max-width: 100%;
+//                 img {
+//                     max-width: 100%;
+//                     margin-top: 55px;
+//                 }
+//             }
+//         }
+//     }
+// }

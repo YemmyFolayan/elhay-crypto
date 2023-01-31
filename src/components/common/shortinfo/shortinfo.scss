@@ -1,0 +1,109 @@
+@import "../../../variables.scss";
+
+.shortinfo{
+    margin-top: 15px;
+    width:100%;
+    @include rowflexx(flex-start);
+
+    @include breakpoint(mobileonly){
+        width: 100%;
+    }
+    img {
+        width: auto;
+        margin-right: 10px;
+    }
+    p{
+        margin: 0;
+        width: 100%;
+        @include fontNormal(1em, 1.5em, $vesti-901);
+        strong {
+            color: $vesti-700;
+        }
+        @media only screen and (max-width: 600px) {
+            @include fontNormal(1em, 1.5em, $vesti-901);
+        }
+    }
+    &.-fail {
+        p{
+            @include fontNormal(1em, 1.5em, red);
+        }
+    }
+}
+.smallinfo{
+    margin-top: 15px;
+    width:100%;
+    @include rowflexx(flex-start);
+    background-color: #EAEAEA;
+    padding: 1rem;
+
+    @include breakpoint(mobileonly){
+        width: 100%;
+    }
+    img {
+        width: auto;
+        margin-right: 10px;
+    }
+    p{
+        margin: 0;
+        width: 100%;
+        @include fontNormal(1em, 1.5em, $vesti-901);
+        strong {
+            color: $vesti-700;
+        }
+        @media only screen and (max-width: 600px) {
+            @include fontNormal(1em, 1.5em, $vesti-901);
+        }
+    }
+    .ol li{
+        @include fontNormal(1em, 1.5em, $gray-700);
+
+        @media only screen and (max-width: 600px) {
+            @include fontNormal(1em, 1.5em, $gray-700);
+        }
+        p{
+            ol{
+                li{
+                    @include fontNormal(1em, 1.5em, $vesti-901);
+
+                    @media only screen and (max-width: 600px) {
+                        @include fontNormal(1em, 1.5em, $vesti-901);
+                    }
+                }
+            }
+        }
+    }
+    &.-fail {
+        p{
+            @include fontNormal(1em, 1.5em, red);
+        }
+    }
+}
+
+.infobox{
+    margin-top: 15px;
+    width:100%;
+    padding: 10px 10px;
+    @include rowflexx(flex-start);
+    gap: 10px;
+    border-radius: 10px;
+    border: 1px solid $vesti-700;
+    background-color: $vesti-100;
+
+    @include breakpoint(mobileonly){
+        width: 100%;
+    }
+    img {
+        width: auto;
+    }
+    p{
+        margin: 0;
+        width: 100%;
+        @include fontMedium(1em, 1.5em, $vesti-901);
+        strong {
+            color: $vesti-900;
+        }
+        @media only screen and (max-width: 600px) {
+            @include fontMedium(1em, 1.5em, $vesti-901);
+        }
+    }
+}

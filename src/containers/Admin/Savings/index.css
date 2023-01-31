@@ -1,0 +1,90 @@
+#savings {
+  padding-left: 5%;
+  padding-right: 5%;
+  
+}
+
+#saving-container{
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.saving-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#savings .savings-box {
+  padding: 5% 7%;
+  background: #000000;
+  border-radius: 2rem;
+  color: #fff;
+}
+
+#savings .savings-box h2 {
+  font-size: 2.4rem;
+  color: #ffffff;
+}
+
+#savings .savings-box h4 {
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+#savings .savings-box .title {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+#savings .savings-box .savings-progress .ant-progress-inner {
+  background: #c4c4c4;
+}
+
+#savings .savings-btn .btn {
+  background: #f3f2f2;
+  padding: 20px;
+  border-radius: 26px;
+  height: 50px;
+}
+
+
+@media (max-width: 500px) {
+  #savings .savings-btn .btn {
+    min-width: 100px !important;
+    max-width: 200px !important;
+  }
+}
+
+.empty-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.create-savings-plan {
+  background-color: #000000;
+  height: 50px;
+  color: #fff;
+  border-radius: 5px !important;
+  transition: all 0.5s ease;
+}
+.create-savings-plan:hover {
+  background-color: #3E6F26;
+  color: #fff;
+}
+
+.new-savings-plan {
+  background-color: #000000;
+  height: 50px;
+  color: #fff;
+  border-radius: 5px !important;
+  transition: all 0.5s ease;
+}
+
+.new-savings-plan:hover {
+  background-color: #3E6F26;
+  color: #fff;
+}
+

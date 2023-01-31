@@ -1,0 +1,84 @@
+@import "../../variables.scss";
+
+.airtime {
+    width: 100%;
+    height: fit-content;
+    @include rowflexx(center);
+
+    &__inner ,&__content {
+        @include colflexx(flex-start);
+        gap: 30px;
+    }
+    &__operators {
+        @include colflexx(flex-start);
+        gap: 10px;
+
+        p{
+            @include fontMedium(1em,1em,$vesti-901);
+        }
+    }
+
+    &__opbox {
+        width: 500px !important;
+        overflow-x: scroll;
+
+
+        @include breakpoint(mobileonly){
+            width: 350px !important;
+        }
+
+        @include breakpoint(desktop){
+            width: 100%;
+        }
+    }
+    
+
+    &__inputs,&__btns {
+        // width: 460px;
+        width: 100% !important;
+        @include breakpoint(mobileonly){
+            width: 80vw;
+        }
+        // @include breakpoint(desktop){
+        //     width:460px
+        // }
+
+        .amountfloat, .inputfloat{
+            width: 100% !important;
+        }
+    }
+    &__opbox{
+        width: fit-content;
+        @include rowflexx(center);
+        gap: 20px;
+        flex-wrap: nowrap;
+        @include breakpoint(mobileonly){
+            overflow: scroll;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            &::-webkit-scrollbar-track {
+                display: none;
+            }
+            &::-webkit-scrollbar-thumb {
+                display: none;
+            }
+        }
+        img {
+            width: auto;
+            transition: all .5s ease;
+            opacity: .5;
+            transition: all .5s ease;
+            &.--active {
+                opacity: 1;
+                border-radius: 10px;
+                border: 1px solid $vesti-700;
+                box-shadow: inset 1em 1em $vesti-700;
+            }
+        }
+    }
+    &__btns {
+        margin-top: 10px;
+        
+    }
+}

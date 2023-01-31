@@ -1,0 +1,129 @@
+@import "../../../variables.scss";
+
+
+.Coin-page{
+    max-height: 90vh; 
+
+    .container{
+        position: relative;
+        bottom: 900px;
+        z-index: 1;
+        max-height: 85vh;
+        text-align: center;
+
+        @include colflexx(center);
+        
+        .coin-text{
+            width: 50%;
+            margin-top: 20px;
+            @include colflexx(center);
+            .coming-soon {
+                margin-bottom: 30px;
+            }
+            p:nth-child(2){
+                @include fontBold(2em, 1em, $vesti-902);
+                .vst{
+                    @include fontBold(1em, 1em, $vesti-700);
+                }
+            }
+            p:nth-child(3){
+
+                
+                @include fontNormal(1.2em, 1.5em, $vesti-901);
+            }
+        }
+        .waitlist-btn {
+            width: 25%;
+            height: 60px !important;
+            @include fontMedium(1.3em, 1em, #fff);
+            @include rowflex(center,center);
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background-color: $vesti-700;
+            transition: all 0.3s ease;
+            &:hover {
+                background-color: $vesti-900;
+            }
+        }
+    }  
+} 
+
+@media screen and (min-width:320px) and (max-width:600px) {
+    .Coin-page{
+        max-height: 60vh; 
+        .container{
+            position: relative;
+            bottom: 960px;
+            z-index: 1;
+            max-height: 85vh;
+            text-align: center;
+            
+            .coin-text{
+                p:nth-child(2){
+                    @include fontBold(2em, 1em, $vesti-902);
+                    .vst{
+                        @include fontBold(1em, 1em, $vesti-700);
+                    }
+                }
+                p:nth-child(3){
+                    @include fontBold(1.2em, 1em, $vesti-700);
+                }
+            }
+            .waitlist-btn {
+                width: 50%;
+                height: 50px !important;
+                @include fontMedium(0.8em, 1em, #fff);
+                @include rowflex(center,center);
+                border: none;
+                outline: none;
+                margin-left: 80px;
+                cursor: pointer;
+                background-color: $vesti-700;
+                transition: all 0.3s ease;
+                &:hover {
+                    background-color: $vesti-900;
+                }
+            }
+        }  
+    }
+}
+@media screen and (min-width:728px) and (max-width:800px) {
+    .Coin-page{
+        max-height: 60vh; 
+        .container{
+            position: relative;
+            bottom: 1652px !important;
+            z-index: 1;
+            max-height: 85vh;
+            text-align: center;
+            
+            .coin-text{
+                p:nth-child(2){
+                    @include fontBold(2em, 1em, $vesti-902);
+                    .vst{
+                        @include fontBold(1em, 1em, $vesti-700);
+                    }
+                }
+                p:nth-child(3){
+                    @include fontBold(1.2em, 1em, $vesti-700);
+                }
+            }
+            .waitlist-btn {
+                // width: 50%;
+                height: 50px !important;
+                @include fontMedium(0.8em, 1em, #fff);
+                @include rowflex(center,center);
+                border: none;
+                outline: none;
+                margin-left: 250px;
+                cursor: pointer;
+                background-color: $vesti-700;
+                transition: all 0.3s ease;
+                &:hover {
+                    background-color: $vesti-900;
+                }
+            }
+        }  
+    }
+}

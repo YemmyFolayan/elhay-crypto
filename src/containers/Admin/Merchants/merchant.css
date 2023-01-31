@@ -1,0 +1,334 @@
+.merchant-card {
+  background: #fcfffa;
+  border: 0.5px solid #000000;
+  border-radius: 20px;
+}
+.merchant-card__title {
+  font-weight: bold;
+  font-size: 16px;
+  color: #000000;
+}
+.merchant-card__desc {
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.merchant-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.merchant-card__btn {
+  width: fit-content !important;
+  background-color: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: all .5s ease;
+  font-size: 1.2em;
+}
+
+.merchant-card__btn:hover i {
+  margin-left: 20px !important;
+}
+.merchant-card__btn button {
+  width: fit-content !important;
+}
+.merchant-card__btn i {
+  color: #000000;
+  margin-left: 10px !important;
+  transition: all .5s ease;
+}
+.merchant-card__btn span {
+  color: #000000;
+  transition: all .5s ease;
+}
+
+.member-card__title {
+  font-weight: bold;
+  font-size: 12px;
+  color: #000000;
+  /* margin-left: 22px; */
+
+}
+
+.campaign-card__title {
+  font-size: 16px;
+  color: #000000;
+
+}
+
+.black__title {
+  font-weight: bold;
+  font-size: 20px;
+  color: #121243;
+
+}
+.plan-card__title {
+  font-size: 10px;
+  color: #000080;
+
+}
+
+.green__title {
+  font-weight: bold;
+  font-size: 12px;
+  color: #000000;
+
+}
+.free_label {
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #FFFAED;
+  width: 50px;
+
+  
+}
+
+.standard_label {
+  font-weight: bold;
+  font-size: 10px;
+  color: #518C36;
+  background-color: #F0F3EE;
+  width: 160px;
+
+  
+}
+
+
+.date__title {
+  font-weight: bold;
+  font-size: 11px;
+  color: #8B8C8C;
+
+}
+
+
+.member__title {
+  font-weight: bold;
+  font-size: 35px;
+  color: #8B8C8C;
+  margin-left: 2%;
+
+}
+.member-webinar__title {
+  font-weight: bold;
+  font-size: 35px;
+  color: #000000;
+}
+
+
+.more {
+justify-self: center;
+margin-left: 40%;
+margin-bottom: 10%;
+
+}
+
+.marginP{
+  margin-right: -200px;
+}
+
+
+.marginPP{
+  margin: 50px;
+}
+
+
+.margin30{
+  margin: 30px;
+}
+
+.plan-card {
+  background: #fcfffa;
+ position: relative;
+  border-radius: 10px;
+ 
+}
+
+.circleLeft {
+  border-radius: 50%;
+  position: absolute;
+  left: -15%;
+  right: 80%;
+  top: -10%;
+  bottom: 90%;
+  background: #000000;
+  overflow: hidden !important;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+
+.circleRight {
+  border-radius: 50%;
+  position: absolute;
+  left: 80%;
+  right: -15%;
+  top: -10%;
+  bottom: 90%;  
+  background: #000000;
+  overflow: hidden !important;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.backBtn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color:  #000000!important;
+  border: 0.5px solid #000000;
+  font-weight: 400;
+  font-size: 1.2rem;
+  background: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.campaign-card {
+  background: #F0F3EE;
+  border-radius: 20px;
+  width: 620px;
+  max-height: 82px;
+  display: inline-flex;
+  vertical-align: top;
+
+}
+
+
+.main {
+  /* flex: 1; */
+  text-align: left;
+  margin-right: 280px;
+  
+}
+.image {
+ margin-top: 10px;
+ margin-right: 15px;
+  flex: 1;
+  height: 100%;
+}
+.padlockIcon {
+  max-width: 120px;
+  max-height: 120px;
+  background: #FFFFFF;
+  border: 10px solid #FFFFFF;
+  border-radius: 50%;
+ 
+  margin-top: -40px;
+  position: relative !important;
+}
+
+.padlock{
+  float: right;
+} 
+
+.MuiTab-textColorPrimary.Mui-selected {
+  color:#121243 !important;
+  font-weight: bold !important;
+}
+
+.MuiTabs-indicator {
+  background-color: #000000 !important;
+  height: 3px !important;  
+}
+@media (min-width: 600px) {
+.MuiTab-root {
+    min-width: 260px !important;
+}
+}
+.PrivateTabIndicator {
+  background-color: #000000 !important;
+}
+
+.MuiTab-indicatorColorPrimary {
+  color: #000000 !important;
+  background-color: #000000 !important;
+}
+
+
+.MuiTab-root {
+  padding: 6px 12px;
+  overflow: hidden;
+  position: relative;
+  font-size: 15px !important;
+  max-width: 264px;
+  min-width: 72px;
+  /* box-sizing: border-box; */
+  min-height: 48px;
+  /* text-align: center; */
+  /* flex-shrink: 0; */
+  /* font-family: "Roboto", "Helvetica", "Arial", sans-serif; */
+  font-family: "Lato", "Helvetica", "Arial", sans-serif;
+  font-weight: bold !important;
+  line-height: 29px !important;
+  color: #121243;
+  white-space: normal;
+  letter-spacing: 0em !important;   
+  text-transform: none !important;
+}
+
+.merchant-services {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  max-height: 110em;
+  gap: 0px;
+  margin: 0 auto;
+  /* background-color: red; */
+}
+
+@media (min-width: 360px) 
+and (max-width:768px)  {
+  .merchant-services {
+    flex-direction: column;
+    flex-wrap: nowrap !important;
+    /* align-items: flex-start; */
+    height: fit-content;
+    max-height: fit-content !important;
+    /* background-color: red; */
+  }
+  .merchant-card {
+    width: 90vw;
+  }
+}
+
+@media (min-width: 768px) 
+  and (max-width: 1024px) {
+    .merchant-services {
+      max-height:170em !important;
+      /* background-color: red; */
+    }
+}
+@media (min-width: 800px) 
+  and (max-width: 1280px)  {
+  .merchant-services {
+    max-height:170em !important;
+    /* background-color: red; */
+  }
+}
+
+@media only screen 
+  and (min-width: 1024px) 
+  and (max-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .merchant-services {
+      max-height:170em !important;
+      /* background-color: red; */
+    }
+}
+
+/* .MuiCardContent-root {
+  margin: 10px !important;
+}
+
+.makeStyles-membershipCard-3 {
+  margin: 5px !important;
+  max-width: 200px !important;
+  max-height: 200px !important;
+}
+
+.makeStyles-card-2 {
+  max-width: 200px !important;
+  max-height: 200px !important;
+} */

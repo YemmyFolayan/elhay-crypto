@@ -1,0 +1,182 @@
+@import "../../../variables.scss";
+
+
+.background{
+  background-color: #F8FEF5;
+  margin-top: 10px;
+  padding: 2px;
+  border-radius: 15px;  
+}
+
+.prefooter-container {
+  border-radius: 0px !important;
+  padding: 0 !important;
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+  background-color: #F8FEF5;
+  @include colflex(center,center);
+  width: 100% !important;
+  height: 200px;
+
+  .prefooter-inner {
+    width: 70%;
+    height: 90%;
+    @include rowflex(center,center);
+
+    p:nth-child(1){
+      margin: 0;
+      width: 70%;
+      text-align: center;
+      @include fontMedium(2em, 1em, $vesti-901);
+    }
+   
+  }
+  .button{
+    margin-top: 20px;
+    background-color: $vesti-700;
+    // width: 25%;
+    height: 100px !important;
+    padding: 1em !important;
+    border: none !important;
+    border-radius: 15px !important;
+    cursor: pointer;
+    @include fontMedium(1.2em, 0.7em, #fff);    
+    @include rowflex(center,center);
+    transition: all 0.3s ease;
+    &:hover{
+      background: $vesti-900;
+    }
+  }
+  
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+  .prefooter-container {
+    border-radius: 0px !important;
+    padding: 0 !important;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    background-color: #F8FEF5;
+    @include colflex(center,center);
+    width: 100% !important;
+    height: 100%;
+
+    .prefooter-inner {
+      width: 90%;
+      height: 90%;
+      @include colflex(center,center);
+
+      p:nth-child(1){
+        margin: 0;
+        @include fontMedium(1.3em, 1em, $vesti-902);
+      }
+      .company-logos {
+        width: 80%;
+        grid-gap: 50px;
+        margin-top: 20px;
+        @include colflexx(center);
+
+
+        img {
+          width: auto;
+
+        }
+
+        img:not(:first-child) {
+          margin-left: -5px;
+          margin-top: 10px;
+        }
+      }
+    }
+    .button{
+      margin-top: 20px;
+      background-color: $vesti-700;
+      height: 60px !important;
+      padding: 1em !important;
+      border: none !important;
+      border-radius: 15px !important;
+      cursor: pointer;
+      @include fontMedium(1em, 0.7em, #fff);    
+      @include rowflex(center,center);
+      transition: all 0.3s ease;
+      &:hover{
+        background: $vesti-900;
+      }
+    }
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 800px) {
+  .prefooter-container {
+    border-radius: 0px !important;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    padding: 0 !important;
+
+//     padding-bottom: 50px;
+
+    background-color: #F8FEF5;
+    @include colflex(center,center);
+    width: 100% !important;
+    height: 100%;
+
+    .prefooter-inner {
+      width: 90%;
+      height: 90%;
+      @include colflex(center,center);
+
+      p:nth-child(1){
+        margin: 0;
+        @include fontMedium(1.5em, 1em, $vesti-902);
+      }
+    }
+    .button{
+      height: 60px !important;
+    }
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1224px) {
+  .prefooter-container {
+    border-radius: 0px !important;
+    padding: 0 !important;
+
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #F8FEF5;
+    @include colflex(center,center);
+    width: 100% !important;
+    height: 100%;
+
+    .prefooter-inner {
+      width: 90%;
+      height: 90%;
+      @include colflex(center,center);
+
+      p:nth-child(1){
+        margin: 0;
+        @include fontMedium(2.25em, 1em, $vesti-902);
+      }
+      .company-logos {
+        width: 100%;
+        grid-gap: 20px;
+        margin-top: 50px;
+        @include rowflexx(center);
+
+        img {
+          width: auto;
+        }
+
+        img:not(:first-child) {
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+
+}
+

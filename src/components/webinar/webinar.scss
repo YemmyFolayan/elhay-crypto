@@ -1,0 +1,78 @@
+@import "../../variables.scss";
+
+
+.webinar-card{
+    //filter: drop-shadow(0px 4px 30px rgba(157, 157, 157, 0.2)) !important;
+    width: 320px;
+    border-radius: 5px;
+    border: 1px solid $gray-300;
+    transition: all 0.5s ease;
+    cursor: pointer;
+
+    &:hover {
+        filter: drop-shadow(0px 4px 30px rgba(157, 157, 157, 0.2)) !important;
+    }
+
+    &.webinar-card-media {
+        width: 100% !important;
+        max-width: 100% !important;
+        object-fit:cover !important;
+        // overflow: hidden !important;
+        height:200px !important;
+    }
+
+    img {
+        overflow: hidden !important;
+    }
+
+    .webinar-card-content {
+        // background-color: red;
+
+        .webinar-title{
+            width: 90%;
+            margin: 0;
+            @include fontBold(1.2em, 1.2em, $vesti-700);
+        }
+        .webinar-featuring {
+            width: 90%;
+            margin-top: 10px;
+            @include fontNormal(.9em, 1.2em, $vesti-901);
+        }
+        .webinar-date{
+            width: 90%;
+            margin-top: 5px;
+            @include fontNormal(.8em, 1.2em, $gray-500);
+        }
+        .webinar-subtitle{
+            
+            margin-top: 5px;
+            text-overflow: ellipsis;
+            width: 100%;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            @include fontNormal(1em, 1.6em, $vesti-902);
+
+        }
+
+        .free_label{
+            width: fit-content;
+            padding: 10px;
+            @include rowflex(center, center);
+            @include fontMedium(.8em, 1em, $yellow-900);
+            background-color: $yellow-100;
+            border: 1px solid $yellow-200;
+            border-radius: 5px;
+        }
+        .exclusive_label{
+            width: fit-content;
+            padding: 10px;
+            @include rowflex(center, center);
+            @include fontMedium(.8em, 1em, $vesti-900);
+            background-color: $vesti-100;
+            border: 1px solid $vesti-200;
+            border-radius: 5px;
+        }
+    }
+}

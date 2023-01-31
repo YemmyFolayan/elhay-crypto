@@ -1,0 +1,317 @@
+@import "../../variables.scss";
+
+.vcard {
+    width: 100%;
+    @include colflexx(flex-start);
+
+    .select-input:nth-child(2){
+        margin-bottom: 15px;
+    }
+    // .select-input:nth-child(1) {
+    //     margin-bottom: 15px;
+    // }
+    &__colbrand, &__location, &__kyc, &__kycusa, &__locationusa {
+        width: 100%;
+        @include rowflexx(flex-start);
+        gap: 10px;
+        // margin-bottom: 5px;
+
+        @include breakpoint(mobileonly){
+            @include colflexx(flex-start);
+            gap: 15px;
+            margin-top: 5px;
+            margin-bottom: 0px;
+        }
+        @include breakpoint(phablet){
+            @include colflex(flex-start,center);
+            gap: 10px;
+        }
+    }
+
+    
+    &__locationusa{
+        margin-bottom: 10px;
+    }
+    .shortinfo{
+        margin-top: -10px !important;
+        margin-bottom: 15px;
+
+        @include breakpoint(mobileonly){
+            margin-top: 5px !important;
+        }
+    }
+    &__location {
+        margin-top: 6px;
+        margin-bottom: 10px;
+        @include breakpoint(mobileonly){
+            margin-top: 13px;
+            margin-bottom: 13px;
+        }
+        .shortinfo{
+            margin-top: 5px !important;
+            margin-bottom: 10px;
+            strong {
+                font-style: italic;
+            }
+            @include breakpoint(mobileonly){
+                margin-top: 5px !important;
+                margin-bottom: 5px;
+            }
+        }
+    }
+    &__kycusa {
+        align-items: center;
+        margin-top: 5px;
+        .inputfloat {
+            margin-top: 2px;
+        }
+    }
+
+    &__kyc {
+        align-items: center;
+        margin-top: 7px;
+        @include breakpoint(mobileonly){
+            margin-top: 13px;
+        }
+        .inputfloat {
+            margin-top: 4px;
+        }
+    }
+
+    .inputfloat {
+        .inputfloat__box {
+            .shortinfo{
+                margin-top: 10px !important;
+            }
+    
+            .apto-error{
+                margin: 0;
+                @include fontNormal(1em, 1em , red);
+            }
+        }
+        
+    }
+    .textarea {
+        margin-top: 5px;
+        margin-bottom: 0px;
+
+        @include breakpoint(mobileonly){
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+    }
+
+    .dob.dob {
+
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border: none;
+        box-sizing: border-box;
+        margin-top: 0px;
+        box-shadow: none;
+        width: 100% !important;
+        margin-top: 10px;
+        height: 60px;
+        background: #F9F8F9;
+        border: 1px solid $gray-400;
+        box-sizing: border-box;
+        outline: none;
+        padding-left: 20px;
+        margin-bottom: 10px;
+        position: relative;
+        
+        @include fontNormal(1em, 1em, $gray-600);
+
+        @include breakpoint(mobileonly) {
+            width: 100%!important;
+            height: 55px;
+        }
+        @include breakpoint(tablet) {
+            width: 100% !important;
+            height: 55px;
+        }
+
+        @include breakpoint(phablet) {
+            width: 100% !important;
+        }
+        
+        &:focus {
+            border: 1px solid $vesti-700;
+            background-color: $vesti-100;
+            color: $vesti-901;
+        }
+        &:disabled {
+            cursor: not-allowed;
+            color: $gray-800;
+        }
+    }
+    
+}
+
+.globalgeng, .mcard,.stepone {
+    width: 450px;
+
+    @include breakpoint(mobileonly){
+        width: 70vw;
+    }
+    @include breakpoint(phablet){
+        width: 400px;
+    }
+    &__radio {
+        @include colflexx(flex-start);
+        gap: 10px;
+    }
+    &__type {
+        @include colflexx(flex-start);
+        gap: 20px;
+        margin-bottom:20px;
+    }
+    &__content {
+        // margin-top: 30px
+        width: 100%;
+    }
+    *.inputfloat{
+        width: 100%;
+    }
+    &__column {
+        width: 100%;
+        @include colflexx(flex-start);
+        gap: 20px;
+        margin-bottom: 30px;
+
+        .shortinfo{
+            margin-top: -10px;
+            span {
+                @include colflexx(flex-start);
+                gap:10px;
+                strong {
+                    font-style: italic;
+                }
+            }
+        }
+    }
+    &__row {
+        width: 100%;
+        @include colflexx(flex-start);
+        gap: 20px;
+        // background-color: red;
+        @include breakpoint(desktop){
+            @include rowflexx(center);
+        }
+        .inputfloat {
+            width: 150%;
+        }
+
+        @include breakpoint(desktop){
+            @include rowflexx(center);
+        }
+    }
+    &__monoprompt{
+        position: relative !important;
+        height: 200px;
+        padding-right: 20px;
+        overflow-y: scroll;
+        margin-bottom: 20px;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+
+          }
+        &::-webkit-scrollbar-track {
+            background: $vesti-200;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $vesti-700 ;
+            border-radius: 6px;
+            border: $vesti-900;
+        }
+
+        &__see {
+
+            strong {
+                color: $vesti-700;
+            }
+        }
+    }
+
+    
+    &__row {
+        width: 100%;
+        @include colflexx(flex-start);
+        gap: 20px;
+        .inputfloat {
+            width: 100%;
+
+            @include breakpoint(mobileonly){
+                width: 70vw !important;
+            }
+            // @include breakpoint(phablet){
+            //     width: 450px !important;
+            // }
+            // @include breakpoint(tablet){
+            //     width: 450px !important;
+            // }
+        }
+
+        @include breakpoint(desktop){
+            @include rowflexx(center);
+        }
+    }
+}
+
+.dob.dob {
+
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+    margin-top: 0px;
+    box-shadow: none;
+    width: 100% !important;
+    margin-top: 10px;
+    height: 60px;
+    background: #F9F8F9;
+    border: 1px solid $gray-400;
+    box-sizing: border-box;
+    outline: none;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    
+    @include fontNormal(1em, 1em, $gray-600);
+
+    @include breakpoint(mobileonly) {
+        width: 100%!important;
+        height: 55px;
+    }
+    @include breakpoint(tablet) {
+        width: 100% !important;
+        height: 55px;
+    }
+
+    @include breakpoint(phablet) {
+        width: 100% !important;
+    }
+    
+    &:focus {
+        border: 1px solid $vesti-700;
+        background-color: $vesti-100;
+        color: $vesti-901;
+    }
+    &:disabled {
+        cursor: not-allowed;
+        color: $gray-800;
+    }
+}
+
+.monoreload{
+    margin-top: 10px;
+    @include rowflexx(center);
+    gap: 5px;
+    @include fontMedium(1em,1em,$vesti-700);
+}
+*.radiooption{
+    width: 100%;
+}

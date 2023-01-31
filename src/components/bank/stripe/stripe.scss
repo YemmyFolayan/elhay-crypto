@@ -1,0 +1,253 @@
+@import "../../../variables.scss";
+
+.stripefeature{
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+    padding: 30px;
+    overflow: hidden;
+    border: 1px solid $vesti-700;
+    background-color: $vesti-902;
+    @include breakpoint(mobileonly){
+        width: 90vw;
+    }
+    &.--createcard {
+        // background-color: $vesti-800;
+        border: 1px solid #30173c;
+        background-color: #8948a8;
+    }
+    &.--pending{
+        border: 1px solid $yellow-700;
+        background-color: $yellow-100;
+    }
+    &.--approved{
+        border: 1px solid $vesti-700;
+        background-color: $vesti-902;
+    }
+    &.--fail{
+        border: 1px solid $red-800;
+        background-color: $red-100;
+    }
+    &__top{
+        @include colflexx(flex-start);
+        gap: 30px;
+
+        span{
+            @include colflexx(flex-start);
+            gap: 10px !important;
+
+            h4:nth-child(1){
+                @include fontBold(2em, 1em, #fff);
+                margin-bottom: 0px !important;
+                &.--pending{
+                    color: $yellow-800;
+                }
+                &.--fail{
+                   color: $red-800;
+                }
+
+                @include breakpoint(mobileonly){
+                    @include fontBold(1.5em, 1em, #fff);
+                }
+            }
+            p:nth-child(2){
+                @include fontNormal(1.2em, 1.4em, #fff);
+                width: 350px;
+
+                @include breakpoint(mobileonly){
+                    width: 65vw;
+                    @include fontNormal(1em, 1.4em, #fff);
+                }
+                @include breakpoint(desktop){
+                    width: 600px;
+                }
+                &.--pending{
+                    color: $yellow-900;
+                }
+                &.--fail{
+                   color: $red-902;
+                }
+            }
+        }
+
+        button {
+            z-index: 1;
+
+        }
+    }
+
+    &__loader {
+        height: 50px;
+        @include rowflex(center,center);
+    }
+
+    .shortinfo {
+        p {
+            color: #fff;
+        }
+    }
+
+    &__img {
+        width: auto;
+        position: absolute;
+        bottom: -50px;
+        right: -50px;
+
+        &.--createcard {
+            bottom: -60px;
+        }
+        @include breakpoint(mobileonly){
+            width: 150px;
+            display: none;
+        }
+    }
+
+    &__btn {
+        width: fit-content;
+        height: 45px;
+        padding: 0px 10px;
+        @include fontMedium(1em,1em,#fff);
+        background-color: $vesti-700;
+
+        &.--createcard{
+            background-color: #fff;
+            color: $vesti-901;
+        }
+
+        &.--pending{
+            background-color: $yellow-800;
+        }
+        &.--approved{
+            background-color: $vesti-700;
+        }
+        &.--fail{
+            background-color: $red-800;
+        }
+
+        @include breakpoint(mobileonly){
+            width: 200px !important;
+        }
+    }
+}
+
+.stripedisplay {
+    width: 100%;
+    @include colflexx(flex-start);
+    gap: 20px;
+
+    @include breakpoint (mobileonly){
+        width: 70vw;
+    }
+    @include breakpoint (desktop){
+        width: 400px;
+    }
+    &__sta{
+        width: 100%;
+        @include colflexx(flex-start);
+        gap:10px;
+        p:nth-child(1){
+            margin: 0;
+            @include fontMedium(1.2em, 1em, $vesti-900);
+        }
+    }
+    &__status {
+        width:100%;
+        border-radius: 5px;
+        padding: 10px 20px 10px 20px;
+        @include rowflex(center,center);
+
+        &.stripedisplay__status-not {
+            background-color: $yellow-100;
+            border: 1px dashed  $yellow-900;
+            color: $yellow-900;
+        }
+        &.stripedisplay__status-verified {
+            background-color: $vesti-100;
+            border: 1px dashed  $vesti-900;
+            color: $vesti-900;
+        }
+    }
+}
+
+.stripedetail {
+    width: 100%;
+    &__inner {
+        width: 100%;
+        @include colflexx(flex-start);
+        gap: 10px;
+
+        
+        .referal-info{
+            @include rowflexx(center);
+            @include fontNormal(1em, 1em, $yellow-800);
+
+            img {
+                width: auto;
+                margin-right: 10px;
+                filter: invert(73%) sepia(93%) saturate(313%) hue-rotate(354deg) brightness(96%) contrast(97%);
+            }
+        }
+    }
+    &__title{
+        margin: 0;
+        @include fontMedium(1.2em, 1em, $vesti-900);
+    }
+    &__box{
+        // margin-top: 20px;
+        width: 100% !important;
+        padding: 7px 15px 7px 15px;
+        border-radius: 5px;
+        border: 1px dashed $yellow-700;
+        background-color: $yellow-100;
+        transition: all 0.5s ease;
+        text-align: center;
+        @include colflex(center,center);
+        gap: 5px !important;
+        @include breakpoint(phablet){
+            width: 350px !important;
+        }
+        @include breakpoint(tablet){
+            width: 350px;
+        }
+        @include breakpoint(desktop){
+            gap: 0px;
+        }
+        p:nth-child(1){
+            margin: 0;
+            @include fontNormal(1.2em, 1em, $yellow-800);
+            text-transform: capitalize !important;
+        }
+        p:nth-child(2){
+            margin: 0;
+            margin-top: 3px;
+            @include fontBold(.8em, 1.4em, $yellow-800);
+        }
+        &.copied{
+            border: 1px dashed $vesti-700;
+            background-color: $vesti-100;
+
+            p:nth-child(1){
+                @include fontNormal(1.2em, 1em, $vesti-900);
+            }
+            p:nth-child(2){
+                margin: 0;
+                margin-top: 3px;
+                @include fontBold(.8em, 1.4em, $vesti-900);
+            }
+
+        }
+        
+    }
+    &__copied{
+        @include fontNormal(1em, 1em, $green-700);
+    }
+
+    &__extra {
+        @include fontNormal(1.1em, 1.7em, $vesti-901);
+
+        strong {
+            color: $vesti-700;
+            font-weight: 600;
+        }
+    }
+}

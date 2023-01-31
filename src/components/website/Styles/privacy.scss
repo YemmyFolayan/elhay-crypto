@@ -1,0 +1,75 @@
+@import "../../../variables.scss";
+
+.privacy-container{
+    width: 100%;
+    height: fit-content;
+    @include colflex(center,center);
+    .privacy-title {
+
+        width: 100%;
+        height: 50vh;
+        background-color: #F0F3EE;
+        @include rowflex(center,center);
+        p{
+            margin: 0;
+            @include fontBold(2.8em, 1.5em, $vesti-902);
+        }
+        
+    }
+    .privacy-body {
+        width: 70%;
+
+        @include breakpoint(mobileonly){
+            width: 80%;
+            margin-top: 50px;
+        }
+        
+        p{
+            margin-top: 100px;
+            text-align: left;
+            // height: 100em;
+            @include fontNormal(1.2em, 1.5em, $vesti-901);
+
+            @include breakpoint(phablet){
+                @include fontNormal(1em, 1.5em, $vesti-901);
+            }
+
+            @include breakpoint(mobileonly){
+                @include fontNormal(1em, 1.5em, $vesti-901);
+            }
+
+            p {
+                margin-top: 10px !important;
+            }
+        }
+        strong {
+            color:$vesti-700;
+            @include fontSemiBold(1.3em, 1em, $vesti-700);
+        }
+        .priv-new {
+            margin: 0;
+            // font-size: 1.3em !important;
+            @include fontNormal(1.5em, 1.7em, $vesti-901);
+
+            a {
+                font-weight: 500;
+            }
+
+            strong {
+                color:$vesti-700;
+                @include fontSemiBold(1.3em, 1em, $vesti-700);
+            }
+
+            ul {
+                list-style: none;
+                padding-right: 20px;
+
+                li {
+                    @include fontNormal(1em, 2em, $vesti-901);
+                }
+            }
+        }
+    } 
+   
+    
+}

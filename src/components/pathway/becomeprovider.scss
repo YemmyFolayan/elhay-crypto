@@ -1,0 +1,44 @@
+@import "../../variables.scss";
+
+.becomeprovider-container{
+    width: 21em;
+    height: fit-content;
+    @include rowflex(center,center);
+    text-align: center;
+    margin-top: 50px;
+
+    .becomeprovider-inner {
+        @include colflexx(center);
+
+        img {
+            width: auto;
+
+        }
+        p:nth-child(2){
+            margin: 0;
+            margin-top: 30px;
+            @include fontBold(1.5em, 1em, $vesti-800);
+        }
+        p:nth-child(3){
+
+            width: 90%;
+            margin-top: 10px;
+            @include fontNormal(1.1em, 1.7em, $vesti-901);
+        }
+
+       
+        .becomeprovider-btn {
+            background-color: $vesti-700;
+            height: 50px;
+            color: #fff;
+            transition: all 0.5s ease;
+            border-radius: 5px !important;
+    
+            &:hover {
+                background-color: $vesti-800;
+                color: #fff;
+            }
+           
+        }
+    }
+}

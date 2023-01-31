@@ -1,0 +1,152 @@
+@import "../../variables.scss";
+ 
+.accountdetails{
+    width: 100%;
+    height: fit-content;
+    @include rowflex(center,center);
+
+    &__inner{
+        width: 100%;
+        height: fit-content;
+    }
+    &__picture {
+        width: fit-content;
+        position: relative;
+        margin-bottom: 50px;
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 100%;
+            border: 2px solid $vesti-700;
+            object-fit: cover; 
+
+            @include breakpoint(mobileonly){
+                width: 80px;
+                height: 80px;
+            }
+            @include breakpoint(phablet){
+                width: 100px;
+                height: 100px;
+            }
+            @include breakpoint(tablet){
+                width: 124px;
+                height: 125px;
+            }
+        }
+
+        label {
+            background-color: $vesti-700;
+            color: white;
+            // padding: .5rem 2rem .5rem 2rem ;
+            width: 100px;
+            height: 50px;
+            font-family: sans-serif;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 1rem;
+            position: absolute;
+            bottom: 0px;
+            right: -30px;
+            @include rowflex(center,center);
+            @include fontBold(1em,1em,#fff);
+            transition: all .5s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            @include breakpoint(mobileonly){
+                width: 80px;
+                height: 30px;
+                bottom: -20px;
+            }
+            @include breakpoint(phablet){
+                width: 100px;
+                bottom: -10px;
+            }
+            @include breakpoint(tablet){
+                width: 125px;
+                bottom: -10px;
+            }
+          }
+        
+    }
+    &__form {
+        width: 100% !important;
+        height: fit-content;
+        @include colflexx(flex-end);
+
+        .form-input:not(:first-child){
+            margin-top: 50px;
+
+            @include breakpoint(mobileonly){
+                margin-top: 20px;
+            }
+            @include breakpoint(phablet){
+                margin-top: 20px;
+            }
+            @include breakpoint(tablet){
+                margin-top: 20px;
+            }
+        }
+        .select-input {
+            margin-top: 50px;
+
+            @include breakpoint(phablet){
+                margin-top: 20px;
+            }
+            @include breakpoint(tablet){
+                margin-top: 20px;
+            }
+        }
+        .referal {
+            width: 75%;
+
+            @include breakpoint(mobileonly){
+                width: 90vw;
+                overflow: hidden;
+            }
+
+            @include breakpoint(phablet){
+                width: 100%;
+            }
+
+            @include breakpoint(tablet){
+                width: 100%;
+            }
+            .referal{
+                width: 100%;
+
+                &__inner{
+                    width: 100%;
+
+                    p:nth-child(2){
+                        font-size: 1.2em;
+                    }
+                }
+            }
+        }
+        .save-changes {
+            width: 250px !important;
+            height: 60px !important;
+            margin-top: 100px;
+            cursor: pointer;
+            background-color: $vesti-700;
+            color: #fff;
+            border-radius: 10px !important;
+            @include rowflex(center,center);
+            @include fontBold(1em, 1em, #fff);
+            transition: all .5s ease;
+
+            &:hover {
+                background-color: $vesti-900;
+            }
+
+            &:disabled{
+                cursor: not-allowed;
+                background-color: $gray-600;
+
+            }
+        }
+    }
+}   

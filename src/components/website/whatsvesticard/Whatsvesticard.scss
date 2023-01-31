@@ -1,0 +1,346 @@
+@import "../../../variables.scss";
+
+.whatsvesticard-container{
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 50px;
+    border-radius: 50px;
+    padding-bottom: 50px;
+    @include rowflex(center,center);
+
+    .whatsvesticard-inner {
+        width: 80%;
+        height: fit-content;
+        @include colflexx(center);
+
+        &.top{
+            width: 50%;
+            p:nth-child(1){
+                margin: 0;
+                @include fontBold(2.25em, 1em, $vesti-902);
+            }
+            p:nth-child(2){
+                margin-top: 10px;
+                @include fontNormal(1.2em, 1.5em, $vesti-902);
+            }
+        }
+        &.bottom {
+            width: 100%;
+            margin-top: 50px;
+            @include colflexx(center);
+
+            .single-started-container, .single-reverse-container {
+                width: 100% !important;
+                &.right, &.left {
+                    @include colflexx(flex-start);
+                    width: 80% !important;
+                    height: fit-content;
+                    p:nth-child(1) {
+                        margin: 0;
+                        @include fontBold(1.8em, 1.2em, $vesti-902);
+                    }
+                    div:nth-child(2) {
+                        padding: 0px;
+                        margin-top: 10px;
+                        @include fontNormal(1.25em, 1.5em, $vesti-901);
+                        @include breakpoint(mobileonly){
+                            @include fontNormal(1.6em, 1.5em, $vesti-901);
+                        }
+                    }
+                    p:nth-child(3) {
+                        cursor: pointer;
+                        margin-top: 30px;
+                        @include fontSemiBold(1.5em, 1.5em, $vesti-700);
+
+                        @include breakpoint(mobileonly){
+                            @include fontNormal(1.5em, 1.5em, $vesti-901);
+                        }
+                    }
+                }
+
+                img {
+                    width: 500px;
+                }
+            }
+
+            .single-started-container {
+                @include rowflex(flex-start, space-between);
+
+            }
+            .single-reverse-container {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                margin-top: 30px;
+
+                &.right {
+                    width: fit-content !important;
+                    // margin-left: 50px;
+                    width: 50% !important;
+
+                }
+            }
+
+        }
+
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 600px){
+    .whatsvesticard-container{
+        width: 100%;
+        height: fit-content;
+        border-radius: 20px;
+        margin-bottom: 50px;
+        padding-bottom: 30px;
+        @include colflex(center,center);
+    
+        .whatsvesticard-inner {
+            width: 100%;
+            height: fit-content;
+            @include colflexx(center);
+            margin-top: -53px;
+            font-size: 11px;
+    
+            &.top{
+                width: 90%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(1.45em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1em, 1.5em, $vesti-902);
+                }
+            }
+            &.bottom {
+                width: 90%;
+                margin-top: 50px;
+                @include colflexx(center);
+    
+                .single-started-container, .single-reverse-container {
+                    width: 100%;
+                    img {
+                        width: 250px;
+                    }
+    
+                    &.right, &.left {
+                        @include colflexx(flex-start);
+                        p:nth-child(1) {
+                            margin: 0;
+                            @include fontBold(1.8em, 1.2em, $vesti-902);
+                        }
+
+                        div:nth-child(2) {
+                            margin-top: 10px;
+                            @include fontNormal(1.5em, 1.5em, $vesti-902);
+                        }
+                       
+                        p:nth-child(3) {
+                            @include fontNormal(1.5em, 1.5em, $vesti-700);
+                        }
+
+                    }
+                }
+    
+                .single-started-container {
+                    @include colflexxx(flex-start);
+                    &.right {
+                        @include colflexx(flex-start);
+                        width: 90% !important;
+                        margin-right: 50px;
+                    }
+                    &.left {
+                        @include colflexx(flex-start);
+                        width: 100% !important;
+                        margin-top: 40px;
+                        margin-right: 50px;
+                    }
+                }
+                .single-reverse-container {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    align-items: center;
+                    margin-top: 30px;
+                    width: 100%;
+                    align-items: center;
+    
+                    &.right {
+                        width: 100% !important;
+                    }
+                }
+    
+            }
+    
+        }
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 800px){
+    .whatsvesticard-container{
+        width: 100%;
+        height: fit-content;   
+        border-radius: 20px;
+        padding-bottom: 30px;
+        @include colflex(center,center);
+    
+        .whatsvesticard-inner {
+            width: 90%;
+            height: fit-content;
+            @include colflexx(center);
+            margin-top: -10px;
+    
+            &.top{
+                width: 100%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(2em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.5em, 1.5em, $vesti-902);
+                }
+            }
+            &.bottom {
+                width: 100%;
+                margin-top: 20px;
+                @include colflexx(center);
+    
+                .single-started-container, .single-reverse-container {
+                    width: 100%;
+                    img {
+                        width: 300px;
+                    }
+    
+                    &.right, &.left {
+                        @include colflexx(flex-start);
+                        p:nth-child(1) {
+                            margin: 0;
+                            // width: 260px;
+                            @include fontBold(1.8em, 1.2em, $vesti-902);
+                            align-items: center;
+                        }
+                        div:nth-child(2) {
+                            margin-top: 10px;
+                            // width: 500px;
+                            @include fontNormal(1.3em, 1.5em, $vesti-902);
+                        }
+                       
+                        p:nth-child(3) {
+                            @include fontMedium(1.4em, 1.5em, $vesti-700);
+                        }
+                    }
+                }
+    
+                .single-started-container {
+                    @include colflexxx(center);
+                    &.right {
+                        
+                        margin-right: 50px;
+                    }
+                    &.left {
+                        margin-top: 40px;
+                    }
+                }
+                .single-reverse-container {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 30px;
+    
+                    &.left {
+                        
+                        margin-left: 0px;
+                    }
+                    &.right {
+                        // width: 100% !important;
+                    }
+                }
+    
+            }
+    
+        }
+    }
+}
+// @media only screen and (min-width: 800px) and (max-width: 1224px){
+//     .whatsvesticard-container{
+//         width: 80%;
+//         height: fit-content;
+//         background-color: #F8FEF5;
+//         margin-bottom: 100px;
+//         border-radius: 50px;
+//         // padding-top: 30px;
+//          padding-bottom: 50px;
+//         @include rowflex(center,center);
+    
+//         .whatsvesticard-inner {
+//             width: 90%;
+//             height: fit-content;
+//             @include colflexx(center);
+    
+//             &.top{
+//                 width: 50%;
+//                 p:nth-child(1){
+//                     margin: 0;
+//                     @include fontBold(2.25em, 1em, $vesti-902);
+//                 }
+//                 p:nth-child(2){
+//                     margin-top: 10px;
+//                     @include fontNormal(1.2em, 1.5em, $vesti-902);
+//                 }
+//             }
+//             &.bottom {
+//                 width: 100%;
+//                 margin-top: 50px;
+//                 @include colflexx(center);
+    
+//                 .single-started-container, .single-reverse-container {
+//                     width: 100%;
+                    
+    
+//                     &.right, &.left {
+//                         @include colflexx(flex-start);
+//                         p:nth-child(1) {
+//                             margin: 0;
+//                             @include fontBold(1.8em, 1.2em, $vesti-902);
+//                         }
+//                         p:nth-child(2) {
+//                             margin-top: 10px;
+//                             @include fontNormal(1.25em, 1.5em, $vesti-902);
+//                         }
+//                         p:nth-child(3) {
+//                             @include fontNormal(1.25em, 1.5em, $vesti-901);
+//                         }
+//                         p:nth-child(4) {
+//                             @include fontNormal(1.25em, 1.5em, $vesti-901);
+//                         }
+//                         p:nth-child(5) {
+//                             @include fontNormal(1.25em, 1.5em, $vesti-901);
+//                         }
+//                         a:nth-child(6) {
+//                             @include fontNormal(1.25em, 1.5em, $vesti-901);
+//                         }
+//                     }
+//                 }
+    
+//                 .single-started-container {
+//                     @include rowflexx(flex-start);
+//                     &.right {
+                        
+//                         margin-right: 50px;
+//                     }
+//                 }
+//                 .single-reverse-container {
+//                     display: flex;
+//                     flex-direction: row-reverse;
+//                     justify-content: space-between;
+//                     margin-top: 30px;
+    
+//                     &.right {
+//                         width: fit-content;
+//                         margin-left: 50px;
+//                     }
+//                 }
+    
+//             }
+    
+//         }
+//     }  
+// }

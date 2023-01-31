@@ -1,0 +1,176 @@
+@import "../../../variables.scss";
+
+.cctop-cont{
+    width: 100% ;
+    height: 50vh;
+    margin-top: 5rem;
+    @include colflex(center, center);
+    .vesti-cctop{
+        @include colflex(center, center);
+        text-align: center;
+        p:nth-child(1){
+            width: 29%;
+            @include fontBold(2.25em, 1.5em, $vesti-902);
+            span{
+                color: $vesti-700;
+            }
+
+            @include breakpoint(tablet){
+                width: 60vw;
+            }
+        }        
+        p:nth-child(2){
+            width: 50%;
+            @include fontNormal(1.5em, 1.3em, $vesti-700);
+
+            @include breakpoint(tablet){
+                width: 60vw;
+            }
+        }
+    }
+    .buttons{
+        @include rowflex(center,center);
+        gap: 1rem;
+        margin-top: 40px;
+        .button-left{
+            width: 100%;
+            height: 50px;
+            border-radius: 10px !important;
+            margin-bottom: 15px;
+            background-color: $vesti-700;
+            transition: all .5s ease;
+            @include rowflex(center,center);
+            @include fontNormal(1em, 1em, #fff);
+        
+            &:hover {
+              background-color: $vesti-900;
+            }
+        }
+        .button-right{
+            width: 100%;
+            height: 50px;
+            padding: 20px 50px;
+            margin-bottom: 15px;
+            border-radius: 10px !important;
+            background-color: $vesti-100;
+            border: 1px solid $vesti-700 !important;
+            transition: all .5s ease;
+            @include rowflex(center,center);
+            @include fontNormal(1em, 1em, $vesti-700);
+        
+            &:hover {
+              background-color: $vesti-900;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 600px){
+    .cctop-cont{
+        width: 100% ;
+        margin-top: 5rem;
+        @include colflex(center, center);
+        .vesti-cctop{
+            @include colflex(center, center);
+            text-align: center;
+            p:nth-child(1){
+                width: 100%;
+                @include fontBold(1.5em, 1.5em, $vesti-902);
+                span{
+                    color: $vesti-700;
+                }
+            }        
+            p:nth-child(2){
+                width: 90%;
+                @include fontNormal(1em, 1em, $vesti-700);
+            }
+        }
+        .buttons{
+            @include colflex(center,center);
+            gap: 0rem;
+            .button-left{
+                width: 50%;
+                height: 50px;
+                margin-bottom: 15px;
+                background-color: $vesti-700;
+                transition: all .5s ease;
+                @include rowflex(center,center);
+                @include fontNormal(1em, 1em, #fff);
+            
+                &:hover {
+                  background-color: $vesti-900;
+                }
+            }
+            .button-right{
+                width: 50%;
+                height: 50px;
+                margin-bottom: 15px;
+                background-color: $vesti-100;
+                border: 1px solid $vesti-700 !important;
+                transition: all .5s ease;
+                @include rowflex(center,center);
+                @include fontNormal(1em, 1em, $vesti-700);
+            
+                &:hover {
+                  background-color: $vesti-900;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 800px){
+    .cctop-cont{
+        width: 100% ;
+        margin-top: 5rem;
+        @include colflex(center, center);
+        .vesti-cctop{
+            @include colflex(center, center);
+            text-align: center;
+            p:nth-child(1){
+                width: 50%;
+                @include fontBold(1.8em, 1.3em, $vesti-902);
+                span{
+                    color: $vesti-700;
+                }
+            }        
+            p:nth-child(2){
+                width: 50%;
+                @include fontNormal(1.3em, 1.1em, $vesti-700);
+            }
+        }
+        .buttons{
+            @include rowflex(center,center);
+            // gap: 1rem;
+            .button-left{
+                width: 100px;
+                height: 50px;
+                margin-bottom: 15px;
+                margin-left: 35px;
+                background-color: $vesti-700;
+                transition: all .5s ease;
+                @include rowflex(center,center);
+                @include fontNormal(1em, 1em, #fff);
+            
+                &:hover {
+                  background-color: $vesti-900;
+                }
+            }
+            .button-right{
+                width: 100px;
+                height: 50px;
+                margin-bottom: 15px;
+                margin-left: 35px;
+                background-color: $vesti-100;
+                border: 1px solid $vesti-700 !important;
+                transition: all .5s ease;
+                @include rowflex(center,center);
+                @include fontNormal(1em, 1em, $vesti-700);
+            
+                &:hover {
+                  background-color: $vesti-900;
+                }
+            }
+        }
+    }
+}

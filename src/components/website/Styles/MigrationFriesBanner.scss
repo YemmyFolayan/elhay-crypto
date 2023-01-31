@@ -1,0 +1,181 @@
+@import "../../../variables.scss";
+
+
+.migrationfries-container{
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    .bac-ground{
+
+        width: 100%;
+        height: 30em;
+        padding: 5rem;
+        // height: fit-content !important; 
+        background-color: #F0F3EE;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include colflexx(center);
+        
+        @include breakpoint(mobileonly){
+            padding: 0px;
+            height: 50vh;
+            @include colflexx(center);
+        }
+        .vesti-fees{
+            width: 100%;
+            text-align: center;
+
+            @include breakpoint(mobileonly){
+                width: 85% ;
+            }
+            p:nth-child(1) {
+                margin: 0;
+                @include fontBold(2em, 1em, $vesti-901);
+
+                @include breakpoint(mobileonly){
+                    @include fontBold(1.5em, 1em, $vesti-901);
+                }
+            }
+            p:nth-child(2){
+                margin-top: 10px;
+                @include fontNormal(1.5em, 1.5em, $vesti-902);
+
+                @include breakpoint(mobileonly){
+                    @include fontNormal(1em, 1.5em, $vesti-902);
+                }
+            }
+            
+        }
+        .migrationfries-links {
+            margin-top: 30px;
+            @include rowflexx(center);
+            flex-wrap: wrap;
+            width: fit-content;
+            
+            p:not(:first-child){
+                margin-left: 50px;
+
+                @include breakpoint(mobileonly){
+                    margin-left: 20px 
+                }
+            }
+            .all,.news,.jobs,.scholarships {
+                @include fontBold(1em, 1em, $vesti-901);
+                font-size: 1.5em !important;
+                &.active {
+                    color: $vesti-700;
+                }
+            }
+        }
+    }
+
+    .fries-container {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        width: 70%;
+        height: fit-content;
+
+        @include breakpoint(phablet){
+            width: 80%;
+            height: fit-content;
+        }
+
+        @include breakpoint(mobileonly){
+            width: 80%;
+            height: fit-content;
+        }
+        .card {
+            border-radius: .8rem !important;
+            transition: all .5s ease;
+    
+            &:hover {
+                filter: drop-shadow(0px 4px 30px rgba(157, 157, 157, 0.2)) !important;
+            }
+
+            .card-img-div {
+                width: 100%;
+                height: 150px;
+                overflow: hidden;
+
+                .card-img, .card-img-bottom, .card-img-top {
+                    width: 100%;
+                    padding: 10px;
+                }
+            }
+    
+            
+    
+            .card-body {
+    
+                a {
+                    text-decoration: none;
+                    color: #000000;
+                    font-size: large;
+                    font-weight: 500;
+    
+                    &:hover{
+                        text-decoration: none;
+                        color: #000000;
+                    }
+    
+                }
+            }
+        }
+    }
+
+    .vesti-download-container {
+        margin-top: 100px;
+        width: 70%;
+
+        @include breakpoint(phablet){
+            width: 90%;
+            height: fit-content;
+        }
+
+        @include breakpoint(mobileonly){
+            width: 90%;
+            height: fit-content;
+            @include rowflex(center,center);
+        }
+    }
+
+   
+    
+}
+
+
+
+
+
+  .body-height{
+    padding-top: 0rem;
+}
+.mig-fry a {
+    text-decoration: none;
+    color: #000000;
+}
+
+
+
+.payment {
+    margin: 1rem !important;
+}
+
+.vesti-color{
+    color: #000000;
+}
+.vesti-color2{
+    color: #000000;
+}
+.vesti-color3{
+    color: #121243;
+}
+
+
+

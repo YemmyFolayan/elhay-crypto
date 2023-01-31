@@ -1,0 +1,14 @@
+@import "../../../variables.scss";
+
+
+.create-pathway-actions {
+    @include rowflexx(center);
+
+    .actions-btn {
+        margin-left: 20px;
+    }
+}
+.create-hr {
+    border : 5px solid $gray-300 !important;
+    margin-top: 10px !important;
+}

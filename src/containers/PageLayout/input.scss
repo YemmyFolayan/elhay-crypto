@@ -1,0 +1,117 @@
+@import "../../variables.scss";
+
+input[name="firstName"], input[name="lastName"], .my-input-class input   {
+    width: 100% !important;
+    // margin-top: 30px;
+    height: 60px;
+    background: #F9F8F9;
+    border: 1px solid $gray-400;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none !important;
+    padding-left: 20px;
+    position: relative;
+    
+    @include fontNormal(1em, 1em, $gray-600);
+
+    @include breakpoint(mobileonly) {
+        width: 100%!important;
+        height: 50px;
+    }
+    @include breakpoint(tablet) {
+        width: 100% !important;
+        height: 50px;
+    }
+
+    @include breakpoint(phablet) {
+        width: 100% !important; //250PX
+        // height: 50px;
+    }
+    
+
+    &:focus {
+        border: 1px solid $vesti-700;
+        background-color: $vesti-100;
+        color: $vesti-901;
+        
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    &:disabled {
+        cursor: not-allowed;
+        color: $gray-800;
+    }
+}
+#textarea{
+    width: 100% !important;
+    border: 1px solid $gray-400;
+    height: 100px;
+    resize: none;
+
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    padding: 20px;
+    background-color: $gray-200;
+    @include fontNormal(1em, 1em, $gray-600);
+
+    @include breakpoint(tablet) {
+        height: 60px;
+    }
+
+    &:focus {
+        border: 1px solid $vesti-700;
+        background-color: $vesti-100;
+        color: $vesti-901;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+}
+
+.resend {
+    margin: 0;
+    margin-top: 10px;
+    font-style: italic;
+    @include fontSemiBold(1.2em, 1em, $vesti-900);
+    strong {
+        font-style: normal;
+        color:$vesti-700
+    }
+    @include breakpoint(mobileonly){
+        @include fontSemiBold(0.9em, 1em, $vesti-900);
+        margin-top: 25px;
+    }
+}
+
+.checkver {
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 5px; 
+    
+    &.--success {
+        width: 100%;
+        background-color:  $vesti-100;
+        border: .5px solid $vesti-700;
+        @include fontNormal(1em, 1em, $vesti-901);
+    }
+    &.--error {
+        background-color:  rgb(255, 234, 234);
+        border: .5px solid red;
+        @include fontNormal(1em, 1em, rgb(99, 0, 0));
+    }
+  }
+  
+*.inputfloat{
+    width: 100% !important;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 319px){
+    .resend{
+        @include fontSemiBold(0.7em, 1em, $vesti-900);
+        margin-top: 30px;
+    }
+}

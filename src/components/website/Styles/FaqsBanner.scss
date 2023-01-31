@@ -1,0 +1,488 @@
+@import "../../../variables.scss";
+
+.faqs-main-container {
+  width: 100%;
+}
+.back-ground{
+  padding-top: 10rem;
+  height: 100vh !important;
+  width: 100% !important;
+  position: relative;
+  @include colflex(center,center);
+
+  @include breakpoint (mobileonly) {
+    overflow:  hidden !important;
+    height: fit-content;
+  }
+
+  img {
+    width: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    @include breakpoint (mobileonly) {
+      width:  200% !important;
+      // display: none;
+      // height: 100%;
+    }
+  }
+  .faqs-top-cont {
+    margin-top: -300px;
+    @include colflex(center, center);
+
+    @include breakpoint (mobileonly) {
+      margin-top: -500px !important;
+    }
+
+    
+  }
+  .vesti-faqs,.faqs-search-box  {
+    z-index: 10;
+    position: relative;
+    
+  }
+
+  .faqs-search-box {
+    z-index: 11;
+    width: fit-content;
+
+    .search {
+      width: 700px;
+      position: relative;
+      p{
+        position: absolute;
+        left: 10px;
+        top: 20px;
+        padding: 10px;
+        min-width: 50px;
+        text-align: center;
+        // width: 100px;
+        @include fontLight(1.5em, 1em, $gray-400);
+      }
+
+      input {
+        width: 100%;
+        padding-left: 100px;
+        // text-align: center;
+        border: 1px solid $vesti-700;
+        border-radius: 10px;
+
+        &:focus {
+          background-color: $vesti-100;
+          border: 1px solid $vesti-700;
+        }
+      }
+    }
+  }
+}
+
+.faqs-container{
+  margin-top: 150px !important;
+  .questions{
+    margin-top: 150px !important;
+  }
+}
+.body-height{
+  padding-top: 10rem;
+}
+.vesti-faqs{
+  margin-top: 5rem;
+}
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+  
+.searchTerm {
+  width: 100%;
+  height: 80px;
+  font-size: 20px;
+  border: 1px solid #000000;
+  border-left: none;
+  padding: 5px;
+  outline: none;
+  color: #121243;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.searchButton {
+  width: 6rem;
+  border: 1px solid #000000;
+  border-right: none;
+  background: #ffffff;
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+  border-bottom-left-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+// .wrap{
+//   width: 50%;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   margin-top: 8rem;
+// }
+/* accordion styling begins here */
+.accordion-button.collapsed::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath fill-rule='evenodd' d='M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z'/%3e%3c/svg%3e");
+
+    
+}
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z'/%3e%3c/svg%3e");
+  
+}
+
+.accordion-item{
+  border: none !important;
+  border-radius: 10px;
+}
+
+.accordion-button {
+  min-height: 100px;
+}
+.accordion-item .accordion-header .accordion-button.collapsed {
+  color: #000000;
+  padding: 20px 20px;
+  max-width: 100% !important;
+  border-radius: 10px;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  color: #000000 !important;
+  @include fontMedium(1.5em, 1.4em,$vesti-700);
+}
+.accordion-body{
+  
+  @include fontNormal(1.2em, 1.4em, $vesti-901);
+}
+.accordion-button:focus{
+  box-shadow: none !important;
+}
+.accordion-body p {
+  padding-bottom: 2rem;
+  /* padding-top: 2rem; */
+  line-height: 2rem;
+  font-size: 18px;
+  // color: #000000;
+  @include fontNormal(1.2em, 1.5em, $vesti-901);
+}
+/* accordion styling ends here */
+
+.downloadvesti{
+  background-color: #000000;
+  padding: 20px;
+  border-radius:15px;
+  width: 100%;
+  height: 400px;
+  margin-top: 10rem;
+}
+.downloadimage {
+  padding-bottom: 12.3rem!important;
+}
+h3{
+  color: #121243;
+  padding-bottom: 2rem;
+  @include fontBold(1.2em, 1.4em, $vesti-901);
+      
+}
+ol li {
+  color: #000000;
+  padding-bottom: 2rem;
+}
+p a {
+  text-decoration: none;
+  color: #000000;
+}
+p a:hover {
+  text-decoration: none;
+  color: #000000;
+}
+.payment {
+  margin: 1rem !important;
+}
+.vesti-color{
+  color: #000000;
+}
+.vesti-color2{
+  color: #000080;
+}
+.vesti-color3{
+  color: #121243;
+}
+.phone-section{
+  background-color: #F8FEF5;
+}
+
+@media (min-width: 320px) and (max-width: 600px){
+  .back-ground{
+    padding-top: 10rem;
+    height: 100vh !important;
+    width: 100% !important;
+    position: relative;
+    @include colflex(center,center);
+  
+    img {
+      width: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    .faqs-top-cont {
+      // margin-top: -300px;
+      @include colflex(center, center);
+      width: 90%;
+    }
+    .vesti-faqs,.faqs-search-box  {
+      z-index: 10;
+      position: relative;
+      
+    }
+  
+    .faqs-search-box {
+      z-index: 11;
+      width: fit-content;
+  
+      .search {
+        width: 100%;
+        position: relative;
+        p{
+          position: absolute;
+          left: 10px;
+          top: 20px;
+          padding: 10px;
+          min-width: 50px;
+          text-align: center;
+          // width: 100px;
+          @include fontLight(1.5em, 1em, $gray-400);
+        }
+  
+        input {
+          width: 100%;
+          padding-left: 100px;
+          // text-align: center;
+          border: 1px solid $vesti-700;
+          border-radius: 10px;
+  
+          &:focus {
+            background-color: $vesti-100;
+            border: 1px solid $vesti-700;
+          }
+        }
+      }
+    }
+  }
+  h1{
+    font-size: 18px !important;
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+  }
+  .faqs-container{
+    margin-top: 150px !important;
+    .questions{
+      margin-top: 227px !important;
+      margin-bottom: 0px !important;
+    }
+  }
+  .body-height{
+    padding-top: 10rem;
+  }
+  .vesti-faqs{
+    margin-top: 5rem;
+  }
+  .search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+    
+  .searchTerm {
+    width: 100%;
+    height: 80px;
+    font-size: 20px;
+    border: 1px solid #000000;
+    border-left: none;
+    padding: 5px;
+    outline: none;
+    color: #121243;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+  .searchButton {
+    width: 6rem;
+    border: 1px solid #000000;
+    border-right: none;
+    background: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+    border-bottom-left-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+  }
+
+  .accordion-item .accordion-header .accordion-button.collapsed {
+    color: #000000;
+    padding: 20px 20px;
+    max-width: 100% !important;
+    border-radius: 10px;
+    font-size: 12.5px !important;
+  }
+  .accordion-body p {
+    padding-bottom: 2rem;
+    line-height: 2rem;
+    font-size: 18px;
+    @include fontNormal(0.9em, 1.5em, $vesti-901);
+  }
+  .accordion-button:not(.collapsed) {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    color: #000000 !important;
+    font-size: 12.5px !important;
+  }
+  .accordion-button {
+    min-height: 10px;
+  }
+}
+@media (min-width: 600px) and (max-width: 800px){
+  .back-ground{
+    padding-top: 10rem;
+    height: 100vh !important;
+    width: 100% !important;
+    position: relative;
+    @include colflex(center,center);
+  
+    img {
+      width: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    .faqs-top-cont {
+      margin-top: -300px;
+      @include colflex(center, center);
+      width: 90%;
+    }
+    .vesti-faqs,.faqs-search-box  {
+      z-index: 10;
+      position: relative;
+      
+    }
+  
+    .faqs-search-box {
+      z-index: 11;
+      width: fit-content;
+  
+      .search {
+        width: 100%;
+        position: relative;
+        p{
+          position: absolute;
+          left: 10px;
+          top: 20px;
+          padding: 10px;
+          min-width: 50px;
+          text-align: center;
+          // width: 100px;
+          @include fontLight(1.5em, 1em, $gray-400);
+        }
+  
+        input {
+          width: 100%;
+          padding-left: 100px;
+          // text-align: center;
+          border: 1px solid $vesti-700;
+          border-radius: 10px;
+  
+          &:focus {
+            background-color: $vesti-100;
+            border: 1px solid $vesti-700;
+          }
+        }
+      }
+    }
+  }
+  h1{
+    font-size: 18px !important;
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+  }
+  .faqs-container{
+    margin-top: 150px !important;
+    .questions{
+      margin-top: 227px !important;
+      margin-bottom: 0px !important;
+    }
+  }
+  .body-height{
+    padding-top: 10rem;
+  }
+  .vesti-faqs{
+    margin-top: 5rem;
+  }
+  .search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+    
+  .searchTerm {
+    width: 100%;
+    height: 80px;
+    font-size: 20px;
+    border: 1px solid #000000;
+    border-left: none;
+    padding: 5px;
+    outline: none;
+    color: #121243;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+  .searchButton {
+    width: 6rem;
+    border: 1px solid #000000;
+    border-right: none;
+    background: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+    border-bottom-left-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+  }
+
+  .accordion-item .accordion-header .accordion-button.collapsed {
+    color: #000000;
+    padding: 20px 20px;
+    max-width: 100% !important;
+    border-radius: 10px;
+    font-size: 12.5px !important;
+  }
+  .accordion-body p {
+    padding-bottom: 2rem;
+    line-height: 2rem;
+    font-size: 18px;
+    @include fontNormal(0.9em, 1.5em, $vesti-901);
+  }
+  .accordion-button:not(.collapsed) {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    color: #000000 !important;
+    font-size: 12.5px !important;
+  }
+  .accordion-button {
+    min-height: 10px;
+  }
+}
+  
+  
+  
+  
+  

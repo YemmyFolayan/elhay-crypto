@@ -1,0 +1,45 @@
+@import "../../../variables.scss";
+
+.littlebalance {
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 20px 10px 20px;
+    background-color: $vesti-800;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    // @include rowflexx(center);
+    position: relative;
+    @include rowflexx(flex-start);
+    &.--founders {
+        background-color: $vpurp-800;
+    }
+    &.--usd {
+        background-color: $cyan-901;
+    }
+    img {
+        width: auto;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+    &__right {
+        // padding: 10px 10px 5px 10px;
+        border-radius: 5px;
+        padding-right: 50px;
+        p:nth-child(1){
+            margin: 0;
+            text-transform: uppercase;
+            @include fontNormal (10px, 1em, #fff);
+        }
+    
+        p:nth-child(2){
+            margin: 0;
+            margin-top: 5px;
+            @include fontSemiBold(1.5em, 1em, #fff);
+            @include breakpoint(mobileonly){
+                @include fontSemiBold(1.2em, 1em, #fff);
+            }
+        }
+    }
+    
+}

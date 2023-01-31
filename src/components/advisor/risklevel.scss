@@ -1,0 +1,85 @@
+@import "../../variables.scss";
+
+.risklevel-container {
+    width: 100%;
+    height: 100vh;
+    @include colflex(flex-start,flex-start);
+    .risklevel-title{
+        margin: 0;
+        font-size: 1.5em !important;
+        color: $vesti-901 !important;
+        font-display: 300 !important;
+        @include fontMedium(1.3em, 1em, $vesti-901);
+    }
+    .risklevel-inner-container {
+        width: 100%;
+        height: fit-content;
+        margin-top: 50px;
+        @include rowflexx(center);
+        flex-wrap: wrap;
+        gap: 30px;
+
+        @include breakpoint(mobileonly){
+            @include colflexx(flex-start);
+            flex-wrap: wrap;
+            column-gap: 30px;
+        }
+        .singlerisk-container {
+            width: 350px;
+            height: fit-content;
+            background-color: #fff;
+            border: 1px solid $gray-300;
+            border-radius: 20px;
+            padding: 30px 30px 30px 30px;
+            transition: all .5s ease;
+            cursor: pointer;
+            @include colflexx(flex-start);
+
+            
+            &:hover {
+                background-color: $vesti-100;
+                border: 1px solid $vesti-700;
+
+                .singlerisk-content{
+                    p:nth-child(1){
+                        color: $vesti-700;
+                    }
+                }
+            }
+            
+
+            img {
+                width: auto;
+            }
+
+            .singlerisk-content {
+                @include colflexx(flex-start);
+                margin-top: 40px;
+                p:nth-child(1){
+                    margin: 0;
+                    transition: all .5s ease;
+                    @include fontBold(1.2em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    
+                    margin-top: 5px;
+                    @include fontNormal(1em, 1.7em, $vesti-901);
+                }
+
+                p:nth-child(3){
+                    margin-top: 20px;
+                    @include fontBold(1em, 1em, $vesti-700);
+                    @include rowflexx(center);
+
+                    i{
+                        margin-left: 10px;
+                        font-size: 1em;
+                        
+                    }
+                }
+            }
+
+        }
+    }
+
+}

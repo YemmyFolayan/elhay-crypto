@@ -1,0 +1,25 @@
+@import "../../variables.scss";
+
+.issuesila{
+    width: 100%;
+    height: fit-content;
+    &__inputs {
+        width: 100%;
+        &__btn{
+            width: 100%;
+            outline: none;
+            border: none;
+            background-color: $vesti-700;
+            @include fontMedium(1em,1em, #fff);
+            transition: all .5s ease;
+            &:hover {
+                background-color: $vesti-800;
+            }
+            &:disabled {
+                background-color: $gray-500;
+                color: $gray-100;
+                cursor: not-allowed;
+            }
+        }
+    }
+}

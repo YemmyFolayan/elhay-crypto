@@ -1,0 +1,87 @@
+@import "../../variables.scss";
+
+.recommendation {
+    width: fit-content;
+    margin-top: 50px;
+    @include colflexx(flex-start);
+
+    .recommendation__title{
+        margin: 0;
+        font-size: 1.3em !important;
+        color: $vesti-700 !important;
+        @include fontSemiBold(1.5em, 1em, $vesti-700);
+    }
+
+    &__inner {
+        width: fit-content;
+        @include rowflexx(flex-start);
+        margin-top: 20px;
+        flex-wrap: wrap;
+        gap: 50px;
+
+        .singlerec {
+            width: fit-content;
+            padding: 15px 25px 15px 25px;
+            @include rowflexx(center);
+            background-color: #fff;
+            border-radius: 10px;
+            border: 1px solid $gray-300;
+
+            div:not(:first-child){
+                margin-left: 30px;
+            }
+            &__left {
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontSemiBold(1.5em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 20px;
+                    @include fontLight(1.2em, 1em, $vesti-901);
+                }
+            }
+
+            &__graph {
+                width: 150px;
+                height: 90px !important;
+                overflow: hidden;
+            }
+
+            &__right {
+                @include colflexx(flex-end);
+
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontSemiBold(1.5em,1em,$vesti-700);
+                }
+
+                .percentage {
+                    margin-top: 10px;
+                    @include rowflex(center,center);
+                    // background-color: red;
+                    width: fit-content;
+                    border-radius: 5px;
+                    padding: 10px 20px 10px 20px;
+                    &.--active {
+                        background-color: $green-700;
+                    }
+                    &.--drop {
+                        background-color: #DD2323;
+                    }
+                    &__inner {
+                        @include rowflexx(center);
+                        i{
+                            margin-right: 10px;
+                            font-size: 2em;
+                            color: #fff;
+                        }
+                        p:nth-child(2){
+                            margin: 0;
+                            @include fontSemiBold(2em,1em, #fff);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

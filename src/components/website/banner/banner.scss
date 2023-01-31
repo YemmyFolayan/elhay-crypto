@@ -1,0 +1,284 @@
+@import "../../../variables.scss";
+
+.banner-container {
+    width: 100%;
+    height: 37em;
+    @include rowflex(center,center);
+
+    .banner-inner-container {
+        width: 90%;
+        height: 80%;
+        @include rowflex(flex-start, space-between);
+
+        &.left {
+            width: 100%;
+            height: 90%;
+            @include colflexx(flex-start);
+
+            .top {
+                width: 100%;
+                height: fit-content;
+                div{
+                    width: 100%;
+                    .Typewriter__cursor{
+                        display: none;
+                    }
+                    span {
+                        width: 70%;
+                        @include rowflex(center,center);
+                        margin:0;
+                        height: fit-content;
+                        text-align: left;
+                        p:nth-child(1) {
+                            @include fontBlack(4.25em,1.3em, $vesti-901);
+                        }
+                        strong {
+                            color: $vesti-700;
+                            // @include fontBlack(3em,1.2em, $vesti-700);
+                        }
+    
+                        @include breakpoint(mobileonly) {
+                            width: 80%;
+                        }
+                    }
+                }
+                p:nth-child(2) {
+                    width: 80%;
+                    margin: 0;
+                    @include fontNormal(1.5em,1.5em, $vesti-901);
+                }
+            }
+
+            .bottom {
+                width: fit-content;
+                @include rowflexx(center);
+                margin-top: 3rem;
+                div:nth-child(2) {
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        &.right {
+            width: 600px;
+            img {
+                width: 600px;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 600px)  {
+    .banner-container {
+        width: 100%;
+        height: fit-content;
+        @include colflex(center,center);
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    
+        .banner-inner-container {
+            width: 90%;
+            height: 80%;
+            @include colflex(flex-start, space-between);
+    
+            &.left {
+                width: 100%;
+                height: 100%;
+                @include colflexx(flex-start);
+    
+                .top {
+                    width: 100%;
+                    height: fit-content;
+
+                    div{
+                        width: 346px;
+                        font-size: 1em;
+                        span {
+                            @include colflex(center,center);
+                            margin:0;
+                            height: fit-content;
+                            p:nth-child(1) {
+    
+                                @include fontBlack(3.2em,1.4em, $vesti-901);
+                            }
+                            strong {
+                                color: $vesti-700;
+                                // @include fontBlack(3em,1.2em, $vesti-700);
+                            }
+                        }
+                    }
+                    p:nth-child(2) {
+                        width: 100%;
+                        margin: 0;
+                        margin-bottom: 30px;
+                        @include fontNormal(1.2em,1.5em, $vesti-901);
+                    }
+                }
+    
+                .bottom {
+                    width: 100% !important;
+
+                    @include rowflexx(center);
+
+                    .download-container{
+                        width: 100%;
+                        height: 55px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                    }
+    
+                    div:nth-child(2) {
+                        margin-left: 20px;
+                        font-size: 10px;
+                    }
+                }
+            }
+            &.right {
+                display: none;
+                // width: 600px;
+                // img {
+                //     width: 280px;
+                //     margin-top: 40px;
+                // }
+            }
+        }
+    }
+    
+}
+@media (min-width: 600px) and (max-width: 800px){
+    .banner-container {
+        width: 100%;
+        height: 100%;
+        @include colflex(center,center);
+    
+        .banner-inner-container {
+            width: 80%;
+            height: 100%;
+            @include colflex(center, space-between);
+    
+            &.left {
+                height: 100%;
+                @include colflexx(flex-start);
+    
+                .top {
+                    width: 100%;
+                    height: fit-content;
+                    div{
+                        font-size: 1.5em;
+                        span {
+                            @include colflex(center,center);
+                            margin:0;
+                            height: fit-content;
+                            p:nth-child(1) {
+                                @include fontBlack(1.25em,1.3em, $vesti-901);
+                            }
+                            strong {
+                                color: $vesti-700;
+                                // @include fontBlack(3em,1.2em, $vesti-700);
+                            }
+                        }
+                        p:nth-child(2) {
+                            width: 110%;
+                            margin: 0;
+                            margin-bottom: 10px;
+                            @include fontNormal(1.2em,1.5em, $vesti-901);
+                        }
+                    }
+                }
+    
+                .bottom {
+                    width: 100%;
+                    margin-top: 2rem;
+                    @include rowflexxx(center);
+
+                    .download-container{
+                        height: 55px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                    }
+    
+                    div:nth-child(2) {
+                        margin-left: 20px;
+                        font-size: 10px;
+                    }
+                }
+            }
+            &.right {
+                max-width: 100%;
+                img {
+                    max-width: 100%;
+                    margin-top: 55px;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 800px) and (max-width: 1224px){
+    .banner-container {
+        width: 100%;
+        height: 100%;
+        @include colflex(center,center);
+    
+        .banner-inner-container {
+            width: 100%;
+            height: 100%;
+            @include colflex(center, space-between);
+    
+            &.left {
+                height: 100%;
+                width: 85%;
+                margin-top: 3rem;
+                @include colflexx(flex-start);
+    
+                .top {
+                    width: 100%;
+                    height: fit-content;
+                    span {
+                        @include colflex(center,center);
+                        margin:0;
+                        height: fit-content;
+                        p:nth-child(1) {
+                            @include fontBlack(2.25em,1.3em, $vesti-901);
+                        }
+                        strong {
+                            color: $vesti-700;
+                            // @include fontBlack(3em,1.2em, $vesti-700);
+                        }
+                    }
+                    p:nth-child(2) {
+                        width: 100%;
+                        margin: 0;
+                        margin-bottom: 30px;
+                        margin-top: -2rem;
+                        @include fontNormal(1.8em,1.5em, $vesti-901);
+                    }
+                }
+    
+                .bottom {
+                    width: 100%;
+                    @include rowflexxx(center);
+                    justify-content: flex-start;
+
+                    .download-container{
+                        height: 55px;
+                        padding-left: 12px;
+                        padding-right: 12px;
+                    }
+    
+                    div:nth-child(2) {
+                        margin-left: 20px;
+                        font-size: 10px;
+                    }
+                }
+            }
+            &.right {
+                max-width: 100%;
+                img {
+                    max-width: 100%;
+                    margin-top: 55px;
+                }
+            }
+        }
+    }
+}

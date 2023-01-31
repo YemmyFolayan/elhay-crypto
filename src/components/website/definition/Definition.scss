@@ -1,0 +1,228 @@
+@import "../../../variables.scss";
+
+.definition-container{
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 100px;
+    margin-top: 2rem;
+    border-radius: 50px;
+    padding-bottom: 50px;
+    background-color: #F8FEF5;
+    @include rowflex(center,center);
+
+    .definition-inner {
+        width: 100%;
+        height: fit-content;
+        @include colflexx(center);
+
+        &.top{
+            width: 50%;
+            margin-bottom: 3rem;
+            p:nth-child(1){
+                margin: 0;
+                margin-bottom: 1rem;
+                @include fontBold(2.25em, 1em, $vesti-902);
+            }
+            p:nth-child(2){
+                margin-top: 10px;
+                @include fontNormal(1.3em, 1.5em, $vesti-901);
+            }
+        }
+        &.bottom {
+            width: 80%;
+            margin-top: 3rem;
+            margin: 0 auto;
+            text-align: center;
+            gap: 2rem;
+            @include rowflex(flex-start, space-between);
+            
+            .card{
+                border: none;
+                background-color: #FFFFFF;
+                img {
+                    margin-bottom: 20px;
+                    margin-left: 20px;
+                }
+                .card-body{
+                    @include colflex(flex-start,center);
+
+                    .card-title{
+                        text-align: left;
+                        @include fontSemiBold(1.2em, 1.5em, $vesti-902); 
+                    }
+                    .card-text{
+                        text-align: left;
+                        @include fontNormal(1.1em, 1.5em, $vesti-902);                        
+                    }
+                }
+            }          
+
+        }
+
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 600px){
+    .definition-container{
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 40px;
+        border-radius: 20px;
+        padding-bottom: 30px;
+        @include colflex(center,center);
+    
+        .definition-inner {
+            width: 90%;
+            height: fit-content;
+            @include colflexx(center);
+            font-size: 11px;
+            margin: 0 auto;
+    
+            &.top{
+                width: 90%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(1.45em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.2em, 1.5em, $vesti-902);
+                }
+            }
+            &.bottom {
+                width: 100%;
+                margin-top: 30px;
+                @include colflexx(center);
+    
+                .card{
+                    border: none;
+                    background-color: #FFFFFF;
+                    img {
+                        margin-bottom: 20px;
+                    }
+                    .card-body{
+                        @include colflex(flex-start,center);
+    
+                        .card-title{
+                            text-align: left;
+                            @include fontSemiBold(1.5em, 1.5em, $vesti-902); 
+                        }
+                        .card-text{
+                            text-align: left;
+                            @include fontNormal(1.25em, 1.5em, $vesti-902); 
+                            width: 80%;                       
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 800px){
+    .definition-container{
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 100px;
+        margin-top: 2rem;
+        border-radius: 20px;
+        padding-bottom: 30px;
+        @include colflex(center,center);
+    
+        .definition-inner {
+            width: 100%;
+            height: fit-content;
+            @include colflexx(center);
+            margin-top: -15px;
+    
+            &.top{
+                width: 100%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(2em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.3em, 1.5em, $vesti-902);
+                }
+            }
+            &.bottom {
+                width: 100%;
+                margin-top: 20px;
+                @include colflexx(center);
+                gap: 3rem;
+    
+                .card{
+                    border: none;
+                    background-color: #FFFFFF;
+    
+                    .card-body{
+                        @include colflex(flex-start,center);
+    
+                        .card-title{
+                            text-align: left;
+                            @include fontSemiBold(1.5em, 1.5em, $vesti-902); 
+                        }
+                        .card-text{
+                            text-align: left;
+                            @include fontNormal(1.25em, 1.5em, $vesti-902);                        
+                        }
+                    }
+    
+                }
+    
+            }
+        }
+    }
+}
+@media only screen and (min-width: 800px) and (max-width: 1224px){
+    .definition-container{
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 100px;
+        border-radius: 50px;
+        // padding-top: 30px;
+         padding-bottom: 50px;
+        @include rowflex(center,center);
+    
+        .definition-inner {
+            width: 90%;
+            height: fit-content;
+            @include colflexx(center);
+    
+            &.top{
+                width: 100%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(2.25em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.5em, 1.5em, $vesti-902);
+                }
+            }
+            &.bottom {
+                width: 100%;
+                margin-top: 50px;
+                @include colflexx(center);
+    
+                .card{
+                    border: none;
+                    background-color: #FFFFFF;
+    
+                    .card-body{
+                        @include colflex(center,center);
+    
+                        .card-title{
+                            text-align: left;
+                            @include fontSemiBold(1.5em, 1.5em, $vesti-902); 
+                        }
+                        .card-text{
+                            text-align: left;
+                            @include fontNormal(1.25em, 1.5em, $vesti-902);                        
+                        }
+                    }
+    
+                }                  
+            }
+        }
+    }  
+}

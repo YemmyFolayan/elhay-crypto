@@ -1,0 +1,28 @@
+@import "../../../variables.scss";
+
+.newft{
+    margin-top: 50px;
+    @include colflexx(flex-start);
+    gap: 10px;
+
+    &__bottom {
+        width: 80vw;
+        @include breakpoint(phablet){
+            width: 85vw;
+        }
+        @include breakpoint(tablet){
+            width: 85vw;
+        }
+
+        @include breakpoint(desktop){
+            width: 1190px;
+        }
+        @media screen and (min-width: 1024px) and (min-height: 1320px) {
+            width: 100vw;
+        }
+        
+        @media screen and (min-width: 1024px) and (max-height: 1310px) {
+            width: 90%;
+        }
+    }
+}

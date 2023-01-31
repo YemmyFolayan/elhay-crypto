@@ -1,0 +1,628 @@
+@import "../../../variables.scss";
+
+.dowithvesti-container{
+    width: 100%;
+    height: fit-content;
+    @include rowflex(center,center);
+
+    .dowithvesti-inner {
+        width: 90%;
+        height: 90%;
+        @include colflexx(center);
+
+        &.top{
+            width: 60%;
+           
+            p:nth-child(1){
+                margin: 0;
+                @include fontBold(2.25em, 1em, $vesti-902);
+            }
+            p:nth-child(2){
+                margin-top: 10px;
+                width: fit-content;
+                word-break:break-word;
+                @include fontNormal(1.2em, 1.5em, $vesti-902);                
+            }
+        }
+
+        &.bottom {
+            width: fit-content;
+            margin-top: 50px;
+            @include colflexx(flex-start);
+
+            .bottom-top-content, .bottom-lower-content{
+                width: 100%;
+                @include rowflex(center,space-between);
+
+                .overlay-container {
+                    position: relative;
+                    width: 575px;
+                    height: 500px;
+                    @include rowflexx(center);
+                    
+                    .overlay-inner {
+                        width: 100%;
+                        height: 100%;
+                        @include rowflexx(center);
+                        cursor: pointer;
+                        margin:0 !important;
+                        img {
+                            margin:0 !important;
+                        }
+                        &:hover {
+                            .overlay{
+                                opacity: 1;
+                            }
+                        }
+                        .overlay {
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            height: 100% !important;
+                            width: 100% !important;
+                            opacity: 0;
+                            transition: all .5s ease;
+                            border-radius: 20px;
+                            background-color: #FFFFFF;
+                            border: 1px solid $vesti-800;
+                            padding-top: 40px;
+                            padding-left: 40px;
+                            padding-right: 40px;
+
+                            .overlay-text {
+                                p:nth-child(1){
+                                    @include fontBold(2em, 1.2em, $vesti-700);
+                                }
+                                p:nth-child(2){
+                                    width: 90%;
+                                    @include fontNormal(1.2em, 1.5em, $vesti-901);
+                                }
+                                p:nth-child(3){
+                                    width: 90%;
+                                    @include fontNormal(1.2em, 1.5em, $vesti-901);
+                                    margin-bottom: 30px;
+                                }
+                                .overlay-link {
+                                   
+                                    text-decoration: none;
+                                    transition: all 0.3s ease;
+                                    @include fontBold(1.2em, 1em, $vesti-901);
+
+                                    &:hover {
+                                        color:$vesti-700;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    
+                  }
+                 
+                 
+            }
+            .bottom-lower-content{
+                margin-top: 30px;
+            }
+            .sub_header_container{
+                width: 100%;
+                @include rowflex(center,center);
+                margin-bottom: 1rem;
+                margin-top: 3rem;
+                .sub_header{
+                    text-align: center;
+                    @include fontBold(2.25em, 1em, $vesti-902);
+                }
+            }
+
+        }
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 600px){
+    .dowithvesti-container{
+        width: 100%;
+        height: fit-content;
+        @include colflex(center,center);
+    
+        .dowithvesti-inner {
+            width: 90%;
+            height: 90%;
+            @include colflexx(center);
+    
+            &.top{
+                width: 100%;
+                margin-top: 10px!important;
+    
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(1.25em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.2em, 1.5em, $vesti-902);
+                }
+            }
+    
+            &.bottom {
+                width: fit-content;
+                // margin-top: 50px;
+                @include colflexx(flex-start);
+    
+                .bottom-top-content, .bottom-lower-content{
+                    width: 100%;
+                    @include colflex(center,space-between);
+                    
+    
+                    .overlay-container {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        @include colflexx(center);
+                        margin-bottom: 25px;
+                        margin-left: 0px !important;
+
+                        
+                        .overlay-inner {
+                            width: 100%;
+                            height: 100%;
+                            @include colflexx(center);
+                            cursor: pointer;
+                            margin:0 !important;
+                            img {
+                                margin:0 !important;
+                            }
+                            &:hover {
+                                .overlay{
+                                    opacity: 1;
+                                }
+                            }
+                            & img {
+                                width: 95%;
+                            }
+                            .overlay {
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                height: 100% !important;
+                                width: 100% !important;
+                                opacity: 0;
+                                transition: all .5s ease;
+                                border-radius: 20px;
+                                background-color: #FFFFFF;
+                                border: 1px solid $vesti-800;
+                                padding-top: 60px;
+                                padding-left: 20px;
+                                padding-right: 20px;
+                                font-size: 10px;
+    
+                                .overlay-text {
+                                    margin-top: -31px;
+                                    p:nth-child(1){
+                                        @include fontBold(1.2em, 1.2em, $vesti-700);
+                                    }
+                                    p:nth-child(2){
+                                        width: 90%;
+                                        @include fontNormal(1em, 1.5em, $vesti-901);
+                                    }
+                                    p:nth-child(3){
+                                        width: 90%;
+                                        @include fontNormal(1em, 1.5em, $vesti-901);
+                                        margin-bottom: 30px;
+                                    }
+                                    .overlay-link {
+                                       
+                                        text-decoration: none;
+                                        transition: all 0.3s ease;
+                                        @include fontBold(1em, 1em, $vesti-901);
+    
+                                        &:hover {
+                                            color:$vesti-700;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                        
+                    }
+                     
+                     
+                }
+                .bottom-lower-content{
+                    margin-top: 0px;
+                }
+                .sub_header_container{
+                    width: 100%;
+                    @include rowflex(center,center);
+                    margin-bottom: 1rem;
+                    margin-top: 0;
+                    .sub_header{
+                        text-align: center;
+                        @include fontBold(1.25em, 1em, $vesti-902);
+                    }
+                }
+    
+            }
+
+        }
+    }
+}
+
+@media (min-width: 600px) and (max-width: 800px){
+    .dowithvesti-container{
+        width: 100%;
+        height: fit-content;
+        @include colflex(center,center);
+    
+        .dowithvesti-inner {
+            width: 80%;
+            height: 100%;
+            @include colflexx(center);
+    
+            &.top{
+                width: 90%;
+                margin-top: 10px!important;
+    
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(1.7em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.2em, 1.5em, $vesti-902);
+                }
+            }
+    
+            &.bottom {
+                width: fit-content;
+                @include colflexx(flex-start);                
+    
+                .bottom-top-content, .bottom-lower-content{
+                    width: 100%;
+                    @include rowflex(center,space-between);                    
+    
+                    .overlay-container {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        @include colflexx(center);
+                        margin-bottom: 25px;
+                        margin-left: 0px !important;
+                        
+                        .overlay-inner {
+                            width: 100%;
+                            height: 100%;
+                            @include colflexx(center);
+                            cursor: pointer;
+                            margin:0 !important;
+                            img {
+                                margin:0 !important;
+                            }
+                            &:hover {
+                                .overlay{
+                                    opacity: 1;
+                                }
+                            }
+                            & img {
+                                width: 95%;
+                            }
+                            .overlay {
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                height: 100% !important;
+                                width: 100% !important;
+                                opacity: 0;
+                                transition: all .5s ease;
+                                border-radius: 20px;
+                                background-color: #FFFFFF;
+                                border: 1px solid $vesti-800;
+                                padding-top: 60px;
+                                padding-left: 20px;
+                                padding-right: 20px;
+                                font-size: 10px;
+    
+                                .overlay-text {
+                                    margin-top: -31px;
+                                    p:nth-child(1){
+                                        @include fontBold(2.2em, 1.2em, $vesti-700);
+                                    }
+                                    p:nth-child(2){
+                                        width: 90%;
+                                        @include fontNormal(1.5em, 1.5em, $vesti-901);
+                                    }
+                                    p:nth-child(3){
+                                        width: 90%;
+                                        @include fontNormal(1.5em, 1.5em, $vesti-901);
+                                        margin-bottom: 30px;
+                                    }
+                                    .overlay-link {
+                                       
+                                        text-decoration: none;
+                                        transition: all 0.3s ease;
+                                        @include fontBold(1.5em, 1em, $vesti-901);
+    
+                                        &:hover {
+                                            color:$vesti-700;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                        
+                    }                   
+                     
+                }
+                .bottom-lower-content{
+                    margin-top: 0px;
+                }
+                .sub_header_container{
+                    width: 100%;
+                    @include rowflex(center,center);
+                    margin-bottom: 1rem;
+                    margin-top:2rem;
+                    .sub_header{
+                        text-align: center;
+                        @include fontBold(1.7em, 1em, $vesti-902);
+                    }
+                }
+    
+            }
+        }
+    }
+}
+@media (min-width: 800px) and (max-width: 1224px){
+    .dowithvesti-container{
+        width: 100%;
+        height: fit-content;
+        @include colflex(center,center);
+    
+        .dowithvesti-inner {
+            width: 80%;
+            height: 100%;
+            @include colflexx(center);
+    
+            &.top{
+                width: 90%;
+                margin-top: 10px!important;
+    
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(1.7em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.2em, 1.5em, $vesti-902);
+                }
+            }
+    
+            &.bottom {
+                width: fit-content;
+                @include colflexx(flex-start);                
+    
+                .bottom-top-content, .bottom-lower-content{
+                    width: 100%;
+                    @include rowflex(center,space-between);                    
+    
+                    .overlay-container {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        @include colflexx(center);
+                        margin-bottom: 25px;
+                        margin-left: 0px !important;
+                        
+                        .overlay-inner {
+                            width: 100%;
+                            height: 100%;
+                            @include colflexx(center);
+                            cursor: pointer;
+                            margin:0 !important;
+                            img {
+                                margin:0 !important;
+                            }
+                            &:hover {
+                                .overlay{
+                                    opacity: 1;
+                                }
+                            }
+                            & img {
+                                width: 95%;
+                            }
+                            .overlay {
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                height: 100% !important;
+                                width: 100% !important;
+                                opacity: 0;
+                                transition: all .5s ease;
+                                border-radius: 20px;
+                                background-color: #FFFFFF;
+                                border: 1px solid $vesti-800;
+                                padding-top: 60px;
+                                padding-left: 20px;
+                                padding-right: 20px;
+                                font-size: 10px;
+    
+                                .overlay-text {
+                                    margin-top: -31px;
+                                    p:nth-child(1){
+                                        @include fontBold(2.2em, 1.2em, $vesti-700);
+                                    }
+                                    p:nth-child(2){
+                                        width: 90%;
+                                        @include fontNormal(1.5em, 1.5em, $vesti-901);
+                                    }
+                                    p:nth-child(3){
+                                        width: 90%;
+                                        @include fontNormal(1.5em, 1.5em, $vesti-901);
+                                        margin-bottom: 30px;
+                                    }
+                                    .overlay-link {
+                                       
+                                        text-decoration: none;
+                                        transition: all 0.3s ease;
+                                        @include fontBold(1.5em, 1em, $vesti-901);
+    
+                                        &:hover {
+                                            color:$vesti-700;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                        
+                    }                   
+                     
+                }
+                .bottom-lower-content{
+                    margin-top: 0px;
+                }
+                .sub_header_container{
+                    width: 100%;
+                    @include rowflex(center,center);
+                    margin-bottom: 1rem;
+                    margin-top:2rem;
+                    .sub_header{
+                        text-align: center;
+                        @include fontBold(1.7em, 1em, $vesti-902);
+                    }
+                }
+    
+            }
+        }
+    }
+}
+// @media (min-width: 800px) and (max-width: 1224px){
+//     .dowithvesti-container{
+//         width: 100%;
+//         height: fit-content;
+//         @include colflex(center,center);
+    
+//         .dowithvesti-inner {
+//             width: 100%;
+//             height: 100%;
+//             @include colflexx(center);
+    
+//             &.top{
+//                 width: 85%;
+//                 margin-top: 10px!important;
+    
+//                 p:nth-child(1){
+//                     margin: 0;
+//                     @include fontBold(2.25em, 1em, $vesti-902);
+//                 }
+//                 p:nth-child(2){
+//                     margin-top: 10px;
+//                     @include fontNormal(1.5em, 1.5em, $vesti-902);
+//                 }
+//             }
+    
+//             &.bottom {
+//                 width: fit-content;
+//                 // margin-top: 50px;
+//                 @include colflexx(flex-start);
+    
+//                 .bottom-top-content, .bottom-lower-content{
+//                     width: 100%;
+//                     @include colflex(center,space-between);
+                    
+    
+//                     .overlay-container {
+//                         position: relative;
+//                         width: 100%;
+//                         height: 100%;
+//                         @include colflexx(center);
+//                         margin-bottom: 25px;
+//                         margin-left: 0px !important;
+
+                        
+//                         .overlay-inner {
+//                             width: 100%;
+//                             height: 100%;
+//                             @include colflexx(center);
+//                             cursor: pointer;
+//                             margin:0 !important;
+//                             img {
+//                                 margin:0 !important;
+//                             }
+//                             &:hover {
+//                                 .overlay{
+//                                     opacity: 1;
+//                                 }
+//                             }
+//                             & img {
+//                                 width: 95%;
+//                             }
+//                             .overlay {
+//                                 position: absolute;
+//                                 top: 0;
+//                                 bottom: 0;
+//                                 left: 0;
+//                                 right: 0;
+//                                 height: 100% !important;
+//                                 width: 100% !important;
+//                                 opacity: 0;
+//                                 transition: all .5s ease;
+//                                 border-radius: 20px;
+//                                 background-color: #FFFFFF;
+//                                 border: 1px solid $vesti-800;
+//                                 padding-top: 60px;
+//                                 padding-left: 20px;
+//                                 padding-right: 0px;
+//                                 font-size: 14px;
+    
+//                                 .overlay-text {
+//                                     margin-top: -31px;
+//                                     p:nth-child(1){
+//                                         @include fontBold(2.2em, 1.2em, $vesti-700);
+//                                     }
+//                                     p:nth-child(2){
+//                                         width: 90%;
+//                                         @include fontNormal(1.5em, 1.5em, $vesti-901);
+//                                     }
+//                                     p:nth-child(3){
+//                                         width: 90%;
+//                                         @include fontNormal(1.5em, 1.5em, $vesti-901);
+//                                         margin-bottom: 30px;
+//                                     }
+//                                     .overlay-link {
+                                       
+//                                         text-decoration: none;
+//                                         transition: all 0.3s ease;
+//                                         @include fontBold(1.5em, 1em, $vesti-901);
+    
+//                                         &:hover {
+//                                             color:$vesti-700;
+//                                         }
+//                                     }
+//                                 }
+//                             }
+//                         }
+                        
+                        
+//                     }
+                     
+                     
+//                 }
+//                 .bottom-lower-content{
+//                     margin-top: 0px;
+//                 }
+    
+    
+//             }
+//         }
+//     }
+// }

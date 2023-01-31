@@ -1,0 +1,146 @@
+@import "../../variables.scss";
+
+.creategroup-container {
+    width: 100%;
+    height: 100%;
+    @include rowflex(center,center);
+
+    .creategroup-inner-container {
+        width: 95%;
+        height: 95%;
+        @include colflexx(flex-start);
+        p:nth-child(1) {
+            margin: 0;
+            margin-bottom: 30px;
+            @include fontBold(2em, 1em, $gray-400);
+        }
+        form  {
+            width: 100%;
+            height: fit-content;
+            margin-bottom: 20px;
+            @include colflexx(flex-start);
+            .custom-field:not(:first-child){
+                margin-top: 20px;
+            }
+            .custom-field {
+                width: 100%;
+                p{
+                    margin: 0;
+                    @include fontNormal(1em, 1em, $vesti-901);
+                }
+
+                label{
+                    margin: 0;
+                    @include fontNormal(1em, 1em, $vesti-901);
+                }
+    
+                input[type='text'] {
+                    width: 100% !important;
+    
+                    height: 50px;
+                    border: none;
+                    padding: 0;
+                    margin: 0;
+                    margin-top: 10px;
+                    border-radius: 5px;
+                    box-sizing: border-box;
+                    outline: none;
+                    padding-left: 20px;
+                    background-color: $gray-200;
+                    @include fontNormal(1em, 1em, $gray-600);
+    
+                    @include breakpoint(tablet) {
+                        height: 60px;
+                    }
+                }
+
+                .description-box{
+                    width: 100% !important;
+    
+                    height: 100px;
+                    border: none;
+                    padding: 0;
+                    margin: 0;
+                    margin-top: 10px;
+                    border-radius: 5px;
+                    box-sizing: border-box;
+                    outline: none;
+                    padding: 20px;
+                    background-color: $gray-200;
+                    @include fontNormal(1em, 1em, $gray-600);
+    
+                    @include breakpoint(tablet) {
+                        height: 60px;
+                    }
+                }
+            }
+
+            .file-uploader {
+                width: 100%;
+                height: fit-content;
+                // @include rowflex(center,center);
+                margin-top: 20px;
+
+                input[type='file']{
+                    width: 100% !important;
+    
+                    height: fit-content;
+                    border: none;
+                    padding: 0;
+                    margin: 0;
+                    // margin-top: 10px;
+                    border-radius: 5px;
+                    box-sizing: border-box;
+                    outline: none;
+                    padding: 10px;
+                    background-color: $gray-200;
+                    @include fontNormal(1em, 1em, $gray-600);
+                    @include rowflex(center,center);
+    
+                    @include breakpoint(tablet) {
+                        height: 60px;
+                    }
+                }
+
+                .image-preview {
+                    width: 300px;
+                    overflow: hidden;
+                    height: 150px;
+                    border-radius: 10px;
+                    margin-top: 10px;
+                    overflow: hidden;
+
+                    img {
+                        width: 300px;
+                        object-fit: 'cover';
+                        background-position: '30% 30%';
+                        background-size:' cover';
+                    }
+                }
+            }
+
+            .create-group-btn {
+                margin-top: 30px;
+                width: 100%;
+                width: fit-content;
+                padding: 20px;
+                padding-left: 30px;
+                padding-right: 30px;
+                height: 60px;
+                border-radius: 5px;
+                background-color:  $vesti-700;
+                @include fontMedium(1em, 1em, #fff);
+                @include rowflex(center,center);
+                transition: all 0.5s ease;
+        
+                &:hover {
+                    background-color:  $vesti-900;
+                }
+        
+            }
+
+
+
+        }
+    }
+}

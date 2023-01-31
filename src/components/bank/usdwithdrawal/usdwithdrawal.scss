@@ -1,0 +1,304 @@
+@import "../../../variables.scss";
+
+.usdwithdrawal {
+    width: 100%;
+    @include colflexx(flex-start);
+
+    @include breakpoint(phablet){
+        width: 50vw
+    }
+    @include breakpoint(tablet){
+        width: 50vw
+    }
+    &__get {
+        @include fontNormal(1.2em, 1em, $vesti-800);
+        width: fit-content;
+        height: fit-content;
+        padding: 5px 10px 5px 10px;
+        border-radius: 10px;
+        background-color: $vesti-200;
+        border: .5px solid $vesti-700;
+
+        &.--error {
+            @include fontNormal(1.2em, 1em, red);
+            background-color: rgb(255, 190, 190);
+            border: .5px solid red;
+        }
+    }
+    .form {
+        width: 100%;
+        padding-top: 0px;
+        .inputfloat{
+            width: 100%;
+           
+            // height: 60px !important;
+        }
+        &>:nth-child(1){
+            @include breakpoint(mobileonly){
+                margin-top: 0px;
+            }
+           
+        }
+
+        @include breakpoint(mobileonly){
+            width: 75vw !important;
+        }
+        
+        @include colflex(flex-start,space-between);
+        &__numbers, &__address {
+            width: 100%;
+            flex: 1;
+            // @include rowflex(flex-start,space-between);
+            display: flex;
+            // flex-direction: row !important;
+            gap: 20px;
+            @include breakpoint (mobileonly){
+                @include colflexx(flex-start);
+                gap: 0px;
+                .select-box{
+                    height: 60px !important;
+                    // margin-top: 10px;
+                    margin-bottom: 0px;
+                }
+            }
+            @include breakpoint (phablet){
+                @include colflexx(flex-start);
+                gap: 0px;
+                .select-box{
+                    margin-top: 2px;
+                    margin-bottom: 10px;
+                }
+            }
+            
+        }
+
+        &__city {
+            width: 100%;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            @include rowflex(flex-end,space-between);
+            gap: 20px;
+            .inputfloat {
+                height:60px !important;
+                padding-bottom: 0px;
+            }
+            .select-input{
+                height:60px !important;
+                margin-bottom: 2px;
+            }
+            @include breakpoint (mobileonly){
+                @include colflexx(flex-start);
+                gap: 20px;
+                .select-box{
+                    height: 60px !important;
+                    margin-bottom: 0px;
+                }
+            }
+            @include breakpoint (phablet){
+                @include colflexx(flex-start);
+                gap: 15px;
+                .select-box{
+                    margin-top: 2px;
+                    margin-bottom: 10px;
+                }
+            }
+           
+        }
+        .check {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px; 
+            @include colflexx(flex-start);
+
+            &.--success {
+                background-color:  $vesti-100;
+                border: .5px solid $vesti-700;
+
+                p:nth-child(1){
+                    @include fontNormal(1em, 1em, $vesti-901);
+                }
+                p:nth-child(2){
+                    @include fontMedium(1em, 1em, $vesti-700);
+                }
+            }
+            &.--error {
+                background-color:  rgb(255, 234, 234);
+                border: .5px solid red;
+
+                p:nth-child(1){
+                    @include fontNormal(1em, 1em, rgb(99, 0, 0));
+                }
+                p:nth-child(2){
+                    @include fontMedium(1em, 1em, red);
+                }
+            }
+            p:nth-child(1){
+                margin: 0;
+            }
+            p:nth-child(2){
+                margin: 0;
+                margin-top: 10px;
+            }
+        }
+
+        &__check {
+            width: 100%;
+            margin-top: 10px;
+            .form-ctrl {
+                @include fontNormal(1em, 1.4em, $vesti-901);
+            }
+            div {
+                margin-top: 10px;
+            }
+    
+        }
+
+        &__address {
+            margin-top: 15px;
+        }
+        &__button {
+            width: 100%;
+            height: 50px !important;
+            cursor: pointer;
+            background-color: $vesti-700;
+            color: #fff;
+            // margin-top: 10px;
+            border-radius: 10px !important;
+            @include rowflex(center,center);
+            @include fontBold(1em, 1em, #fff);
+            transition: all .5s ease;
+
+            &:hover {
+                background-color: $vesti-900;
+            }
+
+            &:disabled{
+                cursor: not-allowed;
+                background-color: $gray-600;
+
+            }
+
+            @include breakpoint(mobileonly){
+                font-size: 10px;
+            }
+            @include breakpoint(phablet){
+                font-size: 12px;
+            }
+        }
+    }
+
+    .firststep{
+
+        &__bottom{
+            @include colflexx(flex-start);
+            gap: 10px;
+        }
+        &__header {
+            margin: 0;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            @include fontBold(1.2em, 1em, $vesti-901);
+        }
+
+        &__radios {
+            @include colflexx(flex-start);
+            gap: 20px;
+            &:nth-child(2){
+                margin-top: 0px !important;
+            }
+            &:nth-child(2){
+                margin-top: 30px !important;
+            }
+            
+        }
+        &__ben {
+            margin-bottom: 30px;
+            width: 100%;
+            overflow: hidden;
+            height: fit-content;
+            @include colflexx(flex-start);
+        }
+        &__row {
+            width: 400px;
+            // max-width: 40px;
+            @include rowflexx(flex-start);
+            overflow-y: scroll;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            @include breakpoint(mobileonly){
+                width: 80vw;
+            }
+            @include breakpoint(phablet){
+                width: 350px;
+            }
+            @include breakpoint(tablet){
+                width: 455px;
+            }
+            &__account:not(:first-child){
+                margin-left: 5px;
+            }
+            &__account {
+                width: fit-content;
+                height: 50px;
+                padding: 15px 10px 15px 10px;
+                background-color: #fff;
+                border-radius: 5px;
+                white-space: nowrap;
+                border: 1px solid $gray-300;
+                transition: all .5s ease;
+                @include fontNormal(1.1em,1em, $vesti-901);
+
+                i:nth-child(1){
+                    color: $vesti-700;
+                    margin-right: 5px;
+                }
+                i:nth-child(2){
+                    color: red;
+                    margin-left: 5px;
+                }
+                &.--active {
+                    background-color: $vesti-100;
+                    color: $vesti-700;
+                    border-color: $vesti-700;
+
+                    i:nth-child(1){
+                        color: $vesti-700;
+                    }
+                }
+            }
+
+        }
+        &__button {
+            width: 100%;
+            height: 60px !important;
+            cursor: pointer;
+            background-color: $vesti-700;
+            color: #fff;
+            margin-top: 10px;
+            border-radius: 10px !important;
+            @include rowflex(center,center);
+            @include fontBold(1em, 1em, #fff);
+            transition: all .5s ease;
+    
+            &:hover {
+                background-color: $vesti-900;
+            }
+    
+            &:disabled{
+                cursor: not-allowed;
+                background-color: $gray-600;
+    
+            }
+    
+            @include breakpoint(mobileonly){
+                font-size: 10px;
+            }
+            @include breakpoint(phablet){
+                font-size: 12px;
+            }
+        }
+    }
+}

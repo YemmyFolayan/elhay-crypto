@@ -1,0 +1,116 @@
+@import "../../../variables.scss";
+
+.top-background-container {
+    width: 100%;
+    height: 60vh;
+    background-color: $vesti-100;
+    position: relative;
+    text-align: center;
+    padding-top: 120px;
+    @include rowflex(center,center);
+
+    @include breakpoint(mobileonly) {
+        width: 100% !important;
+        overflow: hidden !important;
+        height: 60vh !important;
+    }
+    img {
+        width: 100% !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        @include breakpoint(mobileonly) {
+            width: 150% !important;
+            // height: 100em !important;
+        }
+    }
+    .top-background-content {
+
+        width: 40%;
+        height: 200px;
+        z-index: 2;
+        // margin-top: -100px;
+
+        @include breakpoint(mobileonly) {
+            margin-top: -150px !important;
+        }
+        p:nth-child(1) {
+            margin: 0;
+            @include fontBold(2.5em, 1.2em, $vesti-902);
+
+            @include breakpoint(mobileonly) {
+                @include fontBold(2em, 1.2em, $vesti-902);
+            }
+        }
+        p:nth-child(2) {
+            
+            @include fontNormal(1.5em, 1.5em, $vesti-901);
+            @include breakpoint(mobileonly) {
+                @include fontNormal(1em, 1.5em, $vesti-901);
+            }
+        }
+        
+    }
+}
+
+@media (min-width: 320px) and (max-width: 600px){
+    .top-background-container {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        text-align: center;
+        @include rowflex(center,center);
+       
+        .top-background-content {
+    
+            width: 80%;
+            height: 100px;
+            z-index: 2;
+            margin-top: 50px;
+            p:nth-child(1) {
+                margin: 0;
+                margin-bottom: 3px;
+                @include fontBold(1.5em, 1.2em, $vesti-902);
+            }
+            p:nth-child(2) {
+                
+                @include fontNormal(1.2em, 1.5em, $vesti-901);
+            }
+            
+        }
+    }
+}
+@media (min-width: 600px) and (max-width: 800px){
+    .top-background-container {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        text-align: center;
+        @include rowflex(center,center);
+        img {
+            width: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+    
+        }
+        .top-background-content {
+    
+            width: 100%;
+            height: 200px;
+            z-index: 2;
+            margin-top: -100px;
+            p:nth-child(1) {
+                margin: 0;
+                @include fontBold(2.5em, 1.2em, $vesti-902);
+            }
+            p:nth-child(2) {
+                
+                @include fontNormal(1.5em, 1.5em, $vesti-901);
+            }
+            
+        }
+    }
+}

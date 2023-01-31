@@ -1,0 +1,50 @@
+@import "../../../variables.scss";
+
+.billpayment-card{
+  width: 48%;
+  height: 100%;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 1rem;
+
+  @include breakpoint(mobileonly){
+    width: 100%
+
+  }
+
+
+  .billpayment-card-inner{
+    @include rowflex(baseline, space-around);
+    // margin-top: 1rem;
+    
+    @include breakpoint(mobileonly){
+      display: flex;
+      flex-direction: row;
+      // gap: 3rem;
+      padding: 1rem;
+      margin-top: 1rem;
+      margin-left: 1rem;
+
+    }
+
+    
+    .card-title p{
+      @include fontMedium(1.5em, 1.4em, $vesti-902);
+      color: $vesti-902;
+
+      @include breakpoint(mobileonly){
+        @include fontMedium(1.2em, 1.4em, $vesti-902);
+      }
+    }
+    .billpayment-image{
+      // width: 100%;
+      @include breakpoint(mobileonly){
+        
+        // width: 50%;
+        img{
+          // width: 100%;          
+        }
+      }
+    }
+  }
+}

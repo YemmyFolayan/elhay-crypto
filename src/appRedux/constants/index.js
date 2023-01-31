@@ -1,0 +1,288 @@
+// Project constants
+export const PROJECT_NAME = 'vesti';
+export const ADMIN_EMAIL = 'help@wevesti.com';
+export const REDIRECT_URL = `${window.location}`;
+export const REDIRECT_URL_CASH = `${window.location}`;
+
+export const COOKIES_TIME = 7;
+
+// response
+export const SUCCESSFUL_CODE = 200;
+
+// Error message
+export const FETCH_ERROR_MESSAGE =
+  'Error!, unable to access the server. Please try again';
+
+// Module constants
+export const FETCH_START = 'FETCH_START';
+export const FETCH_SUCCESS = 'FETCH_SUCCESS';
+export const FETCH_ERROR = 'FETCH_ERROR';
+export const SHOW_MESSAGE = 'SHOW_MESSAGE';
+export const HIDE_MESSAGE = 'HIDE_MESSAGE';
+
+// permissions
+export const SAVE_PERMISSION = 'SAVE_PERMISSION';
+export const SAVE_USER_PERMISSION = 'SAVE_USER_PERMISSION';
+
+// alertBoxes
+export const OPEN_BOX = 'OPEN_BOX';
+export const CLOSE_SKILL_BOX = 'CLOSE_SKILL_BOX';
+export const CLOSE_SAVING_BOX = 'CLOSE_SAVING_BOX';
+export const CLOSE_KYC_BOX = 'CLOSE_KYC_BOX';
+export const OPEN_SHARE = 'OPEN_SHARE';
+export const CLOSE_SHARE = 'CLOSE_SHARE';
+
+// pathways
+export const OPEN_DESC = 'OPEN_DESC';
+export const OPEN_STAGES = 'OPEN_STAGES';
+
+// activities
+export const FETCH_ACTIVITIES = 'FETCH_ACTIVITIES';
+export const SAVE_FETCH_ACTIVITIES = 'SAVE_FETCH_ACTIVITIES';
+
+// upload
+export const SAVE_FETCH_UPLOADS = 'SAVE_FETCH_UPLOADS';
+export const SAVE_FETCH_UPLOAD = 'SAVE_FETCH_UPLOAD';
+export const SAVE_FETCH_DOCUMENT_UPLOAD = 'SAVE_FETCH_DOCUMENT_UPLOAD';
+export const SAVE_FETCH_IMAGE_UPLOAD = 'SAVE_FETCH_IMAGE_UPLOAD';
+
+// roles
+export const SAVE_ROLES_START = 'SAVE_ROLES_START';
+export const FETCH_ROLES_START = 'FETCH_ROLES_START';
+export const FETCH_ROLES_END = 'FETCH_ROLES_END';
+export const LOADING_PERMISSION = 'LOADING_PERMISSION';
+
+export const SAVE_ROLES = 'SAVE_ROLES';
+export const SAVE_ROLE = 'SAVE_ROLE';
+
+// Locations
+export const SAVE_FETCH_LOCATIONS = 'SAVE_FETCH_LOCATIONS';
+export const SAVE_FETCH_LOCATION = 'SAVE_FETCH_LOCATION';
+export const FETCH_LOCATIONS = 'FETCH_LOCATIONS';
+export const FETCH_LOCATIONS_ERROR = FETCH_ERROR_MESSAGE;
+
+// Stats
+// ...Transactions
+export const SAVE_STATS_TRANSACTIONS = 'SAVE_STATS_TRANSACTIONS';
+export const FETCH_STATS_TRANSACTIONS = 'FETCH_STATS_TRANSACTIONS';
+export const SUCCESSFUL_TRANSACTION = 'SUCCESSFUL_TRANSACTION';
+
+// ...Terminal Performance
+export const SAVE_STATS_TERMINAL_PERFORMANCE =
+  'SAVE_STATS_TERMINAL_PERFORMANCE';
+export const FETCH_STATS_TERMINAL_PERFORMANCE =
+  'FETCH_STATS_TERMINAL_PERFORMANCE';
+
+// ...Operator Stats Sales Revenue
+export const SAVE_STATS_SALES_REVENUE = 'SAVE_STATS_SALES_REVENUE';
+export const FETCH_STATS_SALES_REVENUE = 'FETCH_STATS_SALES_REVENUE';
+
+// ...Operator Stats Sales Transaction
+export const SAVE_STATS_SALES_TRANSACTION = 'SAVE_STATS_SALES_TRANSACTION';
+export const FETCH_STATS_SALES_TRANSACTION = 'FETCH_STATS_SALES_TRANSACTION';
+
+// ...Operator Stats Sales Volume
+export const SAVE_STATS_SALES_VOLUME = 'SAVE_STATS_SALES_VOLUME';
+export const FETCH_STATS_SALES_VOLUME = 'FETCH_STATS_SALES_VOLUME';
+
+// Reports
+// ...Operator Transactions
+export const FETCH_REPORT_HISTORY = 'FETCH_REPORT_HISTORY';
+export const SAVE_REPORT_HISTORY = 'SAVE_REPORT_HISTORY';
+
+export const FETCH_REPORT_DROPDOWN = 'FETCH_REPORT_DROPDOWN';
+export const SAVE_REPORT_DROPDOWN = 'SAVE_REPORT_DROPDOWN';
+
+export const FETCH_REPORT_DOWNLOAD = 'FETCH_REPORT_DOWNLOAD';
+export const SAVE_REPORT_DOWNLOAD = 'SAVE_REPORT_DOWNLOAD';
+
+// ...Routes
+export const SAVE_STATS_ROUTES = 'SAVE_STATS_ROUTES';
+export const FETCH_STATS_ROUTES = 'FETCH_STATS_ROUTES';
+
+export const FETCH_STATS_ERROR = FETCH_ERROR_MESSAGE;
+
+// Corporates
+export const SAVE_FETCH_CORPORATES = 'SAVE_FETCH_CORPORATES';
+export const SAVE_FETCH_CORPORATE = 'SAVE_FETCH_CORPORATE';
+export const FETCH_CORPORATES = 'FETCH_CORPORATES';
+export const FETCH_CORPORATES_ERROR = FETCH_ERROR_MESSAGE;
+
+// Lgas
+export const SAVE_FETCH_LGAS = 'SAVE_FETCH_LGAS';
+export const SAVE_FETCH_LGA = 'SAVE_FETCH_LGA';
+export const FETCH_LGAS = 'FETCH_LGAS';
+export const FETCH_LGA_ERROR = FETCH_ERROR_MESSAGE;
+
+// Classes
+export const SAVE_FETCH_CLASS = 'SAVE_FETCH_CLASS';
+export const SAVE_FETCH_ONE_CLASS = 'SAVE_FETCH_ONE_CLASS';
+export const FETCH_CLASS = 'FETCH_CLASS';
+export const FETCH_CLASS_ERROR = FETCH_ERROR_MESSAGE;
+
+// Classes
+export const SAVE_FETCH_POS = 'SAVE_FETCH_POS';
+// export const SAVE_FETCH_ONE_CLASS = 'SAVE_FETCH_ONE_CLASS';
+export const FETCH_POS = 'FETCH_POS';
+export const FETCH_POS_ERROR = FETCH_ERROR_MESSAGE;
+
+// Users
+export const SAVE_FETCH_USERS = 'SAVE_FETCH_USERS';
+export const SAVE_FETCH_USER = 'SAVE_FETCH_USER';
+export const FETCH_USERS = 'FETCH_USERS';
+export const FETCH_USERS_ERROR = FETCH_ERROR_MESSAGE;
+
+// Profile
+export const FETCH_PROFILES = 'FETCH_PROFILES';
+export const FETCH_PROFILE_SINGLE = 'FETCH_PROFILE_SINGLE';
+export const FETCH_PROFILE_START = 'FETCH_PROFILE_START';
+export const FETCH_PROFILE_FAIL = 'FETCH_PROFILE_FAIL';
+export const UPDATE_USERNAME = 'UPDATE_USERNAME';
+export const UPDATE_LOCATION = 'UPDATE_LOCATION';
+export const UPDATE_NUMBER = 'UPDATE_NUMBER';
+export const UPDATE_EMAIL = 'UPDATE_EMAIL';
+export const SEND_VERIFICATION = 'SEND_VERIFICATION';
+export const UPDATE_PROFILE = 'UPDATE_PROFILE';
+
+// Routes
+export const SAVE_FETCH_ROUTES = 'SAVE_FETCH_ROUTES';
+export const SAVE_FETCH_ROUTE = 'SAVE_FETCH_ROUTE';
+export const FETCH_ROUTES = 'FETCH_ROUTES';
+export const FETCH_ROUTES_ERROR = FETCH_ERROR_MESSAGE;
+
+// Coupons
+export const SAVE_FETCH_COUPONS = 'SAVE_FETCH_COUPONS';
+export const SAVE_FETCH_COUPON = 'SAVE_FETCH_COUPON';
+export const FETCH_COUPONS = 'FETCH_COUPONS';
+export const FETCH_COUPONS_ERROR = FETCH_ERROR_MESSAGE;
+
+// States
+export const SAVE_FETCH_STATES = 'SAVE_FETCH_STATES';
+export const FETCH_STATES = 'FETCH_STATES';
+export const FETCH_STATES_ERROR = FETCH_ERROR_MESSAGE;
+
+// Auth const
+export const SIGNUP_USER = 'SIGNUP_USER';
+export const SIGNUP_ERROR = 'SIGNUP_ERROR';
+export const SIGNIN_USER_SUCCESS = 'SIGNIN_USER_SUCCESS';
+export const RESET_LINK_SUCCESS = 'RESET_LINK_SUCCESS';
+export const SIGNUP_USER_SUCCESS = 'SIGNUP_USER_SUCCESS';
+export const SIGNIN_USER_NOT_ACTIVE = 'SIGNIN_USER_NOT_ACTIVE';
+export const SIGNOUT_USER_SUCCESS = 'SIGNOUT_USER_SUCCESS';
+export const ON_SHOW_LOADER = 'ON_SHOW_LOADER';
+export const USER_TOKEN_SET = 'USER_TOKEN_SET';
+export const OPENREG = 'OPENREG';
+export const SEND_2FA = 'SEND_2FA';
+
+// Paycode
+export const SAVE_FETCH_TOKEN = 'SAVE_FETCH_TOKEN';
+export const FETCH_TOKEN = 'FETCH_TOKEN';
+
+// operators - actions used in fetching country states
+export const LOADING_STATE = 'LOADING_STATE';
+export const LOADING_STATE_INNER = 'LOADING_STATE_INNER';
+export const SAVE_STATE = 'SAVE_STATE';
+export const SAVE_CITY = 'SAVE_CITY';
+
+// Users
+
+// Respnosive dashboardMenu
+export const TOGGLE_DASHBOARD_MENU = 'TOGGLE_DASHBOARD_MENU';
+export const COLLAPSE_DASHBOARD_MENU = 'COLLAPSE_DASHBOARD_MENU';
+
+// Transactions
+export const FETCH_TRANSACTIONS = 'FETCH_TRANSACTIONS';
+export const FETCH_TRANSACTIONS_START = 'FETCH_TRANSACTIONS_START';
+export const FETCH_TRANSACTIONS_FAIL = 'FETCH_TRANSACTIONS_FAIL';
+export const WALLET_TRANS = 'WALLET_TRANS';
+
+// Countries
+export const FETCH_COUNTRIES = 'FETCH_COUNTRIES';
+export const FETCH_COUNTRIES_START = 'FETCH_COUNTRIES_START';
+export const FETCH_COUNTRIES_FAIL = 'FETCH_COUNTRIES_FAIL';
+export const FETCH_COUNTRY = 'FETCH_COUNTRY';
+export const PAY_MERCHANT = 'PAY_MERCHANT';
+
+//Post
+export const FETCH_POSTS = 'FETCH_POSTS';
+export const FETCH_POSTS_START = 'FETCH_POSTS_START';
+export const FETCH_POSTS_FAIL = 'FETCH_POSTS_FAIL';
+
+//fries
+export const FETCH_FRIES_START = 'FETCH_FRIES_START';
+export const FETCH_FRIES = 'FETCH_FRIES';
+export const FETCH_FRIES_FAIL = 'FETCH_FRIES_FAIL';
+
+export const OPEN_UPDATE_KYC = 'OPEN_UPDATE_KYC';
+export const CLOSE_UPDATE_KYC = 'CLOSE_UPDATE_KYC';
+
+export const OPEN_UPGRADE = 'OPEN_UPGRADE';
+export const CLOSE_UPGRADE = 'CLOSE_UPGRADE';
+
+export const OPEN_REWARD = 'OPEN_REWARD';
+export const CLOSE_REWARD = 'CLOSE_REWARD';
+
+export const OPEN_LOAN = 'OPEN_LOAN';
+export const CLOSE_LOAN = 'CLOSE_LOAN';
+
+export const OPEN_ACCWAIT = 'OPEN_ACCWAIT';
+export const CLOSE_ACCWAIT = 'CLOSE_ACCWAIT';
+
+export const OPEN_CWAIT = 'OPEN_CWAIT';
+export const CLOSE_CWAIT = 'CLOSE_CWAIT';
+
+export const OPEN_FEES = 'OPEN_FEES';
+export const CLOSE_FEES = 'CLOSE_FEES';
+
+export const OPEN_VCARD = 'OPEN_VCARD';
+export const CLOSE_VCARD = 'CLOSE_VCARD';
+
+export const OPEN_ACTION = 'OPEN_ACTION';
+export const CLOSE_ACTION = 'CLOSE_ACTION';
+
+export const OPEN_BVN_VERIFICATION = 'OPEN_BVN_VERIFICATION';
+export const CLOSE_BVN_VERIFICATION = 'CLOSE_BVN_VERIFICATION';
+
+export const AIRTIME_RECHARGE = 'AIRTIME_RECHARGE';
+
+export const OPEN_PAUSE = 'OPEN_PAUSE';
+export const CLOSE_PAUSE = 'CLOSE_PAUSE';
+
+export const HANDLE_EVENT = 'HANDLE_EVENT';
+export const REMINDER_EVENT = 'REMINDER_EVENT';
+
+// kyc
+
+export const KYC_STATUS = 'KYC_STATUS';
+
+// waitlisting
+export const FOUNDER_WAITLIST_EDIT = 'FOUNDER_WAITLIST_EDIT';
+export const FOUNDER_WAITLIST = 'FOUNDER_WAITLIST';
+export const WAITLIST_EDIT = 'WAITLIST_EDIT';
+export const CREATE_STRIPE_CARD = 'CREATE_STRIPE_CARD';
+
+export const EDIT_STRIPEACCOUNT = 'EDIT_STRIPEACCOUNT';
+export const EDIT_STRIPE = 'EDIT_STRIPE';
+export const STRIPE_TRANSACTION = 'STRIPE_TRANSACTION';
+export const FOUNDERS_WALLET = 'FOUNDERS_WALLET';
+
+export const USD_WALLET = 'USD_WALLET';
+
+// country and state
+
+export const FETCH_ALL_COUNTRIES = 'FETCH_ALL_COUNTRIES';
+export const FETCH_ALL_STATES = 'FETCH_ALL_STATES';
+
+// MONO CARDS
+export const CREATE_MONO_CARD = 'CREATE_MONO_CARD';
+export const CARD_ACTION = 'CARD_ACTION';
+export const FETCH_CARD = 'FETCH_CARD';
+
+// transactions
+export const WALLET_TRANSACTION = 'WALLET_TRANSACTION';
+
+export const HANDLE_SHUTTLERS = 'HANDLE_SHUTTLERS';
+export const HANDLE_ANNOUNCEMENT = 'HANDLE_ANNOUNCEMENT';
+export const DOMORE_ACTION = 'DOMORE_ACTION';
+
+export const MINUTE_SESSION = 28 * 60000;

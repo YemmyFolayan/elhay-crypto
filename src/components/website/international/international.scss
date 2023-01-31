@@ -1,0 +1,223 @@
+@import "../../../variables.scss";
+
+.international-payments-container {
+    width: 100%;
+    height: 100%;
+    background-color: #F8FEF5;
+    margin-bottom: 100px;
+    @include rowflex(center,center);
+
+    .international-payments-inner {
+        width: 90%;
+        height: 90%;
+        margin-top: 20px;
+        @include rowflexx(center);
+
+        img:nth-child(1) {
+            width: auto;
+            margin-top: 24px;
+
+            @include breakpoint(mobileonly){
+                width: 250px;
+            }
+        }
+
+        &.right {
+            width: 90%;
+            @include colflexx(flex-start);
+            margin-left: 50px;
+            .right-top-content{
+                width: fit-content;
+                
+                p:nth-child(1){
+                    margin: 0;
+                    width: 60%;
+                    @include fontBold(2.25em, 1.2em, $vesti-901);
+
+                    
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontLight(1.5em, 1em, $vesti-901);
+                }
+            }
+            .right-bottom-content{
+                width: 100%;
+                margin-top: 50px;
+                @include rowflex(flex-start,space-between);
+
+                .single-international-container {
+                    width: fit-content;
+                    @include rowflexx(flex-start);
+                    
+
+                    img {
+                        width: auto;
+                    }
+                    &.right {
+                        @include colflexx(flex-start);
+                        margin-left: 20px;
+                        p:nth-child(1){
+                            @include fontBold(1.4em, 1em, $vesti-902)
+                        }
+                        p:nth-child(2){
+                            width: 80%;
+                            @include fontNormal(1.2em, 1.4em, $vesti-902)
+                        }
+                    }
+                }
+            }
+
+            div:nth-child(3){
+                margin-top: 50px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 600px){
+    .international-payments-container {
+        width: 100%;
+        height: 100%;
+        background-color: #F8FEF5;
+        margin-bottom: 10px;
+        @include colflex(center,center);
+    
+        .international-payments-inner {
+            width: 90%;
+            height: 90%;
+            @include colflexx(flex-start);
+
+            // img {
+            //     max-width: 100%;
+            // }
+    
+            img:nth-child(1) {
+                max-width: 100%;
+                margin-top: 50px;
+            }
+    
+            &.right {
+                width: 90%;
+                @include colflexx(flex-start);
+                margin-left: 25px;
+                .right-top-content{
+                    width: fit-content;
+                    
+                    p:nth-child(1){
+                        margin: 0;
+                        width: 100%;
+                        @include fontBold(1.25em, 1.2em, $vesti-901);
+                        margin-top: 30px;
+                    }
+                    p:nth-child(2){
+                        margin-top: 20px;
+                        @include fontLight(1.5em, 1em, $vesti-901);
+                    }
+                }
+                .right-bottom-content{
+                    width: 100%;
+                    margin-top: 0px;
+                    @include colflex(flex-start,space-between);
+    
+                    .single-international-container {
+                        width: fit-content;
+                        @include rowflexx(flex-start);
+                        margin-top: 10px;                        
+    
+                        img {
+                            max-width: 100%;
+                        }
+                        &.right {
+                            @include colflexx(flex-start);
+                            margin-left: 20px;
+                            p:nth-child(1){
+                                @include fontBold(1.4em, 1em, $vesti-902)
+                            }
+                            p:nth-child(2){
+                                width: 80%;
+                                @include fontNormal(1.2em, 1.4em, $vesti-902)
+                            }
+                        }
+                    }
+                }
+    
+                div:nth-child(3){
+                    margin-top: 0px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 800px){
+    .international-payments-container {
+        width: 100%;
+        height: 100%;
+        background-color: #F8FEF5;
+        margin-bottom: 10px;
+        @include colflex(center,center);
+    
+        .international-payments-inner {
+            width: 90%;
+            height: 90%;
+            @include rowflexx(center);
+
+    
+            img:nth-child(1) {
+                max-width: 100%;
+                margin-top: 30px;
+            }
+    
+            &.right {
+                width: 100%;
+                @include colflexx(center);
+                // margin-left: px;
+                .right-top-content{
+                    width: fit-content;
+                    
+                    p:nth-child(1){
+                        margin: 0;
+                        width: 100%;
+                        @include fontBold(1.25em, 1.2em, $vesti-901);
+                        margin-top: 30px;
+                    }
+                    p:nth-child(2){
+                        margin-top: 20px;
+                        @include fontLight(1.5em, 1em, $vesti-901);
+                    }
+                }
+                .right-bottom-content{
+                    width: 100%;
+                    margin-top: 0px;
+                    @include colflex(center,space-between);
+    
+                    .single-international-container {
+                        width: fit-content;
+                        @include rowflexx(flex-start);
+                        margin-top: 10px;                        
+    
+                        img {
+                            max-width: 100%;
+                        }
+                        &.right {
+                            @include colflexx(flex-start);
+                            margin-left: 20px;
+                            p:nth-child(1){
+                                @include fontBold(1.4em, 1em, $vesti-902)
+                            }
+                            p:nth-child(2){
+                                width: 80%;
+                                @include fontNormal(1.2em, 1.4em, $vesti-902)
+                            }
+                        }
+                    }
+                }
+    
+                div:nth-child(3){
+                    margin-top: 0px;
+                }
+            }
+        }
+    }
+}

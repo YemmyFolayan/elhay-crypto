@@ -1,0 +1,117 @@
+@import "../../../variables.scss";
+
+.form-input{
+    @include rowflex(flex-start,space-between);
+    height:fit-content;
+    width: 100%;
+    @include breakpoint(mobileonly) {
+        height:fit-content;
+        @include colflex(flex-start, space-between);
+        flex-direction: column !important;
+    }
+    @include breakpoint(phablet) {
+        width: 100%!important;
+        flex-direction: column !important;
+        
+    }
+    @include breakpoint(tablet) {
+        width: 100%!important;
+        flex-direction: column !important;
+        
+    }
+
+
+    .l-label {
+        height: auto;
+        // width: 100%;
+        // background-color: red;
+        flex: 1;
+        @include colflex(flex-start, flex-start);
+        display: flex;
+
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        p:nth-child(1){
+            margin: 0;
+            @include fontBold(1.2em,1em, $vesti-902);
+        }
+        p:nth-child(2){
+            margin-top: 10px;
+            @include fontMedium(1.2em,1em, $vesti-700);
+        }
+        @include breakpoint(mobileonly) {
+            height: 20px;
+            margin-bottom: 5px;
+            margin-top: 10px;
+            @include fontMedium(.8em,1em, $vesti-902);
+        }
+    }
+
+    .input-box {
+        // width: 100%;
+        flex: 3;
+    }
+    
+    input[name="firstName"], input[name="lastName"]  {
+        text-transform: capitalize;
+    }
+    input[type='text'], input[type='password'], input[type='number'] {
+        width: 100% !important;
+        // margin-top: 30px;
+        height: 60px;
+        background: #F9F8F9;
+        border: 1px solid $gray-400;
+        box-sizing: border-box;
+        border-radius: 5px;
+        outline: none;
+        padding-left: 20px;
+        position: relative;
+        font-size: 16px !important;
+        @include fontNormal(1em, 1em, $gray-600);
+
+        @include breakpoint(mobileonly) {
+            width: 100%!important;
+            height: 55px !important;
+            font-size: 16px !important;
+        }
+        @include breakpoint(tablet) {
+            width: 100% !important;
+            height: 55px;
+            font-size: 16px !important;
+        }
+
+        @include breakpoint(phablet) {
+            width: 100% !important; //250PX
+            // height: 50px;
+            font-size: 16px !important;
+        }
+        
+
+        &:focus {
+            border: 1px solid $vesti-700;
+            background-color: $vesti-100;
+            color: $vesti-901;
+        }
+        &:disabled {
+            cursor: not-allowed;
+            color: $gray-800;
+        }
+
+       
+
+        // &:valid {
+        //     border: 1px solid $blue-500;
+        //     background-color: $blue-100;
+        //     color: $blue-901;
+        // }
+    }
+}
+.eyes{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 20;
+    height: 20;
+    color: $gray-600;
+}

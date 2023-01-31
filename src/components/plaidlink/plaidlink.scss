@@ -1,0 +1,27 @@
+@import "../../variables.scss";
+
+.plaid-modal{
+
+    height: fit-content !important;
+    position: relative !important;
+    margin: 0 auto;
+
+}
+
+#plaid-link-iframe-1{
+
+    margin: 0 auto !important;
+    top: 100px !important;
+    position: absolute !important;
+    background-color: transparent !important;
+    overflow: none !important;
+    height: 700px !important;
+    padding: 0px !important;
+
+    @include breakpoint(mobileonly){
+        width: 100% !important;
+        height: 700px !important;
+        overflow: scroll !important;
+        margin-bottom: 100px !important;
+    }
+}

@@ -1,0 +1,133 @@
+@import "../../../variables.scss";
+
+
+
+.platform {
+    cursor: pointer;
+    @include colflexx(flex-start);
+    min-width: 30px;
+    width: fit-content;
+    padding: 0px 40px 0px 40px;
+    outline: none; 
+    border: none;
+    height: 56px !important;
+    border-radius: 5px !important;
+    @include fontMedium(1.1em, 1em, #fff);
+    &::first-letter {
+        text-transform: uppercase;
+        // background-color: red;
+    }
+
+    &.platform_mainbtn {
+        width: 100%;
+        background-color:  $vesti-700;
+        transition: all .5s ease;
+        font-size: 1.2em;
+        white-space: nowrap;
+        @include rowflex(center,center);
+    
+        &:hover {
+            color: #fff;
+            background-color: $vesti-900;
+        }
+    
+        &:disabled{
+            background-color: $gray-500;
+            color: #fff;
+            cursor: not-allowed;
+        }
+    
+        @include breakpoint(mobileonly){
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+    &.platform_withicon, &.platform_withiconnobg {
+        width: 100%;
+        // background-color:  transparent;
+        background-color:  $vesti-700;
+        transition: all .5s ease;
+        white-space: nowrap;
+        @include rowflex(center,center);
+        gap: 10px;
+
+        @include breakpoint(mobileonly){
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+    &.platform_withiconnobg {
+        background-color:  transparent;
+        color: $vesti-700;
+    }
+    &.platform_secbtn {
+        width: 100%;
+        background-color:  transparent;
+        border: 1px solid $vesti-700 !important;
+        transition: all .5s ease;
+        font-size: 1.2em;
+        white-space: nowrap;
+        @include rowflex(center,center);
+        @include fontMedium(1.1em, 1em, $vesti-700);
+
+        &:hover {
+            color: $vesti-700;
+            background-color: transparent;
+            border: 1px solid $vesti-700;
+        }
+
+        &.--red {
+           background-color: rgb(255, 235, 235);
+            @include fontMedium(1.1em, 1em, red);
+
+            &:hover {
+                color:red;
+                background-color:  rgb(255, 219, 219);
+            }
+        }
+
+        
+
+        &:disabled{
+            background-color: $gray-500;
+            color: #fff;
+            cursor: not-allowed;
+        }
+    }
+    &.platform_slant {
+        width: fit-content;
+        height: fit-content;
+        transition: all .5s ease;
+        white-space: nowrap;
+        @include fontMedium(1.1em, 1em, $vesti-900);
+        font-style: italic;
+
+        &:hover {
+            color: $vesti-700;
+        }
+        
+
+        &:disabled{
+            color: $gray-500;
+            cursor: not-allowed;
+        }
+    }
+    &.--child{
+        width: 100%;
+        margin: 0;
+        margin-top: 20px;
+        @include fontNormal(.9em, 1.2em, $vesti-901);
+    }
+    &.--small{
+        height: 45px !important;
+        @include fontMedium(1em, 1em, #fff);
+
+    }
+}
+
+button {
+    // text-transform: uppercase !important;
+    &::first-letter{
+        text-transform: uppercase !important;
+    }
+}

@@ -1,0 +1,594 @@
+@import "../../../variables.scss";
+
+
+.background{
+  background-color: #F8FEF5;
+  margin-top: 10px;
+  padding: 2px;
+  border-radius: 15px;  
+}
+.japa-footer figure img {
+  margin-right: 3rem;
+}
+.japa-footer figure img {
+  margin-right: 3rem;
+}
+.japa-footer .doc-links a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-right: 2rem;
+  transition: all 0.5s ease;
+}
+.japa-footer-col ul li a:hover {
+  padding-left: 5px;
+}
+.japa-footer_space {
+  padding-top: 50px;
+}
+.japa-footer .japa-footer-links {
+  margin: 50px;
+  padding: 50px 0;
+  text-align: center;
+  font-size: 16px;
+  color: var(--main-color);
+  font-weight: 300;
+  margin: 0;
+  border-top: 1px solid var(--main-color);
+}
+
+.featured-container {
+  border-radius: 0px !important;
+  padding: 0 !important;
+  background-color: #F8FEF5;
+  @include rowflex(center,center);
+  width: 100% !important;
+  height: 200px;
+
+  .featured-inner {
+    width: 90%;
+    height: 90%;
+    @include rowflex(center,center);
+
+    p:nth-child(1){
+      margin: 0;
+      @include fontMedium(2.2em, 1em, $vesti-902);
+    }
+  }
+}
+
+.japa-footer-container {
+  width: 100%;
+  height: 100%;
+  background-color: $vesti-700;
+  @include rowflex(center,center);
+
+  .japa-footer-inner{
+    width: 90%;
+    height: 85%;
+    @include colflexx(flex-start);
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+
+    &.top {
+      width: 100%;
+      .japa-footer-top {
+        width: 100%;
+        @include rowflexx(flex-start);
+
+        img {
+          width: auto;
+        }
+        .right {
+          margin-left: 50px;
+          width: 80%;
+          @include rowflexx(flex-start);
+
+          ul {
+            list-style: none;
+            padding: 0;
+            width: 30%;
+            li:nth-child(1) {
+              @include fontSemiBold(1.4em, 1em, $vesti-100);
+            }
+
+            li {
+              text-decoration: none;
+              .japa-footer-link {
+                text-decoration: none;
+                @include fontNormal(1.2em, 1.5em, $vesti-100);
+                cursor: pointer;
+                transition: all .5s ease;
+
+                &:hover {
+                  @include fontNormal(1.2em, 1.5em, $vesti-900);
+                }
+              }
+              a{
+                @include fontNormal(1.2em, 1.5em, $vesti-100);
+              }
+            }
+
+            li:not(:first-child){
+              width: 80%;
+              margin-top: 20px;
+              @include fontNormal(1.2em, 1.5em, $vesti-100);
+            }
+
+            li {
+              .japa-footer-link {
+                @include fontNormal(1.2em, 0.1em, $vesti-100);
+                text-decoration: none;
+                transition: all .5s ease;
+
+                &:hover {
+                  @include fontNormal(1.2em, 0.1em, $vesti-100);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .japa-footer-body-text{
+        margin: 0;
+        margin-top: 50px;
+        @include fontNormal(1.2em, 1.8em, $vesti-100);
+      } 
+    }
+      hr {
+        width: 100%;
+        border: 1px solid $vesti-100;
+        margin-top: 40px !important;
+        margin-bottom: 30px !important;
+      }
+    &.bottom {
+      width: 100%;
+      @include rowflex(center, space-between);
+
+      .social-media-links {
+        width: fit-content;
+
+        a{
+          text-decoration: none;
+          img {
+            width: auto;
+          }
+        }
+        a:not(:first-child) {
+          margin-left: 15px;
+        }
+      }
+
+      .doc-links {
+        width: fit-content;
+
+        a{
+          text-decoration: none;
+          @include fontSemiBold(1.2em, 1em, $vesti-100);
+
+        }
+        a:not(:first-child) {
+          margin-left: 15px;
+        }
+      }
+      .copyright-text {
+
+        @include fontLight(1.20em, 1em, $vesti-100);
+
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+  .featured-container {
+    border-radius: 0px !important;
+    padding: 0 !important;
+    background-color: #F8FEF5;
+    @include colflex(center,center);
+    width: 100% !important;
+    height: 100%;
+
+    .featured-inner {
+      width: 90%;
+      height: 90%;
+      @include colflex(center,center);
+      margin-top: 0;
+
+      p:nth-child(1){
+        margin: 0;
+        @include fontMedium(1.5em, 1em, $vesti-902);
+      }
+      .company-logos {
+        width: 80%;
+        grid-gap: 50px;
+        margin-top: 20px;
+        @include colflexx(center);
+
+
+        img {
+          width: auto;
+
+        }
+
+        img:not(:first-child) {
+          margin-left: -5px;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  .japa-footer-container {
+    width: 100%;
+    height: 100%;
+    background-color: $vesti-700;
+    @include rowflex(center,center);
+
+    .japa-footer-inner{
+      width: 90%;
+      height: 85%;
+      @include colflexx(flex-start);
+
+      &.top {
+        width: 100%;
+        .japa-footer-top {
+          width: 100%;
+          margin-top: 20px;
+          @include colflexxx(flex-start);
+          .white-logo{
+            margin-top: 20px;            
+          } 
+          img {
+            max-width: 100%;
+            margin-top: 0;
+          }
+          .right {
+            margin-left: 0px;
+            width: 80%;
+            @include colflexx(flex-start);
+
+            ul {
+              list-style: none;
+              padding: 0;
+              width: 100%;
+              margin-top: 20px;
+              li:nth-child(1) {
+                @include fontSemiBold(1.4em, 1em, $vesti-100);
+              }
+
+              li {
+                text-decoration: none;
+                .japa-footer-link {
+                  text-decoration: none;
+                  @include fontNormal(1.2em, 1.5em, $vesti-100);
+                  cursor: pointer;
+                  transition: all .5s ease;
+  
+                  &:hover {
+                    @include fontNormal(1.2em, 1.5em, $vesti-900);
+                  }
+                }
+              }
+
+              li:not(:first-child){
+                width: 90%;
+                margin-top: 20px;
+                @include fontNormal(1.2em, 1.5em, $vesti-100);
+              }
+            }
+          }
+        }
+
+        .japa-footer-body-text{
+          margin: 0;
+          margin-top: 30px;
+          @include fontNormal(1em, 1.8em, $vesti-100);
+        } 
+      }
+       hr {
+         width: 100%;
+         border: 1px solid $vesti-100;
+         margin-top: 40px !important;
+         margin-bottom: 30px !important;
+       }
+      &.bottom {
+        width: 100%;
+        @include colflex(center, space-between);
+
+        .social-media-links {
+          width: fit-content;
+
+          a{
+            text-decoration: none;
+            img {
+              width: auto;
+            }
+          }
+          a:not(:first-child) {
+            margin-left: 15px;
+          }
+        }
+
+        .doc-links {
+          width: fit-content;
+
+          a{
+            text-decoration: none;
+            @include fontSemiBold(0.8em, 1em, $vesti-100);
+
+          }
+          a:not(:first-child) {
+            margin-left: 10px;
+          }
+        }
+        .copyright-text {
+          @include fontLight(0.8em, 1em, $vesti-100);
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 800px) {
+  .featured-container {
+    border-radius: 0px !important;
+    padding: 0 !important;
+    background-color: #F8FEF5;
+    @include colflex(center,center);
+    width: 100% !important;
+    height: 100%;
+
+    .featured-inner {
+      width: 90%;
+      height: 90%;
+      @include colflex(center,center);
+
+      p:nth-child(1){
+        margin: 0;
+        @include fontMedium(1.5em, 1em, $vesti-902);
+      }
+      .company-logos {
+        width: 70%;
+        grid-gap: 20px;
+        margin-top: 20px;
+        @include colflexx(center);
+
+        img {
+          width: auto;
+        }
+
+        img:not(:first-child) {
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+
+  .japa-footer-container {
+    width: 100%;
+    height: 100%;
+    background-color: $vesti-700;
+    @include rowflex(center,center);
+
+    .japa-footer-inner{
+      width: 90%;
+      height: 85%;
+      @include colflexx(flex-start);
+
+      &.top {
+        width: 100%;
+        .japa-footer-top {
+          width: 100%;
+          margin-top: 20px;
+          @include colflexxx(flex-start);
+          .white-logo{
+            margin-top: 20px;            
+          } 
+          img {
+            max-width: 100%;
+            margin-top: 0;
+          }
+          .right {
+            margin-left: 0px;
+            width: 100%;
+            @include rowflexx(flex-start);
+
+            ul {
+              list-style: none;
+              padding: 0;
+              width: 100%;
+              margin-top: 20px;
+              li:nth-child(1) {
+                @include fontSemiBold(1.2em, 1em, $vesti-100);
+              }
+
+              li:not(:first-child){
+                width: 100%;
+                margin-top: 20px;
+                @include fontNormal(1em, 1.5em, $vesti-100);
+              }
+            }
+          }
+        }
+
+        .japa-footer-body-text{
+          margin: 0;
+          margin-top: 30px;
+          @include fontNormal(1em, 1.8em, $vesti-100);
+        } 
+      }
+       hr {
+         width: 100%;
+         border: 1px solid $vesti-100;
+         margin-top: 40px !important;
+         margin-bottom: 30px !important;
+       }
+      &.bottom {
+        width: 100%;
+        @include colflex(center, space-between);
+
+        .social-media-links {
+          width: fit-content;
+
+          a{
+            text-decoration: none;
+            img {
+              width: auto;
+            }
+          }
+          a:not(:first-child) {
+            margin-left: 15px;
+          }
+        }
+
+        .doc-links {
+          width: fit-content;
+
+          a{
+            text-decoration: none;
+            @include fontSemiBold(0.8em, 1em, $vesti-100);
+
+          }
+          a:not(:first-child) {
+            margin-left: 10px;
+          }
+        }
+        .copyright-text {
+          @include fontLight(0.8em, 1em, $vesti-100);
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1224px) {
+  .featured-container {
+    border-radius: 0px !important;
+    padding: 0 !important;
+    background-color: #F8FEF5;
+    @include colflex(center,center);
+    width: 100% !important;
+    height: 100%;
+
+    .featured-inner {
+      width: 90%;
+      height: 90%;
+      @include colflex(center,center);
+
+      p:nth-child(1){
+        margin: 0;
+        @include fontMedium(2.25em, 1em, $vesti-902);
+      }
+      .company-logos {
+        width: 100%;
+        grid-gap: 20px;
+        margin-top: 50px;
+        @include rowflexx(center);
+
+        img {
+          width: auto;
+        }
+
+        img:not(:first-child) {
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+
+  .japa-footer-container {
+    width: 100%;
+    height: 100%;
+    background-color: $vesti-700;
+    @include rowflex(center,center);
+
+    .japa-footer-inner{
+      width: 90%;
+      height: 85%;
+      @include colflexx(flex-start);
+
+      &.top {
+        width: 100%;
+        .japa-footer-top {
+          width: 100%;
+          margin-top: 20px;
+          @include colflexxx(flex-start);
+
+          img {
+            max-width: 100%;
+            margin-top: 20px;
+          }
+          .right {
+            margin-left: 0px;
+            width: 100%;
+            @include rowflexx(flex-start);
+
+            ul {
+              list-style: none;
+              padding: 0;
+              width: 100%;
+              margin-top: 20px;
+              li:nth-child(1) {
+                @include fontSemiBold(1.5em, 1em, $vesti-100);
+              }
+
+              li:not(:first-child){
+                width: 100%;
+                margin-top: 20px;
+                @include fontNormal(1.3em, 1.5em, $vesti-100);
+              }
+            }
+          }
+        }
+
+        .japa-footer-body-text{
+          margin: 0;
+          margin-top: 30px;
+          @include fontNormal(1.5em, 1.8em, $vesti-100);
+        } 
+      }
+       hr {
+         width: 100%;
+         border: 1px solid $vesti-100;
+         margin-top: 40px !important;
+         margin-bottom: 30px !important;
+        }
+      &.bottom {
+        width: 100%;
+        @include colflex(center, space-between);
+
+        .social-media-links {
+          width: fit-content;
+
+          a{
+            text-decoration: none;
+            img {
+              width: auto;
+            }
+          }
+          a:not(:first-child) {
+            margin-left: 15px;
+          }
+        }
+
+        .doc-links {
+          width: fit-content;
+
+          a{
+            text-decoration: none;
+            @include fontSemiBold(1.1em, 1em, $vesti-100);
+
+          }
+          a:not(:first-child) {
+            margin-left: 10px;
+          }
+        }
+        .copyright-text {
+          @include fontLight(0.8em, 1em, $vesti-100);
+        }
+      }
+    }
+  }
+}
+

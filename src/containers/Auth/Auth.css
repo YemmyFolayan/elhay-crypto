@@ -1,0 +1,195 @@
+.auth_wizard_txt {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #4a4a4a;
+}
+
+.logo_landing {
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  width: 150px;
+  /* height: 80px; */
+}
+
+.auth_content {
+  height: 100%;
+}
+.auth_card {
+  width: 400px;
+  height: 500px;
+  background: #ffffff;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.07);
+  border-radius: 5px;
+  padding: 1em 2.5em;
+}
+.auth_card_signup {
+  width: 450px;
+  height: 670px;
+  background: #ffffff;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.07);
+  border-radius: 5px;
+  padding: 1em 2.5em;
+}
+.auth_card2 {
+  width: 450px;
+  height: 500px;
+  background: #ffffff;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.07);
+  border-radius: 5px;
+  padding: 1em 2.5em;
+}
+
+.landing_txt {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 56px;
+  /* or 160% */
+
+  color: #4a4a4a;
+}
+
+.auth_input {
+  padding: 0.7em 1em;
+  border: none;
+  width: 100%;
+  background: #eff2f7;
+  border-radius: 4px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height */
+
+  color: #adadad;
+}
+.auth_input::placeholder {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height */
+  color: #adadad;
+}
+
+.auth_input:focus,
+input:focus {
+  outline: none;
+  color: black !important;
+}
+.auth_input,
+input {
+  outline: none;
+  /* color: black !important; */
+  color: black;
+}
+
+.auth_input_checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+
+  border: 1px solid #adadad;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.profpic {
+  background-image: url(../../assets/girl_pic.svg);
+  object-fit: cover;
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+  position: fixed;
+}
+
+.header_text1 {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 102.5%;
+  /* or 49px */
+
+  color: #000000;
+}
+/* lskhugefewf */
+
+/* Customize the label (the container) */
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #02567b;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

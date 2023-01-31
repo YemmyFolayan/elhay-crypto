@@ -1,0 +1,54 @@
+@import "../../variables.scss";
+ 
+.security-container{
+    width: 100%;
+    height: fit-content;
+    @include rowflex(center,center);
+    .new-modal .ant-modal-content .ant-modal-body form {
+        width: 100% !important;
+        height: fit-content;
+        @include colflexx(flex-start);
+        gap: 20px;
+
+        .updateprofile-btn-box {
+            width: 100%;
+            margin-top: 0px;
+        }
+    }
+    
+    .security-inner-container{
+        width: 100%;
+        height: fit-content;
+        @include colflexx(flex-start);
+        gap: 30px;
+        
+        .titleinfo {
+            width: 100%;
+            @include rowflex(flex-start,space-between);
+
+            @include breakpoint(mobileonly){
+                @include colflexx(flex-start);
+                gap: 20px;
+            }
+            span {
+                @include colflexx(flex-start);
+                gap: 0px;
+
+                p:nth-child(1){
+                    @include fontBold(1.2em,1em,$vesti-902);
+                }
+                p:nth-child(2){
+                    white-space: nowrap;
+                    @include fontMedium(1.2em,1em,$vesti-800);
+                }
+            }
+
+            &__link {
+                @include fontSemiBold(1.2em, 1em, $vesti-700);
+                font-style: italic;
+                white-space: nowrap;
+                cursor: pointer;
+            }
+        }
+    }
+}   

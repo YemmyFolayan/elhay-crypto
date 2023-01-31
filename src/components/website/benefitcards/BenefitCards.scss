@@ -1,0 +1,230 @@
+@import "../../../variables.scss";
+
+.benefitcards-container{
+    width: 100%;
+    height: fit-content;
+    border-radius: 50px;
+    padding-bottom: 50px;
+    // background-color: #F8FEF5;
+    @include rowflex(center,center);
+
+    .benefitcards-inner {
+        width: 80%;
+        height: fit-content;
+        @include colflexx(center);
+
+        &.top{
+            width: 50%;
+            p:nth-child(1){
+                margin: 0;
+                @include fontBold(2.25em, 1em, $vesti-902);
+            }
+            p:nth-child(2){
+                margin-top: 10px;
+                @include fontNormal(1.2em, 1.5em, $vesti-901);
+            }
+        }
+        &.bottom {
+            width: 80%;
+            margin-top: 50px;
+            @include rowflexx(center);
+
+            .card{
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+                transition: all .5s ease;
+                img{
+                    margin-bottom: 20px;
+                }
+                &:hover{
+                    background-color: $vesti-100;
+                    .card-title{
+                        color: $vesti-700;
+                    }
+                }
+
+                .card-title{
+                    @include fontSemiBold(1.5em, 1.5em, $vesti-902);
+                    transition: all .5s ease;
+                }
+                .card-text{
+                    @include fontNormal(1.25em, 1.5em, $vesti-901);
+                
+                }
+
+            }
+
+            
+
+        }
+
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 600px){
+    .benefitcards-container{
+        width: 80%;
+        margin: 0 auto;
+        height: fit-content;
+        border-radius: 20px;
+        padding-bottom: 30px;
+        @include colflex(center,center);
+    
+        .benefitcards-inner {
+            width: 100%;
+            height: fit-content;
+            @include colflexx(center);
+            margin-top: -53px;
+    
+            &.top{
+                width: 100%;
+                p:nth-child(1){
+                    margin: 0;
+
+                    text-align: center;
+                    @include fontBold(1.45em, 1em, $vesti-902);
+
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.1em, 1.5em, $vesti-902);
+                }
+            }
+            &.bottom {
+                width: 100%;
+                margin-top: 30px;
+                margin: 0 auto;
+                padding: 0px !important;
+                @include colflexx(flex-start);
+                
+                .card{
+                    width: 100% !important;
+                    border: none;
+                    background-color: transparent;
+                    padding-right: 0px;
+                    margin-left: 0px;
+    
+                    .card-title{
+                        @include fontSemiBold(1.1em, 1.5em, $vesti-902);
+                    
+                    }
+                    .card-text{
+                        @include fontNormal(1.1em, 1.5em, $vesti-901);
+                    
+                    }
+    
+                }
+    
+            }
+    
+        }
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 800px){
+    .benefitcards-container{
+        width: 80%;
+        height: fit-content;
+        // background-color: #F8FEF5;
+        margin-bottom: 100px;
+        border-radius: 20px;
+        margin-left: 80px;
+        padding-bottom: 30px;
+        @include colflex(center,center);
+    
+        .benefitcards-inner {
+            width: 100%;
+            height: fit-content;
+            @include colflexx(center);
+            margin-top: -53px;
+    
+            &.top{
+                width: 100%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(1.8em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.35em, 1.5em, $vesti-902);
+                }
+            }
+            &.bottom {
+                width: 100%;
+                margin-top: 20px;
+                @include colflexx(center);
+    
+                .card{
+                    border: none;
+                    background-color: transparent;
+                    margin-left: -56px;
+                    width: 25rem;
+    
+                    .card-title{
+                        @include fontSemiBold(1.5em, 1.5em, $vesti-902);
+                    
+                    }
+                    .card-text{
+                        @include fontNormal(1.25em, 1.5em, $vesti-901);
+                    
+                    }
+    
+                }
+    
+            }
+    
+        }
+    }
+}
+@media only screen and (min-width: 800px) and (max-width: 1224px){
+    .benefitcards-container{
+        width: 100%;
+        height: fit-content;
+        background-color: #F8FEF5;
+        margin-bottom: 100px;
+        border-radius: 50px;
+        // padding-top: 30px;
+         padding-bottom: 50px;
+        @include rowflex(center,center);
+    
+        .benefitcards-inner {
+            width: 90%;
+            height: fit-content;
+            @include colflexx(center);
+    
+            &.top{
+                width: 100%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(2.25em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.2em, 1.5em, $vesti-902);
+                }
+            }
+            &.bottom {
+                width: 100%;
+                margin-top: 50px;
+                @include rowflexx(center);
+    
+                .card{
+                    border: none;
+                    background-color: transparent;
+    
+                    .card-title{
+                        @include fontSemiBold(1.5em, 1.5em, $vesti-902);
+                    
+                    }
+                    .card-text{
+                        @include fontNormal(1.25em, 1.5em, $vesti-901);
+                    
+                    }
+    
+                }
+                
+    
+            }
+    
+        }
+    }  
+}

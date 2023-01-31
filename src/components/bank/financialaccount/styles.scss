@@ -1,0 +1,195 @@
+@import "../../../variables.scss";
+
+.financialaccount{
+    .titlesubtitle {
+        &__steps{
+            @include fontMedium(1.2em, 1em , $vpurp-700);
+        }
+    }
+}   
+
+.stepone,.steptwo {
+    width: 100%;
+    @include colflexx(flex-start);
+    gap: 30px;
+    
+    &__col {
+        width: 98%;
+        @include colflexx(flex-start);
+        gap: 20px;
+        .littlebalance{
+            margin-bottom: 0px;
+        }
+
+        &.--list{
+            padding-right: 20px;
+            max-height: 250px;
+            @include overflowScroll($vpurp-200, $vpurp-700);
+            overflow-y: scroll;
+            overflow-x: auto;
+
+            // &::-webkit-scrollbar {
+            //     width: 4px;
+
+            // }
+            // &::-webkit-scrollbar-track {
+            //     background: $vpurp-200;
+            // }
+            // &::-webkit-scrollbar-thumb {
+            //     background-color: $vpurp-700 ;
+            //     border-radius: 6px;
+            //     border: $vpurp-900;
+            // }
+        }
+    }
+    &__charge {
+        margin-top: -10px;
+        padding: 5px 20px;
+        border-radius: 10px;
+        background-color: $vpurp-200;
+        border: .5px solid $vpurp-700;
+        @include fontNormal(1em,1em,$vpurp-901);
+
+        strong {
+            color: $vpurp-700;
+        }
+    }
+    &__row {
+        width: 100%;
+        @include colflexx(flex-start);
+        gap: 20px;
+
+        @include breakpoint(desktop){
+            @include rowflexx(flex-end);
+            gap: 20px;
+        }
+    }
+    .titlesubtitle {
+        &__steps{
+            @include fontMedium(1.2em, 1em , $vpurp-700);
+        }
+    }
+    
+    .platform{
+        &.platform_mainbtn {
+            background-color: $vpurp-800;
+            &:disabled{
+                background-color: $vpurp-902 !important;
+            }
+        }
+        &.platform_secbtn {
+            border-color: $vpurp-800 !important;
+            color: $vpurp-800;
+        }
+    }
+    .inputfloat,.amountinput, .amountfloat,.my-input-class {
+        width: 400px !important;
+        @include breakpoint(mobileonly){
+            width: 75vw !important;
+        }
+        @include breakpoint(phablet){
+            width: 350px !important;
+        }
+        &__box__label{
+            color: $vpurp-700 !important;
+        }
+        input {
+            &:focus {
+                border: 1px solid $vpurp-700 !important;
+                background-color: $vpurp-100 !important;
+                color: $vpurp-901 !important;
+            }
+        }
+        
+    }
+    &__btns {
+        width: 100%;
+        @include colflexx(flex-start);
+        gap: 20px;
+        // background-color: red;
+        @include breakpoint(desktop){
+            @include rowflexx(flex-start);
+            gap: 20px;
+        }
+    }
+
+    .radiooption{
+        width: 100%;
+        &.--active {
+            border: 1px solid $vpurp-700;
+            background-color: $vpurp-100;
+            .radiooption__left {
+                p:nth-child(1){
+                    @include fontBold(1.1em, 1em, $vpurp-700);
+    
+                    @include breakpoint(desktop){
+                        @include fontBold(1.3em, 1em, $vpurp-700);
+                    }
+                }
+            }
+        }
+        input[type="radio"] {
+            &:checked + label:before {
+                border-color: $vpurp-700;  
+            }
+            &:checked +label+ div.paymentoption-detail {
+                p:nth-child(1){
+                    color: $vpurp-700;
+                }
+            }
+        }
+        label {
+            &:after {
+                background:$vpurp-700;            
+            }
+        }
+        
+    }
+}
+
+.transfinancreview {
+
+    width: 400px !important;
+
+    @include breakpoint(mobileonly){
+        width: 70vw !important;
+    }
+
+    @include breakpoint(desktop){
+        width: 100% !important;
+    }
+    *.backcontinue {
+        width: 100% !important;
+        .platform{
+            &.platform_mainbtn {
+                background-color: $vpurp-800;
+                &:disabled{
+                    background-color: $vpurp-902 !important;
+                }
+            }
+            &.platform_secbtn {
+                border-color: $vpurp-800 !important;
+                color: $vpurp-800;
+            }
+        }
+    }
+    .transreview {
+        background-color: $vpurp-100;
+        border: .5px solid $vpurp-700;
+        &__single:not(:last-child){
+            // background-color: red;
+            padding: 10px 0px;
+            border-bottom: 1px dashed $vpurp-700;
+        }
+        &__single {
+           
+            p:nth-child(1){
+                @include fontNormal(1em,1em,$vpurp-901);
+            }
+            p:nth-child(2){
+                @include fontBold(1em,1em,$vpurp-700);
+            }
+        }
+    }
+    
+}

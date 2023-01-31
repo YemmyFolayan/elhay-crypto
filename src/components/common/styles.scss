@@ -1,0 +1,82 @@
+@import "../../variables.scss";
+
+.clipboard {
+    width: 100%;
+    &__inner {
+        width: 100%;
+        @include colflexx(flex-start);
+        gap: 10px;
+
+        .referal-info{
+            @include rowflexx(center);
+            @include fontNormal(1em, 1em, $yellow-800);
+
+            img {
+                width: auto;
+                margin-right: 10px;
+                filter: invert(73%) sepia(93%) saturate(313%) hue-rotate(354deg) brightness(96%) contrast(97%);
+            }
+        }
+    }
+    &__title{
+        margin: 0;
+        @include fontMedium(1.2em, 1em, $vesti-900);
+    }
+    &__box{
+        width: 100% !important;
+        padding: 7px 15px 7px 15px;
+        border-radius: 5px;
+        border: 1px dashed $yellow-700;
+        background-color: $yellow-100;
+        transition: all 0.5s ease;
+        text-align: center;
+        @include colflex(center,center);
+        gap: 5px !important;
+        @include breakpoint(phablet){
+            width: 350px !important;
+        }
+        @include breakpoint(tablet){
+            width: 350px;
+        }
+        @include breakpoint(desktop){
+            gap: 0px;
+        }
+        p:nth-child(1){
+            margin: 0;
+            @include fontNormal(1.2em, 1em, $yellow-800);
+            text-transform: capitalize !important;
+        }
+        p:nth-child(2){
+            margin: 0;
+            margin-top: 3px;
+            @include fontBold(.8em, 1.4em, $yellow-800);
+        }
+        &.copied{
+            border: 1px dashed $vesti-700;
+            background-color: $vesti-100;
+
+            p:nth-child(1){
+                @include fontNormal(1.2em, 1em, $vesti-900);
+            }
+            p:nth-child(2){
+                margin: 0;
+                margin-top: 3px;
+                @include fontBold(.8em, 1.4em, $vesti-900);
+            }
+
+        }
+        
+    }
+    &__copied{
+        @include fontNormal(1em, 1em, $green-700);
+    }
+
+    &__extra {
+        @include fontNormal(1.1em, 1.7em, $vesti-901);
+
+        strong {
+            color: $vesti-700;
+            font-weight: 600;
+        }
+    }
+}

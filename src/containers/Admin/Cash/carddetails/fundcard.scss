@@ -1,0 +1,67 @@
+@import "../../../../variables.scss";
+
+.fundcard {
+    width: 100% !important;
+    @include colflexx(flex-start);
+    .vestirate {
+        margin-bottom: 10px;
+    }
+
+    .inputfloat,.amountfloat {
+        width: 400px;
+        @include breakpoint(mobileonly){
+            width:70vw !important;
+        }
+        @include breakpoint(phablet){
+            width:350px !important;
+        }
+        @include breakpoint(tablet){
+            width:400px !important;
+        }
+    }
+    &__btn {
+        outline: none;
+        border: none;
+        background-color: $vesti-700;
+        @include fontMedium(1em,1em, #fff);
+        transition: all .5s ease;
+        &:hover {
+            background-color: $vesti-800;
+        }
+        &:disabled {
+            background-color: $gray-500;
+            color: $gray-100;
+            cursor: not-allowed;
+        }
+    }
+
+    &__get {
+        @include fontNormal(1em, 1em, $vesti-800);
+        width: fit-content;
+        height: fit-content;
+        padding: 5px 10px 5px 10px;
+        border-radius: 10px;
+        background-color: $vesti-200;
+        border: .5px solid $vesti-700;
+    }
+    &__error {
+        @include fontNormal(1em, 1em, $red-900);
+        width: fit-content;
+        height: fit-content;
+        padding: 5px 10px 5px 10px;
+        border-radius: 2px;
+        background-color: $red-100;
+        border: .5px solid $red-700;
+    }
+    &__final {
+        width: 350px;
+
+        @include breakpoint(mobileonly){
+            width: 75vw;
+        }
+
+        @include breakpoint(desktop){
+            width: 400px;
+        }
+    }
+}

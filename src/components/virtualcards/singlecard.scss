@@ -1,0 +1,98 @@
+@import "../../variables.scss";
+
+.singlecard {
+    // width: 500px;
+    width: 100%;
+    // height: 230px;
+    position: relative;
+    overflow: hidden;
+    padding: 30px;
+    border-radius: 20px;
+    transition: all 1s ease;
+    @include colflexx(flex-start);
+
+    @include breakpoint(mobileonly){
+
+        width: 90vw;
+        padding: 30px;
+        margin: 0 auto;
+
+    }
+    @include breakpoint(phablet){
+        width: 100%;
+    }
+    &.--Black, &.--black {
+        @include card($gray-800, #fff, $gray-500);
+        background: linear-gradient(26.56deg, #000000 18.53%, #121243 98.94%);
+    }
+    &.--Blue, &.--blue {
+        @include card(#5AA2E8, #fff, #294664);
+        background: linear-gradient(26.56deg, #70B8FF 18.53%, #123960 98.94%);
+    }
+    &.--Green, &.--green {
+        @include card($green-500, #fff, $green-900);
+        background: linear-gradient(26.56deg, #000000 18.53%, #121243 98.94%);
+    }
+    &.--Purple, &.--purple {
+        @include card($sila-600, #fff, $sila-800);
+        background: linear-gradient(26.56deg, #A455D9 18.53%, #311047 98.94%);
+    }
+    &.--Yellow,  &.--yellow {
+        @include card($yellow-600, #fff, $yellow-900);
+        background: linear-gradient(26.56deg, #483806 18.53%, #483806 98.94%);
+    }
+
+    &.--white ,&.--White  {
+        // @include card($yellow-600, #fff, $yellow-900);
+        @include card($gray-100, $gray-800, $yellow-900);
+        // background-color: #fff;
+        border: 1px solid $gray-500;
+
+        i {
+            color: $gray-800 !important;
+        }
+
+        img {
+            // filter: invert(5%) sepia(1%) saturate(3597%) hue-rotate(169deg) brightness(92%) contrast(92%);
+            filter: invert(100%);
+        }
+
+        .singlecard__mid__number{
+
+           @include breakpoint (mobileonly){
+            letter-spacing: 0px !important;
+            font-size: 0.8em !important;
+
+           } 
+                        
+            &.--active {
+                background-color: $green-900;
+                color: #fff;
+            }
+            &.--inactive {
+                background-color: $red-900;
+                color: #fff;
+            }
+        }
+        .singlecard__link{
+            &.--fund{
+                background-color: $gray-800 !important;
+                color: #fff !important;
+            }
+        }
+    }
+
+}
+@keyframes bounce {
+    0% { 
+      opacity: 0;
+    }
+  
+    50% { 
+        opacity: .5;
+    }
+  
+    100% { 
+        opacity: 1;
+    }
+  }

@@ -1,0 +1,130 @@
+@import "../../variables.scss";
+
+.createpost {
+    width: 100%;
+    height: fit-content;
+    padding: 0px;
+
+    @include rowflexx(flex-start);
+    @include breakpoint(mobileonly){
+        @include colflexx(flex-start);
+    }
+    @include breakpoint(tablet){
+        @include colflexx(flex-start);
+    }
+    img {
+        margin-right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+
+        @include breakpoint(mobileonly){
+            margin-right: 0px;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            margin-bottom: 20px;
+        }
+        
+    }
+
+    &__right {
+        width: 100%;
+        @include colflexx(flex-start);
+
+        textarea{
+            resize: none;
+            margin-top: -1px;
+        }
+        &__bottom {
+            width: 100%;
+            margin-top: 30px;
+            @include rowflex(flex-start,space-between);
+
+            @include breakpoint(mobileonly){
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            @include breakpoint(phablet){
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            @include breakpoint(tablet){
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            
+            &__button {
+                width: 150px;
+                height: 50px;
+                background-color: $vesti-700;
+                color: #fff;
+                transition: all 0.5s ease;
+                border-radius: 5px !important;
+
+                &:hover {
+                    background-color: $vesti-800;
+                    color: #fff;
+                }
+                &:disabled {
+                    background-color: $gray-600;
+                    color: #fff;
+                    cursor: not-allowed;
+                } 
+            }
+
+            &__image {
+                cursor: pointer;
+                @include fontMedium(1em,1em, $vesti-700);
+
+                i {
+                    margin-right: 5px;
+                }
+
+                @include breakpoint(mobileonly){
+                    margin-bottom: 10px;
+                }
+        
+                @include breakpoint(phablet){
+                    margin-bottom: 10px;
+                }
+        
+                @include breakpoint(tablet){
+                    margin-bottom: 10px;
+                }
+            }
+
+            
+        }
+
+        &__remove {
+            @include fontMedium(1em,1em, red);
+            transition: all .5s ease;
+            cursor: pointer;
+
+            &:hover{
+                transform: scale(1.1);
+            }
+            i {
+                margin-right: 5px;
+            }
+
+            @include breakpoint(mobileonly){
+                margin-bottom: 10px;
+            }
+    
+            @include breakpoint(phablet){
+                margin-bottom: 10px;
+            }
+    
+            @include breakpoint(tablet){
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

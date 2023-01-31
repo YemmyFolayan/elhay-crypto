@@ -1,0 +1,190 @@
+@import "../../../variables.scss";
+
+.about-bannner-container {
+  width:  100% !important;
+
+  @include breakpoint(mobileonly) {
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+}
+
+
+
+.co-founder{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 3rem;
+}
+.team p a {
+  text-decoration: none;
+  color: #000000; 
+}
+.team p a img{
+  text-decoration: none;
+  color: #000000;
+  margin-right: 10px;
+  
+}
+.team p a:hover {
+  text-decoration: none;
+  color: #000000;
+}
+
+.team-row {
+  width: 100%;
+  @include rowflex(center,center);
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.other-team-members {
+  width: 100%;
+  @include colflexx(center);
+  // .team-header {
+  //   text-align: center;
+  //   margin: 0;
+  //   @include fontBold(2em,1em, $vesti-700);
+  // }
+  .team-header {
+    @include colflexx(center);
+    p:nth-child(1){
+      @include fontBold(2.5em, 1em, $vesti-700);
+    }
+    p:nth-child(2){
+      text-align: center;
+      @include fontNormal(1.3em, 1.4em, $vesti-901);
+      width: 100%;
+    }
+  }
+  .other-team-members-content {
+    margin: 0 px;
+    margin-top: 50px;
+    padding: 0px !important;
+    @include rowflexx(center);
+    flex-wrap: wrap;
+    // gap: 20px;
+    .advisors{
+      @include fontBold(2.5em, 1em, $vesti-700);
+
+    }
+
+  }
+  
+}
+
+@media screen and (min-width:320px) and (max-width:600px) {
+
+  .team-bottom-content {
+    margin-top: -80px !important;
+  } 
+  
+  
+  .co-founder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 3rem;
+  }
+  .co-founderba{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 3rem;
+  }
+  .team-header {
+    @include colflexx(center);
+    p:nth-child(1){
+      @include fontBold(2em, 1em, $vesti-901);
+    }
+    p:nth-child(2){
+      text-align: center;
+      @include fontNormal(1em, 1.4em, $vesti-901);
+      width: 80%;
+    }
+  }
+
+  .co-founder{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 3rem;
+  }
+  .team p a {
+  text-decoration: none;
+  color: #000000; 
+  }
+  .team p a img{
+  text-decoration: none;
+  color: #000000;
+  margin-right: 10px;
+  
+  }
+  .team p a:hover {
+  text-decoration: none;
+  color: #000000;
+  }
+
+  .team{
+    
+    h1:nth-child(1){
+      padding-top: 2px !important;
+      text-align: center;
+      @include fontBold(1.5em !important, 1em, $vesti-700);
+    }
+    h4:nth-child(2){
+      padding-top: 2px !important;
+      text-align: center;
+      @include fontSemiBold(1em !important, 1.4em, $vesti-902);
+    }
+    h6:nth-child(3){
+      padding-top: 2px !important;
+      text-align: center;
+      @include fontSemiBold(1em !important, 1.4em, $vesti-902);
+    }
+        
+  }
+  .team p  {
+    color: #000000; 
+    font-size: small;
+    text-align: center;
+  }
+  .team p a {
+    text-decoration: none;
+    color: #000000; 
+  }
+  .team p a img{
+    text-decoration: none;
+    color: #000000;
+    margin-right: 10px;
+    text-align: center;
+    
+  }
+  .team p a:hover {
+    text-decoration: none;
+    color: #000000;
+  }
+  
+  .other-team-members {
+    width: 100%;
+    @include colflexx(center);
+    .team-header {
+      @include colflexx(center);
+      p:nth-child(1){
+        @include fontBold(1.5em, 1em, $vesti-700);
+      }
+      p:nth-child(2){
+        text-align: center;
+        @include fontNormal(1em, 1.4em, $vesti-901);
+        width: 100%;
+      }
+    }
+    .other-team-members-content {
+      margin-top: 50px;
+    }
+    
+  }
+  
+}

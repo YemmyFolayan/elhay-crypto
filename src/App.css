@@ -1,0 +1,150 @@
+p, h4,h6,h2{
+  margin: 0  !important;
+}
+input {
+  font-size: 16px !important;
+}
+.negmarg_1 {
+  margin-top: -1em;
+}
+.negmarg_2 {
+  margin-top: -2em;
+}
+.main_txt_1 {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 64px;
+  color: #000000;
+}
+.sub_txt_1 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 31px;
+  color: #000000;
+  
+}
+
+.signup_box {
+  max-width: 500px;
+}
+
+.form_txt_1 {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 42px;
+
+  color: #000000;
+}
+.form_txt_2 {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.content_field_home {
+  max-width: 540px !important;
+}
+
+.main_txt_2 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 29px;
+  color: #000000;
+  margin-top: -1.5em;
+  margin-bottom: 2em;
+}
+
+.offwhite_bg {
+  background: #fafafa;
+  border-radius: 51px;
+}
+
+.form_element {
+  /* z-index: 8000 !important; */
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 30px;
+  padding-left: 2em;
+
+  color: #000000;
+
+  background: #faf9f9;
+  border-radius: 20px;
+  appearance: none !important;
+  border: none;
+  height: 70px;
+  margin: 1em 0;
+}
+
+.primary_btn {
+  max-width: 702.82px;
+  height: 64px;
+  color: white;
+  background: #000000;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+.primary_btn:disabled{
+  background-color: #4F4F4F;
+  cursor: not-allowed;
+}
+.signup_box input {
+  z-index: 8000 !important;
+}
+
+.stock_links:link,
+.stock_links:hover,
+.stock_links {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  /* identical to box height */
+
+  color: #000000;
+}
+/* iframe {
+  pointer-events: none;
+} */
+
+body {
+  position: relative !important;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 450px) {
+  body {
+    font-size:14px !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  input, textarea {
+    font-size: 16px !important;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+  select,
+  textarea,
+  input {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,217 @@
+@import "../../variables.scss";
+ 
+.addbank-container{
+    width: 100%;
+    height: fit-content;
+    @include rowflex(center,center);
+
+    *.inputfloat {
+        width: 100%  !important;
+    }
+    .addbank-inner-container{
+        width: 100%;
+        height: fit-content;
+       
+        .profilebank {
+            width: 100% !important;
+            height: fit-content;
+            @include colflexx(flex-end);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end !important;
+            justify-content: flex-end !important;
+
+            .form-input:not(:first-child){
+                margin-top: 50px;
+
+                @include breakpoint(mobileonly){
+                    margin-top: 20px;
+                }
+            }
+            .account-number {
+                width: 75%;
+
+                @include breakpoint(mobileonly){
+                    width: 100%;
+                }
+                @include breakpoint(phablet){
+                    width: 100%;
+                }
+                @include breakpoint(tablet){
+                    width: 100%;
+                }
+            }
+            .account-name {
+
+                margin-top: 10px;
+                margin-bottom: 10px;
+                width: 75%;
+                @include colflexx(flex-end);
+                float: right;
+                p:nth-child(1){
+                    margin: 0;
+                    margin-bottom: 10px;
+                    @include fontMedium(1.2em, 1.4em, $vesti-901);
+                }
+                :nth-child(2){
+                    margin-top: 0px;
+                }
+
+                @include breakpoint(mobileonly){
+                    width: 100%;
+                }
+                @include breakpoint(phablet){
+                    width: 100%;
+                }
+                @include breakpoint(tablet){
+                    width: 100%;
+                }
+            }
+            .mybanks-box{
+                @include colflexx(flex-end);
+                width: 75%;
+                height: fit-content;
+                margin-bottom: 50px;
+                margin-top: 10px;
+                
+
+                @include breakpoint(mobileonly){
+                    width: 100%;
+                    margin-bottom: 50px;
+                }
+                @include breakpoint(phablet){
+                    width: 100%;
+                    margin-bottom: 50px;
+                }
+                @include breakpoint(tablet){
+                    width: 100%;
+                    margin-bottom: 50px;
+                }
+
+                .title {
+                    margin: 0;
+                    @include fontBold(1.2em, 1em, $gray-400);
+                }
+
+                .mybanks-big-container {
+                    width: fit-content;
+                    margin-top: 10px;
+                    height: fit-content;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: flex-start;
+                    gap: 10px;
+                    justify-content: flex-end;
+    
+                   @include breakpoint(mobileonly){
+                       @include rowflexx(flex-start);
+
+                   }
+    
+                    
+                    .mybanks-container {
+                        width: fit-content;
+                        padding: 10px ;
+                        background-color:  $vesti-100;
+                        border: 1px solid $vesti-700;
+                        border-radius: 5px;
+                        height: 30px;
+                        @include rowflexx(center);
+
+                        @include breakpoint(mobileonly){
+                            width: fit-content;
+                            height: 30px;
+                            padding: 5px;
+                        }
+                    
+                        @include breakpoint(phablet){
+                            width: fit-content;
+                            height: 30px;
+                            padding: 5px;
+                        }
+                        .mybanks-inner-container :not(:first-child){
+                            margin-left: 5px;
+                        }
+                        .mybanks-inner-container {
+                            width: fit-content;
+                            
+                            
+                            margin: 0 auto;
+                            @include rowflex(center, center);
+                    
+                           
+                            p{
+                                margin: 0;
+                                @include rowflex(center,center);
+                                @include fontNormal(1em, 1em, $vesti-700);
+                                i {
+                                    margin-left: 10px;
+                                }
+                
+                                @include breakpoint(mobileonly){
+                                    width: 100%;
+                                    @include fontNormal(.8em, 1em, $vesti-700);
+                                }
+                            
+                                @include breakpoint(phablet){
+                                    width: 100%;
+                                    @include fontNormal(.8em, 1em, $vesti-700);
+                                }
+                            }
+                        }
+
+                        i {
+                            color:  $vesti-700;
+                            margin-left: 5px;
+                            transition: all .5s ease;
+
+                            &:hover {
+                                transform-origin: center center;
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+                }
+            }
+            
+            
+            
+
+            .updateprofile-btn-box {
+                width: 100%;
+                margin-top: 0px;
+                margin-bottom: 50px;
+                @include rowflexx(center);
+                gap: 20px;
+
+                .save-changes {
+                    width: 200px !important;
+                    height: 60px !important;
+                    cursor: pointer;
+                    background-color: $vesti-700;
+                    color: #fff;
+                    border-radius: 10px !important;
+                    @include rowflex(center,center);
+                    @include fontBold(1em, 1em, #fff);
+                    transition: all .5s ease;
+                    float: right;
+    
+                    &:hover {
+                        background-color: $vesti-900;
+                    }
+    
+                    &:disabled{
+                        cursor: not-allowed;
+                        background-color: $gray-600;
+    
+                    }
+                }
+            }
+
+
+
+           
+        }
+
+    }
+}   

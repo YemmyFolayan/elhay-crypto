@@ -1,0 +1,268 @@
+@import "../../../variables.scss";
+
+.singleteam-container {
+    cursor: pointer;
+    padding: 0px !important;
+    // width: 90px !important;
+    .singleteam-inner {
+        width: 100%;
+        @include colflexx(center);
+        width: fit-content;
+        height: fit-content;
+        transition: all 0.5s ease;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 30px;
+        border: 1px solid $gray-200;
+        border-radius: 10px;
+
+        &:hover {
+            padding-bottom: 30px;
+            filter: drop-shadow(0px 4px 30px rgba(157, 157, 157, 0.2)) !important;
+            background-color: #fff;
+            .profile-box{
+                .profile {
+                    transform: scale(1.1);
+                    filter: grayscale(0%);
+                }
+            }
+            
+        }
+        .profile-box {
+            width: 280px;
+            background-color: tomato;
+            overflow: hidden;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            .profile {
+                width: 280px !important;
+                transform-origin: 65% 75%;
+                transition: transform .25s, visibility .25s ease-in;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                filter: grayscale(100%);
+            }
+
+        }
+       
+        p:nth-child(2){
+            margin: 0;
+            margin-top: 10px;
+            @include fontBold(1.5em, 1em, $vesti-700);
+        }
+        p:nth-child(3){
+            margin-top: 10px;
+            @include fontNormal(1em, 1em, $vesti-901);
+        }
+        .contact-links {
+            width: fit-content;
+            a{
+                text-decoration: none;
+            }
+    
+            a:not(:last-child){
+                margin-right: 10px;
+            }
+        }
+        
+    }
+}
+
+@media screen and (min-width:320px) and (max-width: 600px) {
+    .singleteam-container {
+        cursor: pointer;
+        
+        
+        .singleteam-inner {
+            width: 100%;
+            @include colflexx(center);
+    
+            width: fit-content;
+            height: fit-content;
+            transition: all 0.5s ease;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-bottom: 30px;
+            border: 1px solid $gray-200;
+            border-radius: 10px;
+    
+            &:hover {
+                padding-bottom: 30px;
+                filter: drop-shadow(0px 4px 30px rgba(157, 157, 157, 0.2)) !important;
+                background-color: #fff;
+                .profile-box{
+                    .profile {
+                        transform: scale(1.1);
+                    }
+                }
+                
+            }
+            .profile-box {
+                width: 100%;
+                overflow: hidden;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                .profile {
+                    width: 100% !important;
+                    transform-origin: 65% 75%;
+                    transition: transform .25s, visibility .25s ease-in;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                }
+            }
+           
+            p:nth-child(2){
+                margin: 0;
+                margin-top: 10px;
+                @include fontBold(1.5em, 1em, $vesti-700);
+            }
+            p:nth-child(3){
+                margin-top: 10px;
+                @include fontNormal(1em, 1em, $vesti-901);
+            }
+            .contact-links {
+                width: fit-content;
+                a{
+                    text-decoration: none;
+                }
+        
+                a:not(:last-child){
+                    margin-right: 10px;
+                }
+            }
+            
+        }
+    }
+}
+@media screen and (min-width:600px) and (max-width: 800px) {
+    .singleteam-container {
+        cursor: pointer;
+        
+        
+        .singleteam-inner {
+            width: 80%;
+            @include colflexx(center);
+    
+            width: fit-content;
+            height: fit-content;
+            transition: all 0.5s ease;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-bottom: 30px;
+            border: 1px solid $gray-200;
+            border-radius: 10px;
+    
+            &:hover {
+                padding-bottom: 30px;
+                filter: drop-shadow(0px 4px 30px rgba(157, 157, 157, 0.2)) !important;
+                background-color: #fff;
+                .profile-box{
+                    .profile {
+                        transform: scale(1.1);
+                    }
+                }
+                
+            }
+            .profile-box {
+                width: 100%;
+                overflow: hidden;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                .profile {
+                    width: 100% !important;
+                    transform-origin: 65% 75%;
+                    transition: transform .25s, visibility .25s ease-in;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                }
+            }
+           
+            p:nth-child(2){
+                margin: 0;
+                margin-top: 10px;
+                @include fontBold(1.5em, 1em, $vesti-700);
+            }
+            p:nth-child(3){
+                margin-top: 10px;
+                @include fontNormal(1em, 1em, $vesti-901);
+            }
+            .contact-links {
+                width: fit-content;
+                a{
+                    text-decoration: none;
+                }
+        
+                a:not(:last-child){
+                    margin-right: 10px;
+                }
+            }
+            
+        }
+    }
+}
+@media screen and (min-width:800px) and (max-width: 1224px) {
+    .singleteam-container {
+        cursor: pointer;
+        width: fit-content !important;
+        
+        .singleteam-inner {
+            width: 100%;
+            @include colflexx(center);
+    
+            width: fit-content;
+            height: fit-content;
+            transition: all 0.5s ease;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-bottom: 30px;
+            border: 1px solid $gray-200;
+            border-radius: 10px;
+    
+            &:hover {
+                padding-bottom: 30px;
+                filter: drop-shadow(0px 4px 30px rgba(157, 157, 157, 0.2)) !important;
+                background-color: #fff;
+                .profile-box{
+                    .profile {
+                        transform: scale(1.1);
+                    }
+                }
+                
+            }
+            .profile-box {
+                width: 100%;
+                overflow: hidden;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                .profile {
+                    width: 100% !important;
+                    transform-origin: 65% 75%;
+                    transition: transform .25s, visibility .25s ease-in;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                }
+            }
+           
+            p:nth-child(2){
+                margin: 0;
+                margin-top: 10px;
+                @include fontBold(1.5em, 1em, $vesti-700);
+            }
+            p:nth-child(3){
+                margin-top: 10px;
+                @include fontNormal(1em, 1em, $vesti-901);
+            }
+            .contact-links {
+                width: fit-content;
+                a{
+                    text-decoration: none;
+                }
+        
+                a:not(:last-child){
+                    margin-right: 10px;
+                }
+            }
+            
+        }
+    }
+}

@@ -1,0 +1,580 @@
+@import "../../../variables.scss";
+
+.green-block-image{
+    position: absolute;
+    left: 10rem;
+    bottom: 44rem;
+    
+}
+.join-com-container {
+    width: 100%;
+    height: 100%;    
+    @include rowflex(center,center);
+    position: relative;
+    // top: 4rem;
+    margin-bottom: 2rem;
+
+    .join-com-inner-container {
+        width: 80%;
+        height: 100%;
+        padding: 20px 0px 20px 0px;
+        border-radius: 20px;
+        position: relative;
+        background-color: $vesti-900;
+        @include colflex(center, space-between);
+        .join-com-plane {
+            position: absolute;
+            top: -100px;
+            right: 10px;
+            width: auto;
+
+            @include breakpoint(mobileonly){
+                width: 150px;
+                top: -50px;
+            }
+            @include breakpoint(tablet){
+                width: 150px;
+                top: -50px;
+            }
+            @include breakpoint(laptop){
+                width: 150px;
+                top: -50px;
+            }
+        }
+        .join-com-circles {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            right: 0px;
+            width: auto;
+            width: 100%;
+
+            @include breakpoint(mobileonly){
+                display: none;
+            }
+            @include breakpoint(phablet){
+                display: none;
+            }
+            @include breakpoint(tablet){
+                display: none;
+            }
+            // margin: 0 auto;
+        }
+        &.left {
+            width: 80%;
+            height: 100%;
+            margin-bottom: 2rem;
+            text-align: center;
+            background-color: transparent;
+            @include colflexx(center);
+
+            .top {
+                width: 100%;                
+                height: fit-content;
+                span {
+                    width: 100%;
+                    @include rowflex(center,center);
+                    margin:0;
+                    height: fit-content;
+                    p:nth-child(1) {
+                        @include fontBlack(2.25em,1.3em, #ffffff);
+                    }
+
+                    
+                }
+                p:nth-child(2) {
+                    width: 100%;
+                    margin: 0;
+                    margin-top: -2rem;
+                    @include fontNormal(1.2em,1.5em, #ffffff);
+                }
+            }
+
+            .middle {
+                width: 100%;
+                height: fit-content;
+                @include colflexx(center);
+                margin-top: 30px;
+                input{
+                    width: 50%;
+                    height: 50px;
+                    border-radius: 7px;
+                    outline: none;
+                    border: none;
+                    padding: 1rem;
+                    @include fontMedium(1.2em, 0.7em, #fff);
+
+                    @include breakpoint(mobileonly) {
+                        width: 80% !important;
+                        height: 50px !important;
+                    }
+                    @include breakpoint(phablet) {
+                        width: 80%;
+                        height: 50px;
+                    }
+                    
+                }
+                button{
+                    width: 50%;
+                    margin-top: 20px;
+                    background-color: $vesti-700;
+                    height: 60px !important;
+                    padding: 1em !important;
+                    border: none !important;
+                    border-radius: 7px !important;
+                    cursor: pointer;
+                    @include fontMedium(1.2em, 0.7em, #fff);    
+                    @include rowflex(center,center);
+                    transition: all 0.3s ease;
+                    &:hover{
+                      background: $vesti-900;
+                    }
+                    @include breakpoint(mobileonly) {
+                        width: 80% !important;
+                        height: 50px !important;
+                    }
+                    @include breakpoint(phablet) {
+                        width: 80% !important;
+                        height: 50px;
+                    }
+                }
+                
+            }
+            .bottom {
+                width: fit-content;
+                @include colflexx(center);
+                margin-top: 30px;
+                .inner-bottom-top{
+                    width: 42%;
+                    @include fontNormal(1.2em, 1.5em, #fff);
+                }
+                .inner-bottom-bottom {
+                    margin-top: 1rem;
+                    @include rowflex(center,center);
+                    img{
+                        margin-left: 2rem;
+                        margin-right: 1rem;
+                    } 
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 600px)  {
+    .green-block-image{
+        // position: absolute;
+        left: -1rem;
+        bottom: 112rem;
+    }
+    .join-com-container {
+        width: 100%;
+        height: fit-content;
+        @include colflex(center,center);
+        // top: 7rem;
+        // margin-top: -8rem;
+    
+        .join-com-inner-container {
+            width: 90%;
+            height: 80%;
+            @include colflex(center, space-between);
+    
+            .left {
+                width: 100%;
+                height: 100%;
+                @include colflexx(center);
+    
+                .top {
+                    width: 100%;
+                    height: fit-content;
+                    margin-left: 0; 
+                    span {
+                        width: 100%;
+                        @include colflex(center,center);
+                        margin:0;
+                        height: fit-content;
+                        p:nth-child(1) {
+                            @include fontBlack(1.3em,1em, #FFFFFF);
+                        }
+                    }
+                    p:nth-child(2) {
+                        width: 100%;
+                        margin: 0;
+                        margin-bottom: 30px;
+                        @include fontNormal(1.2em,1.5em, #FFFFFF);
+                    }
+                }
+                
+
+                .middle {
+                    width: 100%;
+                    @include colflexx(center);
+                    margin-top: 10px;
+                    
+                    button{
+                        margin-top: 10px;
+                        height: 30px !important;
+                    }
+                    
+                }
+                .bottom {
+                    width: fit-content;
+                    @include colflexx(center);
+                    margin-top: 30px;
+                    width: 100%;
+                    .inner-bottom-top{
+                        margin: 0 auto;
+                        width: 100%;
+                        @include rowflex(center,center);
+                        p {
+                            width: 80%;                            
+                            @include fontNormal(.8em, 1.4em, #fff);
+                        }
+                        
+                    }
+                    .inner-bottom-bottom {
+                        margin-top: 1rem;
+                        @include rowflex(center,center);
+                        img{
+                            margin-left: 1rem;
+                            margin-right: 0.5rem;
+                            width: 20px;
+                        } 
+                    }
+                }
+            }
+        }
+    }
+    
+}
+@media only screen and (min-width: 375px) and (max-width: 400px)  {
+    .green-block-image{
+        // position: absolute;
+        left: -1rem;
+        bottom: 99rem;
+    }
+    .join-com-container {
+        width: 100%;
+        height: fit-content;
+        @include colflex(center,center);
+        // top: 9rem;
+        margin-top: 4rem;
+    
+        .join-com-inner-container {
+            width: 90%;
+            height: 80%;
+            @include colflex(center, space-between);
+    
+            &.left {
+                width: 100%;
+                height: 100%;
+                @include colflexx(center);
+    
+                .top {
+                    width: 100%;
+                    height: fit-content;
+                    margin-left: 0; 
+                    span {
+                        width: 100%;
+                        @include colflex(center,center);
+                        margin:0;
+                        height: fit-content;
+                        p:nth-child(1) {
+                            @include fontBlack(1.5em,1.4em, #FFFFFF);
+                        }
+                    }
+                    p:nth-child(2) {
+                        width: 100%;
+                        margin: 0;
+                        margin-bottom: 30px;
+                        @include fontNormal(1.2em,1.5em, #FFFFFF);
+                    }
+                }
+                
+
+                .middle {
+                    width: 100%;
+                    @include colflexx(center);
+                    margin-top: 10px;
+                    input{
+                        width: 59%;
+                        height: 30px;;
+                    }
+                    button{
+                        margin-top: 10px;
+                        height: 30px !important;
+                    }
+                    
+                }
+                .bottom {
+                    width: fit-content;
+                    @include colflexx(center);
+                    margin-top: 30px;
+                    .inner-bottom-top{
+                        width: 100%;
+                        p{
+                            @include fontNormal(1em, 1.5em, #fff);
+                        }
+                        
+                    }
+                    .inner-bottom-bottom {
+                        margin-top: 1rem;
+                        @include rowflex(center,center);
+                        img{
+                            margin-left: 1rem;
+                            margin-right: 0.5rem;
+                        } 
+                    }
+                }
+            }
+        }
+    }
+    
+}
+@media only screen and (min-width: 400px) and (max-width: 600px)  {
+    .green-block-image{
+        // position: absolute;
+        left: -1rem;
+        bottom: 95rem;
+    }
+    .join-com-container {
+        width: 100%;
+        height: fit-content;
+        @include colflex(center,center);
+        // top: 7rem;
+        margin-top: 7rem;
+    
+        .join-com-inner-container {
+            width: 90%;
+            height: 80%;
+            @include colflex(center, space-between);
+    
+            &.left {
+                width: 100%;
+                height: 100%;
+                @include colflexx(center);
+    
+                .top {
+                    width: 100%;
+                    height: fit-content;
+                    margin-left: 0; 
+                    span {
+                        width: 100%;
+                        @include colflex(center,center);
+                        margin:0;
+                        height: fit-content;
+                        p:nth-child(1) {
+                            @include fontBlack(1.5em,1.4em, #FFFFFF);
+                        }
+                    }
+                    p:nth-child(2) {
+                        width: 90%;
+                        margin: 0;
+                        margin-bottom: 30px;
+                        @include fontNormal(1.2em,1.5em, #FFFFFF);
+                    }
+                }
+                
+
+                .middle {
+                    width: 100%;
+                    @include colflexx(center);
+                    margin-top: 10px;
+                    input{
+                        width: 52%;
+                        height: 30px;;
+                    }
+                    button{
+                        margin-top: 10px;
+                        height: 30px !important;
+                    }
+                    
+                }
+                .bottom {
+                    width: fit-content;
+                    @include colflexx(center);
+                    margin-top: 30px;
+                    .inner-bottom-top{
+                        width: 100%;
+                        @include fontNormal(1.2em, 1.5em, #fff);
+                    }
+                    .inner-bottom-bottom {
+                        margin-top: 1rem;
+                        @include rowflex(center,center);
+                        img{
+                            margin-left: 1rem;
+                            margin-right: 0.5rem;
+                        } 
+                    }
+                }
+            }
+        }
+    }
+    
+}
+@media only screen and (min-width: 600px) and (max-width: 800px)  {
+    .green-block-image{
+        left: -1rem;
+        bottom: 56rem;
+    }
+    .join-com-container {
+        width: 100%;
+        height: fit-content;
+        @include colflex(center,center);
+        // top: 7rem;
+        // margin-top: -6rem;
+    
+        .join-com-inner-container {
+            width: 90%;
+            height: 80%;
+            @include colflex(center, space-between);
+    
+            &.left {
+                width: 100%;
+                height: 100%;
+                @include colflexx(center);
+    
+                .top {
+                    width: 100%;
+                    height: fit-content;
+                    margin-left: 0; 
+                    margin-top: 3rem;
+                    span {
+                        width: 100%;
+                        @include colflex(center,center);
+                        margin:0;
+                        height: fit-content;
+                        p:nth-child(1) {
+                            @include fontBlack(1.5em,1.4em, #FFFFFF);
+                        }
+                    }
+                    p:nth-child(2) {
+                        width: 100%;
+                        margin: 0;
+                        margin-bottom: 30px;
+                        @include fontNormal(1.2em,1.5em, #FFFFFF);
+                    }
+                }
+                
+
+                .middle {
+                    width: 100%;
+                    @include colflexx(center);
+                    margin-top: 10px;
+                    input{
+                        width: 50%;
+                        height: 50px;
+                    }
+                    button{
+                        margin-top: 10px;
+                        width: 50% !important;
+                        height: 50px !important;
+                    }
+                    
+                }
+                .bottom {
+                    width: fit-content;
+                    @include colflexx(center);
+                    margin-top: 30px;
+                    .inner-bottom-top{
+                        width: 50%;
+                        p{
+                            @include fontNormal(1em, 1.5em, #fff);
+                        }
+                    }
+                    .inner-bottom-bottom {
+                        margin-top: 1rem;
+                        @include rowflex(center,center);
+                        img{
+                            margin-left: 1rem;
+                            margin-right: 0.5rem;
+                        } 
+                    }
+                }
+            }
+        }
+    }
+    
+}
+@media only screen and (min-width: 800px) and (max-width: 1024px)  {
+    .green-block-image{
+        // position: absolute;
+        left: -5rem;
+        bottom: 71rem;
+    }
+    .join-com-container {
+        width: 100%;
+        height: fit-content;
+        @include colflex(center,center);
+        // top: 6rem;
+        // margin-top: -4rem;
+    
+        .join-com-inner-container {
+            width: 90%;
+            height: 80%;
+            @include colflex(center, space-between);
+    
+            &.left {
+                width: 100%;
+                height: 100%;
+                @include colflexx(center);
+    
+                .top {
+                    width: 100%;
+                    height: fit-content;
+                    margin-left: 0; 
+                    span {
+                        width: 100%;
+                        @include colflex(center,center);
+                        margin:0;
+                        height: fit-content;
+                        p:nth-child(1) {
+                            @include fontBlack(1.5em,1.4em, #FFFFFF);
+                        }
+                    }
+                    p:nth-child(2) {
+                        width: 100%;
+                        margin: 0;
+                        margin-bottom: 30px;
+                        @include fontNormal(1.2em,1.5em, #FFFFFF);
+                    }
+                }
+                
+
+                .middle {
+                    width: 100%;
+                    @include colflexx(center);
+                    margin-top: 10px;
+                    input{
+                        width: 50%;
+                        height: 30px;;
+                    }
+                    button{
+                        margin-top: 10px;
+                        height: 30px !important;
+                    }
+                    
+                }
+                .bottom {
+                    width: fit-content;
+                    @include colflexx(center);
+                    margin-top: 30px;
+                    .inner-bottom-top{
+                        width: 50%;
+                        p{
+                            @include fontNormal(1.2em, 1.5em, #fff);
+                        }
+                    }
+                    .inner-bottom-bottom {
+                        margin-top: 1rem;
+                        @include rowflex(center,center);
+                        img{
+                            margin-left: 1rem;
+                            margin-right: 0.5rem;
+                        } 
+                    }
+                }
+            }
+        }
+    }
+    
+}

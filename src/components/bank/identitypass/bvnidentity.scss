@@ -1,0 +1,81 @@
+@import "../../../variables.scss";
+
+
+.waitlist__firststep, .waitlist__thirdstep{
+
+    &__bottom{
+        &__header {
+            margin: 0;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            @include fontBold(1.2em, 1em, $vesti-901);
+        }
+
+        &__radios {
+            &:nth-child(2){
+                margin-top: 0px !important;
+            }
+            &:nth-child(2){
+                margin-top: 30px !important;
+            }
+            
+        }
+    }
+    
+    &__button {
+        width: 100%;
+        height: 60px !important;
+        cursor: pointer;
+        background-color: $vesti-700;
+        color: #fff;
+        margin-top: 10px;
+        border-radius: 10px !important;
+        @include rowflex(center,center);
+        @include fontBold(1em, 1em, #fff);
+        transition: all .5s ease;
+
+        &:hover {
+            background-color: $vesti-900;
+        }
+
+        &:disabled{
+            cursor: not-allowed;
+            background-color: $gray-600;
+
+        }
+
+        @include breakpoint(mobileonly){
+            font-size: 10px;
+        }
+        @include breakpoint(phablet){
+            font-size: 12px;
+        }
+    }
+}
+
+.waitlist__details {
+    &__bottom {
+
+        .form-input:not(:first-child){
+            margin-top: 20px;
+        }
+        .form-input {
+            .shortinfo {
+                margin-top: -10px;
+            }
+        }
+    }
+}
+
+.waitlist__uploaddocs {
+
+    &__docs:not(:first-child){
+        margin-bottom: 30px;
+    }
+    &__docs {
+        p:nth-child(1){
+            margin: 0;
+            @include fontMedium(1.2em, 1em, $vesti-901);
+        }
+    }
+}

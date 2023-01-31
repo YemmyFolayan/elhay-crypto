@@ -1,0 +1,346 @@
+@import "../../../variables.scss";
+
+.domore {
+    width: 100%;
+    height: fit-content;
+    margin-top: 80px;
+    position: relative;
+    @include colflexx(flex-start);
+
+    &__inner {
+        width: 100%;
+        &::-webkit-scrollbar-track {
+            background-color: red;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: transparent ;
+            border-radius: 6px;
+            border: $vesti-900;
+
+        }
+        @include breakpoint(tablet){
+            width: 100%;
+        }
+    }
+    &__content {
+        margin-top: 10px;
+        width: 100vw; 
+        height: 100%;
+        @include rowflexx(flex-start);
+
+        .flickity-prev-next-button .flickity-button-icon{
+            @include breakpoint(mobileonly){
+                // top: 134px;
+            }
+        }
+        .carousel-nav .flickity-prev-next-button.next{
+            @include breakpoint(mobileonly){
+                top: 134px;
+                width: 9% !important;
+                height: 9% !important;
+            }
+        }
+        .carousel-nav .flickity-prev-next-button.previous{
+            @include breakpoint(mobileonly){
+                top: 134px;
+                width: 9% !important;
+                height: 9% !important;
+            }
+        }
+
+        @include breakpoint(mobileonly){
+            width: 100vw;
+            overflow: scroll;
+            @include rowflex(flex-start,space-between);
+
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: transparent ;
+                border-radius: 6px;
+                border: $vesti-900;
+
+            }
+
+        }
+
+       
+        .domorecard:not(:first-child){
+            margin-left: 20px;
+        }
+       
+        .domorecard {
+            padding: 20px;
+            background-color: $vesti-100;
+            border: .5px solid $vesti-901;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all .5s ease;
+            @include colflexx(flex-start);
+           
+            &.--loan, &.--update {
+                background-color: $yellow-100;
+                border: .5px solid $yellow-700;
+                &:hover {
+                    background-color: $yellow-700;
+
+                    .domorecard__left, .domorecard__right {
+                        &__texts {
+                            p{
+                                color: #fff !important;
+                            }
+                            
+                        }
+                        &__link{
+                            color: #fff;
+                            @include fontMedium(1.2em, 1em, #fff);
+                        }
+                        
+                    }
+                }
+                .domorecard__left {
+                    &__texts{
+                        p:nth-child(1){
+                            margin: 0;
+                            @include fontMedium(1.5em,1em,$yellow-700);
+    
+                            @include breakpoint(mobileonly){
+                                @include fontMedium(1.2em,1em,$yellow-700);
+                            }
+                        }
+    
+                        p:nth-child(2){
+                            margin-top: 10px;
+                            
+                            @include fontNormal(1em,1.4em, $yellow-900);
+    
+                            @include breakpoint(mobileonly){
+                                width: 100%;
+                                
+                                @include fontNormal(1em,1.4em, $yellow-900);
+                            }
+                        }
+                    }
+                }
+                .domorecard__right{
+                    &__link{
+                        text-decoration: none;
+                        @include fontNormal(1.2em,1em,$yellow-900);
+                    }
+                }
+
+            }
+            @include breakpoint(mobileonly){
+                // width: 350px;
+                height: 210px;
+
+            }
+           
+            &:hover {
+                background-color: $vesti-700;
+
+                .domorecard__left, .domorecard__right {
+                    &__texts {
+                        p{
+                            color: #fff;
+                        }
+                        
+                    } 
+                }
+                .domorecard__link{
+                    color: #fff;
+                }
+                
+            }
+           
+
+            &__left{
+                @include colflexx(flex-start);
+                @include breakpoint(mobileonly){
+                    width: 250px;
+                    height: 100%;
+                }
+                @include breakpoint(phablet){
+                    width: 250px;
+                }
+                @include breakpoint(tablet){
+                    width: 250px;
+                }
+                @include breakpoint(laptop){
+                    width: 310px;
+                }
+                &__texts{
+                    // background-color: red;
+                    margin-bottom: 10px;
+                    @include colflexx(flex-start);
+                    
+                    @include breakpoint(mobileonly){
+                        width: 100%;
+                    }
+                    p:nth-child(1){
+                        margin: 0;
+                        @include fontMedium(1.5em,1em,$vesti-901);
+
+                        @include breakpoint(mobileonly){
+                            @include fontMedium(1.2em,1em,$vesti-901);
+                        }
+                    }
+
+                    p:nth-child(2){
+                        margin-top: 10px;
+                        // height: 50px;
+                        height: 70px;
+                        max-height: 71px;
+                        @include fontNormal(1em,1.4em, $vesti-902);
+
+                        @include breakpoint(mobileonly){
+                            width: 100%;
+                            @include fontNormal(1em,1.5em, $vesti-902);
+                        }
+                    }
+                }
+
+                
+            }
+
+            &__right{
+                width: 100%;
+                margin-top: -10px;
+                @include rowflex(flex-end, space-between);
+
+                img {
+                    width: auto;
+                    // margin-left:20px;
+
+                    @include breakpoint (mobileonly){
+                        display: none;
+                    }
+                }
+            }
+            &__link{
+                text-decoration: none;
+                font-style: italic;
+                @include fontSemiBold(1.2em,1em,$vesti-700);
+                i{
+                    margin-left: 5px;
+                }
+
+                
+            }
+        }
+    }
+    
+}
+* {
+    box-sizing: border-box;
+  }
+
+  .carousel {
+    margin-bottom: 40px;
+  }
+  
+  .carousel-nav {
+    margin-bottom: 40px;
+    width: 77.5vw;
+    position: relative;
+    overflow: hidden;
+    @include breakpoint(mobileonly){
+        width: 95vw;
+    }
+    @include breakpoint(phablet){
+        width: 95vw;
+    }
+    @include breakpoint(tablet){
+        width: 95vw;
+    }
+    @media only screen 
+  and (min-width: 1014px) 
+  and (max-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    width: 75vw;
+    }
+    
+  }
+  
+  .carousel-cell {
+    width: 350px;
+    height: 300px;
+    margin-right: 10px;
+    border-radius: 5px;
+    counter-increment: carousel-cell;
+  }
+  
+  .carousel-cell-1 {
+    width: fit-content;
+    height: fit-content;
+    margin-right: 10px;
+    border-radius: 5px;
+    counter-increment: carousel-cell;
+  }
+  
+  /* cell number */
+ 
+  .carousel-nav .carousel-cell {
+    height: fit-content;
+    width: 100%;
+  }
+  .flickity-button {
+    min-width: 30px !important;
+      width: 50px!important;
+      height: 50px !important;
+      background-color: $vesti-900 !important;
+      filter: drop-shadow(0px 4px 30px rgba(157, 157, 157, 0.2)) !important;
+  }
+  /* big buttons, no circle */
+.carousel-nav .flickity-prev-next-button.previous {
+    position: absolute !important;
+    bottom: 100px !important;
+    left: 30px !important;
+  }
+
+  .carousel-nav .flickity-prev-next-button.next {
+    border-radius: 100%;
+    position: absolute !important;
+    bottom: 100px !important;
+    right: 30px !important;
+  }
+  /* arrow color */
+  .flickity-prev-next-button .arrow {
+    fill: white;
+    width: 30px !important;
+  }
+  .flickity-prev-next-button.no-svg {
+    color: white;
+  }
+  .flickity-prev-next-button:hover {
+    background: transparent;
+  }
+  /* hide disabled button */
+  .flickity-prev-next-button:disabled {
+    display: none;
+  }
+  .flickity-button {
+  background: #333;
+}
+.flickity-button:hover {
+  background: #F90;
+}
+
+.flickity-prev-next-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+/* icon color */
+.flickity-button-icon {
+  fill: white;
+}
+/* position outside */
+.flickity-prev-next-button.previous {
+  left: -40px;
+}
+.flickity-prev-next-button.next {
+  right: -40px;
+}

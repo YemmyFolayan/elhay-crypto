@@ -1,0 +1,549 @@
+@import "../../../../variables.scss";
+
+.mycard{
+    width: 100%;
+    @include colflexx(flex-start);
+    padding: 50px;
+
+    @include breakpoint(mobileonly){
+        width: 100vw;
+        padding: 20px;
+    }
+    .shortinfo{
+        width: 350px;
+        @include breakpoint(mobileonly){
+            width: 95vw;
+        }
+    }
+
+    &__empty {
+        width: 100%;
+        height: 100%;
+        @include rowflex(center,center);
+    }
+    &__inner {
+        width: 100%;
+        @include rowflex(flex-start, space-between);
+        flex-wrap: wrap;
+        gap: 50px;
+        .singlecard{
+            height: fit-content;
+        }
+        
+    }
+    &__left{
+        // width: fit-content;
+        width: 100%;
+        height: fit-content;
+        // padding: 40px;
+        border-radius: 20px;
+        @include colflexx(flex-start);
+        
+        @include breakpoint(mobileonly){
+            width: 100%;
+            padding: 10px;
+        }
+        @include breakpoint(desktop){
+            width: fit-content;
+        }
+        
+        .carddetail{
+            margin-top: 20px;
+            width: 100%;
+            height: fit-content;
+            padding: 30px 0px 30px 30px;
+            background-color: #fff;
+            border: 1px solid $gray-300;
+            border-radius: 15px;
+            @include colflexx(flex-start);
+            
+            @include breakpoint(mobileonly){
+                width: 100%;
+                padding: 20px;
+            }
+
+            &__bottom {
+                @include colflexx(flex-start);
+                margin-top: 10px;
+                div:not(:first-child){
+                    margin-top: 10px;
+                }
+                
+            }
+            &__bsingle {
+                @include colflexx(flex-start);
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontMedium(1em, 1em, $vesti-700);
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    letter-spacing: 1px;
+                    overflow-wrap: break-word;
+                    max-width: 400px;
+                    word-wrap: break-word;
+                    hyphens: auto;
+                    text-transform: capitalize;
+                    @include rowflex(center,space-between);
+                    @include fontMedium(1.2em, 1.4em, $gray-500);
+                    @include breakpoint(mobileonly){
+                        max-width: 70vw;
+                    }
+                    i {
+                        font-size: 20px;
+                        margin-left: 10px;
+                        color: $yellow-500;
+
+                        &.--copied {
+                            color: $vesti-700;
+                        }
+                    }
+                }
+
+                &.--active p:nth-child(2) {
+                    margin: 0;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    background-color: $green-200;
+                    border: 1px solid $green-700;
+                    padding: 10px;
+                    border-radius: 5px;
+                    @include fontMedium(1.2em,1em , $green-700 );
+                  }
+                  &.--inactive p:nth-child(2) {
+                    margin: 0;
+                    // margin-left: 10px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    background-color: rgb(255, 227, 227);
+                    padding: 10px;
+                    border: 1px solid red;
+                    border-radius: 5px;
+                    border: .5px solid red;
+                    @include fontMedium(1.2em,1em , red );
+                  }
+
+
+            }
+            &__btn {
+                @include rowflex(center,center);
+                height: fit-content !important;
+                position: relative !important;
+                margin: 0 auto;
+                margin-top: 30px;
+                
+                @include breakpoint(phablet){
+                    @include colflexx(flex-start);
+                }
+
+                &--normal{
+                    width: fit-content;
+                    min-width: 30px !important;
+                }
+
+                &--nobg {
+                    width: 50px !important;
+                    margin-left: 10px !important;
+                    height: fit-content;
+
+                    .cardactions {
+                        width: fit-content;
+                        max-width: 300px;
+                        top: 50px;
+                        position: absolute;
+                        background-color: #fff;
+                        border-radius: 10px;
+                        border: 1px solid $gray-300;
+                        padding: 10px;
+                        opacity: 0;
+                        transition: all 2s ease;
+                        
+                        @include breakpoint (mobileonly){
+                            top: 60px;
+                            left: 100px;
+                        }
+                        @include breakpoint (phablet){
+                            top: 60px;
+                            left: 50px;
+                        }
+                        &.--active {
+                            opacity: 1;
+                        }
+
+                        span:not(:nth-child(1)){
+                            margin-top: 0px
+                        }
+                        span{
+                            width: 270px;
+                            padding: 20px;
+                            background-color: transparent;
+                            cursor: pointer;
+                            border-radius: 10px;
+                            transition: all .5s ease;
+                            @include rowflexx(center);
+
+                            @include breakpoint(mobileonly){
+                                width: 200px;
+                                padding: 15px;
+                            }
+                            @include breakpoint(phablet){
+                                width: 250px;
+                                padding: 15px;
+                            }
+                            img {
+                                margin-right: 10px;
+                                filter: none !important;
+                            }
+
+                            p{
+                                white-space: nowrap;
+                                margin: 0px;
+                                @include fontMedium(1em, 1em, $vesti-901);
+
+                                @include breakpoint(mobileonly){
+                                    @include fontMedium(.8em, 1em, $vesti-901);
+                                }
+                            }
+
+                            &:hover {
+                                background-color: $gray-200;
+                            }
+
+                        }
+                    }
+                }
+
+                
+                
+            }
+            &__btns {
+                @include rowflexx(center);
+                gap: 30px;
+                margin: 0 auto !important;
+                @include breakpoint(mobileonly){
+                    gap: 15px;
+                }
+                span {
+                    @include colflexx(center);
+                    gap: 10px;
+
+                    p{
+                        text-transform: capitalize;
+                        @include fontMedium(.9em,1em,$vesti-900);
+                    }
+                }
+            }
+        }
+    }
+
+    &__right {
+        width: 50%;
+        height: fit-content;
+        position: relative;
+        scrollbar-width: thin;
+
+        @include colflexx(flex-start);
+
+        @include breakpoint(mobileonly){
+            width: 100%;
+        }
+        @include breakpoint(tablet){
+            width: 90%;
+        }
+        @include breakpoint(phablet){
+            width: 98%;
+        }
+        
+
+      
+    }
+    &__title {
+        width: 100%;
+        height: fit-content;
+        .shortinfo {
+            width: 60%;
+        }
+
+    }
+   
+    &__transactions{
+        padding: 0px 40px 0px 40px;
+        width: 100%;
+        min-height: 300px;
+        max-height:500px;
+        overflow-y: scroll;
+        margin: 0 auto;
+        padding: 40px;
+        border: .5px solid #EAEAEA;
+        box-shadow: 0px 0px 5px rgba(245, 245, 245, 0.7);
+        border-radius: 20px;
+        @include colflex(flex-start,flex-start);
+
+        &::-webkit-scrollbar {
+            width: 4px;
+
+          }
+        &::-webkit-scrollbar-track {
+            background: $vesti-200;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $vesti-700 ;
+            border-radius: 6px;
+            border: $vesti-900;
+        }
+
+        hr:last-child{
+            display: none;
+        }
+        .singletransaction {
+            width: 100%;
+            height: fit-content;
+            @include colflex(flex-start,space-between);
+            gap: 10px;
+            &__title {
+                margin: 0;
+                margin-bottom: 20px;
+                @include fontBold(1em,1em, $vesti-901);
+            }
+            &__single{
+                @include rowflex(center,space-between);
+
+                @include breakpoint(mobileonly){
+                    gap: 10px;
+                }
+            }
+            
+            &__left {
+                @include rowflexx(flex-start);
+                // text-transform: lowercase;
+
+                @include breakpoint(mobileonly){
+                    @include colflexx(flex-start);
+                    gap: 10px;
+                }
+                img {
+                    width: auto;
+                    margin-right: 15px;
+                }
+
+                p{
+                    // margin: 0;
+                    width: 70%;
+                    @include fontNormal(1.2em, 1.4em, $vesti-901);
+                    @include breakpoint(mobileonly){
+                        width: 60vw;
+                        @include fontNormal(1em, 1.4em, $vesti-901);
+                    }
+                    strong{
+                        color: $vesti-700;
+                    }
+                }
+            }
+            &__right {
+                @include colflexx(flex-end);
+                gap: 10px !important;
+            }
+            &__charges{
+                @include fontMedium( 1em, 1.2em, $red-900);
+            }
+            &__amount {
+                // margin: 0;
+                width: fit-content;
+                margin-bottom: 2px !important;
+                @include fontBold(1.2em,0em, $vesti-700);
+                &.--debit {
+                    color: red;
+                }
+
+                &.--credit {
+                    color: $vesti-700;
+                }
+            }
+        }
+        hr{
+            width: 100%;
+            background-color: $gray-300;
+            margin-bottom: 30px;
+        }
+        &::-webkit-scrollbar {
+            width: 4px;
+
+          }
+        &::-webkit-scrollbar-track {
+            background: $vesti-200;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $vesti-700 ;
+            border-radius: 6px;
+            border: $vesti-900;
+        }
+    }
+
+    .singlecard{
+        height: 250px;
+    }
+    
+}
+form {
+    .inputfloat {
+        width: 90%;
+        margin-top: 20px;
+    }
+    .backcontinue {
+        @include rowflex(flex-start,flex-start);
+    }
+}
+.title {
+    margin: 0;
+    margin-bottom: 20px;
+    @include fontBold(2.5em, 1em, $gray-500);
+
+    @include breakpoint(mobileonly){
+        @include fontBold(1.5em, 1em, $gray-500);
+    }
+}
+
+.freezecard {
+    @include colflexx(center);
+
+    img {
+        width: auto;
+        margin-bottom: 30px;
+    }
+
+    span {
+        height: fit-content;
+        margin-bottom: 10px;
+        text-align: center;
+        @include colflexx(center);
+
+        p:nth-child(1){
+            margin: 0;
+            @include fontBold(1.5em, 1em, $vesti-700);
+        }
+        h6{
+            margin: 0;
+            width: 80%;
+            @include fontNormal(1.2em, 1.4em, $vesti-902);
+            strong {
+                color: $vesti-700;
+            }
+            @include breakpoint (mobileonly){
+                width: 100%;
+            }
+        }
+    }
+}
+.ordercard {
+    width: 100%;
+    @include colflexx(flex-start);
+
+    .select-input:nth-child(2){
+        margin-bottom: 15px;
+    }
+
+    .titlesubtitle{
+        margin-bottom: 10px;
+    }
+    
+    &__location {
+        width: 100%;
+        @include rowflexx(flex-start);
+        gap: 10px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+
+        @include breakpoint(mobileonly){
+            @include colflexx(flex-start);
+            gap: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        @include breakpoint(phablet){
+            @include colflex(flex-start,center);
+            gap: 10px;
+        }
+    }
+
+    .inputfloat {
+        .inputfloat__box {
+            .shortinfo{
+                margin-top: 10px !important;
+            }
+    
+            .apto-error{
+                margin: 0;
+                @include fontNormal(1em, 1em , red);
+            }
+        }
+        
+    }
+
+    .backcontinue {
+        width: 100%;
+        margin-top: 40px;
+        width: 100%;
+        outline: none;
+        border: none;
+        margin-top: 30px;
+        background-color: $vesti-700;
+        @include fontMedium(1em,1em, #fff);
+        transition: all .5s ease;
+        &:hover {
+            background-color: $vesti-800;
+        }
+        &:disabled {
+            background-color: $gray-500;
+            color: $gray-100;
+            cursor: not-allowed;
+        }
+    }
+}
+
+.cardinfo {
+    width: 400px;
+    height: fit-content;
+    @include colflexx(flex-start);
+    gap: 20px;
+    background-color: #f7fdf5;
+    padding: 20px;
+    border-radius: 10px;
+    border: .5px solid $vesti-700;
+    @include breakpoint(mobileonly){
+        width: 75vw;
+    }
+    @include breakpoint(phablet){
+        width: 75vw;
+    }
+    span:not(:last-child){
+        border-bottom: .5px dashed $vesti-700;
+        // border-top: 1px solid $vesti-700;
+    }
+    &__top {
+        width: 100%;
+        margin-bottom: 10px;
+        border-bottom: none !important;
+        @include rowflex(flex-start, space-between);
+
+        p:nth-child(1){
+            @include fontSemiBold(1em, 1em, $vesti-901);
+        }
+        p:nth-child(2){
+            @include fontSemiBold(1em, 1em, $vesti-901);
+        }
+    }
+    &__detail {
+        padding: 5px 0px;
+        width: 100%;
+        @include rowflex(flex-start,space-between);
+
+        p:nth-child(1){
+            @include fontMedium(1em, 1em, $vesti-901);
+        }
+        p:nth-child(2){
+            @include fontBold(1em, 1em, $vesti-700);
+        }
+    }
+}

@@ -1,0 +1,40 @@
+@import "../../../variables.scss";
+
+.vestireward__top {
+    width: 100%;
+    @include colflexx(center);
+    gap: 0px;
+    // text-align: center;
+    .titlesubtitle {
+        @include colflexx(center);
+        text-align: center !important;
+    }
+    .referal__inner{
+        margin-top: -30px;
+        width: 400px;
+
+        @include breakpoint(mobileonly){
+            width: 70vw;
+        }
+        .referal__inner__link{
+            width: 100%;
+            white-space: normal !important;
+        } 
+    }
+    *.numcheck__body{
+        width: 100%;
+        font-size: 1.1em;
+    }
+    // p:nth-child(1){
+    //     margin: 0;
+    //     @include fontBold(1.75em,1em, $vesti-700);
+
+    // }
+
+    // p:nth-child(2){
+    //     margin: 0;
+    //     margin-top: 10px;
+
+    //     @include fontNormal(1.2em,1.4em, $vesti-901);
+    // }
+}

@@ -1,0 +1,423 @@
+@import "../../../variables.scss";
+
+.japawithsense-container{
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 100px;
+    border-radius: 50px;
+    padding-bottom: 50px;
+    @include rowflex(center,center);
+
+    .japawithsense-inner {
+        width: 85%;
+        height: fit-content;
+        @include colflexx(center);
+
+        &.top{
+            width: 50%;
+            margin-top: 5rem;
+            p:nth-child(1){
+                margin: 0;
+                @include fontBold(2.25em, 1em, $vesti-902);
+            }
+            p:nth-child(2){
+                margin-top: 10px;
+                @include fontNormal(1.2em, 1.5em, $vesti-902);
+            }
+        }
+        .middle-inner {
+            width: 100%;
+            margin-top: 30px;
+            padding-bottom: 5rem;
+            @include rowflex(flex-start, space-between);
+            gap: 8rem;
+            .middle-left{
+                @include rowflex(center, space-between);
+                gap: 2rem;
+
+                img {
+                    width: 600px;
+
+                    @include breakpoint(mobileonly){
+                        width: 350px;
+                    }
+                    @include breakpoint(phablet){
+                        width: 350px;
+                    }
+                }
+            }
+            .middle-right{
+                width: 50%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(1.5em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.2em, 1.5em, $vesti-901);
+                }
+                p:nth-child(3){
+                    margin-top: 10px;
+                    @include fontNormal(1.2em, 1.5em, $vesti-901);
+                }
+                a:nth-child(4){
+                    @include fontMedium(1.2em, 1.5em, $vesti-700);
+                }
+            }           
+
+        }
+        .bottom-inner {
+            width: 100%;
+            margin-top: 30px;
+            @include rowflex(center, space-between);
+            gap: 8rem;
+            .bottom-right{
+                @include colflex(center, space-between);
+                gap: 2rem;
+                .inner-bottom-right-top{
+                    @include rowflex(center, space-between);
+                    gap: 2rem;
+                }
+                .inner-bottom-right-bottom{
+                    @include rowflex(center, space-between);
+                    gap: 2rem;
+                }
+            }
+            .bottom-left{
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(1.5em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.2em, 1.5em, $vesti-901);
+                }
+                p:nth-child(3){
+                    margin-top: 10px;
+                    @include fontNormal(1.2em, 1.5em, $vesti-901);
+                }
+                a:nth-child(4){
+                    @include fontMedium(1.2em, 1.5em, $vesti-700);
+                }
+            }           
+
+        }
+
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 600px){
+    .japawithsense-container{
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 90px;
+        padding-bottom: 30px;
+        @include colflex(center,center);
+    
+        .japawithsense-inner {
+            height: fit-content;
+            @include colflexx(center);
+            font-size: 11px;
+            width: 90%;
+
+            &.top{
+                width: 90%;
+                margin-top: 0px !important;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(1.45em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1em, 1.5em, $vesti-902);
+                }
+            }
+            .middle-inner {
+                width: 100%;
+                margin-top: 30px;
+                padding: 0px;
+                @include revcolflex(center, space-between);
+                gap: 0rem;
+                .middle-left{
+                    @include colflex(center, space-between);
+                    gap: 2rem;
+                    // margin-bottom: -5rem;
+                    .card{
+                        width: 100% !important;
+                    }
+                }
+                .middle-right{
+                    width: 100%;
+                    p:nth-child(1){
+                        margin: 0;
+                        @include fontBold(1.5em, 1em, $vesti-902);
+                    }
+                    p:nth-child(2){
+                        margin-top: 10px;
+                        @include fontNormal(1.2em, 1.5em, $vesti-901);
+                    }
+                    p:nth-child(3){
+                        margin-top: 10px;
+                        @include fontNormal(1.2em, 1.5em, $vesti-901);
+                    }
+                    a:nth-child(4){
+                        @include fontMedium(1.2em, 1.5em, $vesti-700);
+                    }
+                }           
+    
+            }
+            .bottom-inner {
+                width: 100%;
+                margin-top: 30px;
+                padding: 0px;
+                @include colflex(center, space-between);
+                gap: 8rem;
+                .bottom-right{
+                    // margin-left: -19px;
+                    width: 100%;
+                    @include colflex(center, space-between);
+                    gap: 2rem;
+                    .inner-bottom-right-top{
+                        @include colflex(center, space-between);
+                        gap: 2rem;
+                        .card{
+                            width: 100% !important;
+                        }
+                    }
+                    .inner-bottom-right-bottom{
+                        @include colflex(center, space-between);
+                        gap: 2rem;
+                        .card{
+                            width: 100% !important;
+                        }
+                    }
+                }
+                .bottom-left{
+                    margin-bottom: -5rem;
+                    p:nth-child(1){
+                        margin: 0;
+                        @include fontBold(1.5em, 1em, $vesti-902);
+                    }
+                    p:nth-child(2){
+                        margin-top: 10px;
+                        @include fontNormal(1.2em, 1.5em, $vesti-901);
+                    }
+                    p:nth-child(3){
+                        margin-top: 10px;
+                        @include fontNormal(1.2em, 1.5em, $vesti-901);
+                    }
+                    a:nth-child(4){
+                        @include fontMedium(1.2em, 1.5em, $vesti-700);
+                    }
+                }           
+    
+            }
+    
+        }
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 800px){
+    .japawithsense-container{
+        width: 80%;
+        height: fit-content;
+        margin-bottom: 100px;        
+        margin-left: 80px;
+        padding-bottom: 30px;
+        @include colflex(center,center);
+    
+        .japawithsense-inner {
+            width: 100%;
+            height: fit-content;
+            @include colflexx(center);
+            margin-top: -53px;
+    
+            &.top{
+                width: 100%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(2em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-bottom: 42px;
+                    @include fontNormal(1.5em, 1.5em, $vesti-902);
+                }
+            }
+            .middle-inner {
+                width: 100%;
+                margin-top: 10px;
+                padding-bottom: 1rem;
+                @include revcolflex(center, space-between);
+                gap: 0rem;
+                text-align: left;
+                .middle-left{
+                    @include rowflex(center, space-between);
+                    gap: 2rem;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .middle-right{
+                    width: 100%;
+                    margin-top: 2rem;
+                    p:nth-child(1){
+                        margin: 0;
+                        @include fontBold(1.5em, 1em, $vesti-902);
+                    }
+                    p:nth-child(2){
+                        margin-top: 10px;
+                        @include fontNormal(1.2em, 1.5em, $vesti-901);
+                    }
+                    p:nth-child(3){
+                        margin-top: 10px;
+                        @include fontNormal(1.2em, 1.5em, $vesti-901);
+                    }
+                    a:nth-child(4){
+                        @include fontMedium(1.2em, 1.5em, $vesti-700);
+                    }
+                }           
+    
+            }
+            .bottom-inner {
+                width: 100%;
+                margin-top: 30px;
+                @include colflex(center, space-between);
+                gap: 2rem;
+                .bottom-right{
+                    @include rowflex(center, space-between);
+                    gap: 2rem;
+                    .inner-bottom-right-top{
+                        @include colflex(center, space-between);
+                        gap: 2rem;
+                    }
+                    .inner-bottom-right-bottom{
+                        @include colflex(center, space-between);
+                        gap: 2rem;
+                    }
+                }
+                .bottom-left{
+                    p:nth-child(1){
+                        margin: 0;
+                        text-align: left;
+                        @include fontBold(1.5em, 1em, $vesti-902);
+                    }
+                    p:nth-child(2){
+                        margin-top: 10px;
+                        @include fontNormal(1.2em, 1.5em, $vesti-901);
+                    }
+                    p:nth-child(3){
+                        margin-top: 10px;
+                        @include fontNormal(1.2em, 1.5em, $vesti-901);
+                    }
+                    a:nth-child(4){
+                        @include fontMedium(1.2em, 1.5em, $vesti-700);
+                    }
+                }           
+    
+            }
+    
+        }
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1224px){
+    .japawithsense-container{
+        width: 100%;
+        height: fit-content;
+        padding-bottom: 0;
+        margin-bottom: 0px;
+        @include rowflex(center,center);
+    
+        .japawithsense-inner {
+            width: 90%;
+            height: fit-content;
+            @include colflexx(center);
+    
+            &.top{
+                width: 90%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(2.25em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.2em, 1.5em, $vesti-902);
+                }
+            }
+            
+            .middle-inner {
+                width: 100%;
+                margin-top: 30px;
+                @include revcolflex(flex-start, space-between);
+                gap: 0rem;
+                .middle-left{
+                    width: 100%;
+                    margin-top: 20px;
+                    @include rowflex(flex-start, flex-start);
+                    gap: 2rem;
+                }
+                .middle-right{
+                    width: 90%;
+                    p:nth-child(1){
+                        margin: 0;
+                        text-align: left;
+                        @include fontBold(1.5em, 1em, $vesti-902);
+                    }
+                    p:nth-child(2){
+                        margin-top: 10px;
+                        @include fontNormal(1.2em, 1.5em, $vesti-901);
+                    }
+                    p:nth-child(3){
+                        margin-top: 10px;
+                        @include fontNormal(1.2em, 1.5em, $vesti-901);
+                    }
+                    a:nth-child(4){
+                        @include fontMedium(1.2em, 1.5em, $vesti-700);
+                    }
+                }           
+    
+            }
+            .bottom-inner {
+                width: 100%;
+                margin-top: 0px;
+                @include colflex(center, space-between);
+                gap: 2rem;
+                .bottom-right{
+
+                    width: 100%;
+                    @include rowflex(center, space-between);
+                    gap: 2rem;
+                    .inner-bottom-right-top{
+                        @include rowflex(center, space-between);
+                        gap: 2rem;
+                        iframe {
+                            width: 320px !important;
+                        }
+                    }
+                    .inner-bottom-right-bottom{
+                        @include rowflex(center, space-between);
+                        gap: 2rem;
+                    }
+                }
+                .bottom-left{
+                    width: 100%;
+                    p:nth-child(1){
+                        margin: 0;
+                        text-align: left;
+                        @include fontBold(1.5em, 1em, $vesti-902);
+                    }
+                    p:nth-child(2){
+                        margin-top: 10px;
+                        @include fontNormal(1.2em, 1.5em, $vesti-901);
+                    }
+                    p:nth-child(3){
+                        margin-top: 10px;
+                        @include fontNormal(1.2em, 1.5em, $vesti-901);
+                    }
+                    a:nth-child(4){
+                        @include fontMedium(1.2em, 1.5em, $vesti-700);
+                    }
+                }           
+    
+            }
+        }
+    }  
+}

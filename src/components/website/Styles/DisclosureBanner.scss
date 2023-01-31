@@ -1,0 +1,58 @@
+@import "../../../variables.scss";
+
+.disclosure-container{
+    width: 100% !important;
+    @include colflex(center,center);
+    .disclosure-title{
+        width: 100%;
+        background-color: #F0F3EE;
+        height: 50vh;
+        @include rowflex(center,center);
+
+        h1{ 
+            @include fontBold(2.8em, 1.5em, $vesti-902);
+
+        }
+       
+    }
+    .disclosure-main{
+        width: 70%;
+        margin-top: 100px;
+
+        @include breakpoint(mobileonly) {
+            margin-top: 50px;
+            width: 80%;
+        }
+        p{
+            @include fontNormal(1.2em, 1.5em, $vesti-901);
+
+            @include breakpoint(phablet){
+                @include fontNormal(1em, 1.5em, $vesti-901);
+            }
+
+            @include breakpoint(mobileonly){
+                @include fontNormal(1em, 1.5em, $vesti-901);
+            }
+
+            a {
+                font-weight: 500;
+            }
+            ol{
+                li{
+                    @include fontNormal(1em, 1.5em, $vesti-901);
+
+                    @include breakpoint(phablet){
+                        @include fontNormal(1em, 1.7em, $vesti-901);
+                    }
+
+                    @include breakpoint(mobileonly){
+                        @include fontNormal(1em, 1.7em, $vesti-901);
+                    }
+                }
+            }
+        }
+
+      
+        
+    }
+}

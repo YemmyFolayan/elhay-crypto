@@ -1,0 +1,277 @@
+@import "../../../variables.scss";
+
+.cardofferings-container{
+    width: 70%;
+    height: fit-content;
+    margin-bottom: 100px;
+    padding-bottom: 50px;
+    @include rowflex(center,center);
+
+    .cardofferings-inner {
+        width: 80%;
+        height: fit-content;
+        @include colflexx(center);
+
+        &.top{
+            // width: 0%;
+            margin-left: 450px;
+            p:nth-child(1){
+                margin: 0;
+                @include fontBold(2.25em, 1em, $vesti-902);
+            }
+            p:nth-child(2){
+                margin-top: 10px;
+                @include fontNormal(1.2em, 1.5em, $vesti-901);
+            }
+        }
+        &.bottom {
+            width: 80%;
+            margin-top: 50px;
+            @include rowflex(center, space-between);
+
+            .matching-images{
+                position: relative;
+
+                &:hover {
+                    img {
+                        transform: scale(1.2);
+                    }
+                    
+                }
+
+                img{
+                    position: absolute;
+                    bottom: -300px;
+                    width: 550px;
+                    opacity: 0;
+                    transition:all .5s ease;
+
+                    &.active {
+                        opacity: 1;
+                    }
+
+                    
+
+                }
+            }
+
+            .card:not(:first-child){
+                margin-top: 20px;
+            }
+
+            .card{
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+                transition: all .5s ease;
+
+                &.active, &:hover{
+                    background-color: $vesti-100;
+                    .card-number{
+                        color: $vesti-700;
+                        background-color: $vesti-300;
+                    }
+
+                    .card-title{
+                        color: $vesti-700;
+                    }
+                }
+
+                .card-number {
+                    width: fit-content;
+                    height: fit-content;
+                    border-radius: 10px;
+                    padding: 20px 25px 20px 25px;
+                    background-color: $gray-300;
+                    margin-bottom: 20px;
+                    @include fontBold(1em, 1em, $gray-600);
+
+                    transition: all .5s ease;
+                }
+                .card-title{
+                    @include fontSemiBold(1.5em, 1.5em, $vesti-902);
+                    transition: all .5s ease;
+                
+                }
+                .card-text{
+                    @include fontNormal(1.25em, 1.5em, $vesti-901);
+                    // width: 100%;                  
+                
+                }
+
+            }
+
+            
+
+        }
+
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 600px){
+    .cardofferings-container{
+        width: 80%;
+        margin-left: 30px;
+        height: fit-content;
+        margin-bottom: 26px;
+        border-radius: 20px;
+        padding-bottom: 30px;
+        @include colflex(center,center);
+    
+        .cardofferings-inner {
+            width: 90%;
+            height: fit-content;
+            @include colflexx(center);
+            margin-top: -150px;
+    
+            &.top{
+                width: 100%;
+                margin-left: 0px !important;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(1.2em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.1em, 1.5em, $vesti-902);
+                }
+            }
+            &.bottom {
+                width: 100%;
+                margin-top: 50px;
+                @include colflexx(center);
+
+                .matching-images{
+                    display: none;
+                }
+    
+                .card{
+                    width: 100% !important;
+                    border: none;
+                    background-color: transparent;
+    
+                    .card-title{
+                        @include fontSemiBold(1.1em, 1.5em, $vesti-902);
+                    
+                    }
+                    .card-text{
+                        @include fontNormal(1.1em, 1.5em, $vesti-901);
+                    
+                    }
+    
+                }
+    
+            }
+    
+        }
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 800px){
+    .cardofferings-container{
+        width: 80%;
+        height: fit-content;
+        margin-bottom: 100px;
+        border-radius: 20px;
+        padding-bottom: 30px;
+        margin-left: 81px;
+        @include colflex(center,center);
+    
+        .cardofferings-inner {
+            width: 100%;
+            height: fit-content;
+            @include colflexx(center);
+            margin-top: -53px;
+    
+            &.top{
+                width: 100%;
+                margin-left: 0px !important;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(2em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.5em, 1.5em, $vesti-902);
+                }
+            }
+            &.bottom {
+                width: 100%;
+                margin-top: 20px;
+                @include colflexx(center);
+
+                .matching-images{
+                    display: none;
+                }
+    
+                .card{
+                    border: none;
+                    background-color: transparent;
+    
+                    .card-title{
+                        @include fontSemiBold(1.5em, 1.5em, $vesti-902);
+                    
+                    }
+                    .card-text{
+                        @include fontNormal(1.25em, 1.5em, $vesti-901);
+                    
+                    }
+    
+                }
+    
+            }
+    
+        }
+    }
+}
+// @media only screen and (min-width: 800px) and (max-width: 1224px){
+//     .cardofferings-container{
+//         width: 80%;
+//         height: fit-content;
+//         margin-bottom: 100px;
+//         border-radius: 50px;
+//         // padding-top: 30px;
+//          padding-bottom: 50px;
+//         @include rowflex(center,center);
+    
+//         .cardofferings-inner {
+//             width: 90%;
+//             height: fit-content;
+//             @include colflexx(center);
+    
+//             &.top{
+//                 width: 50%;
+//                 margin-left: 0px !important;
+//                 p:nth-child(1){
+//                     margin: 0;
+//                     @include fontBold(2.25em, 1em, $vesti-902);
+//                 }
+//                 p:nth-child(2){
+//                     margin-top: 10px;
+//                     @include fontNormal(1.2em, 1.5em, $vesti-902);
+//                 }
+//             }
+//             &.bottom {
+//                 width: 100%;
+//                 margin-top: 50px;
+//                 @include rowflexx(center);
+    
+//                 .card{
+//                     border: none;
+//                     background-color: transparent;
+    
+//                     .card-title{
+//                         @include fontSemiBold(1.5em, 1.5em, $vesti-902);
+                    
+//                     }
+//                     .card-text{
+//                         @include fontNormal(1.25em, 1.5em, $vesti-901);
+                    
+//                     }
+    
+//                 }
+                
+    
+//             }
+    
+//         }
+//     }  
+// }

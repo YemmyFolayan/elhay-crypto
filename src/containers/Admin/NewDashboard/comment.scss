@@ -1,0 +1,72 @@
+@import "../../../variables.scss";
+
+.single-comment-container {
+    background-color: $gray-100;
+    width: 90%;
+    height: fit-content;
+    // margin-left: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 10px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    @include rowflex(center,center);
+
+    .single-comment-inner {
+        width: 90%;
+        height: 100%;
+        @include rowflexx(flex-start);
+
+        img {
+            width: 50px !important;
+            height: 50px !important;
+            margin-right: 10px;
+            border-radius: 100% !important;
+        }
+
+        &.right {
+            width: 90%;
+            @include colflexx(flex-start);
+            
+            .top {
+                width: 100%;
+                p:nth-child(1) {
+                    margin: 0;
+                    @include fontSemiBold(1.2em, 1em, $vesti-700);
+                }
+                p:nth-child(2) {
+                    margin-top: 5px;
+                   
+                    @include fontNormal(1em, 1.4em, $gray-400);
+                }
+            }
+            .comment-content {
+                width: 100%;
+                height: fit-content !important;
+                
+                @include colflex(flex-start,space-between);
+                p:nth-child(1) {
+                    height: fit-content;
+                    @include fontNormal(1.2em, 1.4em, $vesti-902);
+                }
+
+                &.bottom {
+                    width: fit-content;
+                    margin-top: 10px;
+                    @include rowflex(flex-start, center);
+                    p {
+                        // width: 100%;
+                        cursor: pointer;
+                        @include fontNormal(1em, 1em, $gray-500);
+                    }
+
+                    p:not(:first-child) {
+                        margin-left: 15px;
+                    }
+                }
+
+            }
+        }
+
+    }
+}

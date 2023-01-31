@@ -1,0 +1,84 @@
+@import "../../../variables.scss";
+
+.prompt {
+    .prompt__inner{
+        width: 100%;
+        @include colflex(flex-start, flex-end);
+        display: inline-block;
+        position: inherit;
+        margin-top: 0px;
+       .pofprompt__inner__btn {
+            width: 100%;
+            margin-top: 10px;
+            @include colflexx(flex-start);
+            .form-control {
+                @include fontNormal(1.2em, 1em, $vesti-902);
+                width: fit-content;
+                line-height: 1.1;
+                border: none !important;
+                @include rowflexx(center);
+                
+                
+                input[type="checkbox"] {
+                    // margin-left: 20px;
+                    appearance: none;
+                    background-color: #fff;
+                    margin: 0;
+                    font: inherit;
+                    color: $vesti-901;
+                    width: 1.15em;
+                    height: 1.15em;
+                    border: 0.15em solid $vesti-901;
+                    border-radius: 0.15em;
+                    transform: translateY(-0.075em);
+                    display: grid;
+                    place-content: center;
+                    margin-right: 10px;
+                    transition: all 0.5s ease;
+    
+                    &:checked {
+                        border: 0.15em solid $vesti-700;
+                    }
+                    &::before {
+                        content: "";
+                        width: 0.65em;
+                        height: 0.65em;
+                        transform: scale(0);
+                        transition: 120ms transform ease-in-out;
+                        box-shadow: inset 1em 1em $vesti-700;
+                    }
+                }
+                input[type="checkbox"]:checked::before {
+                    transform: scale(1);
+                    
+                }
+                .link {
+                    margin-left: 5px;
+                    @include fontMedium(1em,1.1em,$vesti-700);
+                    &::before{
+                      content: '    ';
+                    }
+                  }
+            }
+            button:nth-child(2){
+                width: 100%;
+                outline: none;
+                border: none;
+                background-color: $vesti-700;
+                @include fontMedium(1em,1em, #fff);
+                border-radius: 10px;
+                transition: all .5s ease;
+
+                &:hover {
+                    background-color: $vesti-800;
+                }
+                &:disabled{
+                    cursor: not-allowed;
+                    background-color: $gray-600;
+        
+                }
+            }
+        }
+        
+    }
+}

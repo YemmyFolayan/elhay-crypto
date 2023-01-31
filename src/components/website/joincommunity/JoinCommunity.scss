@@ -1,0 +1,247 @@
+@import "../../../variables.scss";
+
+.join-community-container{
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 6rem;
+    border-radius: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    @include rowflex(center,center);
+
+    .join-community-inner {
+        width: 80%;
+        height: fit-content;
+        @include colflexx(center);
+
+        &.top{
+            width: 50%;
+            p:nth-child(1){
+                margin: 0;
+                @include fontBold(2.25em, 1em, $vesti-902);
+            }
+            p:nth-child(2){
+                margin-top: 10px;
+                @include fontNormal(1.5em, 1.5em, $vesti-901);
+            }
+        }
+        &.bottom {
+            width: 80%;
+            margin-top: 50px;
+            margin: 0 auto;
+            @include rowflex(center,center);
+
+            .card{
+                border: none;
+                background-color: transparent;
+
+                .card-body{
+                    @include colflex(center,center);
+
+                    .card-title{
+                        @include fontSemiBold(1.2em, 1.5em, $vesti-902); 
+                    }
+                    .card-text{
+                        @include fontNormal(1.1em, 1.5em, $vesti-902);                        
+                    }
+                }
+            }          
+
+        }
+        a{
+            margin-top: 20px;
+            @include fontMedium(1.3em, 0.7em, $vesti-700);    
+            @include rowflex(center,center);
+        }
+
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 600px){
+    .join-community-container{
+        width: 100%;
+        height: fit-content;
+        margin-bottom: -40px;
+        border-radius: 20px;
+        padding-bottom: 30px;
+        @include colflex(center,center);
+    
+        .join-community-inner {
+            width: 100%;
+            height: fit-content;
+            @include colflexx(center);
+            margin-top: -160px;
+            font-size: 11px;
+    
+            &.top{
+                width: 90%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(1.5em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1em, 1.5em, $vesti-902);
+                }
+            }
+            &.bottom {
+                width: 85%;
+                margin-top: 30px;
+                @include colflexx(center);
+    
+                .card{
+                    border: none;
+                    background-color: transparent;
+    
+                    .card-body{
+                        @include colflex(center,center);
+    
+                        .card-title{
+                            @include fontSemiBold(1.3em, 1.5em, $vesti-902); 
+                        }
+                        .card-text{
+                            @include fontNormal(1.25em, 1.5em, $vesti-902); 
+                            width: 80%;                       
+                        }
+                    }
+                }
+    
+            }
+            .button{
+                margin-top: 20px;
+                background-color: $vesti-700;
+                height: 60px !important;
+                padding: 1em !important;
+                border: none !important;
+                border-radius: 15px !important;
+                cursor: pointer;
+                @include fontMedium(1.2em, 0.7em, #fff);    
+                @include rowflex(center,center);
+                transition: all 0.3s ease;
+                margin-left: 30px;
+                &:hover{
+                  background: $vesti-900;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 800px){
+    .join-community-container{
+        width: 100%;
+        height: fit-content;
+        padding-bottom: 30px;
+        @include colflex(center,center);
+    
+        .join-community-inner {
+            width: 100%;
+            height: fit-content;
+            @include colflexx(center);
+            margin-top: -53px;
+    
+            &.top{
+                width: 100%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(2em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.5em, 1.5em, $vesti-902);
+                }
+            }
+            &.bottom {
+                width: 100%;
+                margin-top: 20px;
+                @include colflexx(center);
+    
+                .card{
+                    border: none;
+                    background-color: transparent;
+    
+                    .card-body{
+                        @include colflex(center,center);
+    
+                        .card-title{
+                            @include fontSemiBold(1.4em, 1.5em, $vesti-902); 
+                        }
+                        .card-text{
+                            @include fontNormal(1.25em, 1.5em, $vesti-902);                        
+                        }
+                    }
+    
+                }
+    
+            }
+            .button{
+                margin-top: 20px;
+                background-color: $vesti-700;
+                height: 60px !important;
+                padding: 1em !important;
+                border: none !important;
+                border-radius: 15px !important;
+                cursor: pointer;
+                @include fontMedium(1.2em, 0.7em, #fff);    
+                @include rowflex(center,center);
+                transition: all 0.3s ease;
+                &:hover{
+                  background: $vesti-900;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 800px) and (max-width: 1224px){
+    .join-community-container{
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 100px;
+        padding-bottom: 50px;
+        @include rowflex(center,center);
+    
+        .join-community-inner {
+            width: 95%;
+            height: fit-content;
+            @include colflexx(center);
+    
+            &.top{
+                width: 50%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(2.25em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.2em, 1.5em, $vesti-902);
+                }
+            }
+            &.bottom {
+                width: 100%;
+                margin-top: 50px;
+                @include rowflexx(center);
+                flex-wrap: wrap;
+                gap: 20px;
+                .card{
+                    border: none;
+                    background-color: transparent;
+    
+                    .card-body{
+                        @include colflex(center,center);
+    
+                        .card-title{
+                            @include fontSemiBold(1.4em, 1.5em, $vesti-902); 
+                        }
+                        .card-text{
+                            @include fontNormal(1.25em, 1.5em, $vesti-902);                        
+                        }
+                    }
+    
+                }                  
+            }
+            a{
+                margin-top: 20px;
+                @include fontMedium(1.3em, 0.7em, $vesti-700);    
+                @include rowflex(center,center);
+            }
+        }
+    }  
+}

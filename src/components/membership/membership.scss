@@ -1,0 +1,339 @@
+@import "../../variables.scss";
+
+
+.membership-top {
+    width: 100%;
+    @include colflex(flex-start, flex-start);
+
+    p:nth-child(1){
+        margin: 0;
+        @include fontBold(2em, 1em, $gray-500);
+    }
+    p:nth-child(2){
+        width: 90%;
+        margin-top: 10px;
+        @include fontNormal(1em, 1.5em, $vesti-901);
+    }
+}
+.selectmembership-container {
+    width: 100%;
+    height: 100%;
+    @include rowflex(center,center);
+
+    .selectmembership-inner {
+        width: 90%;
+        height: 90%;
+        @include colflexx(center);
+
+        &.top {
+            width: 100%;
+            @include colflex(flex-start, flex-start);
+
+            p:nth-child(1){
+                margin: 0;
+                @include fontBold(2em, 1em, $gray-500);
+            }
+            p:nth-child(2){
+                width: 90%;
+                margin-top: 10px;
+                @include fontNormal(1em, 1.5em, $vesti-901);
+            }
+        }
+
+        &.center {
+            width: 100%;
+
+            @include colflexx(center);
+            img {
+                width: 200px;
+            }
+
+            .center-controls {
+                width: fit-content;
+                max-width: 150px;
+                margin-top: 20px;
+                height: 50px;
+                max-height: 60px;
+                @include rowflexx(center);
+
+                div:not(:first-child){
+                    margin-left: 10px;
+                }
+                .control {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 100%;
+                    background-color: $gray-300;
+                    transform-origin: 50% 50%;
+                    transition: all .5s ease;
+
+                    &.active {
+                        background-color:  $vesti-700;
+                    }
+                    &:hover {
+                        width: 40px;
+                        height: 40px;
+                        background-color:  $vesti-700;
+                    }
+                }
+
+            }
+        }
+
+        &.description {
+            text-align: center;
+            width: fit-content;
+            margin-top: 30px;
+            @include colflexx(center);
+
+            p:nth-child(1){
+                margin: 0;
+                @include fontBold(1.5em, 1em, $vesti-700);
+            }
+            p:nth-child(2){
+                width: 90%;
+                margin-top: 10px;
+                @include fontNormal(1.2em, 1.7em, $vesti-901);
+            }
+        }
+
+      
+
+        .btn-container {
+            width: 100%;
+            margin-top: 30px;
+            @include rowflexx(center);
+            
+            @include breakpoint(mobileonly){
+                @include colflexx(flex-start);
+            }
+        
+            .btn-left {
+                width: fit-content !important;
+                height: 50px;
+                padding: 10px 30px 10px 30px !important;
+                background-color: transparent;
+                border: 1px solid $vesti-700 !important;
+                @include fontNormal(1em, 1em, $vesti-700);
+                outline: none;
+                margin-right: 20px;
+                @include rowflex(center,center);
+                border-radius: 10px;
+        
+                transition: all 0.5s ease;
+        
+                &:hover {
+                    background-color: $vesti-700;
+                    color: #fff;
+                }
+
+                @include breakpoint(mobileonly){
+                    width: 100% !important;
+                    margin-right: 0px;
+                    margin-bottom: 10px;
+                }
+
+            }
+        
+            .selectmembership-button{
+                width: fit-content;
+                height: 50px;
+                padding: 10px 20px 10px 20px !important;
+                background-color: $vesti-700;
+                transition: all .5s ease;
+                color: #fff;
+                @include fontNormal(1em, 2em, #fff);
+    
+                i {
+                    margin-left: 10px;
+                }
+                &:disabled {
+                    color: #fff;
+                    background-color:  $gray-600;
+                    cursor: not-allowed;
+    
+                    &:hover {
+                        background-color:  $gray-800;
+                    }
+                }
+                &:hover {
+                    background-color:  $vesti-900;
+                }
+
+                @include breakpoint(mobileonly){
+                    width: 100%;
+                    margin-right: 0px;
+                }
+            }
+        
+        }
+    }
+}
+
+.singleplan-container {
+
+    width: 90%;
+    height: fit-content;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    border: 1px solid $gray-300;
+    background-color: #fff;
+    @include rowflex(center,center);
+
+    @include breakpoint(mobileonly){
+        width: 100%;
+    }
+
+
+    .singleplan-inner{
+        width: 90%;
+        height: 90%;
+        @include colflexx(flex-start);
+
+        
+        &.top {
+            width: 100%;
+            @include rowflex(flex-start,space-between);
+
+            @include breakpoint(mobileonly){
+                width: 100%;
+                @include colflexx(flex-start);
+            }
+            .top-content {
+                width: 100%;
+                @include colflexx(flex-start);
+
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(1em, 1em, $gray-600);
+                }
+
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontBold(3em, 1em, $vesti-700);
+
+                    @include breakpoint(mobileonly){
+                        width: 100%;
+                        @include fontBold(2em, 1em, $vesti-700);
+                    }
+                }
+                p:nth-child(3){
+                    margin-top: -25px;
+                    @include fontNormal(1em, 1em, $vesti-700);
+                }
+                p:nth-child(4){
+                    margin-top: -5px;
+                    @include fontBold(2.2em, 1em, $vesti-901);
+
+                    @include breakpoint(mobileonly){
+                        width: 100%;
+                        margin-top: 0px;
+                        @include fontBold(1.5em, 1em, $vesti-700);
+                    }
+                }
+                p:nth-child(5){
+                    margin-top: -15px;
+                    @include fontLight(1.5em, 1em, $vesti-901);
+                    @include breakpoint(mobileonly){
+                        width: 100%;
+                        margin-top: -5px;
+                        @include fontLight(1.2em, 1em, $vesti-700);
+                    }
+                }
+            }
+        }
+
+        &.ul {
+            list-style: none;
+            padding: 0px;
+            width: 100%;
+            @include breakpoint(mobileonly){
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            li:not(:first-child){
+                margin-top: 20px
+            }
+
+            li {
+                @include fontNormal(1em, 1.4em, $vesti-901);
+                @include rowflexx(center);
+                i {
+                    color: $vesti-700;
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .btn-container {
+            width: 100%;
+            margin-top: 30px;
+            @include rowflexx(center);
+            
+            @include breakpoint(mobileonly){
+                @include colflexx(flex-start);
+            }
+        
+            .btn-left {
+                width: fit-content !important;
+                height: 50px;
+                padding: 10px 30px 10px 30px !important;
+                background-color: transparent;
+                border: 1px solid $vesti-700 !important;
+                @include fontNormal(1em, 1em, $vesti-700);
+                outline: none;
+                margin-right: 20px;
+                @include rowflex(center,center);
+                border-radius: 10px;
+        
+                transition: all 0.5s ease;
+        
+                &:hover {
+                    background-color: $vesti-700;
+                    color: #fff;
+                }
+
+                @include breakpoint(mobileonly){
+                    width: 100% !important;
+                    margin-right: 0px;
+                    margin-bottom: 10px;
+                }
+
+            }
+        
+            .singleplan-button {
+                width: fit-content;
+                height: 50px;
+                padding: 10px 30px 10px 30px;
+                background-color: $vesti-700;
+                transition: all .5s ease;
+                color: #fff;
+    
+                i {
+                    margin-left: 10px;
+                }
+                &:disabled {
+                    color: #fff;
+                    background-color:  $gray-600;
+                    cursor: not-allowed;
+    
+                    &:hover {
+                        background-color:  $gray-800;
+                    }
+                }
+                &:hover {
+                    background-color:  $vesti-900;
+                }
+
+                @include breakpoint(mobileonly){
+                    width: 100%;
+                    margin-right: 0px;
+                }
+            }
+        
+        }
+
+    }
+}

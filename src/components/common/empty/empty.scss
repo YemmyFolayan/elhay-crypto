@@ -1,0 +1,79 @@
+@import "../../../variables.scss";
+
+.empty, .smallempty{
+    width: 21em;
+    height: fit-content;
+    @include rowflex(center,center);
+    text-align: center;
+
+    &__inner {
+        @include colflexx(center);
+    }
+    &__img {
+        width: auto;
+        @include breakpoint(mobileonly){
+            width: 200px;
+        }
+    }
+
+    &__detail {
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+        
+    &__title{
+        margin: 0;
+        margin-top: 30px;
+        @include fontBold(1.5em, 1em, $vesti-800);
+
+        @include breakpoint(mobileonly){
+            @include fontBold(1.2em, 1em, $vesti-800);
+        }
+    }
+
+    &__subtitle{
+        width: 90%;
+        margin-top: 10px;
+        
+        @include fontNormal(1.1em, 1.7em, $vesti-901);
+        @include breakpoint(mobileonly){
+            @include fontNormal(1.1em, 1.7em, $vesti-901);
+        }
+    }
+
+}
+
+.smallempty{
+    margin:  0 auto;
+
+    &__inner {
+        .platform_mainbtn{
+            width: fit-content;
+            padding: 25px;
+            height: 45px !important;
+        }
+    }
+    &__title{
+        margin: 0;
+        margin-top: 20px;
+        @include fontBold(1.2em, 1em, $vesti-800);
+
+        @include breakpoint(mobileonly){
+            @include fontBold(1.2em, 1em, $vesti-800);
+        }
+    }
+
+    &__subtitle{
+        width: 90%;
+        margin-top: 10px;
+        
+        @include fontNormal(1em, 1.4em, $vesti-901);
+        @include breakpoint(mobileonly){
+            @include fontNormal(1em, 1.4em, $vesti-901);
+        }
+    }
+    &__detail {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}

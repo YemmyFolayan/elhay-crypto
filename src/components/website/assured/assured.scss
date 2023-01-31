@@ -1,0 +1,187 @@
+@import "../../../variables.scss";
+
+.assured-container{
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 100px;
+    @include rowflex(center,center);
+
+    .assured-inner {
+        width: 100%;
+        height: fit-content;
+        @include colflexx(center);
+
+        &.top{
+            width: 50%;
+            p:nth-child(1){
+                margin: 0;
+                @include fontBold(2.25em, 1em, $vesti-902);
+            }
+            p:nth-child(2){
+                margin-top: 10px;
+                @include fontNormal(1.2em, 1.5em, $vesti-902);
+            }
+        }
+        &.bottom {
+            width: 100%;
+            margin-top: 50px;
+            @include rowflexx(center);
+            
+            hr {
+                border: 1px solid $gray-300;
+                height: 300px;
+                margin-right: 10px;
+                margin-left: 10px;
+                background-color: red;
+                
+            }
+
+            .single-assureance {
+                @include colflexx(center);
+                width: 50%;
+                
+                img {
+                    width: auto;
+                    margin-bottom:20px;
+                }
+
+                p:nth-child(2){
+                    margin:0;
+                    margin-top:10px;
+                    @include fontBold(1.5em, 1em, $vesti-902);
+                }
+                p:nth-child(3){
+                    margin-top:10px;
+                    @include fontNormal(1.12em, 1.5em, $vesti-901);
+                    white-space: pre-wrap;
+                    width: 70%;
+                }
+            }
+
+        }
+
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+    .assured-container{
+        width: fit-content;
+        height: fit-content;
+        margin-bottom: 0px;
+        border-radius: 50px;
+        @include rowflex(center,center);
+    
+        .assured-inner {
+            width: fit-content;
+            height: fit-content;
+            @include colflexx(center);
+    
+            &.top{
+                width: 90%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(1.5em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    @include fontNormal(1.2em, 1.5em, $vesti-902);
+                }
+            }
+            &.bottom {
+                width: 100%;
+                margin-top: -50px;
+                @include colflexx(center);
+                
+                hr {
+                    display: none
+                    
+                }
+    
+                .single-assureance {
+                    @include colflexx(center);
+                    margin-top: 5rem;
+                    width: 100%;
+                    img {
+                        max-width: 100%;
+                        margin-bottom:20px;
+                    }
+    
+                    p:nth-child(2){
+                        margin:0;
+                        margin-top:10px;
+                        @include fontBold(1.3em, 1em, $vesti-902);
+                    }
+                    p:nth-child(3){
+                        margin-top:10px;
+                        @include fontNormal(1.2em, 1.5em, $vesti-901);
+                    }
+                }
+    
+            }
+    
+        }
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 800px) {
+    .assured-container{
+        width: fit-content;
+        height: fit-content;
+        margin-bottom: 0px;
+        border-radius: 50px;
+        @include rowflex(center,center);
+    
+        .assured-inner {
+            width: fit-content;
+            height: fit-content;
+            @include colflexx(center);
+    
+            &.top{
+                width: 90%;
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(2em, 1em, $vesti-902);
+                }
+                p:nth-child(2){
+                    margin-top: 10px;
+                    width: 50%;
+                    @include fontNormal(1.2em, 1.5em, $vesti-700);
+                }
+            }
+            &.bottom {
+                width: 100%;
+                margin-top: -50px;
+                @include rowflexx(center);
+                
+                hr {
+                    display: none
+                    
+                }
+    
+                .single-assureance {
+                    @include colflexx(center);
+                    margin-top: 5rem;
+                    img {
+                        max-width: 100%;
+                        margin-bottom:20px;
+                    }
+    
+                    p:nth-child(2){
+                        margin:0;
+                        margin-top:10px;
+                        @include fontBold(1.3em, 1em, $vesti-902);
+                    }
+                    p:nth-child(3){
+                        margin-top:10px;
+                        @include fontNormal(1.2em, 1.5em, $vesti-901);
+                    }
+                }
+    
+            }
+    
+        }
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1224px){
+    
+}

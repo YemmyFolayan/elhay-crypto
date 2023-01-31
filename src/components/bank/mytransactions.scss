@@ -1,0 +1,251 @@
+@import "../../variables.scss";
+
+
+.mytransactions-container {
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 50px;
+    @include colflexx(flex-start);
+    overflow-x: auto !important;
+    // background-color: red;
+    
+    @include breakpoint(mobileonly){
+        @include colflexx(center);
+    }
+
+    
+    .mytransactions-container__title{
+        margin: 0;
+        font-size: 2.5em !important;
+        color: $gray-300 !important;
+        @include fontSemiBold(2.5em, 1em, $gray-300);
+    }
+    .mytransactions-inner-container{
+        width: 100%;
+        overflow-x: auto !important;
+        height: fit-content;
+        @include colflexx(flex-start);
+
+        @include breakpoint(mobileonly){
+            @include colflexx(flex-start);
+        }
+        @include breakpoint(phablet){
+            width: 100vw;
+            @include colflexx(flex-start);
+        }
+        
+        .table-container {
+            width: 80%;
+            overflow-x: auto !important;
+            @include breakpoint(mobileonly){
+                width: 20em;
+                overflow-x: auto !important;
+            }
+            @include breakpoint(phablet){
+                width: 100vw;
+                overflow-x: auto !important;
+            }
+
+            @include breakpoint(tablet){
+                width: 100%;
+                overflow-x: auto !important;
+            }
+
+            @include breakpoint(laptop){
+                width: 100%;
+                overflow-x: auto !important;
+            }
+
+            .transactions-table {
+                border-collapse: collapse;
+                width: 100%;
+                margin-top: 10px;
+                border-collapse: collapse;
+                border-spacing: 0;
+                width: 100%;
+                border: 1px solid $gray-200;
+
+                @include breakpoint(tablet){
+                    width: 100vw;
+                }
+                @include breakpoint(phablet){
+                    width: 100vw;
+                }
+                th, td {
+                    padding: 15px;
+                  }
+                thead{
+                    // padding-bottom: 50px;
+                    width: 100%;
+                    tr {
+                        th {
+                            text-align: left;
+                            margin-bottom: 50px;
+                            @include fontNormal(1.3em,1em, $vesti-901);
+                            @include breakpoint(mobileonly){
+                                @include fontNormal(1.1em,1em, $vesti-901);
+                            }
+                        }
+                        &:after {
+                            content:"@";
+                            display:block;
+                            line-height:2em;
+                            height: 100px;
+                            text-indent:-99999px;
+                        }
+                    }
+                    
+                }
+                tbody {
+                    width: 100%;
+                    height: fit-content;
+                    tr:not(:first-child){
+                        margin-top: 0px;
+                    }
+                    tr:not(:last-child){
+                        border-bottom: 1px solid $gray-200;
+                    }
+                    tr{
+                        height: 50px;
+                        border-top: 1px solid $gray-200;
+                    }
+                    tr{
+                        background-color: transparent;
+                        cursor: pointer;
+                        transition: all .5s ease;
+                        border-radius: 10px !important;
+                        white-space: pre !important;
+                        &:hover {
+                            background-color: $gray-200;
+                            td:first-child { 
+                                border-top-left-radius: 10px;
+                                border-bottom-left-radius: 10px;
+                            }
+                            td:last-child { 
+                                border-top-right-radius: 10px; 
+                                border-bottom-right-radius: 10px; 
+                            }
+                        }
+                        td {
+                            text-align: left;
+                            height: 100px !important;
+                            width: fit-content;
+                            // padding: 8px;
+                            img {
+                                width: auto;
+
+                                @include breakpoint(mobileonly){
+                                    width: 30px;
+                                }
+                                @include breakpoint(phablet){
+                                    width: 30px;
+                                }
+                            }
+                            .status {
+                                height: fit-content;
+                                width: fit-content;
+                                padding: 5px 10px 5px 10px;
+                                border-radius: 5px;
+                                text-transform: uppercase;
+                                @include breakpoint(mobileonly){
+                                    padding: 0px 3px 0px 3px;
+                                }
+        
+                                &.success {
+                                    background-color: #F0FFF6;
+                                    border: 1px solid #4DDA89;
+                                    color: #4DDA89;
+                                }
+        
+                                &.pending {
+                                    background-color: $yellow-100;
+                                    border: 1px solid $yellow-500;
+                                    color: $yellow-500;
+                                }
+        
+                                &.failed {
+                                    background-color: #FFEBEB;
+                                    border: 1px solid #FF3636;
+                                    color: #FF3636;
+                                }
+                            }
+
+                         
+                        }
+                        td:nth-child(4) {
+                            @include fontSemiBold(1em, 1em, $vesti-901);
+                            
+                        }
+                        td:nth-child(2),td:nth-child(3),td:nth-child(5){
+                            @include fontNormal(1em, 1em, $vesti-901);
+                            @include breakpoint(mobileonly){
+                                @include fontNormal(0.9em, 1em, $vesti-901);
+
+                            }
+                        }
+
+                        td.amount {
+
+                            &-green {
+                                color: $green-700;
+                            }
+                            &-red {
+                                color: red;
+                            }
+                            &-yellow {
+                                color: $yellow-600;
+                            }
+                        }
+                        
+                        
+        
+                    }
+                    
+                }
+            }
+        }
+        
+
+        .pagination {
+            margin-top: 50px;
+            width: 80%;
+            float: right;
+            @include rowflex(center,flex-end);
+            flex-wrap: wrap;
+            @include breakpoint(mobileonly){
+                width: 90%;
+                margin: 50px auto;
+                @include rowflex(center,center);
+            }
+            @include breakpoint(phablet){
+                width: 100%;
+                margin: 50px auto;
+                @include rowflex(center,center);
+            }
+           
+        }
+    }
+
+    .mytransactions-center-container{
+        width: 100%;
+        height: 35em;
+        @include rowflex(center,center);
+    }
+    
+}
+
+.equal__get {
+    @include fontNormal(1.2em, 1em, $vesti-800);
+    width: fit-content;
+    height: fit-content;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    background-color: $vesti-200;
+    border: .5px solid $vesti-700;
+
+    &.--error {
+        @include fontNormal(1.2em, 1em, red);
+        background-color: rgb(255, 190, 190);
+        border: .5px solid red;
+    }
+}

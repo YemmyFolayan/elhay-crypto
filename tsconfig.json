@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "noEmit": true,
+    "allowJs": true,
+    "removeComments": false,
+    "strict": true,
+    "esModuleInterop": true,
+    "baseUrl": "src",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": false
+  },
+  "include": [
+    "src"
+  ],
+  "paths": {
+    "@assets/*": [
+      "./assets/*"
+    ]
+  }
+}

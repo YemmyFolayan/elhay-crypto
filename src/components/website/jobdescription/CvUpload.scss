@@ -1,0 +1,49 @@
+@import "../../../variables.scss";
+
+
+.cvcdoc-container:not(:first-child){
+    margin-top: 30px;
+}
+
+.cvdoc-container {
+    width: 470px;
+    height: 180px;
+    background: #F8FFF5;
+    border: 2px dashed $vesti-700;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    @include rowflex(flex-end, center);
+    .cvdoc-inner-container {
+        width: 90%;
+        height: 90%;
+        @include colflexx(center);
+
+        p:nth-child(){
+            margin: 0;
+            @include fontNormal(1em, 1em, $vesti-700)
+        }
+        label {
+            background-color: $vesti-700;
+            color: white;
+            // padding: .5rem 2rem .5rem 2rem ;
+            width: 150px;
+            height: 50px;
+            font-family: sans-serif;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 1rem;
+            
+            @include rowflex(center,center);
+            @include fontBold(1em,1em,#fff);
+            transition: all .5s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            }
+    }
+}
+
+           

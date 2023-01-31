@@ -1,0 +1,83 @@
+@import "../../../variables.scss";
+
+.openpdf-container {
+    width: fit-content;
+    margin: 0 auto;
+    height: fit-content;
+    position: relative;
+    @include colflexx(center);
+
+    .react-pdf__Page__canvas {
+        margin: 0 auto;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .openpdf-bottom {
+        // position: absolute;
+        // bottom: -50px;
+        // left: 0;
+        // right: 0;
+        margin: 0 auto;
+        width: fit-content;
+        margin-top: 20px;
+        // background-color: rebeccapurple;
+        @include colflexx(center);
+
+        p:nth-child(1){
+            margin: 0;
+            @include fontMedium(1.2em, 1.4em, $gray-400);
+        }
+
+        .openpdf-buttons {
+            width: fit-content;
+            margin-top: 20px;
+            @include rowflexx(center);
+        
+        
+            .btn-left {
+                width: fit-content !important;
+                height: 50px;
+                padding: 10px 30px 10px 30px !important;
+                background-color: transparent;
+                border: 1px solid $vesti-700 !important;
+                @include fontNormal(1em, 1em, $vesti-700);
+                outline: none;
+                margin-right: 20px;
+                @include rowflex(center,center);
+                border-radius: 10px;
+        
+                transition: all 0.5s ease;
+        
+                &:hover {
+                    background-color: $vesti-700;
+                    color: #fff;
+                }
+
+                &:disabled{
+                    cursor: not-allowed;
+                    background-color: $gray-500;
+                    color: #fff;
+                }
+            }
+        
+            .btn-right {
+                width: fit-content !important;
+                height: 50px;
+                // margin-left: 20px;
+                background-color: $vesti-700;
+                @include fontNormal(1em, 1em, #fff);
+                padding: 10px 15px 10px 15px !important;
+                @include rowflex(center,center);
+                border-radius: 10px;
+                outline: none;
+                transition: all 0.5s ease;
+        
+                &:hover {
+                    background-color: $vesti-900;
+                }
+            }
+        
+        }
+    }
+}

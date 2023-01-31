@@ -1,0 +1,249 @@
+@import "../../variables.scss";
+
+.creditreport {
+    width: 100%;
+    height: fit-content;
+    @include colflexx(flex-start);
+    flex-wrap: nowrap;
+    // gap: 50px;
+    
+    @include breakpoint(mobileonly){
+        width: 80vw;
+    }
+    @include breakpoint(phablet){
+        width: 80vw;
+    }
+    @include breakpoint(tablet){
+        width:70vw;
+    }
+    
+    &__report {
+        width: 350px;
+        height: 200px;
+
+        @include breakpoint(mobileonly){
+            width: 90vw;
+            padding: 0;
+        }
+    }
+
+    &__content {
+        @include rowflexx(flex-start);
+        flex-wrap: nowrap;
+        gap: 50px;
+
+        @include breakpoint(mobileonly){
+            @include colflexx(flex-start);
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        @include breakpoint(phablet){
+            @include colflexx(flex-start);
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        @include breakpoint(tablet){
+            @include colflexx(flex-start);
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+    }
+    &__risk {
+        @include colflexx(center);
+
+        p{
+            margin-top: 20px;
+            padding: 10px 15px 10px 15px;
+            border-radius:5px;
+            background-color: $vesti-200;
+            @include fontMedium(1.2em,1em, $vesti-901);
+
+            &.--low {
+                background-color: $vesti-200;
+                color: $vesti-901;
+                border: 1px solid $vesti-900;
+
+                strong {
+                    color: $vesti-700;
+                }
+            }
+            &.--medium {
+                background-color: $yellow-200;
+                color: $yellow-900;
+                border: 1px solid $yellow-900;
+                strong {
+                    color: $yellow-700;
+                }
+            }
+            &.--high {
+                background-color: rgb(255, 235, 235);
+                color: rgb(54, 2, 2);
+                border: 1px solid rgb(138, 5, 5);
+                strong {
+                    color: red;
+                }
+            }
+        }
+    }
+
+    &__factors {
+        width: 100%;
+        @include colflexx(flex-start);
+        gap: 30px;
+    }
+
+    &__info {
+        cursor: pointer;
+        position: relative;
+        // background-color: rebeccapurple;
+        @include rowflexx(center);
+        &:hover {
+            .creditreport__tooltiptext{
+                visibility: visible;
+            }
+            i{
+                font-size: 1.2em;
+                color: $gray-600;
+            }
+        }
+        p:nth-child(1){
+            @include rowflexx(center);
+            @include fontBold(1.5em,1em,$vesti-901);
+
+            i{
+                font-size: 1.1em;
+                color: $gray-400;
+                margin-left: 5px;
+                transition: all .5s ease;
+            }
+        }
+    }
+    &__tooltiptext{
+        visibility: hidden;
+        position: absolute;
+        text-align: center;
+        width: 250px;
+        white-space: normal;
+        top: -80px;
+        left:10px;
+        z-index: 1;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid $gray-300;
+        background-color: $gray-200;
+        box-shadow: 0px 10px 80px rgba(200,195,210,0.3);
+        transition: all .5s ease;
+    }
+
+    &__list {
+        width: 600px;
+        @include rowflexx(flex-start);
+        flex-wrap: wrap;
+        gap: 30px;
+
+        @include breakpoint(mobileonly){
+            width: 90vw;
+        }
+    }
+
+    &__factor {
+        background-color: $gray-100;
+        border: 1px solid $gray-200;
+        padding: 10px 25px 15px 25px;
+        border-radius: 5px;
+        h5.creditreport__ftitle{
+            @include fontNormal(1em,1em,$vesti-901);
+        }
+        h6.creditreport__fstitle{
+            margin: 0 !important;
+            @include fontMedium(1.2em,1em,$vesti-901);
+        }
+    }
+    &__disbox {
+        margin-top: 50px;
+        @include colflexx(center);
+        gap: 20px;
+    }
+    &__disclosure {
+        margin: 0 auto;
+        text-align: center;
+        width: 60%;
+        @include fontMedium(1em,1.5em, $gray-600);
+        strong {
+            cursor: pointer;
+            color: $vesti-700;
+        }
+    }
+
+    &__offers {
+        @include colflexx(flex-start);
+        gap: 20px;
+
+        img {
+            width: 350px;
+            transition: all .5s ease;
+
+            &:hover {
+                transform: scale(1.1);
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+.importcredit{
+    padding: 0px;
+    height: 100vh;
+    @include colflexx(flex-start);
+
+    .success {
+        margin-top: 50px;
+        padding: 0px;
+        margin:  0 auto;
+
+        @include breakpoint(desktop){
+            margin-top: 10vh;
+        }
+    }
+
+    .shortinfo{
+        width: 300px;
+        margin-left: -20px;
+
+        @include breakpoint(mobileonly){
+            width: 250px;
+        }
+    }
+}
+
+.creditcharge{
+    width: 100%;
+    height: 100%;
+    @include rowflex(center,center);
+
+    &__inner {
+        width: 100%;
+        height: 90%;
+        @include colflexx(flex-start);
+        gap: 10px;
+    }
+
+    &__options {
+        @include colflexx(flex-start);
+        gap: 10px;
+    }
+}
+
+.offers {
+    background-color: red;
+    &__comingsoon {
+        width: 350px;
+        height: 200px;
+        background-color: $vesti-700;
+        color: #fff;
+        border-radius: 20px;
+        @include rowflex(center,center);
+        @include fontNormal(1em, 1em, #fff);
+        background-image: url('../../assets/offercard.svg');
+    }
+}

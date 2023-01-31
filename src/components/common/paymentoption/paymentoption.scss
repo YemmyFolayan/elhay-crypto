@@ -1,0 +1,169 @@
+@import "../../../variables.scss";
+
+
+.paymentoption-container{
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    float: left;
+    @include rowflex(flex-start,flex-start);
+
+    .paymentoption-inner {
+        width: 100% !important;
+        height: 90%;
+        flex: 1;
+        @include colflexx(flex-start);
+
+        // &.top {
+        //     width: 100%;
+        //     margin-top: 10px;
+        //     margin-bottom: 20px;
+        //     @include colflex(flex-start, flex-start);
+
+        //     p:nth-child(1){
+        //         margin: 0;
+        //         @include fontBold(1.2em, 1em, $gray-400);
+        //     }
+        //     p:nth-child(2){
+        //         width: 90%;
+        //         margin-top: 10px;
+        //         @include fontNormal(1em, 1.5em, $vesti-901);
+        //     }
+        // }
+
+        &.center {
+            width: 100%;
+            height: fit-content;
+            @include colflexx(flex-start);
+        }
+        .pay-wallet {
+            width: 100%;
+            display: flex;
+
+            &.active {
+                display: flex;
+            }
+        }
+
+        .paystack-pay {
+            width: 100%;
+            height: 50px;
+            background-color:  $vesti-700;
+            color: #fff;
+            transition: all .5s ease;
+
+            i {
+                margin-left: 10px;
+            }
+
+            &:hover {
+                background-color:  $vesti-900;
+            }
+        }
+
+        .link-box{
+            margin-top: 20px;
+            margin-bottom: 30px;
+
+            width: 100%;
+            padding: 15px 15px 15px 15px;
+            border-radius: 5px;
+            border: 1px solid $vesti-700;
+            background-color: $vesti-100;
+            transition: all 0.5s ease;
+            @include fontNormal(1.2em, 1.7em, $vesti-902);
+
+            strong {
+                color: $vesti-700;
+            }
+            &.copied{
+                border: 1px solid $vesti-700;
+                background-color: $vesti-100;
+
+                @include fontNormal(1.2em, 1.4em, $vesti-700)
+            }
+        }
+
+        .enter-amount {
+
+            width: 100% !important;
+
+            .custom-field {
+                width: 100%;
+                margin-bottom: 20px;
+
+                p{
+                    margin: 0;
+                    @include fontNormal(1em, 1em, $vesti-901);
+                }
+    
+                input[type='text'], input[type='number'] {
+                    width: 100% !important;
+    
+                    height: 50px;
+                    border: none;
+                    padding: 0;
+                    margin: 0;
+                    margin-top: 10px;
+                    border-radius: 5px;
+                    box-sizing: border-box;
+                    outline: none;
+                    padding-left: 20px;
+                    background-color: $gray-200;
+                    @include fontNormal(1em, 1em, $gray-600);
+    
+                    @include breakpoint(tablet) {
+                        height: 60px;
+                    }
+                }
+            }
+
+            
+        }
+    }
+}
+
+.btn-container {
+    width: 100%;
+    margin-top: 30px;
+    @include rowflexx(center);
+
+
+    .btn-left {
+        width: fit-content !important;
+        height: 50px;
+        padding: 10px 30px 10px 30px !important;
+        background-color: transparent;
+        border: 1px solid $vesti-700 !important;
+        @include fontNormal(1em, 1em, $vesti-700);
+        outline: none;
+        margin-right: 20px;
+        @include rowflex(center,center);
+        border-radius: 10px;
+
+        transition: all 0.5s ease;
+
+        &:hover {
+            background-color: $vesti-700;
+            color: #fff;
+        }
+    }
+
+    .btn-right {
+        width: fit-content !important;
+        height: 50px;
+        // margin-left: 20px;
+        background-color: $vesti-700;
+        @include fontNormal(1em, 1em, #fff);
+        padding: 10px 15px 10px 15px !important;
+        @include rowflex(center,center);
+        border-radius: 10px;
+        outline: none;
+        transition: all 0.5s ease;
+
+        &:hover {
+            background-color: $vesti-900;
+        }
+    }
+
+}

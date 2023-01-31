@@ -1,0 +1,44 @@
+@import "../../../variables.scss";
+
+.alertboxes {
+    width: 100%;
+    border-radius: 5px;
+    padding: 15px 10px;
+    @include rowflexx(flex-start);
+    gap: 10px;
+    @include fontMedium(1em,1.4em, $vesti-901);
+
+    // i{
+    //     @include fontMedium(1.2em,1.4em, $vesti-901);
+    // }
+    p{
+        margin-bottom: 0px;
+    }
+    &.--error {
+        background-color: $red-100;
+        border:.5px solid $red-900;
+
+        p,i {
+           color: $red-901; 
+        }
+        i {
+            font-size: 20px;
+        }
+    }
+    &.--warning {
+        background-color: $yellow-100;
+        border:1px solid $yellow-900;
+
+        p,i {
+           color: $yellow-901; 
+        }
+    }
+
+    &.--infobox {
+        background-color: $gray-200;
+        border: 1px solid $gray-300;
+        p{
+            color: $gray-800;
+        }
+    }
+}

@@ -1,0 +1,89 @@
+@import "../../variables.scss";
+
+.diversified {
+    width: 75%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    @include colflexx(flex-start);
+
+    &__title{
+        margin: 0;
+        font-size: 1.3em !important;
+        color: $vesti-700 !important;
+        @include fontSemiBold(1.5em, 1em, $vesti-700);
+    }
+    &__table {
+        width: 80%;
+        overflow-x: auto !important;
+        @include breakpoint(mobileonly){
+            width: 27em;
+            overflow-x: auto !important;
+        }
+        @include breakpoint(phablet){
+            width: 400px;
+            overflow-x: auto !important;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 30px;
+        
+            thead{
+                margin-bottom: 50px;
+                width: 100%;
+                th {
+                    text-align: left;
+                    // width: 50%;
+                    // padding: 8px;
+                    @include fontMedium(1.3em,1em, $gray-300)
+                }
+            }
+            tbody {
+                width: 100%;
+                height: 100px;
+                tr:not(:first-child){
+                    margin-top: 50px;
+                }
+                tr:not(:last-child){
+                    border-bottom: 1px solid $gray-200;
+                }
+                .singlediverse{
+                    td {
+                        text-align: left;
+                        height: 100px !important;
+                        // padding: 8px;
+                    }
+                    td:nth-child(1){
+                        // @include colflexx(flex-start);
+            
+                        p:nth-child(1){
+                            margin: 0;
+                            @include fontSemiBold(1.5em, 1em, $vesti-902);
+                        }
+                        p:nth-child(2){
+                            margin-top: 20px;
+                            @include fontLight(1em,1em,$vesti-901);
+                        }
+                    }
+                    &__gaph {
+                        width: 150px !important;
+                        height: 80px !important;
+                        overflow: hidden;
+                    }
+    
+                    td:nth-child(3){
+                        @include fontMedium(1.5em, 1em, $vesti-700);
+                    }
+    
+                    td:nth-child(5){
+                        @include fontMedium(1.5em, 1em, $vesti-700);
+                    }
+                }
+                
+            }
+        }
+    }
+    
+}
+
+

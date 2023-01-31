@@ -1,0 +1,129 @@
+@import "../../variables.scss";
+.accordion {
+    max-width: 100%;
+    // @include rowflex(center,center);
+    @include breakpoint(mobileonly){
+        width: 100%;        
+        // font-size: 18px;
+    }
+    // margin: 2rem auto;
+    .accordion-item{
+
+        .accordion-title {
+            @include rowflex(center,space-between);
+            cursor: pointer;
+            padding: 1rem;
+            border: 1px solid $vesti-700;
+            border-radius: 1rem;
+            div:nth-child(1){
+                margin-left: 0.5rem;
+                @include fontNormal(1.2em,1em, $vesti-902);
+            }
+        }
+        .accordion-content {
+            padding: 1rem;
+            margin-top: -1.5rem;
+            .info{
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+                @include rowflex(flex-start,flex-start);
+                margin-left: -2rem;
+
+               .infoo{
+                margin-left: 1rem;
+               }
+            }
+            .side{
+                margin-left: -2rem;
+                .side-inner{
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 1rem;
+                    margin-bottom: 1rem;
+                    li{
+                        margin-top: 0.3rem;
+                    }
+                }
+            }
+            p:nth-child(1){
+                @include fontBold(1.2em,1em, $vesti-902);
+            }
+            p:nth-child(2){
+                // margin-top: -0.6rem;
+                margin-top: 1.5rem;
+                @include fontNormal(1em,1em, $vesti-700);
+            }
+            p:nth-child(3){
+                @include fontBold(1.2em,1em, $vesti-902);
+            }
+
+            p:nth-child(4){
+                @include fontBold(1.2em,1em, $vesti-902);
+            }
+            ul{
+                li{
+                    text-decoration: none;
+                    @include fontNormal(1em,1em, $vesti-901);
+                    list-style-type: none;
+                    margin-bottom: 1rem;
+                    img{
+                        margin-right: 0.9rem;
+                    }
+                }
+                span{
+                    @include fontBold(1em,1.3em, $vesti-901);
+                }
+            }
+            button{
+                @include fontNormal(1.2em,1em, $gray-200);
+                height: 50px;
+                width: 325px;
+                left: 20px;
+                top: 314px;
+                border-radius: 5px;
+                padding: 20px 30px 20px 30px;
+                background-color: $vesti-700;
+
+                @include breakpoint(mobileonly){
+                    width: 100%;
+                    @include fontNormal(1em,1em, $gray-200);
+                }
+
+                @include breakpoint(desktop){
+                    width: 100%;
+                }
+                
+
+            }
+
+        }
+        .verone{
+            top: -42px;
+            position: relative;
+            left: -15px;
+        }
+        .picture{
+            top: -49px;
+            position: relative;
+            left: -15px;
+        }
+    }
+
+
+
+}
+  
+@media screen and (max-width: 700px) {
+    body {
+        font-size: 16px;
+    }   
+
+    // .accordion {
+    //     width: 90%;
+    // }
+}
+
+.kycupload-inner-container right{
+    display: flex;
+    flex-direction: column;
+}

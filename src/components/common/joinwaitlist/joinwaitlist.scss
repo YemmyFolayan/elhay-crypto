@@ -1,0 +1,107 @@
+@import "../../../variables.scss";
+
+.joinwaitlist-container {
+    width: 100%;
+    height: 100%;
+    @include rowflex(center,center);
+
+    .joinwaitlist-inner {
+        width: 90%;
+
+        height: 90%;
+
+        @include colflexx(flex-start);
+
+        &.top {
+            width: 100%;
+            height: fit-content;
+            @include colflexx(flex-start);
+
+            p:nth-child(1){
+                margin:0;
+                @include fontBold(2.25em, 1em, $vesti-700);
+            }
+            p:nth-child(2){
+                margin-top: 10px;
+                @include fontNormal(1.2em, 1.4em, $vesti-901);
+            }
+        }
+
+        form {
+            margin-top: 30px;
+            width: 100%;
+            height: 100%;
+            @include colflex(flex-start,flex-end);
+            input[type='text'] {
+                width: 100%;
+                height: 60px;
+                background-color: $gray-100;
+                border: 1px solid $gray-300;
+                box-sizing: border-box;
+                border-radius: 5px;
+                outline: none;
+                padding-left: 20px;
+                @include fontNormal(1em, 1em, $gray-500);
+                
+                @include breakpoint(mobileonly) {
+                    width: 100%!important;
+                    height: 50px;
+                }
+                @include breakpoint(tablet) {
+                    width: 100% !important;
+                    height: 50px;
+                }
+        
+                @include breakpoint(phablet) {
+                    width: 100% !important;
+                }
+                
+        
+                &:focus {
+                    border: 1px solid $vesti-700;
+                    background-color: $vesti-100;
+                    color: $vesti-901;
+                }
+                &:disabled {
+                    cursor: not-allowed;
+                }
+                
+            }
+            .form-top{
+                width: 100%;
+                margin-bottom: 30px;
+                @include rowflexx(center);
+
+                input:nth-child(2) {
+                    margin-left: 20px;
+                }
+            }
+            .email{
+                margin-bottom: 30px;
+            }
+            .waitlist-error {
+                margin-top: -15px;
+                @include fontNormal(1em, 1em, red);
+            }
+            .waitlist-button {
+                width: 100%;
+                height: 70px;
+                background-color: $vesti-700;
+                color: #fff;
+                transition: all 0.5s ease;
+                border-radius: 5px !important;
+
+                &:hover {
+                    background-color: $vesti-800;
+                    color: #fff;
+                }
+                &:disabled {
+                    background-color: $gray-600;
+                    color: $gray-800;
+                    cursor: not-allowed;
+                }
+            }
+
+        }
+    }
+}

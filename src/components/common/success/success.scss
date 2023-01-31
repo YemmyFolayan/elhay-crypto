@@ -1,0 +1,61 @@
+@import "../../../variables.scss";
+
+.success {
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    @include rowflex(center,center);
+
+    &__inner {
+        width: 90%;
+        height: 90%;
+        @include colflexx(center);
+
+        img {
+
+            width:  350px;
+
+            margin-bottom: 50px;
+
+            @include breakpoint(mobileonly){
+                width: 250px
+            }
+        }
+    }
+    &__content {
+        @include colflexx(center);
+        gap: 30px;
+        text-align: center;
+        height: fit-content;
+        &.--error {
+            .success__body {
+                p:nth-child(1){
+                    margin: 0;
+                    @include fontBold(1.5em, 1em, red);
+                }
+    
+                p:nth-child(2){
+                    margin-top: 10px;
+                    text-align: center;
+                    @include fontNormal(1em, 1.7em, #66191D);
+                }
+            }
+        }
+    }
+    &__body {
+        @include colflexx(center);
+        gap: 10px;
+        p{
+            text-align: center;
+        }
+        p:nth-child(1){
+            margin: 0;
+            @include fontBold(1.5em, 1em, $vesti-700);
+        }
+
+        p:nth-child(2){
+            margin-top: 10px;
+            @include fontNormal(1em, 1.7em, $vesti-901);
+        }
+    }
+}

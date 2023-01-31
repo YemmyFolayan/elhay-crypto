@@ -1,0 +1,167 @@
+@import "../../variables.scss";
+
+.createapto {
+    width: 100%;
+    @include colflexx(flex-start);
+
+    @include breakpoint(mobileonly){
+        width: 65vw;
+    }
+    .select-input:nth-child(2){
+        margin-bottom: 15px;
+    }
+
+    .titlesubtitle{
+        margin-bottom: 20px;
+    }
+    
+    &__location {
+        width: 100%;
+        @include rowflexx(flex-start);
+        gap: 10px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+
+        @include breakpoint(mobileonly){
+            @include colflexx(flex-start);
+            gap: 10px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        @include breakpoint(phablet){
+            @include colflex(flex-start,center);
+            gap: 10px;
+        }
+    }
+
+    &.--error {
+        padding: 10px;
+        background-color:  rgb(255, 234, 234);
+        border: .5px solid red;
+        border-radius: 5px;
+        @include fontMedium(1em, 1.2em, red);
+
+        @include breakpoint(mobileonly){
+            padding: 5px;
+            @include fontMedium(.8em, 1.2em, red);
+        }
+    }
+
+    .inputfloat {
+        .inputfloat__box {
+            input {
+                @include breakpoint(mobileonly) {
+                    width: 65vw!important;
+                    height: 50px;
+                }
+            }
+            .shortinfo{
+                margin-top: 10px !important;
+            }
+    
+            .apto-error{
+                margin: 0;
+                @include fontNormal(1em, 1em , red);
+            }
+        }
+        
+    }
+
+    .dob.dob {
+
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border: none;
+        box-sizing: border-box;
+        margin-top: 0px;
+        box-shadow: none;
+        width: 100% !important;
+        margin-top: 10px;
+        height: 60px;
+        background: #F9F8F9;
+        border: 1px solid $gray-400;
+        box-sizing: border-box;
+        outline: none;
+        padding-left: 20px;
+        margin-bottom: 10px;
+        position: relative;
+        
+        @include fontNormal(1em, 1em, $gray-600);
+
+        @include breakpoint(mobileonly) {
+            width: 100%!important;
+            height: 55px;
+        }
+        @include breakpoint(tablet) {
+            width: 100% !important;
+            height: 55px;
+        }
+
+        @include breakpoint(phablet) {
+            width: 100% !important;
+        }
+        
+        &:focus {
+            border: 1px solid $vesti-700;
+            background-color: $vesti-100;
+            color: $vesti-901;
+        }
+        &:disabled {
+            cursor: not-allowed;
+            color: $gray-800;
+        }
+    }
+
+    .backcontinue {
+        margin-top: 40px;
+        @include breakpoint(mobileonly){
+            margin-top: 30px;
+        }
+    }
+    .my-input-class    {
+        width: 100% !important;
+        height: 60px !important;
+        background: #F9F8F9;
+        border: 1px solid $gray-400;
+        box-sizing: border-box;
+        border-radius: 5px;
+        outline: none !important;
+        padding-left: 20px;
+        position: relative;
+        
+        @include fontNormal(1em, 1em, $gray-600);
+    
+        @include breakpoint(mobileonly) {
+            width: 65vw!important;
+            height: 50px;
+        }
+        @include breakpoint(tablet) {
+            width: 100% !important;
+            height: 60px;
+        }
+    
+        @include breakpoint(phablet) {
+            width: 100% !important; //250PX
+            height: 50px;
+        }
+        &::before{
+            content:'Enter Phone Number';
+            position: absolute;
+            top: -30px;
+            background-color: red;
+        }
+        &:focus {
+            border: 1px solid $vesti-700;
+            background-color: $vesti-100;
+            color: $vesti-901;
+            
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+        &:disabled {
+            cursor: not-allowed;
+            color: $gray-800;
+        }
+    }
+}

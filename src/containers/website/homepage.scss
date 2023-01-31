@@ -1,0 +1,92 @@
+@import "../../variables.scss";
+
+.launch {
+    width: 100vw;
+    height: 100vh;
+    background-color: $vesti-100;
+    @include rowflex(center,center);
+
+    @include breakpoint(mobileonly){
+        height: 80vh;
+    }
+    &__inner {
+        width:fit-content;
+        @include colflexx(center);
+    }
+
+    &__header {
+        width: 40%;
+        @include colflexx(center);
+        text-align: center;
+
+        @include breakpoint(mobileonly){
+            width: 90vw;
+        }
+        @include breakpoint(phablet){
+            width: 60vw;
+        }
+        @include breakpoint(tablet){
+            width: 60vw;
+        }
+        h2 {
+            margin: 0;
+            @include fontBold(3em,1.2em,$vesti-901);
+
+            @include breakpoint(mobileonly){
+                @include fontBold(2em,1.2em,$vesti-901);
+            }
+            @include breakpoint(phablet){
+                @include fontBold(2em,1.2em,$vesti-901);
+            }
+        }
+
+        p{
+            margin: 0;
+            margin-top: 10px;
+            @include fontNormal(1.2em,1.4em,$vesti-900);
+
+            @include breakpoint(mobileonly){
+                @include fontNormal(1em,1.4em,$vesti-900);
+            }
+            @include breakpoint(phablet){
+                @include fontNormal(1em,1.4em,$vesti-900);
+            }
+        }
+
+    }
+    &__form {
+        width: 100%;
+        margin-top: 100px;
+        width: 600px;
+        height: fit-content;
+        padding: 30px;
+        background-color: #ffff;
+        border-radius: 10px;
+        filter: drop-shadow(0px 4px 30px rgba(157, 157, 157, 0.2));
+
+        .inputfloat {
+            width: 100% !important;
+        }
+        @include breakpoint(mobileonly){
+            margin-top: 50px;
+            width: 80vw;
+        }
+        @include breakpoint(phablet){
+            margin-top: 50px;
+            width: 80vw;
+        }
+    }
+    form {
+        @include colflexx(flex-start);
+        flex-wrap: nowrap;
+        gap: 30px;
+    }
+
+
+}
+.featured-container{
+    margin: 0 !important;
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+    background-color: #fff !important;
+}

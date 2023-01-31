@@ -1,0 +1,64 @@
+@import "../../../variables.scss";
+
+.for-hover {
+    border: 1px solid #EAEAEA !important;
+    transition: all 0.5s ease !important;
+    padding: 0 !important;
+    border-radius: 10px !important;
+
+    &:hover {
+        box-shadow: 0px 4px 30px rgba(157, 157, 157, 0.2) !important;
+        border: 1px solid #CCCCCC !important;
+    }
+
+    .for-hover-body {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px !important;
+        @include colflex(center, space-between);
+        // padding-bottom: 20px !important;
+
+        .for-hover-body-container {
+            position: relative;
+            width: 100% !important;
+            padding: 0 !important;
+            border-radius: 10px !important;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width:inherit;
+                height: 120px !important;
+                border-top-left-radius: 10px !important;
+                border-top-right-radius: 10px !important;
+            }
+        }
+    }
+
+    .for-hover-content {
+        padding-left:1em !important;
+        padding-right:1em !important;
+        // padding-left:20px;
+        padding-bottom: 20px;
+        margin-top: 1em !important;
+
+        p:nth-child(1){
+            @include fontSemiBold(1em, 1.4em, $vesti-700);
+        }
+        p:nth-child(2){
+            width: 95%;
+            @include fontNormal(1em, 1.5em, $vesti-901);
+        }
+
+        div:nth-child(4){
+            width: 100% !important;
+            border-radius: 10px !important;
+
+            span {
+                width: 100% !important;
+            }
+        }
+    }
+}

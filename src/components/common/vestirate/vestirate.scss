@@ -1,0 +1,36 @@
+@import "../../../variables.scss";
+
+.vestirate{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    background-color: $vesti-200;
+    @include colflexx(flex-start);
+    @include breakpoint(mobileonly){
+        @include fontBold(.8em, 1em, $vesti-800);
+        padding: 5px 10px 5px 10px;
+    }
+    p:nth-child(1){
+        margin: 0;
+        @include fontMedium(.8em, 1em, $vesti-901);
+    }
+    &__rate {
+        margin-top: 5px;
+        @include rowflexx(flex-end);
+        gap: 10px;
+        p:nth-child(1){
+            // margin: 0;
+            @include fontBold(1.2em, 1em, $vesti-800);
+            
+        }
+    }   
+    
+
+    &__before {
+        margin: 0;
+        text-decoration: line-through;
+        @include fontBold(1.2em, 1em, $vesti-800);
+    }
+    
+}

@@ -1,0 +1,117 @@
+@import "../../variables.scss";
+
+.silakyc {
+    width: 100%;
+    height: fit-content;
+    @include colflexx(flex-start);
+
+    // div:not(:last-child){
+    //     margin-bottom: 0px;
+    // }
+
+    &__select {
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        @include colflexx(flex-start);
+        // div:nth-child(2){
+        //     margin-top: 0px;
+        // }
+    }
+
+    &__name, &__contact, &__dobssn, &__last {
+        width: 100%;
+        height: fit-content;
+        padding: 0px;
+        @include rowflexx(flex-start);
+        // background-color: rebeccapurple;
+        flex-wrap: nowrap;
+        gap: 10px;
+        margin-bottom: 0px;
+
+        .error {
+            font-size: 1em !important;
+            color: red !important;
+
+            @include fontNormal(1em, 1.4em, red);
+        }
+        @include breakpoint(mobileonly){
+            @include colflexx(flex-start);
+            width: 100%;
+        }
+
+        &__state {
+
+            @include colflexx(flex-start);
+
+            p{
+                margin: 0;
+                margin-bottom: 2px;
+                @include rowflexx(center);
+                @include fontNormal(1.2em, 1em, $vesti-901);
+            }
+        }
+
+        
+    }
+    &__last{
+            @include rowflexx(center);
+    }
+    .textarea {
+        margin-bottom: 20px;
+        .error {
+            font-size: 1em !important;
+            color: red !important;
+
+            @include fontNormal(1em, 1.4em, red);
+        }
+    }
+    &__dobssn {
+        z-index: 1;
+        .dob.dob {
+
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border: none;
+            box-sizing: border-box;
+            margin-top: 0px;
+            box-shadow: none;
+            width: 100% !important;
+            margin-top: 10px;
+            height: 60px;
+            background: #F9F8F9;
+            border: 1px solid $gray-400;
+            box-sizing: border-box;
+            outline: none;
+            padding-left: 20px;
+            position: relative;
+            
+            @include fontNormal(1em, 1em, $gray-600);
+
+            @include breakpoint(mobileonly) {
+                width: 100%!important;
+                height: 50px;
+            }
+            @include breakpoint(tablet) {
+                width: 100% !important;
+                height: 50px;
+            }
+
+            @include breakpoint(phablet) {
+                width: 100% !important;
+            }
+            
+            &:focus {
+                border: 1px solid $vesti-700;
+                background-color: $vesti-100;
+                color: $vesti-901;
+            }
+            &:disabled {
+                cursor: not-allowed;
+                color: $gray-800;
+            }
+        }
+    }
+}
