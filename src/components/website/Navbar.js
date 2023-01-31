@@ -60,14 +60,7 @@ export const Navbar = props => {
                 Team
               </Link>{' '}
             </p>
-            <p>
-              <Link
-                className={`navbar-link ${props.fries}`}
-                to="/migrationfries"
-              >
-                Migration Fries
-              </Link>
-            </p>
+          
             {JSON.parse(storage) ? (
               <>
                 <p style={{ color: 'red' }} onClick={() => handleLogout}>
