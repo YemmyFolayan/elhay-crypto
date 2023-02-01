@@ -186,12 +186,12 @@ class Login extends Component {
                 >
                   About
                 </a>
-                <a
+                {/* <a
                   className="text-decoration-none mr-3 text-dark"
                   href="/fees"
                 >
                   Fees
-                </a>
+                </a> */}
                 <a
                   className="text-decoration-none mr-3 text-dark"
                   href="/faq"
@@ -211,7 +211,7 @@ class Login extends Component {
             <div className="card bg-white w-100 mt-5 shadow mt-md-auto mb-auto mx-auto mw-500">
               <div className="card-body p-5">
                 <Titlesubtitle
-                  title="Log into your NetWebPay account"
+                  title="Log into your elhay crypto account"
                   subtitle="Welcome back, continue from where you left off."
                 />
 
@@ -357,7 +357,7 @@ class Login extends Component {
                           >
                             Register
                           </Link>
-                          <p className="text-center mt-4"> Developed by Folayan Iluyemi Michael</p>
+
                         </p>
                       </form>
                     )}

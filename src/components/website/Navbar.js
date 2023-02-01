@@ -54,12 +54,12 @@ export const Navbar = props => {
               </p>
               <Products setShow={setShow} show={show} />
             </div>
-            <p>
+            {/* <p>
               {' '}
               <Link className={`navbar-link ${props.about}`} to="/team">
                 Team
               </Link>{' '}
-            </p>
+            </p> */}
           
             {JSON.parse(storage) ? (
               <>

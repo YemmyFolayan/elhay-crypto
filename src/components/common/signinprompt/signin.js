@@ -32,7 +32,7 @@ const Signin = props => {
     <div className="signin-container">
       <div className="signin-inner-container">
         <Titlesubtitle
-          title="Log into your NetWebPay account"
+          title="Log into your elhay crypto account"
           subtitle="Welcome back, continue from where you left off."
         />
         <form onSubmit={e => signin(e)}>
@@ -68,8 +68,7 @@ const Signin = props => {
             <p>
               Don't have an account ? <strong>Register Here </strong>
             </p>
-            <p className="text-center mt-4"> Developed by Folayan Iluyemi Michael</p>
-          </div>
+           </div>
         </form>
       </div>
     </div>

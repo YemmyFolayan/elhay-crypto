@@ -77,9 +77,7 @@ function Footer() {
             <Link className="footer-link" to="/aml">
               • &nbsp; AML
             </Link>
-            <Link className="footer-link" to="/fees">
-              • &nbsp; FEES
-            </Link>
+         
          
           </div>
           <p className="white-footer">

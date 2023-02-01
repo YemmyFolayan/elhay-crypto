@@ -13,7 +13,7 @@ import Loader from 'components/Loader';
 import * as Yup from 'yup';
 import _ from 'lodash';
 import { Titlesubtitle } from 'components/common/titlesubtitle/titlesubtitle';
-import logo from 'assets/h-logo.svg';
+import logo from 'assets/logo-no-background.svg';
 // import logo from 'assets/xmasvesti.svg';
 class AdminResetPassword extends Component {
   state = {
@@ -72,7 +72,15 @@ class AdminResetPassword extends Component {
                     ) : (
                       <div className="d-flex flex-column">
                         <div>
-                          <img className="mb-4" src={logo} alt="Vetsi" />
+                        <img
+                                    className="mb-4"
+                                    src={logo}
+                                    alt="netwebpay"
+                                    width= "20%"
+                                    height="20%"
+                                    
+                        />
+
                           <Titlesubtitle
                             title="Reset Password!"
                             subtitle="Enter and confirm your new password below."

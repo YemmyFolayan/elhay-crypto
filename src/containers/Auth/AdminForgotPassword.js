@@ -17,7 +17,7 @@ import { Titlesubtitle } from 'components/common/titlesubtitle/titlesubtitle';
 
 // const errorIcon = require("assets/error_icon.svg");
 // const sentIcon = require("assets/sent.svg");
-import logo from 'assets/h-logo.svg';
+import logo from 'assets/logo-no-background.svg';
 // import logo from 'assets/xmasvesti.svg';
 class AdminForgotPassword extends Component {
   constructor(props) {
@@ -121,7 +121,10 @@ class AdminForgotPassword extends Component {
                                   <img
                                     className="mb-4"
                                     src={logo}
-                                    alt="Vetsi"
+                                    alt="netwebpay"
+                                    width= "20%"
+                                    height="20%"
+                                    
                                   />
                                   <Titlesubtitle
                                     title="Forgot Your Password ?"

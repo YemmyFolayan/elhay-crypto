@@ -67,40 +67,40 @@ import VestiCreditCards from 'containers/website/VestiCreditCards';
 import BillPaymentHome from 'containers/Admin/BillPayment/BillPaymentHome';
 import AirtimePurchase from 'containers/Admin/BillPayment/Airtime/AirtimePurchase';
 const Routes = [
-  { path: '/', component: Home },
+  { path: '/', component: Login, auth: false },
   { path: '/faq', component: FAQ },
   { path: '/fees', component: Fees },
-  { path: '/team', component: Teams },
-  { path: '/vesticoin', component: Coin, auth: false },
-  { path: '/vesticard', component: Vesticards },
-  { path: '/vesticoinsuccess', component: CoinVstSuccess, auth: false },
+  // { path: '/team', component: Teams },
+  // { path: '/vesticoin', component: Coin, auth: false },
+  // { path: '/vesticard', component: Vesticards },
+  // { path: '/vesticoinsuccess', component: CoinVstSuccess, auth: false },
   { path: '/disclosure', component: Disclosure },
   { path: '/migrationfries', component: Fries },
   { path: '/privacy', component: Privacy },
   { path: '/aml', component: AML },
   { path: '/japa', component: JapaPage },
-  { path: '/testimonials', component: Testimonials },
+  // { path: '/testimonials', component: Testimonials },
   { path: '/comingsoon', component: Countrylaunch },
   { path: '/dashboard', component: Dashboard, auth: true },
   { path: '/feeds', component: NewDashboard, auth: true },
-  { path: '/fry/:postId', component: Singlefry },
-  { path: '/group/:id', component: Groupfeeds, auth: true },
-  { path: '/creditcard', component: VestiCreditCards },
+  // { path: '/fry/:postId', component: Singlefry },
+  // { path: '/group/:id', component: Groupfeeds, auth: true },
+  // { path: '/creditcard', component: VestiCreditCards },
 
   // Pathways
-  { path: '/pathways', component: Pathways, auth: true },
-  { path: '/pathwaydesc/:id', component: Aboutpathway, auth: true },
-  { path: '/actions/:id', component: Actionpathway, auth: true },
-  { path: '/create-pathway', component: CreatePathway, auth: true },
+  // { path: '/pathways', component: Pathways, auth: true },
+  // { path: '/pathwaydesc/:id', component: Aboutpathway, auth: true },
+  // { path: '/actions/:id', component: Actionpathway, auth: true },
+  // { path: '/create-pathway', component: CreatePathway, auth: true },
   // Services
   { path: '/services', component: Services, auth: true },
   { path: '/create-service', component: CreateService, auth: true },
   { path: '/provider', component: Provider, auth: true },
   { path: '/bank', component: Cash, auth: true },
-  { path: '/advice', component: Advice, auth: true },
-  { path: '/advice/:countryId', component: AdviceDetail, auth: true },
-  { path: '/service/:id', component: ServiceDetail, auth: true },
-  { path: '/webinar', component: ScrollableTabsButtonAuto, auth: true },
+  // { path: '/advice', component: Advice, auth: true },
+  // { path: '/advice/:countryId', component: AdviceDetail, auth: true },
+  // { path: '/service/:id', component: ServiceDetail, auth: true },
+  // { path: '/webinar', component: ScrollableTabsButtonAuto, auth: true },
   // { path: '/accounts', component: Account, auth: true },
   { path: '/myprofile', component: Userprofile, auth: true },
   // { path: '/accounts/settings', component: AccountSettings, auth: true },
@@ -109,15 +109,15 @@ const Routes = [
   { path: '/bills-payment', component: BillPaymentHome, auth: true },
   { path: '/airtime', component: AirtimePurchase, auth: true },
 
-  //shared post
-  { path: '/sharedpost/:postId', component: Sharedpost },
-  { path: '/fullpost/:postId', component: Fullpost },
+  // //shared post
+  // { path: '/sharedpost/:postId', component: Sharedpost },
+  // { path: '/fullpost/:postId', component: Fullpost },
 
-  // SAVINGs
-  { path: '/savings', component: Savings, auth: true },
-  { path: '/createsavings', component: Vestisavings, auth: true },
-  { path: '/savings/:savingsId', component: SavingsDetails, auth: true },
-  { path: '/savings/:savingsId/update', component: EditSavings, auth: true },
+  // // SAVINGs
+  // { path: '/savings', component: Savings, auth: true },
+  // { path: '/createsavings', component: Vestisavings, auth: true },
+  // { path: '/savings/:savingsId', component: SavingsDetails, auth: true },
+  // { path: '/savings/:savingsId/update', component: EditSavings, auth: true },
 
   // // no auth routes
   // { path: '/', component: Login, auth: false },
@@ -131,17 +131,17 @@ const Routes = [
   // P2P cash transfer
   { path: '/bank/transfer', component: Transfer },
 
-  // MEMBER
-  { path: '/member/standard', component: MemberStandard, auth: true },
-  { path: '/member/exclusive', component: MemberExclusive, auth: true },
-  { path: '/member/platinum', component: MemberPlatinum, auth: true },
-  { path: '/campaign/create', component: CampaignCreate, auth: true },
-  { path: '/campaign/detail', component: CampaignDetails, auth: true },
-  { path: '/campaign/story', component: CampaignStory, auth: true },
-  { path: '/advice/:countryId', component: CampaignStory, auth: true },
+  // // MEMBER
+  // { path: '/member/standard', component: MemberStandard, auth: true },
+  // { path: '/member/exclusive', component: MemberExclusive, auth: true },
+  // { path: '/member/platinum', component: MemberPlatinum, auth: true },
+  // { path: '/campaign/create', component: CampaignCreate, auth: true },
+  // { path: '/campaign/detail', component: CampaignDetails, auth: true },
+  // { path: '/campaign/story', component: CampaignStory, auth: true },
+  // { path: '/advice/:countryId', component: CampaignStory, auth: true },
 
-  // Robo
-  { path: '/roboadvisor', component: Advisor, auth: true },
+  // // Robo
+  // { path: '/roboadvisor', component: Advisor, auth: true },
 
   { path: '/mycard', component: Mycard, auth: true },
   { path: '/singlewallet', component: Singlewallet, auth: true },
