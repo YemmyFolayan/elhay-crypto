@@ -13,7 +13,7 @@ import Loader from 'components/Loader';
 import * as Yup from 'yup';
 import _ from 'lodash';
 import { Titlesubtitle } from 'components/common/titlesubtitle/titlesubtitle';
-import logo from 'assets/logo-no-background.svg';
+import logo from 'assets/logo.png';
 // import logo from 'assets/xmasvesti.svg';
 class AdminResetPassword extends Component {
   state = {
@@ -77,8 +77,7 @@ class AdminResetPassword extends Component {
                                     src={logo}
                                     alt="netwebpay"
                                     width= "20%"
-                                    height="20%"
-                                    
+                                    height="20%"        
                         />
 
                           <Titlesubtitle

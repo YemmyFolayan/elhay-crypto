@@ -4,7 +4,7 @@ import './Styles/HomeBanner.scss';
 import man from '../../assets/main_img1.svg';
 import guy from '../../assets/main_img2.svg';
 import girl from '../../assets/main_img4.svg';
-import lady from '../../assets/netwebpaylogo.svg';
+import lady from '../../assets/logo.png';
 import setup from '../../assets/setup.svg';
 import coin from '../../assets/coins.svg';
 import phone from '../../assets/phone.png';

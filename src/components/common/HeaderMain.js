@@ -24,7 +24,7 @@ function HeaderMain() {
     <div className="container">
       <Navbar color="white" light expand="md">
         <NavbarBrand href="/">
-          <img src={Logo} width="90" height="35" alt="netwebpay" />
+          <img src={Logo} width="20px" height="20px" alt="netwebpay" />
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

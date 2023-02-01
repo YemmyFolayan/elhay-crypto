@@ -3,9 +3,9 @@ import { Link, navigate } from '@reach/router';
 import '../Authentication.scss';
 import { Formik } from 'formik';
 import Loader from 'components/Loader';
-import logo from '../../../assets/netwebpaylogo.svg';
+import logo from '../../../assets/logo.png';
 // import logo from '../../../assets/xmasvesti.svg';
-import intro from '../../../assets/netwebpaylogo.png';
+import intro from '../../../assets/logo.png';
 import api from 'appRedux/api';
 import {
   openNotificationWithIcon,
@@ -33,7 +33,7 @@ const SignUp = () => {
             <div className="navbar-header mr-4">
               <a className="navbar-brand" href="/">
                 <div className="sr-only">NetWebPay</div>
-                <img src={logo} alt="NetWebPay" width="100px" height="100px"/>
+                <img src={logo} alt="NetWebPay" width="20px" height="20px"/>
               </a>
             </div>
             {/* <div className="d-flex pt-2">
@@ -76,7 +76,7 @@ const SignUp = () => {
               <Titlesubtitle
                 title="Create Your
                 vesti Account"
-                subtitle="Join more than 70,000 users preparing for a new life aboard with NetWebPay Wallets, Virtual Cards, and key immigration services."
+                subtitle="Join more than 4,000 users preparing for a new life aboard with Elhay Crypto Wallets."
               />
               {loading ? (
                 <Loader />

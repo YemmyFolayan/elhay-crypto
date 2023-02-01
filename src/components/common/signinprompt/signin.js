@@ -32,7 +32,7 @@ const Signin = props => {
     <div className="signin-container">
       <div className="signin-inner-container">
         <Titlesubtitle
-          title="Log into your elhay crypto account"
+          title="Log into your Elhay Crypto account"
           subtitle="Welcome back, continue from where you left off."
         />
         <form onSubmit={e => signin(e)}>

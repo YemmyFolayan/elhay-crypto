@@ -81,7 +81,7 @@ function Footer() {
          
           </div>
           <p className="white-footer">
-            &copy;2023 NetWebPay by Folayan Iluyemi Michael. All rights reserved
+            &copy;2023 . All rights reserved
           </p>
         </div>
       </div>

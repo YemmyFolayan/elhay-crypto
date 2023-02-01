@@ -1,6 +1,6 @@
 import React from 'react';
 import './Styles/Navbar.scss';
-import vestilogo from '../../assets/netwebpaylogo.svg';
+import vestilogo from '../../assets/logo.png';
 import { Link } from '@reach/router';
 import { useState } from 'react';
 import japa from '../../assets/vjapa.svg';
@@ -36,7 +36,7 @@ export const Navbar = props => {
     <div className="navbar">
       <div className="navbar-inner-container">
         <div className="navbar-inner-container left">
-          <img src={vestilogo} alt="vesti Logo" width="100px" height="100px"/>
+          <img src={vestilogo} alt="elhay Logo" width="20px" height="20px"/>
         </div>
         <div className="navbar-inner-container right">
           <div className="right-inner">

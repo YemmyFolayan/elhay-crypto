@@ -17,7 +17,7 @@ import { Titlesubtitle } from 'components/common/titlesubtitle/titlesubtitle';
 
 // const errorIcon = require("assets/error_icon.svg");
 // const sentIcon = require("assets/sent.svg");
-import logo from 'assets/logo-no-background.svg';
+import logo from 'assets/logo.png';
 // import logo from 'assets/xmasvesti.svg';
 class AdminForgotPassword extends Component {
   constructor(props) {

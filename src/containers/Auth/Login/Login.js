@@ -14,9 +14,9 @@ import Loader from 'components/Loader';
 // import {redirectDashboard } from 'routes/RedirectRoutes';
 import { redirectFeedsDashboard } from 'routes/RedirectRoutes';
 import { hideMessage, userSignOut } from 'appRedux/actions/auth';
-import logo from '../../../assets/netwebpaylogo.svg';
+import logo from '../../../assets/logo.png';
 // import logo from '../../../assets/xmasvesti.svg';
-import intro from '../../../assets/netwebpaylogo.png';
+import intro from '../../../assets/logo.png';
 import { Titlesubtitle } from 'components/common/titlesubtitle/titlesubtitle';
 // import Singleinputlabel from 'components/common/inputs/singleinputlabel';
 import { Simplemodal } from 'components/common/simplifiedmodal';
@@ -169,8 +169,8 @@ class Login extends Component {
               {/* nav header */}
               <div className="navbar-header mr-4">
                 <a className="navbar-brand" href="/">
-                  <div className="sr-only">vesti</div>
-                  <img src={logo} alt="netwebpay" width="100px" height="100px"/>
+                  <div className="sr-only">Elhay Crypto</div>
+                  <img src={logo} alt="netwebpay" width="20px" height="20px"/>
                 </a>
               </div>
               <div className="d-flex pt-2">
@@ -211,7 +211,7 @@ class Login extends Component {
             <div className="card bg-white w-100 mt-5 shadow mt-md-auto mb-auto mx-auto mw-500">
               <div className="card-body p-5">
                 <Titlesubtitle
-                  title="Log into your elhay crypto account"
+                  title="Log into your Elhay Crypto account"
                   subtitle="Welcome back, continue from where you left off."
                 />
 
