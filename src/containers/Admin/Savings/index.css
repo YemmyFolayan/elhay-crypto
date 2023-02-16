@@ -64,19 +64,19 @@
   align-items: center;
 }
 .create-savings-plan {
-  background-color: #000000;
+   background-color:  #E4AD50;
   height: 50px;
   color: #fff;
   border-radius: 5px !important;
   transition: all 0.5s ease;
 }
 .create-savings-plan:hover {
-  background-color: #3E6F26;
+  background-color: #E4AD50;
   color: #fff;
 }
 
 .new-savings-plan {
-  background-color: #000000;
+   background-color:  #E4AD50;
   height: 50px;
   color: #fff;
   border-radius: 5px !important;
@@ -84,7 +84,7 @@
 }
 
 .new-savings-plan:hover {
-  background-color: #3E6F26;
+  background-color: #E4AD50;
   color: #fff;
 }
 

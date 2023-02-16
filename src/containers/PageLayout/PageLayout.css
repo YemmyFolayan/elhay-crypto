@@ -1,5 +1,5 @@
 .primary-btn {
-  background: #000000;
+  background: #E4AD50;
   border: 1px solid transparent;
   height: 37px;
   border: none;
@@ -19,6 +19,7 @@
   padding: 0em 4em;
   height: 71px;
 }
+
 
 .navbar {
   padding: 0.7rem 1.2rem;

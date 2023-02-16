@@ -126,7 +126,7 @@ const SubscriptionPlan = ({ plan, frequency, showModal, setShowModal }) => {
                 <button
                   type="submit"
                   style={{
-                    background: '#000000',
+                    background: '#E4AD50',
                     color: '#ffffff',
                     marginBottom: '10px',
                   }}

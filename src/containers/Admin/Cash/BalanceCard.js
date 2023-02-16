@@ -42,7 +42,7 @@ const BalanceCard = ({
             backgroundColor: '#F0F3EE',
             cursor: 'pointer',
             position: 'absolute',
-            border: '0.5px solid #3E6F26',
+            border: '0.5px solid #E4AD50',
             borderRadius: '5px',
             padding: '5px 8px',
             color: '#518C36',

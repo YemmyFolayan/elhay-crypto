@@ -936,7 +936,7 @@ button.ant-modal-close {
   cursor: not-allowed;
 }
 .default-btn:hover {
-  background: #3E6F26;
+  background: #E4AD50;
 }
 
 .default-btn-outline {
@@ -1126,7 +1126,7 @@ button {
 .single-vesti-post-link .tooltiptext {
   visibility: hidden;
   width: fit-content;
-  background-color: #3E6F26;
+  background-color: #E4AD50;
   color: #fff;
   padding: 5px;
   text-align: center;
@@ -1148,7 +1148,7 @@ button {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #3E6F26 transparent transparent transparent;
+  border-color: #E4AD50 transparent transparent transparent;
 }
 
 
@@ -1281,7 +1281,7 @@ button {
 }
 
 .create-group:hover {
-  background-color: #3E6F26;
+  background-color: #E4AD50;
 }
 
 .standard_document {

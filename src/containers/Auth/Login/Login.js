@@ -14,8 +14,10 @@ import Loader from 'components/Loader';
 // import {redirectDashboard } from 'routes/RedirectRoutes';
 import { redirectFeedsDashboard } from 'routes/RedirectRoutes';
 import { hideMessage, userSignOut } from 'appRedux/actions/auth';
-import logo from '../../../assets/logo.png';
-// import logo from '../../../assets/xmasvesti.svg';
+import logoblack from '../../../assets/svg/logoblack.svg';
+import googlelogo from '../../../assets/svg/google.svg';
+import applelogo from '../../../assets/svg/apple.svg';
+import goldbg from '../../../assets/svg/goldbg.svg';
 import intro from '../../../assets/logo.png';
 import { Titlesubtitle } from 'components/common/titlesubtitle/titlesubtitle';
 // import Singleinputlabel from 'components/common/inputs/singleinputlabel';
@@ -69,6 +71,54 @@ class Login extends Component {
 
   //   console.log(this.state.from)
   // }
+
+  handleGoogleSignIn = () => {
+    // Load the Google Sign-In API script
+    window.gapi.load('auth2', function() {
+      window.gapi.auth2
+        .init({
+          client_id: 'YOUR_GOOGLE_CLIENT_ID',
+        })
+        .then(function(auth2) {
+          // Sign in the user with the Google Sign-In API
+          auth2.signIn().then(
+            function(googleUser) {
+              // TODO: Handle the signed-in user, e.g. send the user info to your server
+              const profile = googleUser.getBasicProfile();
+              console.log('Signed in with Google:', profile.getName());
+            },
+            function(error) {
+              console.error('Error signing in with Google:', error);
+            },
+          );
+        });
+    });
+  };
+
+  handleAppleSignIn = () => {
+    // Request authorization from the Apple Sign-In API
+    const appleAuthRequest = new Promise(function(resolve, reject) {
+      const authInstance = window.AppleID.auth.init({
+        clientId: 'YOUR_APPLE_CLIENT_ID',
+        scope: 'name email',
+        redirectURI: 'https://your-app.com/callback',
+      });
+      authInstance.onSignInComplete = function(result) {
+        resolve(result);
+      };
+      authInstance.onSignInError = function(error) {
+        reject(error);
+      };
+    });
+    appleAuthRequest
+      .then(function(result) {
+        // TODO: Handle the signed-in user, e.g. send the user info to your server
+        console.log('Signed in with Apple:', result);
+      })
+      .catch(function(error) {
+        console.error('Error signing in with Apple:', error);
+      });
+  };
 
   async componentDidMount() {
     // console.log(document.referrer.includes('/auth?merchant='))
@@ -169,122 +219,133 @@ class Login extends Component {
               {/* nav header */}
               <div className="navbar-header mr-4">
                 <a className="navbar-brand" href="/">
-                  <div className="sr-only">Elhay Crypto</div>
-                  <img src={logo} alt="netwebpay" width="20px" height="20px"/>
+                  <div className="sr-only">Elhay Limited</div>
+                  <img src={logoblack} alt="netwebpay" width="100%" height="100%" />
                 </a>
               </div>
+
               <div className="d-flex pt-2">
                 <a
-                  className="text-decoration-none mr-3 text-dark"
+                  className="text-decoration-none mr-3 text-dark title_text"
                   href="/"
                 >
-                  Home
+                  Elhay Limited
                 </a>
-                <a
-                  className="text-decoration-none mr-3 text-dark"
-                  href="/about"
-                >
-                  About
-                </a>
-                {/* <a
-                  className="text-decoration-none mr-3 text-dark"
-                  href="/fees"
-                >
-                  Fees
-                </a> */}
-                <a
-                  className="text-decoration-none mr-3 text-dark"
-                  href="/faq"
-                >
-                  FAQs
-                </a>
-               
               </div>
             </nav>
             {/* /nav header */}
             {/* content */}
             <div className="py-5 my-auto d-none d-md-block h-500">
-              <img src={intro} className="contain-img" alt="lady smiling" />
-            </div>
-          </div>
-          <div className="col-12 col-md-6 px-4 px-lg-5 h-100 min-vh-md-100 py-4 d-flex flex-column">
-            <div className="card bg-white w-100 mt-5 shadow mt-md-auto mb-auto mx-auto mw-500">
-              <div className="card-body p-5">
-                <Titlesubtitle
-                  title="Log into your Elhay Crypto account"
-                  subtitle="Welcome back, continue from where you left off."
-                />
+              {/* <img src={intro} className="contain-img" alt="lady smiling" /> */}
+              <div className="card bg-white w-100 mt-5 mt-md-auto mb-auto mx-auto mw-500">
+                <div className="card-body p-7">
+                  <div className="main_font_family">
+                    <div className="title_txt">Sign in to Elhay</div>
+                    <p></p>
 
-                {loading ? (
-                  <Loader />
-                ) : (
-                  <Formik
-                    enableReinitialize
-                    initialValues={{
-                      username: this.state.username,
-                      password: '',
-                    }}
-                    validate={values => {
-                      const errors = {};
-                      if (!values.username) {
-                        errors.username = 'Please enter Email or Mobile Number';
-                      } else if (
-                        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
-                          values.username,
-                        )
-                      ) {
-                        errors.username = 'Invalid email address';
-                      }
-                      if (!values.password) {
-                        errors.password = 'Please enter password';
-                      }
-                      return errors;
-                    }}
-                    onSubmit={values => {
-                      let data = {};
-                      if (values.username && values.password) {
-                        this.props.showAuthLoader();
-                        data = {
-                          username: values.username,
-                          password: values.password,
-                        };
-                        // var from = this.props.location.state ? this.props.location.state.from: '/bank'
-                        // eslint-disable-next-line
-                        // var from = document.referrer ? document.referrer.includes('/auth?merchant=') ? `\merchants?merchant=${document.referrer.split('=')[1]}`: this.props.location.state.from : '/bank'
+                    <div className="subtitle_txt">
+                      Send, spend and save smarter
+                    </div>
+                  </div>
 
-                        this.props.userSignIn(
-                          JSON.stringify(data, null, 2),
-                          from,
-                          this.openModal,
-                        );
-                      }
-                    }}
-                  >
-                    {({
-                      values,
-                      errors,
-                      touched,
-                      handleChange,
-                      handleBlur,
-                      handleSubmit,
-                      isSubmitting,
-                    }) => (
-                      <form onSubmit={handleSubmit}>
-                        <Inputfloat
-                          label="Email"
-                          type="email"
-                          id="username"
-                          name="username"
-                          // className="form_element w-100 mb-4"
-                          onChange={handleChange}
-                          placeholder="Email Address"
-                          onBlur={handleBlur}
-                          value={values.username}
-                          invalid={
-                            errors.username && touched.username && 'true'
-                          }
-                        />
-                        {/* <Singleinputlabel
+                  <div className="signin_box main_font_family">
+                    <button
+                      className="google-sign-in"
+                      onClick={this.handleGoogleSignIn}
+                    >
+                      <img src={googlelogo} alt="Google" />
+                      Sign in with Google
+                    </button>
+                    <button
+                      className="apple-sign-in"
+                      onClick={this.handleAppleSignIn}
+                    >
+                      <img src={applelogo} alt="Apple" />
+                      Sign in with Apple
+                    </button>
+                  </div>
+
+                 
+
+                  <div className="d-flex align-items-center">
+
+                    <span className="dash"> &nbsp; &nbsp;  __________________ </span>
+
+                    Or with email
+
+                    <span className="dash"> &nbsp;   ___________________ </span>
+</div>
+                     {loading ? (
+                    <Loader />
+                  ) : (
+                    <Formik
+                      enableReinitialize
+                      initialValues={{
+                        username: this.state.username,
+                        password: '',
+                      }}
+                      validate={values => {
+                        const errors = {};
+                        if (!values.username) {
+                          errors.username =
+                            'Please enter Email or Mobile Number';
+                        } else if (
+                          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
+                            values.username,
+                          )
+                        ) {
+                          errors.username = 'Invalid email address';
+                        }
+                        if (!values.password) {
+                          errors.password = 'Please enter password';
+                        }
+                        return errors;
+                      }}
+                      onSubmit={values => {
+                        let data = {};
+                        if (values.username && values.password) {
+                          this.props.showAuthLoader();
+                          data = {
+                            username: values.username,
+                            password: values.password,
+                          };
+                          // var from = this.props.location.state ? this.props.location.state.from: '/bank'
+                          // eslint-disable-next-line
+                          // var from = document.referrer ? document.referrer.includes('/auth?merchant=') ? `\merchants?merchant=${document.referrer.split('=')[1]}`: this.props.location.state.from : '/bank'
+
+                          this.props.userSignIn(
+                            JSON.stringify(data, null, 2),
+                            from,
+                            this.openModal,
+                          );
+                        }
+                      }}
+                    >
+                      {({
+                        values,
+                        errors,
+                        touched,
+                        handleChange,
+                        handleBlur,
+                        handleSubmit,
+                        isSubmitting,
+                      }) => (
+                        <form onSubmit={handleSubmit}>
+                          <Inputfloat
+                            label="Email"
+                            type="email"
+                            id="username"
+                            name="username"
+                            // className="form_element w-100 mb-4"
+                            onChange={handleChange}
+                            placeholder="Email Address"
+                            onBlur={handleBlur}
+                            value={values.username}
+                            invalid={
+                              errors.username && touched.username && 'true'
+                            }
+                          />
+                          {/* <Singleinputlabel
                           // label="asdasd"
                           row={true}
                           type="email"
@@ -298,23 +359,23 @@ class Login extends Component {
                           disable={false}
                           error ={errors.username }
                         /> */}
-                        {errors.username && touched.username && (
-                          <FormFeedback>{errors.username}</FormFeedback>
-                        )}
-                        <Inputfloat
-                          // label="asdasd"
-                          label="password"
-                          id="password"
-                          type="password"
-                          name="password"
-                          // error ={errors.password }
-                          row={true}
-                          placeholder="Enter Your Password"
-                          value={values.password}
-                          disabled={false}
-                          onChange={handleChange}
-                        />
-                        {/* <input
+                          {errors.username && touched.username && (
+                            <FormFeedback>{errors.username}</FormFeedback>
+                          )}
+                          <Inputfloat
+                            // label="asdasd"
+                            label="password"
+                            id="password"
+                            type="password"
+                            name="password"
+                            // error ={errors.password }
+                            row={true}
+                            placeholder="Enter Your Password"
+                            value={values.password}
+                            disabled={false}
+                            onChange={handleChange}
+                          />
+                          {/* <input
                           id="password"
                           type="password"
                           name="password"
@@ -328,44 +389,64 @@ class Login extends Component {
                           }
                         /> */}
 
-                        <div className="mb-4 mt-2">
-                          <Link
-                            style={{ color: '#000000' }}
-                            to="/auth/forgot-password"
-                          >
-                            Forgot Password?
-                          </Link>
-                        </div>
+                          <div className="mb-4 mt-2">
+                            <Link
+                              style={{ color: '#E4AD50' }}
+                              to="/auth/forgot-password"
+                            >
+                              Forgot Password?
+                            </Link>
+                          </div>
 
-                        {(touched.username || touched.password) && (
-                          <AlertError body="Invalid login credentials (email address /Password)" />
-                        )}
-                        <div className="mb-4"></div>
-                        <Platformbutton
-                          name="Login"
-                          type="submit"
-                          disabled={
-                            !values.username || !values.password ? true : false
-                          }
-                        />
-                        <p className="text-center mt-4">
-                          Don't have an account?
-                          <Link
-                            style={{ color: '#000000' }}
-                            to="/register"
-                            className="ml-2"
-                          >
-                            Register
-                          </Link>
-
-                        </p>
-                      </form>
-                    )}
-                  </Formik>
-                )}
+                          {(touched.username || touched.password) && (
+                            <AlertError body="Invalid login credentials (email address /Password)" />
+                          )}
+                          <div className="mb-4"></div>
+                          <Platformbutton
+                            name="Login"
+                            type="submit"
+                            disabled={
+                              !values.username || !values.password
+                                ? true
+                                : false
+                            }
+                          />
+                          <p className="text-center mt-4">
+                            Don't have an account?
+                            <Link
+                              style={{ color: '#E4AD50' }}
+                              to="/register"
+                              className="ml-2"
+                            >
+                              Sign Up
+                            </Link>
+                          </p>
+                        </form>
+                      )}
+                    </Formik>
+                  )}
+                </div>
               </div>
             </div>
+
+            {/* /content */}
           </div>
+
+          <div className="col-12 col-md-6 px-4 px-lg-5 h-100 min-vh-md-100 py-4 d-flex flex-column">
+
+          <img src={goldbg} alt="netwebpay" width="100%" height="100%" />
+          </div>
+  
+       
+        </div>
+
+        <div className="footer_text main_font_family">
+          <a className="privacy_text" href="/">
+            Privacy Policy
+          </a>
+          <a className="copy_right" href="/">
+            Copyright &copy; 2023
+          </a>
         </div>
       </div>
     );
