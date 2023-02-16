@@ -254,14 +254,14 @@ class Login extends Component {
                       onClick={this.handleGoogleSignIn}
                     >
                       <img src={googlelogo} alt="Google" />
-                      Sign in with Google
+                      &nbsp; Sign in with Google
                     </button>
                     <button
                       className="apple-sign-in"
                       onClick={this.handleAppleSignIn}
                     >
                       <img src={applelogo} alt="Apple" />
-                      Sign in with Apple
+                      &nbsp; Sign in with Apple
                     </button>
                   </div>
 
