@@ -97,7 +97,7 @@ input {
   max-width: 702.82px;
   height: 64px;
   color: white;
-  background: #E4AD50;
+  background: #e4ad50;
   border-radius: 20px;
   border: none;
   cursor: pointer;
@@ -124,12 +124,10 @@ input {
   font-size: 32px;
   line-height: 125%;
   /* identical to box height, or 40px */
-
-  text-align: center;
   letter-spacing: 0.2px;
 
   /* Greyscale / 900 */
-
+   margin: 5%;
   color: #1a202c;
 
   /* Inside auto layout */
@@ -149,88 +147,112 @@ input {
 }
 
 .privacy_text {
- 
-  height: 24px;
-
- 
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 150%;
-  /* identical to box height, or 24px */
-
-  display: flex;
   align-items: center;
-  letter-spacing: 0.2px;
-
-  /* Greyscale/600 */
-
   color: #718096;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  flex-grow: 0;
 }
 
 .main_font_family {
-  font-family: 'Plus Jakarta Sans';
-};
+  font-family: 'Plus Jakarta Sans' !important;
+}
+
+
 
 .copy_right {
   height: 24px;
-
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 150%;
-  /* identical to box height, or 24px */
-
-  display: flex;
-  align-items: center;
-  text-align: right;
-  letter-spacing: 0.2px;
-
-  /* Greyscale/600 */
-
   color: #718096;
-
-  /* Inside auto layout */
+  text-align: right;
 
   flex: none;
   order: 1;
   flex-grow: 0;
 }
+.remember_me {
+
+  align-items: center;
+  color: #1A202C;
+  margin-left: 4px;
+
+
+}
+
+.forgot_pass {
+
+  text-align: right !important;
+}
+
+.no-margin-left {
+  margin-left: 0px !important;
+}
+
+.no-margin-right {
+  margin-right: 0px !important;
+}
+
+.forgot_pass_section{
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 150%;
+/* identical to box height, or 24px */
+gap: 35%;
+display: flex;
+
+letter-spacing: 0.2px;
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.footer_text {
+  /* Auto layout */
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.2px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: #101112;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  gap: 30%;
+  margin-top: 40px;
+  position: absolute;
+  width: 45%;
+  height: 24px;
+  left: 48px;
+  top: 952px;
+}
 
 .signin_box {
   /* Auto layout */
 
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 0px;
-gap: 16px;
-margin-top: 10%;
-margin-bottom: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+  margin-top: 10%;
+  margin-bottom: 10%;
 
-position: relative;
-
+  position: relative;
 }
 
 .title_subtitle {
-
   display: flex;
-flex-direction: column;
-align-items: center;
-padding: 0px;
-gap: 16px;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
 
-position: absolute;
-width: 288px;
-height: 80px;
-left: 245px;
-top: 228px;
+  position: absolute;
+  width: 288px;
+  height: 80px;
+  left: 245px;
+  top: 228px;
 }
 
 .title_txt {
@@ -241,12 +263,11 @@ top: 228px;
   font-size: 32px;
   line-height: 125%;
   /* identical to box height, or 40px */
-  
+
   text-align: center;
   letter-spacing: 0.2px;
-  
-  color: #1A202C;
-  
+
+  color: #1a202c;
 }
 
 .subtitle_txt {
@@ -257,31 +278,50 @@ top: 228px;
   font-size: 16px;
   line-height: 150%;
   /* identical to box height, or 24px */
-  
+
   text-align: center;
   letter-spacing: 0.3px;
-  
+
   /* Greyscale/600 */
-  
+
   color: #718096;
-    
 }
 
-.footer_text {
- /* Auto layout */
+.white_title_txt {
+  /* Heading/H2 */
 
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-padding: 0px;
-gap: 439px;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 110%;
+  /* identical to box height, or 44px */
 
-position: absolute;
-width: 681px;
-height: 24px;
-left: 48px;
-top: 952px;
+  text-align: center;
+
+  /* Others / White */
+
+  color: #ffffff;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.white_subtitle_txt {
+  width: 50%;
+  height: 48px;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  /* or 24px */
+
+  text-align: center;
+  letter-spacing: 0.2px;
+
+  color: #ffffff;
+
+  opacity: 0.7;
 }
 
 .stock_links:link,
@@ -300,17 +340,12 @@ top: 952px;
   pointer-events: none;
 } */
 
-
-
 .dash {
   margin-bottom: 4%;
   color: #718096;
   flex: 1;
   z-index: 1;
 }
-
-
-
 
 body {
   position: relative !important;

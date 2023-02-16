@@ -18,9 +18,10 @@ import logoblack from '../../../assets/svg/logoblack.svg';
 import googlelogo from '../../../assets/svg/google.svg';
 import applelogo from '../../../assets/svg/apple.svg';
 import goldbg from '../../../assets/svg/goldbg.svg';
-import intro from '../../../assets/logo.png';
-import { Titlesubtitle } from 'components/common/titlesubtitle/titlesubtitle';
-// import Singleinputlabel from 'components/common/inputs/singleinputlabel';
+import phonecard from '../../../assets/svg/phonecard.svg';
+import phonetrade from '../../../assets/svg/phonetrade.svg';
+import phonetradecard from '../../../assets/svg/phonetradecard.svg';
+
 import { Simplemodal } from 'components/common/simplifiedmodal';
 import Twofalogin from 'components/auth/twofa/twofa';
 import { setToken } from 'appRedux/api';
@@ -217,16 +218,21 @@ class Login extends Component {
             {/* Horizontal Navbar */}
             <nav className="d-flex align-items-center">
               {/* nav header */}
-              <div className="navbar-header mr-4">
-                <a className="navbar-brand" href="/">
-                  <div className="sr-only">Elhay Limited</div>
-                  <img src={logoblack} alt="netwebpay" width="100%" height="100%" />
-                </a>
-              </div>
+           
+                
+               
+                  <img
+                    src={logoblack}
+                    alt="netwebpay"
+                    width="6%"
+                    height="6%"
+                  
+                  />
+           
 
               <div className="d-flex pt-2">
                 <a
-                  className="text-decoration-none mr-3 text-dark title_text"
+                  className="text-dark title_text"
                   href="/"
                 >
                   Elhay Limited
@@ -265,17 +271,14 @@ class Login extends Component {
                     </button>
                   </div>
 
-                 
-
-                  <div className="d-flex align-items-center">
-
-                    <span className="dash"> &nbsp; &nbsp;  __________________ </span>
-
-                    Or with email
-
-                    <span className="dash"> &nbsp;   ___________________ </span>
-</div>
-                     {loading ? (
+                  <div className="d-flex align-items-center subtitle_txt">
+                    <span className="dash">
+                      &nbsp;  __________________
+                    </span>
+                    &nbsp; Or with email
+                    <span className="dash"> &nbsp; __________________ </span>
+                  </div>
+                  {loading ? (
                     <Loader />
                   ) : (
                     <Formik
@@ -389,13 +392,29 @@ class Login extends Component {
                           }
                         /> */}
 
-                          <div className="mb-4 mt-2">
-                            <Link
-                              style={{ color: '#E4AD50' }}
+                          <div className="mb-4 mt-2 forgot_pass_section">
+
+                            <Link className="remember_me"
+                              style={{ color: '#1A202C' }}
+                              to="/auth/forgot-password"
+                            >
+
+                          <input type="checkbox" id="myCheckbox" name="myCheckbox"/>
+                          &nbsp;
+                              Remember me
+                            </Link>
+                        
+
+
+                            <Link className="forgot_pass"
+                              style={{ color: '#E4AD50',  }}
                               to="/auth/forgot-password"
                             >
                               Forgot Password?
                             </Link>
+
+
+
                           </div>
 
                           {(touched.username || touched.password) && (
@@ -414,7 +433,7 @@ class Login extends Component {
                           <p className="text-center mt-4">
                             Don't have an account?
                             <Link
-                              style={{ color: '#E4AD50' }}
+                              style={{ color: '#1A202C' }}
                               to="/register"
                               className="ml-2"
                             >
@@ -432,12 +451,28 @@ class Login extends Component {
             {/* /content */}
           </div>
 
-          <div className="col-12 col-md-6 px-4 px-lg-5 h-100 min-vh-md-100 py-4 d-flex flex-column">
+          <div
+            className="col-12 col-md-6 h-100 min-vh-md-100 d-flex flex-column"
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              backgroundImage: `url(${goldbg})`,
+              backgroundPosition: 'left',
+              backgroundSize: 'cover',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <img src={phonecard} alt="phonecard" width="60%" height="60%" />
 
-          <img src={goldbg} alt="netwebpay" width="100%" height="100%" />
+            <div className="white_title_txt"> Get better with money </div>
+
+            <div className="white_subtitle_txt">
+              {' '}
+              Your finance work starts here. Our here to help you track and deal
+              with speeding up your transactions.{' '}
+            </div>
           </div>
-  
-       
         </div>
 
         <div className="footer_text main_font_family">
