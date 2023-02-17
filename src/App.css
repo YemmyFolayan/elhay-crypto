@@ -137,6 +137,73 @@ input {
   align-self: stretch;
   flex-grow: 0;
 }
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.carousel-container {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  /* height: 150px; */
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.white_title_txt {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  line-height: 110%;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.white_subtitle_txt {
+  font-size: 18px;
+  margin: 20px;
+  color: #FFFFFF;
+
+  opacity: 0.7;
+
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.carousel-dot.active {
+  background-color: #000;
+}
+
 
 .sigin_text {
   font-size: 32px;
@@ -287,42 +354,6 @@ flex-grow: 0;
   color: #718096;
 }
 
-.white_title_txt {
-  /* Heading/H2 */
-
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 40px;
-  line-height: 110%;
-  /* identical to box height, or 44px */
-
-  text-align: center;
-
-  /* Others / White */
-
-  color: #ffffff;
-  margin-top: 60px;
-  margin-bottom: 20px;
-}
-
-.white_subtitle_txt {
-  width: 50%;
-  height: 48px;
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  /* or 24px */
-
-  text-align: center;
-  letter-spacing: 0.2px;
-
-  color: #ffffff;
-
-  opacity: 0.7;
-}
 
 .stock_links:link,
 .stock_links:hover,

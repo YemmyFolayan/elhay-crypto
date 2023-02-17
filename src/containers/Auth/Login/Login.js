@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { Link } from '@reach/router';
 import { FormFeedback } from 'reactstrap';
 import '../Authentication.scss';
@@ -21,7 +21,7 @@ import goldbg from '../../../assets/svg/goldbg.svg';
 import phonecard from '../../../assets/svg/phonecard.svg';
 import phonetrade from '../../../assets/svg/phonetrade.svg';
 import phonetradecard from '../../../assets/svg/phonetradecard.svg';
-
+import Carousel, { CarouselItem } from 'components/common/carousel/carousel';
 import { Simplemodal } from 'components/common/simplifiedmodal';
 import Twofalogin from 'components/auth/twofa/twofa';
 import { setToken } from 'appRedux/api';
@@ -45,6 +45,27 @@ class Login extends Component {
   constructor(props) {
     super(props);
 
+    this.slides = [
+      {
+        title: 'Get better with money',
+        subtitle:
+          'Your finance work starts here. Our here to help you track and deal with speeding up your transactions.',
+      },
+      {
+        title: 'Trade any type of gift card',
+        subtitle:
+          'Trade Amazon, Walmart, Target, Starbucks, Apple, Google Play, Visa, Mastercard, American Express, Best Buy, Home Depot, Sephora, iTunes, Uber, Airbnb and Netflix Gift Cards with ease.',
+      },
+      {
+        title: 'Trade any type of Cryptocurrency assets',
+        subtitle:
+          'Trade Bitcoin (BTC), Ethereum (ETH), Cardano (ADA) ,Binance Coin (BNB) ,Dogecoin (DOGE) ,Ripple (XRP) ,Tether (USDT) ,Polkadot (DOT) ,Chainlink (LINK) ,Litecoin (LTC) with ease.',
+      },
+    ];
+
+    this.intervalId = null;
+
+    this.showSlide = this.showSlide.bind(this);
     this.props.clearCurrentLoggedInUser(); // this is to clear the current logged in user
     this.props.userSignOut();
     this.state = {
@@ -53,6 +74,7 @@ class Login extends Component {
       data: '',
       code: '',
       token: '',
+      slideIndex: 0,
     };
   }
 
@@ -127,6 +149,11 @@ class Login extends Component {
     // console.log(this.props.location.state? this.props.location.state.from:'')
     // clearSession()
     document.body.classList.add('bg-darkgreen');
+    this.intervalId = setInterval(() => {
+      this.setState(prevState => ({
+        slideIndex: (prevState.slideIndex + 1) % this.slides.length,
+      }));
+    }, 3000);
   }
 
   // componentDidUpdate() {
@@ -137,6 +164,13 @@ class Login extends Component {
 
   componentWillUnmount() {
     document.body.classList.remove('bg-darkgreen');
+    clearInterval(this.interval);
+  }
+
+  showSlide(index) {
+    this.setState({
+      slideIndex: index,
+    });
   }
 
   verifyTwofa = () => {
@@ -190,6 +224,9 @@ class Login extends Component {
         ? this.props.location.state.from
         : ''
       : '/bank';
+
+    const { slideIndex } = this.state;
+
     return (
       <div className="container-fluid">
         <Simplemodal
@@ -218,23 +255,11 @@ class Login extends Component {
             {/* Horizontal Navbar */}
             <nav className="d-flex align-items-center">
               {/* nav header */}
-           
-                
-               
-                  <img
-                    src={logoblack}
-                    alt="netwebpay"
-                    width="6%"
-                    height="6%"
-                  
-                  />
-           
+
+              <img src={logoblack} alt="netwebpay" width="6%" height="6%" />
 
               <div className="d-flex pt-2">
-                <a
-                  className="text-dark title_text"
-                  href="/"
-                >
+                <a className="text-dark title_text main_font_family" href="/">
                   Elhay Limited
                 </a>
               </div>
@@ -272,9 +297,7 @@ class Login extends Component {
                   </div>
 
                   <div className="d-flex align-items-center subtitle_txt">
-                    <span className="dash">
-                      &nbsp;  __________________
-                    </span>
+                    <span className="dash">&nbsp; __________________</span>
                     &nbsp; Or with email
                     <span className="dash"> &nbsp; __________________ </span>
                   </div>
@@ -393,28 +416,26 @@ class Login extends Component {
                         /> */}
 
                           <div className="mb-4 mt-2 forgot_pass_section">
-
-                            <Link className="remember_me"
+                            <a
+                              className="remember_me"
                               style={{ color: '#1A202C' }}
-                              to="/auth/forgot-password"
+                              to="#"
                             >
+                              <input
+                                type="checkbox"
+                                id="myCheckbox"
+                                name="myCheckbox"
+                              />
+                              &nbsp; Remember me
+                            </a>
 
-                          <input type="checkbox" id="myCheckbox" name="myCheckbox"/>
-                          &nbsp;
-                              Remember me
-                            </Link>
-                        
-
-
-                            <Link className="forgot_pass"
-                              style={{ color: '#E4AD50',  }}
+                            <Link
+                              className="forgot_pass"
+                              style={{ color: '#E4AD50' }}
                               to="/auth/forgot-password"
                             >
                               Forgot Password?
                             </Link>
-
-
-
                           </div>
 
                           {(touched.username || touched.password) && (
@@ -463,14 +484,32 @@ class Login extends Component {
               justifyContent: 'center',
             }}
           >
-            <img src={phonecard} alt="phonecard" width="60%" height="60%" />
-
-            <div className="white_title_txt"> Get better with money </div>
-
-            <div className="white_subtitle_txt">
-              {' '}
-              Your finance work starts here. Our here to help you track and deal
-              with speeding up your transactions.{' '}
+            <img src={phonecard} alt="phonecard" width="40%" height="40%" />
+            <div className="carousel">
+              <div className="carousel-container">
+                {this.slides.map((slide, index) => (
+                  <div
+                    key={index}
+                    className={`carousel-item ${
+                      index === slideIndex ? 'active' : ''
+                    }`}
+                  >
+                    <div className="white_title_txt">{slide.title}</div>
+                    <div className="white_subtitle_txt">{slide.subtitle}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="carousel-dots">
+                {this.slides.map((slide, index) => (
+                  <span
+                    key={index}
+                    className={`carousel-dot ${
+                      index === slideIndex ? 'active' : ''
+                    }`}
+                    onClick={() => this.showSlide(index)}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
