@@ -20,7 +20,8 @@ import applelogo from '../../../assets/svg/apple.svg';
 import goldbg from '../../../assets/svg/goldbg.svg';
 import phonecard from '../../../assets/svg/phonecard.svg';
 import phonetrade from '../../../assets/svg/phonetrade.svg';
-import phonetradecard from '../../../assets/svg/phonetradecard.svg';
+import goldotdown from '../../../assets/svg/goldotdown.svg';
+import golddotup from '../../../assets/svg/golddotup.svg';
 import Carousel, { CarouselItem } from 'components/common/carousel/carousel';
 import { Simplemodal } from 'components/common/simplifiedmodal';
 import Twofalogin from 'components/auth/twofa/twofa';
@@ -271,7 +272,7 @@ class Login extends Component {
               <div className="card bg-white w-100 mt-5 mt-md-auto mb-auto mx-auto mw-500">
                 <div className="card-body p-7">
                   <div className="main_font_family">
-                    <div className="title_txt">Sign in to Elhay</div>
+                    <div className="title_txt">Sign In to Elhay</div>
                     <p></p>
 
                     <div className="subtitle_txt">
@@ -285,14 +286,14 @@ class Login extends Component {
                       onClick={this.handleGoogleSignIn}
                     >
                       <img src={googlelogo} alt="Google" />
-                      &nbsp; Sign in with Google
+                      &nbsp; Sign In with Google
                     </button>
                     <button
                       className="apple-sign-in"
                       onClick={this.handleAppleSignIn}
                     >
                       <img src={applelogo} alt="Apple" />
-                      &nbsp; Sign in with Apple
+                      &nbsp; Sign In with Apple
                     </button>
                   </div>
 
@@ -473,7 +474,7 @@ class Login extends Component {
           </div>
 
           <div
-            className="col-12 col-md-6 h-100 min-vh-md-100 d-flex flex-column"
+            className="col-12 col-md-6 h-100 min-vh-md-100 d-flex flex-column goldbg"
             style={{
               display: 'flex',
               flexDirection: 'row',
@@ -484,7 +485,24 @@ class Login extends Component {
               justifyContent: 'center',
             }}
           >
+            <img
+              src={goldotdown}
+              alt="goldotdown"
+              width="10%"
+              height="10%"
+              className="goldbg-goldotdown"
+            />
+
+            <img
+              src={golddotup}
+              alt="golddotup"
+              width="5%"
+              height="10%"
+              className="goldbg-golddotup"
+            />
+
             <img src={phonecard} alt="phonecard" width="40%" height="40%" />
+
             <div className="carousel">
               <div className="carousel-container">
                 {this.slides.map((slide, index) => (
