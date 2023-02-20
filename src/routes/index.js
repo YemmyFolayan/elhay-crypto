@@ -2,6 +2,8 @@ import AdminForgotPassword from 'containers/Auth/AdminForgotPassword';
 import AdminResetPassword from 'containers/Auth/AdminResetPassword';
 
 import Login from 'containers/Auth/Login';
+
+import Twofactor from 'containers/Auth/Login/twofactor';
 import Register from 'containers/Auth/Signup/SignUp';
 
 // import Verification from '../containers/Verification/Verification';
@@ -66,8 +68,10 @@ import Credithistory from 'containers/Admin/credits/credithistory';
 import VestiCreditCards from 'containers/website/VestiCreditCards';
 import BillPaymentHome from 'containers/Admin/BillPayment/BillPaymentHome';
 import AirtimePurchase from 'containers/Admin/BillPayment/Airtime/AirtimePurchase';
+
 const Routes = [
   { path: '/', component: Login, auth: false },
+  { path: '/twofactor', component: Twofactor},
   { path: '/faq', component: FAQ },
   { path: '/fees', component: Fees },
   // { path: '/team', component: Teams },
@@ -96,7 +100,7 @@ const Routes = [
   { path: '/services', component: Services, auth: true },
   { path: '/create-service', component: CreateService, auth: true },
   { path: '/provider', component: Provider, auth: true },
-  { path: '/bank', component: Cash, auth: true },
+  { path: '/mydashboard', component: Cash, auth: false },
   // { path: '/advice', component: Advice, auth: true },
   // { path: '/advice/:countryId', component: AdviceDetail, auth: true },
   // { path: '/service/:id', component: ServiceDetail, auth: true },

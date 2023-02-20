@@ -56,6 +56,22 @@ import Ngnwithdrawal from 'components/bank/ngnwithdrawal/ngnwithdrawal';
 import Fbotransactions from 'components/bank/fbo/fbotransactions';
 import { Wallets } from 'components/bank/balancecard/wallets';
 
+import {
+  home,
+  trades,
+  rates,
+  savings,
+  profile,
+  logout,
+  pathway,
+  provider,
+  chistory,
+ 
+  logoblack,
+} from '../../../assets/assets';
+
+
+
 const useFetchUser = () => {
   const { isLoading, data: userData, refetch } = useQuery(
     'userData',
@@ -99,6 +115,7 @@ const Cash = props => {
   const [load, setLoading] = useState(true);
   const [carddata, setCdata] = useState({});
 
+ 
   const modifyState = value => setState({ ...state, ...value });
 
   var accountRequest = () => {
@@ -125,8 +142,115 @@ const Cash = props => {
     dispatch(openUpdateBox());
   };
 
-  const { userData, refetch } = useFetchUser();
 
+
+  const { userDatas, refetch } = useFetchUser();
+
+  const userData = {
+    id: 'faaf0170-ff07-40db-8108-4199a7cc9313',
+    firstName: 'Vesti',
+    lastName: 'Test ',
+    email: 'test@wevesti.com',
+    username: 'VestiTest',
+    emailVerified: true,
+    wasReferred: null,
+    shuttlersPromo: true,
+    blacklisted: false,
+    superAdmin: false,
+    FactorAuth: false,
+    FactorAuthCode: '234541',
+    providusAccountNumber: '9977696809',
+    adminType: null,
+    userType: 'vesti_user',
+    planType: null,
+    dob: null,
+    location: 'NGA',
+    nextOfKin: null,
+    profilePictureURL: null,
+    country: 'USA',
+    rewardCode: '865146VESTI',
+    juiceUserId: null,
+    phoneNumber: '+14697347949',
+    gender: null,
+    freeze: null,
+    totalRefferralBonus: 0,
+    referalCode: '6hanJJker',
+    totalReffered: '0',
+    ReferalLink: 'https://app.wevesti.com/register?referalCode=6hanJJker',
+    walletAmountInUSCents: '147200',
+    walletInNGNKobo: '10025346',
+    ngnWithdrawalLimit: '50000000',
+    ngnDailyLimit: '300000000',
+    usdWithdrawalLimit: '100000',
+    usdDailyWithdrawalLimit: '200000',
+    ngnTransaferLimit: '500000000',
+    usdTransaferLimit: '100000',
+    ngnDailyTransferLimit: '3000000000',
+    approvedBy: null,
+    usdDailyTransferLimit: '250000',
+    isNewApp: 'true',
+    deviceType: 'website',
+    achbankName: null,
+    achAccountName: null,
+    achAccountNumber: null,
+    achRoutingNumber: null,
+    achWithdrawalAmount: null,
+    achTransactionId: null,
+    countryofChoice: 'United States,Canada,United Kingdom',
+    cardBalance: null,
+    hasVirtualCard: 'true',
+    termsAndCondition: null,
+    kycLevel: 'Level3',
+    passedKyc: true,
+    kycDocumentStatus: 'APPROVED',
+    silaAccountName: null,
+    silaNickName: null,
+    silaHandle: null,
+    silaKycStatus: null,
+    silaWallet: null,
+    silaWalletAddress: null,
+    silaWalletKey: null,
+    silaDocumentVerified: false,
+    silaDocumentId: 'false',
+    isLoanApplicant: true,
+    apto_cardholder_id: null,
+    apto_card_application_id: null,
+    creditData: 'updated',
+    level1Kyc: null,
+    apto_cardholder_token: null,
+    virtualCardWaitlistStatus: 'APPROVED',
+    isLoanInterestPaid: true,
+    loanInterestPaid: '4',
+    verificationId: null,
+    verificationType: null,
+    verificationNumber: null,
+    loanAmount: null,
+    isLoanFormUploaded: null,
+    accountDeleted: null,
+    stripeVirtualAccountNumber: '9670004484',
+    stripeVirtualAccountRoutingNumber: '084106768',
+    stripeVirtualBankName: 'Evolve Bank and Trust',
+    stripeVirtualSwiftCode: '084106768',
+    monoAccountId: null,
+    monoCardHolderId: null,
+    foundersFinancialBalance: '102525',
+    stripeAccountStatus: 'VERIFIED',
+    stripeAccountId: 'acct_1MboWZQUOjNJo9MD',
+    integratorJWTAuthentication: null,
+    sandboxIntegratorJWTAuthentication: null,
+    integratorMode: 'SANDBOX',
+    webhookUrl: null,
+    isExternalIntegrator: null,
+    stripeSourceId: null,
+    stripeVerificationToken: 'vs_1McWHGHyH0mfw5s2DkMyGp4X',
+    stripeFinancialAccountId: 'fa_1LY55fQiXPfq34wivWgPj9Ig',
+    createdAt: '2022-06-14T12:45:39.511Z',
+    updatedAt: '2023-02-18T20:31:04.632Z',
+    isAdmin: false,
+    hasTransactionPin: true,
+    hasVerifiedKyc: true,
+   
+  };
   const { balance, foundersRefetch } = useFounders(
     userData.id,
     userData.stripeAccountStatus,
@@ -435,8 +559,8 @@ const Cash = props => {
         />
       )}
       {/* Virtual Card Modal */}
-      {/* info ="Our Virtual Card service is under maintenance please check back later (please email support if you have questions) help@wevesti.com" */}
-      {/* info ="Our USD Wire service is under maintenance please check back later (please email support if you have questions) help@wevesti.com" */}
+      {/* info ="Our Virtual Card service is under maintenance please check back later (please email support if you have questions) help@elhay.com" */}
+      {/* info ="Our USD Wire service is under maintenance please check back later (please email support if you have questions) help@elhay.com" */}
       <Layout>
         {/* providus account detials */}
         <Simplemodal onClick={() => setAccount(!account)} visible={account}>
@@ -613,11 +737,13 @@ const Cash = props => {
             style={{ height: 'fit-content', width: '100%' }}
           >
             <div className=" flex_page_container d-flex justify-content-center ">
+
+         
               <div className=" px-3 w-100">
                 {/* main start */}
                 <div className="row bank-cont">
                   <div className="col-10 col-lg-5 col-md-10 pt-3">
-                    <div className="section-heading">My Wallets</div>
+                    <div className="section-heading">My Dashboard</div>
                     {/* <Newbalancecard
                       title ={`Your ${currency ? 'NGN':'USD'} vesti balance`}
                       onClick={toggle}

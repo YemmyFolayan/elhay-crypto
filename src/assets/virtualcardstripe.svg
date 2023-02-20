@@ -33,7 +33,7 @@
 <g mask="url(#mask0_11006_91456)">
 <path d="M336.343 198.892L342.378 192.556L360.849 190.781L370.947 191.288L375.011 205.862L364.544 212.326L335.481 211.692L334.866 201.68L336.343 198.892Z" fill="#151617"/>
 </g>
-<rect x="0.5" y="0.5" width="399" height="239" rx="19.5" stroke="#8B8C8C"/>
+<rect x="0.5" y="0.5" width="399" height="239" rx="19.5" stroke="#000000"/>
 <defs>
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_11006_91456" transform="scale(0.00078125 0.00195312)"/>

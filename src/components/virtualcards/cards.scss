@@ -112,7 +112,7 @@
         border: 1px dashed $vesti-700;
         border-radius: 20px;
         // height: 255px;
-        height: 270px;
+        //height: 270px;
         // width: 150px;
         width: 30%;
         padding: 30px;
@@ -129,7 +129,7 @@
         }
         @include breakpoint(phablet){
             width: 130px;
-            height: 270px;
+            //height: 270px;
             margin-left:0px;
             margin-top: 0px;
         }

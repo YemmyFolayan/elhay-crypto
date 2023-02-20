@@ -287,7 +287,7 @@ const Mycard = props => {
           <Empty
             title="Card not found"
             subtitle="The card with ID does not exist, kindly go back to the bank page and select the card you want to see here
-                        , if issue persists kindly reach out to help@wevesti.com."
+                        , if issue persists kindly reach out to help@elhay.com."
             type="normal"
             name="Back to Bank"
             click={() => navigate('/bank')}

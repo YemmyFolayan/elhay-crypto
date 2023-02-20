@@ -345,8 +345,8 @@ const Stepprompt = props => {
               <p>
                 {' '}
                 Contact support at{' '}
-                <strong onClick={() => openMail('help@wevesti.com')}>
-                  help@wevesti.com
+                <strong onClick={() => openMail('help@elhay.com')}>
+                  help@elhay.com
                 </strong>{' '}
                 if you need have any questions.{' '}
               </p>
@@ -464,10 +464,10 @@ const Selectdeposit = props => {
           changed={value => props.setOption(value)}
           id="0"
           isSelected={props.option === 'NGN'}
-          label="Add money via your Naira wallet"
+          label="Add money via your NAIRA WALLET BALANCE"
           sublabel={`Pay  ₦${props.amount.toLocaleString(
             'en-us',
-          )} from your Naira wallet.`}
+          )} from your NAIRA WALLET BALANCE.`}
           value="NGN"
         />
       ) : (

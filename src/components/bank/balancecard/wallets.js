@@ -11,29 +11,30 @@ export const Wallets = props => {
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
   var data = [
+ 
+    // {
+    //   name: 'CRYPTO WALLET BALANCE',
+    //   amount: props.foundersBalance,
+    //   currency: '$',
+    //   buttons: [
+    //     // {
+    //     //     name:`See Details`,
+    //     //     click: () => dispatch(editStripeAccountModal(true))
+    //     // },
+    //     {
+    //       name: `Send Money`,
+    //       click: () =>
+    //         dispatch(walletAction({ open: true, action: 'withdraw' })),
+    //     },
+    //     {
+    //       name: `Add Money`,
+    //       click: () =>
+    //         dispatch(walletAction({ open: true, action: 'deposit' })),
+    //     },
+    //   ],
+    // },
     {
-      name: 'Founders Wallet',
-      amount: props.foundersBalance,
-      currency: '$',
-      buttons: [
-        // {
-        //     name:`See Details`,
-        //     click: () => dispatch(editStripeAccountModal(true))
-        // },
-        {
-          name: `Send Money`,
-          click: () =>
-            dispatch(walletAction({ open: true, action: 'withdraw' })),
-        },
-        {
-          name: `Add Money`,
-          click: () =>
-            dispatch(walletAction({ open: true, action: 'deposit' })),
-        },
-      ],
-    },
-    {
-      name: 'Naira wallet',
+      name: 'NAIRA WALLET BALANCE',
       amount: props.nairaAmount,
       accountNumber: props.accountNumber,
       currency: '₦',
@@ -49,7 +50,7 @@ export const Wallets = props => {
       ],
     },
     {
-      name: 'Usd wallet',
+      name: 'USD WALLET BALANCE',
       currency: '$',
       amount: props.currency ? props.nairaAmount : props.dollarAmount,
       buttons: [
@@ -62,7 +63,9 @@ export const Wallets = props => {
           click: () => props.depositUsd(),
         },
       ],
-    },
+    }
+
+  
   ];
   const [fulldata, setData] = useState(data);
 
@@ -113,9 +116,9 @@ export const Wallets = props => {
 const Singlebalance = props => {
   var __renderLink = () => {
     switch (props.data.name) {
-      case 'Founders Wallet':
+      case 'CRYPTO WALLET BALANCE':
         return <Seedetails click={props.seeDetails} />;
-      case 'Naira wallet':
+      case 'NAIRA WALLET BALANCE':
         return props.userdata.providusAccountNumber ? (
           <Seedetails click={() => props.nairaAccount()} />
         ) : (
@@ -132,9 +135,14 @@ const Singlebalance = props => {
       className={`wallet  ${__renderWalletName(props.data.name)}`}
       key={props.key}
     >
-      <img src={__renderWalletSvg(props.data.name)} alt="wallet" />
+
       <div className="wallet__top">
         <p className="wallet__title">{props.data.name}</p>
+
+      <div className="wallet_white_details">  
+      <img src={__renderWalletSvg(props.data.name)} alt="wallet" className="nairapattern"/> 
+      
+    
         <span className="wallet__balance">
           <p>
             {props.data.currency}{' '}
@@ -149,6 +157,8 @@ const Singlebalance = props => {
             onClick={() => props.setShow(!props.show)}
           />
         </span>
+
+        </div>
       </div>
       {!props.transfer && (
         <div className="wallet__bottom">

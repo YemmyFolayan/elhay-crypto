@@ -1,6 +1,6 @@
 // Project constants
 export const PROJECT_NAME = 'vesti';
-export const ADMIN_EMAIL = 'help@wevesti.com';
+export const ADMIN_EMAIL = 'help@elhay.com';
 export const REDIRECT_URL = `${window.location}`;
 export const REDIRECT_URL_CASH = `${window.location}`;
 

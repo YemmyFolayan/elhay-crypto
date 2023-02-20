@@ -54,7 +54,7 @@ export const Payforreport = props => {
                 </strong>{' '}
                 from your NetWebPay{' '}
                 <strong>
-                  {props.state === 'NGN' ? ' Naira Wallet' : ' USD Wallet'}
+                  {props.state === 'NGN' ? ' NAIRA WALLET BALANCE' : ' USD Wallet'}
                 </strong>
               </p>
             </Smallbox>
@@ -126,8 +126,8 @@ const Creditcharge = props => {
                         changed={ props.setState } 
                         id="1" 
                         isSelected={ props.state === "NGN_KOBO" } 
-                        label="vesti Naira wallet"
-                        sublabel="You can pay via your NetWebPay Naira wallet." 
+                        label="vesti NAIRA WALLET BALANCE"
+                        sublabel="You can pay via your NetWebPay NAIRA WALLET BALANCE." 
                         value="NGN_KOBO" 
                     /> */}
 

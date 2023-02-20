@@ -57,7 +57,7 @@ export const Vcardprompt = props => {
           <p className="information">
             Our Virtual Card service is under maintenance please check back
             later (please email support if you have questions){' '}
-            <strong> help@wevesti.com </strong>
+            <strong> help@elhay.com </strong>
           </p>
           <button className="prompt__btn" onClick={() => props.closeModal()}>
             Close

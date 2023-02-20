@@ -30,11 +30,11 @@ class ErrorBoundary extends React.Component {
             type="error"
             image={errorsvg}
             title="We're Sorry"
-            subtitle="An error occured, if error still persists, please reach out to help@wevesti.com"
+            subtitle="An error occured, if error still persists, please reach out to help@elhay.com"
             button="Go back"
             onClick={() => goBack()}
-            secondBtn={() => openMail('help@wevesti.com')}
-            secondBtntext="help@wevesti.com"
+            secondBtn={() => openMail('help@elhay.com')}
+            secondBtntext="help@elhay.com"
           />
         </div>
       );

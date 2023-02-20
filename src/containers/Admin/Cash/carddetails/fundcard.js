@@ -340,9 +340,9 @@ const Wallettype = props => {
         changed={props.setWalletOption}
         id="1"
         isSelected={props.data.walletToCharge === 'NGN_KOBO'}
-        label="Fund via NetWebPay Naira Wallet"
+        label="Fund via NetWebPay NAIRA WALLET BALANCE"
         // sublabel="This is the only available mode at the moment."
-        sublabel="The amount will be deducted from your NetWebPay Naira Wallet."
+        sublabel="The amount will be deducted from your NetWebPay NAIRA WALLET BALANCE."
         value="NGN_KOBO"
       />
 

@@ -209,7 +209,7 @@ class Login extends Component {
       })
       .catch(error => {
         openNotificationWithIconErr(
-          error.data ? error.data.message : `Please contact help@wevesti.com'`,
+          error.data ? error.data.message : `Please contact help@elhay.com'`,
           error.data ? error.data.message : 'Error Occurred',
           'error',
         );

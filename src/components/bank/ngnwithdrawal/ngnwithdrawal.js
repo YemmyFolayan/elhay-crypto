@@ -343,7 +343,7 @@ const Firststep = props => {
             body={
               removeCommaAmount(props.amount) < 200
                 ? `Amount should be greater than 200 Naira.`
-                : `You do not have upto ₦${props.amount} in your NetWebPay Naira wallet, please deposit into your account.`
+                : `You do not have upto ₦${props.amount} in your NetWebPay NAIRA WALLET BALANCE, please deposit into your account.`
             }
           />
         )}

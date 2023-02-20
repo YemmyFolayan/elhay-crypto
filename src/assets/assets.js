@@ -50,7 +50,7 @@ export const merchant = require('./sidebar-svgs/merchant.svg');
 export const airtime = require('./sidebar-svgs/airtime.svg');
 export const advice = require('./sidebar-svgs/advice.svg');
 export const savings = require('./sidebar-svgs/savings.svg');
-export const profile = require('./sidebar-svgs/profile.svg');
+
 export const pathway = require('./sidebar-svgs/pathway.svg');
 export const provider = require('./sidebar-svgs/provider.svg');
 export const logout = require('./sidebar-svgs/logout.svg');
@@ -71,3 +71,44 @@ export const radio_plaidx = require('./radios/plaidx.svg');
 export const radio_plaid = require('./radios/plaid.svg');
 export const radio_ngnusd = require('./radios/ngnwalletusd.svg');
 export const radio_cardusd = require('./radios/debcrecardusd.svg');
+
+
+//new 
+export const trades = require('./svg/trades.svg');
+
+export const rates = require('./svg/Rates.svg');
+
+export const profile = require('./svg/Profile.svg');
+
+export const home = require('./svg/HomeFilled.svg');
+export const goldbg = require('./svg/goldbg.svg');
+
+export const phonetrade = require('./svg/phonetrade.svg');
+
+export const golddotup = require('./svg/golddotup.svg');
+
+export const goldotdown = require('./svg/goldotdown.svg');
+
+export const phonecard = require('./svg/phonecard.svg');
+
+
+
+export const caramel = require('./svg/caramel.svg');
+
+export const logowhite = require('./svg/logowhite.svg');
+
+export const logoblack = require('./svg/logoblack.svg');
+
+export const yourorder = require('./svg/yourorder.svg');
+
+export const googlelogo = require('./svg/google.svg');
+
+export const applelogo = require('./svg/apple.svg');
+
+export const naira = require('./svg/naira.svg');
+
+export const nairapattern = require('./svg/nairapattern.svg');
+
+export const usd = require('./svg/naira.svg');
+
+export const founders = require('./svg/naira.svg');

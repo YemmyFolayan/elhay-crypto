@@ -236,7 +236,7 @@ const BuyAirtime = props => {
             {/* <Smallbox>
             <p>
                 You are about to recharge your  <strong> {props.data.name}  {props.data.phone}</strong> 
-                with a sum of <strong> ₦{props.data.amount.toLocaleString('en-US')} </strong> from your NetWebPay Naira Wallet 
+                with a sum of <strong> ₦{props.data.amount.toLocaleString('en-US')} </strong> from your NetWebPay NAIRA WALLET BALANCE 
                 includes a transaction charge of 3% 
                 <strong> of ₦{Math.ceil(parseFloat( (props.data.amount * 0.03))).toLocaleString('en-US')} </strong>
             </p>

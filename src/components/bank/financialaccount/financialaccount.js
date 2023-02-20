@@ -205,7 +205,7 @@ export const Compeletetrans = props => {
       />
       {/* <Smallbox>
                 <p>
-                    You are about to withdraw <strong> ${(props.data.amountCents).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") }</strong> from your NetWebPay Founders Wallet 
+                    You are about to withdraw <strong> ${(props.data.amountCents).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") }</strong> from your NetWebPay CRYPTO WALLET BALANCE 
                     to bank routing number of <strong> {props.data.routing_number }</strong> , account number of <strong> {props.data.account_number }</strong>, this 
                     includes a transaction charge of 1.3%
                     <strong> of ${Math.ceil(parseFloat( (props.data.amountCents * 0.013))).toLocaleString('en-US')} </strong>

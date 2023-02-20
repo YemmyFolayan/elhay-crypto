@@ -220,7 +220,7 @@ const Wallettype = props => {
         changed={props.setWalletOption}
         id="1"
         isSelected={props.data.walletToCharge === 'NGN_KOBO'}
-        label={`Using your Naira Wallet at ${props.rate}`}
+        label={`Using your NAIRA WALLET BALANCE at ${props.rate}`}
         sublabel="Use this option to convert your Naira to USD"
         value="NGN_KOBO"
       />
@@ -295,7 +295,7 @@ const Enterpin = props => {
                 <p>
                     You are about to fund your USD wallet with <strong> ${
                     // eslint-disable-next-line
-                    props.data.amount +' ≈ '+ '₦'+total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} from your NetWebPay Naira wallet</strong>, enter your pin to finalize.
+                    props.data.amount +' ≈ '+ '₦'+total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} from your NetWebPay NAIRA WALLET BALANCE</strong>, enter your pin to finalize.
                
                 </p>
             </Smallbox> */}

@@ -3,7 +3,7 @@
 .balancecontainer, .wallets {
     @include colflexx('center');
     width: 32vw;
-    height: 270px;
+    //height: 270px;
     // height: fit-content;
     position: relative;
 
@@ -38,7 +38,7 @@
             position: absolute;
             width: 32vw;
             height: 257px;
-            background-color: #FCFFFA;
+            background-color: #000000;
             padding: 30px;
             border: 1px solid $vesti-901;
             border-radius: 20px;
@@ -58,8 +58,8 @@
             }
             &.--founders {
                 // height: 255px;
-                background-color: #8948a8;
-                background-image: url('../../../assets/founderssvg.svg');
+                background-color: #000000;
+                background-image: url('../../../assets/svg/naira.svg');
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: bottom right;
@@ -67,19 +67,19 @@
                 .newbalance__balance{
                     gap: 10px;
                     *{
-                        color: #fff;
+                        color: #000000;
                         // color: $sila-800;
                     }
                 }
                 .newbalance__seedetails{
-                    color: #fff !important;
+                    color: #000000 !important;
                     *{
-                        color: #fff;
+                        color: #000000;
                     }
                 }
                 
                 button {
-                    background-color: #fff;
+                    background-color: #000000;
                     color: #8948a8;
                 }
 
@@ -118,6 +118,7 @@
                 }
             }
             &__balance {
+                color: #000000;
                 @include colflexx(flex-start);
                 @include breakpoint(mobileonly){
                     margin-top: 20px;
@@ -373,21 +374,26 @@
     *.wallet {
         overflow: hidden;
         position: relative;
+        color: #000000 !important;
         // width: 500px;
         width: 100%;
-        height: 270px;
+        //height: 270px;
         @include colflexx(flex-start);
         gap: 40px;
         border-radius: 20px;
         padding: 30px 40px;
         &.--Founders {
-            @include wallets($vpurp-901, $vpurp-800, $vpurp-300, $vpurp-901);
+            @include wallets($vesti-200, $vesti-200, $vesti-200, $vesti-200);
         }
         &.--Naira {
-            @include wallets($vesti-902, $vesti-901, $vesti-300, $vesti-902);
+            @include wallets($vesti-200, #E4AD50, #E4AD50,#FFFFFF
+            );
+            background-image: url('../../../assets/svg/naira.svg');
         }
         &.--Usd {
-            @include wallets(#024750, #9CF4FF, #9CF4FF, #024750);
+            @include wallets(#024750, #E4AD50, #E4AD50, #FFFFFF);
+            background-color: #000000;
+            background-image: url('../../../assets/svg/naira.svg');
         }
 
         @include breakpoint(mobileonly){

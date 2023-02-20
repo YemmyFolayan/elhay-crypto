@@ -53,7 +53,7 @@ const VirtualCard = ({ cardData, user }) => {
           {!flipped && (
             <>
               <div
-                style={{ fontSize: '1.2rem', color: '#8B8C8C' }}
+                style={{ fontSize: '1.2rem', color: '#000000' }}
                 className="mb-1"
               >
                 Current Balance
@@ -64,7 +64,7 @@ const VirtualCard = ({ cardData, user }) => {
               >
                 ${(customerBalance ?? 0) / 100}
               </div>
-              <div style={{ color: '#8B8C8C' }}>{name}</div>
+              <div style={{ color: '#000000' }}>{name}</div>
               <div
                 style={{ fontSize: '1.2rem', zIndex: 1 }}
                 className="text-white d-flex justify-content-between"
@@ -134,7 +134,7 @@ const VirtualCard = ({ cardData, user }) => {
           ></div>
           {/* Main Content */}
           <div
-            style={{ fontSize: '1.2rem', color: '#8B8C8C' }}
+            style={{ fontSize: '1.2rem', color: '#000000' }}
             className="mb-1"
           >
             CVV

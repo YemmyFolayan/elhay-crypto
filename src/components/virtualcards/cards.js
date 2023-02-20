@@ -65,7 +65,7 @@ export const Cards = props => {
               <p className="pendingtitle">
                 Your card request has been submitted And your KYC is being
                 reviewed by our partner if you do not see your card after
-                15minutes, please email support help@wevesti.com after which you
+                15minutes, please email support help@elhay.com after which you
                 may need to create a card again.
               </p>
             </div>

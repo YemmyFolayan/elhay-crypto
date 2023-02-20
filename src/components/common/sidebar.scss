@@ -7,7 +7,18 @@
 //     }
 // }
 
+
+.caramel {
+ 
+    top: 100%;
+    margin-top: 40%;
+    width: 60%;
+    height: 80%;
+  }
+
 .side_box  {
+
+    width: 350px;
     // z-index: 999999 !important;
     @include rowflexx(flex-start);
     // padding-top: 50px;
@@ -25,7 +36,7 @@
        
     }
     .sidebar-vesti-logo {
-        background-color: #fff;
+       
         // position: relative;
         height: fit-content;
         padding: 60px 100px 50px 0px;
@@ -106,6 +117,8 @@
             // width: 200px;
             height: 60px;
             margin: 0;
+            color: #000000 !important;
+            padding: 16px;
 
             
             
@@ -114,7 +127,7 @@
                 width: 24px;
                 height: 24px;
                 margin-right: 20px;
-                filter: invert(56%) sepia(75%) saturate(6%) hue-rotate(131deg) brightness(87%) contrast(81%);
+                //filter: invert(56%) sepia(75%) saturate(6%) hue-rotate(131deg) brightness(87%) contrast(81%);
                 transition: all 0.5s ease;
                 opacity: .9 !important;
                 

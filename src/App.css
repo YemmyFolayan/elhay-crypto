@@ -24,7 +24,7 @@ input {
 .sub_txt_1 {
   font-family: Roboto;
   font-style: normal;
-  font-weight: 300;
+  /*  */
   font-size: 16px;
   line-height: 31px;
   color: #000000;
@@ -61,7 +61,7 @@ input {
 .main_txt_2 {
   font-family: Roboto;
   font-style: normal;
-  font-weight: 300;
+  /*  */
   font-size: 20px;
   line-height: 29px;
   color: #000000;
@@ -127,7 +127,7 @@ input {
   letter-spacing: 0.2px;
 
   /* Greyscale / 900 */
-   margin: 5%;
+  margin: 5%;
   color: #1a202c;
 
   /* Inside auto layout */
@@ -138,6 +138,41 @@ input {
   flex-grow: 0;
 }
 
+.home_sidebar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  gap: 12px;
+
+  width: 202px;
+  height: 47px;
+
+  background: #000000;
+  border-radius: 12px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.home_sidebar_icon {
+ 
+  color: #E4AD50 !important; 
+}
+
+.mini_side_box {
+  position: absolute;
+  width: 500px;
+  height: 900px;
+  left: 40px;
+  top: 100px;
+  background: #ffe8c2;
+  border-radius: 15px;
+}
 
 .goldbg {
   position: relative;
@@ -157,7 +192,12 @@ input {
   right: 0;
 }
 
-
+.phonetrade {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
 .carousel {
   position: relative;
@@ -198,13 +238,21 @@ input {
   margin-bottom: 20px;
 }
 
+.text_manrope {
+  font-family: 'Manrope';
+font-style: normal;
+font-weight: 1000;
+font-size: 14px;
+line-height: 150%;
+
+}
+
 .white_subtitle_txt {
   font-size: 18px;
   margin: 20px;
-  color: #FFFFFF;
+  color: #ffffff;
 
   opacity: 0.7;
-
 }
 
 .carousel-dots {
@@ -224,10 +272,30 @@ input {
   cursor: pointer;
 }
 
+.wallet_balance {
+  color: #000000 !important;
+}
+
+.wallet_white_details {
+position: relative;
+width: 500px;
+height: 90px;
+left: 0px;
+top: 0px;
+
+background: #FFFFFF;
+border-radius: 15.2752px;
+}
+
+.nairapattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .carousel-dot.active {
   background-color: #000;
 }
-
 
 .sigin_text {
   font-size: 32px;
@@ -246,8 +314,6 @@ input {
   font-family: 'Plus Jakarta Sans' !important;
 }
 
-
-
 .copy_right {
   height: 24px;
   color: #718096;
@@ -258,16 +324,12 @@ input {
   flex-grow: 0;
 }
 .remember_me {
-
   align-items: center;
-  color: #1A202C;
+  color: #1a202c;
   margin-left: 4px;
-
-
 }
 
 .forgot_pass {
-
   text-align: right !important;
 }
 
@@ -279,19 +341,19 @@ input {
   margin-right: 0px !important;
 }
 
-.forgot_pass_section{
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 150%;
-/* identical to box height, or 24px */
-gap: 35%;
-display: flex;
+.forgot_pass_section {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
+  gap: 35%;
+  display: flex;
 
-letter-spacing: 0.2px;
-flex: none;
-order: 1;
-flex-grow: 0;
+  letter-spacing: 0.2px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
 }
 
 .footer_text {
@@ -304,10 +366,8 @@ flex-grow: 0;
   font-size: 16px;
   line-height: 150%;
   color: #101112;
-  display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   padding: 0px;
   gap: 30%;
   margin-top: 40px;
@@ -318,6 +378,49 @@ flex-grow: 0;
   top: 952px;
 }
 
+
+.instruction_text {
+  width: 80%;
+  height: 42px;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  /* display: flex; */
+  align-items: center;
+  letter-spacing: 0.2px;
+  color: #718096;
+}
+
+.text-black a {
+  color: #000000 !important;
+}
+
+
+
+
+.footer_text_signup {
+  gap: 80%;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.2px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: #101112;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px;
+  margin-top: 40px;
+  position: absolute;
+  width: 80%;
+  height: 24px;
+  left: 48px;
+  top: 952px;
+  white-space: nowrap;
+}
 .signin_box {
   /* Auto layout */
 
@@ -377,7 +480,6 @@ flex-grow: 0;
 
   color: #718096;
 }
-
 
 .stock_links:link,
 .stock_links:hover,

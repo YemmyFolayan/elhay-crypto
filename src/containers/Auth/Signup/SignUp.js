@@ -1,8 +1,9 @@
 import React, { Component, useState, useEffect } from 'react';
+import RegionSelect from 'react-region-flag-select';
 import { Link } from '@reach/router';
 import { FormFeedback } from 'reactstrap';
 import '../Authentication.scss';
-import { Formik } from 'formik';
+
 import { connect } from 'react-redux';
 import {
   showAuthLoader,
@@ -14,18 +15,37 @@ import Loader from 'components/Loader';
 // import {redirectDashboard } from 'routes/RedirectRoutes';
 import { redirectFeedsDashboard } from 'routes/RedirectRoutes';
 import { hideMessage, userSignOut } from 'appRedux/actions/auth';
-import logowhite from '../../../assets/svg/logowhite.svg';
-import googlelogo from '../../../assets/svg/google.svg';
-import applelogo from '../../../assets/svg/apple.svg';
-import goldbg from '../../../assets/svg/goldbg.svg';
-import phonecard from '../../../assets/svg/phonecard.svg';
-import phonetrade from '../../../assets/svg/phonetrade.svg';
-import goldotdown from '../../../assets/svg/goldotdown.svg';
-import golddotup from '../../../assets/svg/golddotup.svg';
+
+import {
+  logowhite,
+  logoblack,
+  googlelogo,
+  applelogo,
+  goldbg,
+  phonecard,
+  phonetrade,
+  goldotdown,
+  golddotup,
+  pathway,
+  provider,
+  chistory,
+  caramel,
+} from '../../../assets/assets';
+
+
 import Carousel, { CarouselItem } from 'components/common/carousel/carousel';
 import { Simplemodal } from 'components/common/simplifiedmodal';
 import Twofalogin from 'components/auth/twofa/twofa';
 import { setToken } from 'appRedux/api';
+import { DatePicker } from 'antd';
+import HeaderMain from 'components/common/HeaderMain';
+import Select from 'react-select';
+import * as Yup from 'yup';
+import _ from 'lodash';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { LockIco, ChevDIco } from 'assets/assets';
+import { signUpUser } from 'appRedux/actions/auth';
+import { REDIRECT_URL } from 'appRedux/constants';
 import {
   openNotificationWithIcon,
   openNotificationWithIconErr,
@@ -37,10 +57,20 @@ import Axios from 'axios';
 import { setSession } from 'appRedux/store/cookies';
 import { AlertError } from 'components/common/alertboxes/alertboxes';
 import { Platformbutton } from 'components/common/button/button';
+import { Phonenumber } from 'components/common/inputs/phoneinput';
 // import { useDispatch } from "react-redux"
 
 // import { openAction } from 'appRedux/actions/domore';
 // import { useLocation } from '@reach/router';
+
+const SignUpSchema1 = Yup.object().shape({
+  // dob: Yup.date().required('Date of birth is required'),
+  // password: Yup.string().required('Password is required'),
+  // bvn: Yup.string().required('Bvn is required'),
+  email: Yup.string().required('Email is required'),
+  // location: Yup.string().required('Location is required'),
+  // phoneNumber: Yup.string().required('Phone number is required'),
+});
 
 class SignUp extends Component {
   constructor(props) {
@@ -75,6 +105,8 @@ class SignUp extends Component {
       code: '',
       token: '',
       slideIndex: 0,
+      location: '',
+      citizen: '',
     };
   }
 
@@ -95,6 +127,18 @@ class SignUp extends Component {
   //   console.log(this.state.from)
   // }
 
+  onChange = (date, dateString) => {
+    this.setState({ dob: dateString });
+    // signUpUser
+  };
+
+  handleLocation = data => {
+    this.setState({ location: data });
+  };
+
+  handleCitizenship = data => {
+    this.setState({ citizen: data });
+  };
   handleGoogleSignIn = () => {
     // Load the Google Sign-In API script
     window.gapi.load('auth2', function() {
@@ -208,7 +252,7 @@ class SignUp extends Component {
       })
       .catch(error => {
         openNotificationWithIconErr(
-          error.data ? error.data.message : `Please contact help@wevesti.com'`,
+          error.data ? error.data.message : `Please contact help@elhay.com'`,
           error.data ? error.data.message : 'Error Occurred',
           'error',
         );
@@ -226,6 +270,7 @@ class SignUp extends Component {
       : '/bank';
 
     const { slideIndex } = this.state;
+    const { gender, citizen, password } = this.state;
 
     return (
       <div className="container-fluid">
@@ -241,6 +286,7 @@ class SignUp extends Component {
             from={this.from}
             firstName={this.state.data ? this.state.data.firstName : ''}
             lastName={this.state.data ? this.state.data.lastName : ' '}
+            password={this.state.data ? this.state.data.password : ' '}
             email={this.state.data ? this.state.data.email : ''}
             phone={this.state.data ? this.state.data.phoneNumber : ''}
             picture={this.state.data ? this.state.data.profilePictureURL : ''}
@@ -257,25 +303,35 @@ class SignUp extends Component {
               display: 'flex',
               flexDirection: 'row',
               backgroundImage: `url(${goldbg})`,
-              backgroundPosition: 'right',
+
               backgroundSize: 'cover',
               alignItems: 'center',
               justifyContent: 'center',
             }}
           >
-            <img src={logowhite} alt="logowhite" width="6%" height="6%" />
+            <nav className="d-flex align-items-left mr-4">
+              {/* nav header */}
 
-            <div className="d-flex pt-2">
-              <a className="text-white title_text main_font_family" href="/">
-                Elhay Limited
-              </a>
-            </div>
+              <img
+                src={logowhite}
+                alt="netwebpay"
+                width="6%"
+                height="6%"
+                className="align-items-left"
+              />
+
+              <div className="d-flex pt-2 ml-4">
+                <a className="text-white title_text main_font_family" href="/">
+                  Elhay Limited
+                </a>
+              </div>
+            </nav>
             <img
-              src={goldotdown}
-              alt="goldotdown"
-              width="10%"
-              height="10%"
-              className="goldbg-goldotdown"
+              src={phonetrade}
+              alt="phonetrade"
+              width="40%"
+              height="40%"
+              className="phonetrade align-items-center"
             />
 
             <img
@@ -285,8 +341,6 @@ class SignUp extends Component {
               height="10%"
               className="goldbg-golddotup"
             />
-
-            <img src={phonecard} alt="phonecard" width="40%" height="40%" />
 
             <div className="carousel">
               <div className="carousel-container">
@@ -314,20 +368,26 @@ class SignUp extends Component {
                 ))}
               </div>
             </div>
+
+            <img
+              src={goldotdown}
+              alt="goldotdown"
+              width="10%"
+              height="10%"
+              className="goldbg-goldotdown"
+            />
           </div>
           <div
             className="col-12 col-md-6 px-2 px-md-4 px-lg-5 h-100 min-vh-md-100 py-4 d-flex flex-column"
             style={{
-           
-              backgroundColor: "#FFFFFF",
-              
+              backgroundColor: '#FFFFFF',
             }}
           >
             {/* Horizontal Navbar */}
             <nav className="d-flex align-items-center">{/* nav header */}</nav>
             {/* /nav header */}
             {/* content */}
-            <div className="py-5 my-auto d-none d-md-block h-500">
+            <div className="py-5 my-auto d-none d-md-block">
               {/* <img src={intro} className="contain-img" alt="lady smiling" /> */}
               <div className="card bg-white w-100 mt-5 mt-md-auto mb-auto mx-auto mw-500">
                 <div className="card-body p-7">
@@ -368,151 +428,218 @@ class SignUp extends Component {
                     <Formik
                       enableReinitialize
                       initialValues={{
-                        username: this.state.username,
+                        // location: '',
+                        // citizen: '',
+                        // callCode: '',
+                        // dob: '',
                         password: '',
+                        // bvn: '',
+                       
                       }}
-                      validate={values => {
-                        const errors = {};
-                        if (!values.username) {
-                          errors.username =
-                            'Please enter Email or Mobile Number';
-                        } else if (
-                          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
-                            values.username,
-                          )
-                        ) {
-                          errors.username = 'Invalid email address';
-                        }
-                        if (!values.password) {
-                          errors.password = 'Please enter password';
-                        }
-                        return errors;
-                      }}
-                      onSubmit={values => {
-                        let data = {};
-                        if (values.username && values.password) {
-                          this.props.showAuthLoader();
-                          data = {
-                            username: values.username,
-                            password: values.password,
-                          };
-                          // var from = this.props.location.state ? this.props.location.state.from: '/bank'
-                          // eslint-disable-next-line
-                          // var from = document.referrer ? document.referrer.includes('/auth?merchant=') ? `\merchants?merchant=${document.referrer.split('=')[1]}`: this.props.location.state.from : '/bank'
-
-                          this.props.userSignIn(
-                            JSON.stringify(data, null, 2),
-                            from,
-                            this.openModal,
-                          );
-                        }
+                      validationSchema={SignUpSchema1}
+                      onSubmit={(values, { setSubmitting, resetForm }) => {
+                        setSubmitting(true);
+                        const { countryData } = values.location;
+                        const data = {
+                          ...values,
+                          gender: gender.value,
+                          password: password.value,
+                          dob: values.dob.format('YYYY-MM-DD') || '',
+                          location: countryData.data.name,
+                          citizen: citizen
+                            ? citizen.countryData.data.name
+                            : this.state.citizen,
+                          redirectURL: REDIRECT_URL,
+                          callCode: values
+                            ? values.location.countryData.data.phoneCode
+                            : '',
+                          // callCode: '',
+                        };
+                        this.props.signUpUser(data);
+                        setSubmitting(false);
                       }}
                     >
-                      {({
-                        values,
-                        errors,
-                        touched,
-                        handleChange,
-                        handleBlur,
-                        handleSubmit,
-                        isSubmitting,
-                      }) => (
-                        <form onSubmit={handleSubmit}>
-                          <Inputfloat
-                            label="Email"
-                            type="email"
-                            id="username"
-                            name="username"
-                            // className="form_element w-100 mb-4"
-                            onChange={handleChange}
-                            placeholder="Email Address"
-                            onBlur={handleBlur}
-                            value={values.username}
-                            invalid={
-                              errors.username && touched.username && 'true'
-                            }
-                          />
-                          {/* <Singleinputlabel
-                          // label="asdasd"
-                          row={true}
-                          type="email"
-                          id="username"
-                          name="username"
-                          // className="form_element w-100 mb-4"
-                          onChange={handleChange}
-                          placeholder="Enter Your Email Address"
-                          // onBlur={handleBlur}
-                          value={values.username}
-                          disable={false}
-                          error ={errors.username }
-                        /> */}
-                          {errors.username && touched.username && (
-                            <FormFeedback>{errors.username}</FormFeedback>
-                          )}
-                          <Inputfloat
-                            // label="asdasd"
-                            label="password"
-                            id="password"
-                            type="password"
-                            name="password"
-                            // error ={errors.password }
-                            row={true}
-                            placeholder="Enter Your Password"
-                            value={values.password}
-                            disabled={false}
-                            onChange={handleChange}
-                          />
-                          {/* <input
-                          id="password"
-                          type="password"
-                          name="password"
-                          className="form_element w-100 mb-2 password"
-                          placeholder="Password"
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                          value={values.password}
-                          invalid={
-                            errors.password && touched.password && 'true'
-                          }
-                        /> */}
-
-                          <div className="mb-4 mt-2 forgot_pass_section">
-                            <a
-                              className="remember_me"
-                              style={{ color: '#1A202C' }}
-                              to="#"
-                            >
-                             
-                              By creating an account, you agreeing to our Privacy Policy, and Electronics Communication Policy.
-                            </a>
-
-                           
+                     
+                      {props => (
+                        <>
+                          <div className="ErrorMessageFormik">
+                            {!_.isEmpty(props.errors)
+                              ? `Errors: ${Object.values(props.errors).join(
+                                  ', ',
+                                )}`
+                              : ''}
                           </div>
+                          <Form>
+                            <div className="d-flex justify-content-between">
+                              <div className="w-50 mr-2">
+                                <Field
+                                  className="form_element w-100"
+                                  placeholder="First Name *"
+                                  type="text"
+                                  name="firstName"
+                                />
+                                <ErrorMessage
+                                  name="firstName"
+                                  component="div"
+                                  className="text-red-500 text-xs"
+                                />
+                              </div>
 
-                          {(touched.username || touched.password) && (
-                            <AlertError body="Invalid login credentials (email address /Password)" />
-                          )}
-                          <div className="mb-4"></div>
-                          <Platformbutton
-                            name="Login"
-                            type="submit"
-                            disabled={
-                              !values.username || !values.password
-                                ? true
-                                : false
-                            }
-                          />
-                          <p className="text-center mt-4">
-                          Already have an account? 
-                            <Link
-                              style={{ color: '#1A202C' }}
-                              to="/auth"
-                              className="ml-2"
+                              <div className=" w-50">
+                                <Field
+                                  className="form_element w-95"
+                                  placeholder="Last Name *"
+                                  type="text"
+                                  name="lastName"
+                                />
+                                <ErrorMessage
+                                  name="lastName"
+                                  component="div"
+                                  className="text-red-500 text-xs"
+                                />
+                              </div>
+                            </div>
+                            {/* <div className="d-flex justify-content-between">
+                            <div className=" w-50">
+                              <div className="datepickerselect">
+                                <DatePicker
+                                  placeholder="Select Date of Birth"
+                                  className="form_element_date w-95"
+                                  onChange={e => {
+                                    props.setFieldValue('dob', e, true);
+                                    return this.onChange;
+                                  }}
+                                />
+                              </div>
+                             <ErrorMessage
+                                name="password"
+                                component="div"
+                                className="text-red-500 text-xs"
+                              />
+                            </div> */}
+
+                            <div className=" w-100">
+                              <Field
+                               label="password"
+                                className="form_element w-100"
+                                type="email"
+                                placeholder="Email Address*"
+                                name="email"
+                              />
+                              <ErrorMessage
+                                name="email"
+                                component="div"
+                                className="text-red-500 text-xs"
+                              />
+                            </div>
+                            <div className=" w-100">
+          
+                              <Inputfloat
+                                // label="asdasd"
+                                label="password"
+                                id="password"
+                                type="password"
+                                name="password"
+                                // error ={errors.password }
+                                row={true}
+                                placeholder="Enter Your Password"
+                                value={password}
+                                disabled={false}
+                                
+                              />
+                               <ErrorMessage
+                                name="password"
+                                component="div"
+                                className="text-red-500 text-xs"
+                              />
+                            </div>
+                            <div className="d-flex justify-content-between">
+                              <div className=" w-100">
+                              <Inputfloat
+                                // label="asdasd"
+                                label="Phone Number"
+                                id="phonenumber"
+                                type="text"
+                                name="phoneNumber"
+                               
+                                row={true}
+                                placeholder="Phone Number"
+                                disabled={false}
+                                
+                              />
+                                <ErrorMessage
+                                  name="phoneNumber"
+                                  component="div"
+                                  className="text-red-500 text-xs"
+                                />
+                              </div>
+                              {/* <div className="w-25">
+                                <div
+                                  className="countryflagselect small_flag_space"
+                                  width="5%"
+                                >
+                                  <RegionSelect
+                                    countryOnly
+                                    selectedCountryCode=""
+                                    handleChange={this.handleCitizenship}
+                                    className="form_element"
+                                    name="country_select"
+                                  />
+
+                                  <img
+                                    className="down_ico"
+                                    src={ChevDIco}
+                                    alt="down"
+                                    width="20"
+                                    height="20"
+                                  />
+                                </div>
+                                <ErrorMessage
+                                  name="country_select"
+                                  component="div"
+                                  className="text-red-500 text-xs"
+                                />
+                              </div> */}
+                            </div>
+
+                            <div className="instruction_text m-4">
+                              By creating an account, you agreeing to our{' '}
+                              <b className="text-black">
+                                <a href="/"> Privacy Policy </a>{' '}
+                              </b>{' '}
+                              , and{' '}
+                              <b className="text-black">
+                                {' '}
+                                <a href="/">
+                                  {' '}
+                                  Electronics Communication Policy.{' '}
+                                </a>
+                              </b>
+                            </div>
+
+                            <button
+                              type="submit"
+                              className="btn w-100 mb-4 mt-4 primary_btn"
+                              disabled={
+                                !props.dirty ||
+                                !_.isEmpty(props.errors) ||
+                                props.isSubmitting
+                              }
                             >
-                              Sign In
-                            </Link>
-                          </p>
-                        </form>
+                              Sign Up
+                            </button>
+                            <p className="text-center mt-4">
+                              Already have an account?
+                              <Link
+                                style={{ color: '#1A202C' }}
+                                to="/auth"
+                                className="ml-2 text-black"
+                              >
+                                Sign In
+                              </Link>
+                            </p>
+                          </Form>
+                        </>
                       )}
                     </Formik>
                   )}
@@ -520,19 +647,18 @@ class SignUp extends Component {
               </div>
             </div>
 
+            <div className="footer_text_signup main_font_family">
+              <a className="privacy_text" href="/">
+                Privacy Policy
+              </a>
+              <a className="copy_right" href="/">
+                Copyright &copy; 2023
+              </a>
+            </div>
             {/* /section left */}
           </div>
 
           {/* /section right */}
-        </div>
-
-        <div className="footer_text main_font_family">
-          <a className="privacy_text" href="/">
-            Privacy Policy
-          </a>
-          <a className="copy_right" href="/">
-            Copyright &copy; 2023
-          </a>
         </div>
       </div>
     );

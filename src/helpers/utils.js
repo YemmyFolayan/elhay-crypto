@@ -13,9 +13,13 @@ import withdraw from 'assets/withdraw_tr.svg';
 import airtime from 'assets/airtime_tr.svg';
 import transfer from 'assets/transfer_tr.svg';
 
-import naira from 'assets/wallets/naira.svg';
-import usd from 'assets/wallets/usd.svg';
-import founders from 'assets/main_img2.svg';
+import {
+  usd,
+  naira,
+  nairapattern,
+  founders
+} from 'assets/assets';
+
 export const objectValuesStringify = obj => Object.values(obj).join(', ');
 
 export const useUrlQuery = queryParam => {
@@ -123,11 +127,11 @@ export const __renderRouting = value => {
 
 export const __renderWalletName = value => {
   switch (value) {
-    case 'Founders Wallet':
-      return ' --Founders';
-    case 'Naira wallet':
+    // case 'CRYPTO WALLET BALANCE':
+    //   return ' --Founders';
+    case 'NAIRA WALLET BALANCE':
       return ' --Naira';
-    case 'Usd wallet':
+    case 'USD WALLET BALANCE':
       return ' --Usd';
     default:
       return '';
@@ -136,12 +140,12 @@ export const __renderWalletName = value => {
 
 export const __renderWalletSvg = value => {
   switch (value) {
-    case 'Founders Wallet':
-      return founders;
-    case 'Naira wallet':
-      return naira;
-    case 'Usd wallet':
-      return usd;
+    // case 'CRYPTO WALLET BALANCE':
+    //   return founders;
+    case 'NAIRA WALLET BALANCE':
+      return nairapattern;
+    case 'USD WALLET BALANCE':
+      return nairapattern;
     default:
       return '';
   }

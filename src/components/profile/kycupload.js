@@ -154,7 +154,7 @@ export const Kycupload = props => {
             )
           : openNotificationWithIconErr(
               `${state.type.value} validation`,
-              `An Error occured reach out to help@wevesti.com`,
+              `An Error occured reach out to help@elhay.com`,
               'error',
             );
         setBtn({ ...btn, value: false, name: 'Validate KYC' });

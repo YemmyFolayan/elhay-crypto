@@ -937,7 +937,7 @@ export const usdAccountDeposit = [
   },
   {
     value: 'NAIRA',
-    title: 'Add money via Naira wallet',
+    title: 'Add money via NAIRA WALLET BALANCE',
     subtitle: 'Add money using your NetWebPay naira wallet',
   },
 ];

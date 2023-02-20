@@ -267,10 +267,10 @@ const Createstripe = props => {
           image={pending}
           title={`Founders Card`}
           subtitle={
-            "Sorry your request for the Founder's Card is pending. If you are yet to get a response after sometime, Please reach out to us on help@wevesti.com"
+            "Sorry your request for the Founder's Card is pending. If you are yet to get a response after sometime, Please reach out to us on help@elhay.com"
           }
           onClick={() => openMail()}
-          button="help@wevesti.com"
+          button="help@elhay.com"
         />
       );
     default:

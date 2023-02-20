@@ -84,6 +84,7 @@ button {
 
 .countryflagselect {
   position: relative;
+  
 }
 
 .countryflagselect > span {
@@ -338,6 +339,7 @@ body {
   position: absolute;
   padding-top: 50px !important;
   padding-bottom: 50px !important;
+  margin-left: 100px;
   top: 100px;
   height: fit-content !important;
 }
@@ -359,11 +361,11 @@ body {
   }
 
   .side_box {
-    width: 250px;
+    width: 350px;
   }
 
   .layout.toggled .side_box {
-    width: 75px !important;
+    width: 175px !important;
   }
 
   .layout.toggled .header_box {
@@ -404,7 +406,7 @@ body {
   }
 
   .side_box {
-    width: 75px;
+    width: 175px;
   }
 
   .layout.toggled .header_box {
@@ -434,7 +436,7 @@ body {
     margin-right: 250px;
   }
   .layout.toggled .side_box {
-    width: 75px !important;
+    width: 175px !important;
   }
 }
 
@@ -450,7 +452,7 @@ body {
   }
 
   .layout.toggled .side_box {
-    width: 150px !important;
+    width: 250px !important;
   }
   .layout.toggled .header_box {
     position: absolute;

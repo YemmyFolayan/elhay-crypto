@@ -25,19 +25,19 @@
 <path d="M200.773 252.586H38.7734V263.546H200.773V252.586Z" fill="#C2C2C2" stroke="#ABABAB" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M200.786 252.586H96.5459V263.546H200.786V252.586Z" fill="#A6A6A6" stroke="#ABABAB" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M96.5422 193.625H11.7422V264.825H96.5422V193.625Z" fill="#CCCCCC"/>
-<path opacity="0.6" d="M96.5422 193.625H11.7422V264.825H96.5422V193.625Z" fill="white" stroke="#8B8C8C" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M96.5422 193.625H11.7422V264.825H96.5422V193.625Z" stroke="#8B8C8C" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path opacity="0.6" d="M96.5422 193.625H11.7422V264.825H96.5422V193.625Z" fill="white" stroke="#000000" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M96.5422 193.625H11.7422V264.825H96.5422V193.625Z" stroke="#000000" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M96.5418 193.625H68.3818V264.825H96.5418V193.625Z" fill="#CCCCCC"/>
-<path opacity="0.39" d="M96.5418 193.625H68.3818V264.825H96.5418V193.625Z" fill="white" stroke="#8B8C8C" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M96.5418 193.625H68.3818V264.825H96.5418V193.625Z" stroke="#8B8C8C" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M82.7598 193.785V264.905" stroke="#8B8C8C" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path opacity="0.39" d="M96.5418 193.625H68.3818V264.825H96.5418V193.625Z" fill="white" stroke="#000000" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M96.5418 193.625H68.3818V264.825H96.5418V193.625Z" stroke="#000000" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M82.7598 193.785V264.905" stroke="#000000" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M100.878 122.504H16.0781V193.704H100.878V122.504Z" fill="#CCCCCC"/>
-<path opacity="0.6" d="M100.878 122.504H16.0781V193.704H100.878V122.504Z" fill="white" stroke="#8B8C8C" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M100.878 122.504H16.0781V193.704H100.878V122.504Z" stroke="#8B8C8C" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path opacity="0.6" d="M100.878 122.504H16.0781V193.704H100.878V122.504Z" fill="white" stroke="#000000" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M100.878 122.504H16.0781V193.704H100.878V122.504Z" stroke="#000000" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M100.801 122.504H72.6406V193.704H100.801V122.504Z" fill="#CCCCCC"/>
-<path opacity="0.39" d="M100.801 122.504H72.6406V193.704H100.801V122.504Z" fill="white" stroke="#8B8C8C" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M100.801 122.504H72.6406V193.704H100.801V122.504Z" stroke="#8B8C8C" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M87.0537 122.746V193.786" stroke="#8B8C8C" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path opacity="0.39" d="M100.801 122.504H72.6406V193.704H100.801V122.504Z" fill="white" stroke="#000000" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M100.801 122.504H72.6406V193.704H100.801V122.504Z" stroke="#000000" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M87.0537 122.746V193.786" stroke="#000000" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M321.423 193.625H236.623V264.825H321.423V193.625Z" fill="#CCCCCC"/>
 <path opacity="0.6" d="M321.423 193.625H236.623V264.825H321.423V193.625Z" fill="white" stroke="#919191" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M321.423 193.625H236.623V264.825H321.423V193.625Z" stroke="#919191" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>

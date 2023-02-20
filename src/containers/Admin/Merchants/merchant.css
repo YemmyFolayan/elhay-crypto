@@ -9,7 +9,7 @@
   color: #000000;
 }
 .merchant-card__desc {
-  font-weight: 300;
+  
   font-size: 16px;
 }
 
@@ -99,7 +99,7 @@
 .date__title {
   font-weight: bold;
   font-size: 11px;
-  color: #8B8C8C;
+  
 
 }
 
@@ -107,7 +107,7 @@
 .member__title {
   font-weight: bold;
   font-size: 35px;
-  color: #8B8C8C;
+  
   margin-left: 2%;
 
 }
