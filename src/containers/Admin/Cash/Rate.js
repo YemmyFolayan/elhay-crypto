@@ -81,7 +81,7 @@ const useFetchUser = () => {
   return { isLoading, userData, refetch };
 };
 
-const Cash = props => {
+const Rate = props => {
   const [state, setState] = useState({
     modal: false,
     withdrawalModal: false,
@@ -928,4 +928,4 @@ const mapDispatchToProps = {
   openUpdateBox,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Cash);
+export default connect(mapStateToProps, mapDispatchToProps)(Rate);

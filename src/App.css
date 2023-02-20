@@ -147,7 +147,6 @@ input {
 
   width: 202px;
   height: 47px;
-
   background: #000000;
   border-radius: 12px;
 
@@ -216,7 +215,7 @@ input {
 
 .carousel-item {
   flex: 0 0 100%;
-  display: flex;
+  display: hidden;
   align-items: center;
   justify-content: center;
   text-align: center;

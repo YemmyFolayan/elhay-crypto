@@ -20,31 +20,31 @@ export const useUserData = () => {
   return { isLoading, userData, refetch };
 };
 
-export const useFounders = (id, stripeAccountStatus) => {
-  // alert('hhiii')
-  const {
-    isLoading: foundersLoad,
-    data: balance,
-    refetch: foundersRefetch,
-    isPreviousData: isPreviousFoundersData,
-  } = useQuery(
-    'Founders balance',
+// export const useFounders = (id, stripeAccountStatus) => {
+//   // alert('hhiii')
+//   const {
+//     isLoading: foundersLoad,
+//     data: balance,
+//     refetch: foundersRefetch,
+//     isPreviousData: isPreviousFoundersData,
+//   } = useQuery(
+//     'Founders balance',
 
-    async () =>
-      stripeAccountStatus === 'VERIFIED' &&
-      (await api
-        .get(
-          `/stripe/fetchSingleFinancialAccount/${
-            JSON.parse(localStorage.getItem('userData')).id
-          }`,
-        )
-        .then(res => {
-          // console.log(res.data.data.balance.cash.usd)
-          return res.data.data.balance.cash.usd;
-        })),
-  );
-  return { foundersLoad, balance, foundersRefetch, isPreviousFoundersData };
-};
+//     async () =>
+//       stripeAccountStatus === 'VERIFIED' &&
+//       (await api
+//         .get(
+//           `/stripe/fetchSingleFinancialAccount/${
+//             JSON.parse(localStorage.getItem('userData')).id
+//           }`,
+//         )
+//         .then(res => {
+//           // console.log(res.data.data.balance.cash.usd)
+//           return res.data.data.balance.cash.usd;
+//         })),
+//   );
+//   return { foundersLoad, balance, foundersRefetch, isPreviousFoundersData };
+// };
 
 export const useRates = () => {
   const { isLoading, data: pricesData, refetch } = useQuery(
@@ -107,22 +107,22 @@ export const openMail = value => {
   window.location.href = `mailto:${value}`;
 };
 
-export const useFoundersData = id => {
-  const {
-    isLoading: foundersLoad,
-    data: balance,
-    refetch: foundersRefetch,
-  } = useQuery(
-    'Founders balance',
+// export const useFoundersData = id => {
+//   const {
+//     isLoading: foundersLoad,
+//     data: balance,
+//     refetch: foundersRefetch,
+//   } = useQuery(
+//     'Founders balance',
 
-    async () =>
-      await api
-        .get(`/stripe/fetchSingleFinancialAccount/${id}`)
-        .then(res => res.data.balance.cash.usd),
-  );
-  // localStorage.setItem('userData', userData);
-  return { foundersLoad, balance, foundersRefetch };
-};
+//     async () =>
+//       await api
+//         .get(`/stripe/fetchSingleFinancialAccount/${id}`)
+//         .then(res => res.data.balance.cash.usd),
+//   );
+//   // localStorage.setItem('userData', userData);
+//   return { foundersLoad, balance, foundersRefetch };
+// };
 
 export const useAmount = value => {
   const [amount, setAmount] = useState(value);

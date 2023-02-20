@@ -34,7 +34,7 @@ export const Myfintransactions = props => {
       <div className="mytransactions-container">
         <Titlesubtitle
           title="Open Trades"
-          subtitle="See all transactions you've carried out on NetWebPay."
+          subtitle="See all transactions you've carried out."
         />
         <div className="mytransactions-center-container">
           <Loader />

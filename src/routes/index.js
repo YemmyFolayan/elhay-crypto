@@ -8,6 +8,7 @@ import Register from 'containers/Auth/Signup/SignUp';
 
 // import Verification from '../containers/Verification/Verification';
 import Cash from 'containers/Admin/Cash';
+import Rate from 'containers/Admin/Cash/Rate';
 // import Account from 'containers/Admin/Accounts';
 // import AccountSettings from 'containers/Admin/Accounts/Settings';
 import Transfer from 'containers/Admin/Cash/Transfer';
@@ -101,6 +102,8 @@ const Routes = [
   { path: '/create-service', component: CreateService, auth: true },
   { path: '/provider', component: Provider, auth: true },
   { path: '/mydashboard', component: Cash, auth: false },
+  { path: '/rates', component: Rate, auth: false },
+
   // { path: '/advice', component: Advice, auth: true },
   // { path: '/advice/:countryId', component: AdviceDetail, auth: true },
   // { path: '/service/:id', component: ServiceDetail, auth: true },
@@ -145,6 +148,8 @@ const Routes = [
   // { path: '/advice/:countryId', component: CampaignStory, auth: true },
 
   // // Robo
+
+
   // { path: '/roboadvisor', component: Advisor, auth: true },
 
   { path: '/mycard', component: Mycard, auth: true },
