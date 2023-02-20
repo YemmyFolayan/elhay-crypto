@@ -95,8 +95,8 @@ export const Myfintransactions = props => {
         <p className="mytransactions-container__title">My Transactions</p>
         <div className="mytransactions-center-container">
           <Empty
-            title="No Transactions"
-            subtitle="You are yet to carry out any transactions, when you do they'll appear here, click the buttons above to carry out transactions."
+            title="No Transaction Found"
+            subtitle="You do not have any transaction"
           />
         </div>
       </div>

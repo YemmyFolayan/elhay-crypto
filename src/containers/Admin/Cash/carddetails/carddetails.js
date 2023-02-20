@@ -466,8 +466,8 @@ const Mycard = props => {
                   {cardTrans ? (
                     cardTrans.length < 1 ? (
                       <Empty
-                        title="No Transactions"
-                        subtitle="You are yet to carry out any transactions, when you do they'll appear here, click the buttons above to carry out transactions."
+                        title="No Transaction Found"
+                        subtitle="You do not have any transaction"
                       />
                     ) : (
                       (cardTrans ?? []).map((item, index) => (

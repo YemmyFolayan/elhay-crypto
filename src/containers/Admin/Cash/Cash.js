@@ -20,6 +20,7 @@ import api from 'appRedux/api';
 import { openUpdateBox } from 'appRedux/actions/update';
 import { Domore } from 'components/bank/domore/domore';
 import './cash.scss';
+import { Link } from '@reach/router';
 import { useQuery } from 'react-query';
 import {
   openNotificationWithIcon,
@@ -63,14 +64,11 @@ import {
   savings,
   profile,
   logout,
-  pathway,
-  provider,
-  chistory,
- 
+  talts,
+  tbitcoin,
+  tgift,
   logoblack,
 } from '../../../assets/assets';
-
-
 
 const useFetchUser = () => {
   const { isLoading, data: userData, refetch } = useQuery(
@@ -115,7 +113,6 @@ const Cash = props => {
   const [load, setLoading] = useState(true);
   const [carddata, setCdata] = useState({});
 
- 
   const modifyState = value => setState({ ...state, ...value });
 
   var accountRequest = () => {
@@ -141,8 +138,6 @@ const Cash = props => {
   var openUpdateModal = () => {
     dispatch(openUpdateBox());
   };
-
-
 
   const { userDatas, refetch } = useFetchUser();
 
@@ -249,7 +244,6 @@ const Cash = props => {
     isAdmin: false,
     hasTransactionPin: true,
     hasVerifiedKyc: true,
-   
   };
   const { balance, foundersRefetch } = useFounders(
     userData.id,
@@ -737,8 +731,6 @@ const Cash = props => {
             style={{ height: 'fit-content', width: '100%' }}
           >
             <div className=" flex_page_container d-flex justify-content-center ">
-
-         
               <div className=" px-3 w-100">
                 {/* main start */}
                 <div className="row bank-cont">
@@ -824,26 +816,43 @@ const Cash = props => {
                     />
                   </div>
                   <div className="col-10 col-lg-7 col-md-10 pt-3">
-                    <div className="section-heading ">My NetWebPay Card(s)</div>
-                    <Cards
-                      loading={load}
-                      cdata={carddata ?? []}
-                      userData={userData}
-                      create={
-                        userData.verifiedKyc === 'APPROVED' ||
-                        userData.verifiedKyc === true
-                          ? () => dispatch(openVirtual(''))
-                          : openUpdateModal
-                      }
-                      // create ={ setCardmodal}
-                      setFundmodal={setFundmodal}
-                      fundmodal={fundmodal}
-                      rate={rate}
-                    />
+                    <div className="dashboard_trade_container">
+                      <Link to={`/`}>
+                        <div className="dashboard_trade">
+                          <img
+                            src={tgift}
+                            alt="trade SVG"
+                            className="mr-4 ml-2"
+                          />
+                          Trade Gift Card
+                        </div>
+                      </Link>
+
+                      <Link to={`/`}>
+                        <div className="dashboard_trade">
+                          <img
+                            src={tbitcoin}
+                            alt="trade SVG"
+                            className="mr-4 ml-2"
+                          />
+                          Trade Gift Bitcoin
+                        </div>
+                      </Link>
+                      <Link to={`/`}>
+                        <div className="dashboard_trade">
+                          <img
+                            src={talts}
+                            alt="trade SVG"
+                            className="mr-4 ml-2"
+                          />
+                          Trade Alts
+                        </div>
+                      </Link>
+                    </div>
                   </div>
                 </div>
 
-                {!userData.stripeVirtualAccountNumber && (
+                {/* {!userData.stripeVirtualAccountNumber && (
                   <Newfeature
                     // status="APPROVED"
                     stripeStatus={userData.stripeAccountStatus}
@@ -875,7 +884,7 @@ const Cash = props => {
                       ? () => dispatch(openWaitlist())
                       : openUpdateModal
                   }
-                />
+                /> */}
                 {activeAccount === 0 && userData.stripeVirtualAccountNumber ? (
                   <Myfintransactions id={userData.id} />
                 ) : (

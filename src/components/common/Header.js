@@ -113,7 +113,7 @@ const Header = ({ toggleMenu, info, link, info2, link2 }) => {
         {/* {notifications.length} */}
         <div className="header-icons ml-auto d-flex align-items-center">
           {/* <vestirate rate={590}/> */}
-          <div
+          {/* <div
             style={{ borderRadius: '50vw' }}
             className={`notif_cont ${open ? ' active' : ''}`}
           >
@@ -163,8 +163,9 @@ const Header = ({ toggleMenu, info, link, info2, link2 }) => {
                 </div>
               )}
             </div>
-          </div>
-          <Link to="/myprofile" className="notif_cont ml-3">
+          </div> */}
+          <Link to="/myprofile" className="notif_cont ml-3 notif_userprofile">
+          
             <img
               src={
                 userData.profilePictureURL ? userData.profilePictureURL : dummy
@@ -177,6 +178,15 @@ const Header = ({ toggleMenu, info, link, info2, link2 }) => {
                 objectFit: 'cover',
               }}
             />
+
+         {' '}
+         Hi{' '}, John Doe
+         {userData && userData.firstName === 'User'
+           ? 'there'
+           : userData.firstName}{' '}
+         <b className="fw-bolder">﹀</b>{' '}
+            
+          
           </Link>
           {/* <div className="notif_cont ml-3">
             <img

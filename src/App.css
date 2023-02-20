@@ -287,6 +287,59 @@ background: #FFFFFF;
 border-radius: 15.2752px;
 }
 
+.dashboard_trade_container {
+ 
+border: 1px solid #E4ECF3;
+border-radius: 17.48px;
+width: 40%;
+height: 80%;
+margin-top: 8%;
+margin-bottom: 0;
+padding-bottom: 0;
+}
+
+.dashboard_trade {
+
+padding: 1%;
+margin: 6%;
+width: 90%;
+height: 20%;
+
+
+background: #FFE8C2;
+border-radius: 14.5924px;
+font-family: 'Plus Jakarta Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 15.8066px;
+line-height: 20px;
+/* or 129% */
+
+display: flex;
+align-items: center;
+
+/* Brand Color/Primary */
+
+color: #202734;
+}
+
+
+.dashboard_trade img{
+
+  width: 45.16px;
+  height: 45.16px;
+  left: 17.51px;
+  top: 12.65px;
+  padding: 2%;
+  margin: 0;
+  background: #FFFFFF;
+  backdrop-filter: blur(150.728px);
+  /* Note: backdrop-filter has minimal browser support */
+  
+  border-radius: 5.64523px;
+  }
+
+
 .nairapattern {
   position: absolute;
   top: 0;

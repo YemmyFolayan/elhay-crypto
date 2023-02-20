@@ -1,197 +1,207 @@
-@import "../../variables.scss";
+@import '../../variables.scss';
 
 .header_box {
-    // z-index: 270000;
+  // z-index: 270000;
+
+  // @include breakpoint(mobileonly){
+  //     // padding: 20px 10px 20px 10px !important;
+  // }
+  z-index: 152 !important;
+
+  &__info {
+    cursor: pointer;
+    background-color: $yellow-200;
+    border-bottom: 1px solid $yellow-400;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    @include rowflex(center, center);
+    span {
+      @include rowflexx(center);
+      gap: 5px;
+      p {
+        text-align: center;
+        margin: 0;
+        // width: 60%;
+        @include fontMedium(1em, 1.4em, $yellow-900);
+
+        @include breakpoint(mobileonly) {
+          width: 85%;
+          @include fontNormal(0.8em, 1.4em, $yellow-900);
+        }
+      }
+    }
+  }
+  @include breakpoint(mobileonly) {
+    margin-bottom: 30px !important;
+  }
+  // &__content {
+
+  //     // padding: 20px 50px 20px 50px !important;
+
+  .notif_userprofile {
+    width: 200px;
+    color: #000000;
+    font-family: 'Manrope';
+    font-weight: 600;
+  }
+
+  // }
+  .header-icons {
+    width: fit-content;
+    @include rowflex(center, center);
+    justify-content: center !important;
+    align-items: center !important;
+    .vestirate:nth-child(1) {
+      margin-right: 20px;
+    }
+    .notif_cont {
     
+  
+      
+  
 
-    // @include breakpoint(mobileonly){
-    //     // padding: 20px 10px 20px 10px !important;
-    // }
-    z-index: 152 !important;
+      /* Greyscale / 50 */
 
-    &__info {
-        cursor: pointer;
-        background-color: $yellow-200;
-        border-bottom: 1px solid $yellow-400;
+      background: #fafafa;
+      border-radius: 1000px;
+  
+      position: relative;
+
+      z-index: 160;
+      &.active {
+        background-color: $vesti-200;
+      }
+      .notif_icon {
+        filter: invert(50%) sepia(96%) saturate(927%) hue-rotate(11deg)
+          brightness(108%) contrast(91%);
+        transition: all 0.5s ease;
+
+        &.active {
+          filter: none;
+        }
+      }
+      .notification-box {
+        height: 400px;
+        width: 250px;
+        padding: 20px 10px 20px 10px;
+        overflow-y: scroll;
+        border-radius: 10px;
+        background-color: #ffff;
+        border: 1px solid $gray-300;
         position: absolute;
-        top: 80px;
-        left: 0;
-        right: 0;
-        width: 100%;
-        padding: 10px 0px 10px 0px;
-        @include rowflex(center,center);
-        span {
-            @include rowflexx(center);
-            gap: 5px;
-            p{
-                text-align: center;
+        top: -450px;
+        left: -180px;
+        scrollbar-width: thin;
+        z-index: 270000 !important;
+        transition: all 1s ease;
+        @include colflex(flex-start, center);
+
+        &.active {
+          top: 90px;
+        }
+        &::-webkit-scrollbar {
+          width: 4px;
+        }
+        &::-webkit-scrollbar-track {
+          background: $vesti-200;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: $vesti-700;
+          border-radius: 6px;
+          border: $vesti-900;
+        }
+        @include breakpoint(mobileonly) {
+          top: -450px;
+          left: -200px;
+        }
+        hr:last-child {
+          display: none;
+        }
+
+        hr {
+          width: 100%;
+          background-color: $gray-300;
+        }
+        .notification-box_inner {
+          width: 95%;
+          height: 90%;
+          @include colflexx(flex-start);
+
+          img {
+            width: 150px;
+            opacity: 0.8;
+            margin-bottom: 10px;
+          }
+          .empty {
+            margin: 0;
+            text-align: center;
+            @include fontNormal(1em, 1em, $gray-500);
+          }
+
+          .clear-not {
+            margin: 0px;
+            transition: all 0.5s ease;
+            @include fontMedium(1em, 1em, red);
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+          .singlenotification {
+            @include rowflex(center, space-between);
+            width: 100%;
+            height: fit-content;
+            // background-color: red;
+
+            &__text {
+              width: 85%;
+              @include colflexx(flex-start);
+              p:nth-child(1) {
                 margin: 0;
-                // width: 60%;
-                @include fontMedium(1em, 1.4em, $yellow-900);
-    
-                @include breakpoint(mobileonly){
-                    width: 85%;
-                    @include fontNormal(.8em, 1.4em, $yellow-900);
-                }
+                @include fontMedium(0.8em, 1em, $vesti-700);
+              }
+              p:nth-child(2) {
+                width: 100%;
+                margin-top: 5px;
+                text-transform: capitalize;
+                line-height: 0.5em;
+                margin-bottom: 0px;
+                @include fontNormal(1em, 1.4em, $vesti-901);
+              }
             }
+
+            i {
+              font-size: 1.2em;
+              z-index: 1;
+              color: $vesti-901;
+              transition: all 0.5s ease;
+
+              &:hover {
+                font-size: 1.4em;
+                color: red;
+              }
+            }
+          }
         }
-       
-        
-
+      }
     }
-    @include breakpoint(mobileonly){
-        margin-bottom: 30px !important;
-    }
-    // &__content {
-
-    //     // padding: 20px 50px 20px 50px !important;
-    // }
-    .header-icons {
-        width: fit-content;
-        @include rowflex(center,center);
-        justify-content: center !important;
-        align-items: center !important;
-        .vestirate:nth-child(1){
-            margin-right: 20px;
-        }
-        .notif_cont{
-            position: relative;
-            background-color: #F8E5BF;
-            z-index: 160;
-            &.active {
-                background-color: $vesti-200;
-            }
-            .notif_icon {
-                filter: invert(50%) sepia(96%) saturate(927%) hue-rotate(11deg) brightness(108%) contrast(91%);
-                transition: all .5s ease;
-
-                &.active {
-                    filter: none;
-                }
-            }
-            .notification-box {
-                height: 400px;
-                width: 250px;
-                padding: 20px 10px 20px 10px;
-                overflow-y: scroll;
-                border-radius: 10px;
-                background-color: #ffff;
-                border: 1px solid $gray-300;
-                position: absolute;
-                top: -450px;
-                left: -180px;
-                scrollbar-width: thin;
-                z-index: 270000 !important;
-                transition: all 1s ease;
-                @include colflex(flex-start,center);
-
-                &.active {
-                    top: 90px;
-                }
-                &::-webkit-scrollbar {
-                    width: 4px;
-
-                }
-                &::-webkit-scrollbar-track {
-                    background: $vesti-200;
-                }
-                &::-webkit-scrollbar-thumb {
-                    background-color: $vesti-700 ;
-                    border-radius: 6px;
-                    border: $vesti-900;
-                }
-                @include breakpoint (mobileonly){
-                    top: -450px;
-                    left: -200px;
-                }
-                hr:last-child{
-                    display: none;
-                }
-
-                hr {
-                    width: 100%;
-                    background-color:$gray-300;
-
-                }
-                .notification-box_inner {
-                    width: 95%;
-                    height: 90%;
-                    @include colflexx(flex-start);
-
-                    img {
-                        width: 150px;
-                        opacity: .8;
-                        margin-bottom: 10px;
-                    }
-                    .empty {
-                        margin: 0;
-                        text-align: center;
-                        @include fontNormal(1em,1em,$gray-500);
-                    }
-
-                    .clear-not {
-                        margin:0px;
-                        transition: all .5s ease;
-                        @include fontMedium(1em,1em,red);
-                        
-
-                        &:hover {
-                            text-decoration: underline;
-                        }
-                    }
-                    .singlenotification {
-                        @include rowflex(center, space-between);
-                        width: 100%;
-                        height: fit-content;
-                        // background-color: red;
-                        
-                        &__text {
-                            width: 85%;
-                            @include colflexx(flex-start);
-                            p:nth-child(1){
-                                margin: 0;
-                                @include fontMedium(.8em,1em,$vesti-700);
-                            }
-                            p:nth-child(2){
-                                width: 100%;
-                                margin-top: 5px;
-                                text-transform: capitalize;
-                                line-height: .5em;
-                                margin-bottom: 0px;
-                                @include fontNormal(1em,1.4em,$vesti-901);
-                            }
-                        }
-
-                        i {
-                            font-size: 1.2em;
-                            z-index: 1;
-                            color: $vesti-901;
-                            transition: all .5s ease;
-
-                            &:hover {
-                                font-size: 1.4em;
-                                color: red;
-                            }
-                        }
-                        
-                    }
-                }
-            }
-        }
-    }
-    
+  }
 }
 
-.backtrack{
-    @include rowflexx(center);
-    gap: 10px;
-    cursor: pointer;
-    p{
-        margin: 0px;
-        @include fontMedium(1.4em,1em,$vesti-700);
-    }
-    i {
-        color: $vesti-700;
-        font-size: 1.4em;
-    }
+.backtrack {
+  @include rowflexx(center);
+  gap: 10px;
+  cursor: pointer;
+  p {
+    margin: 0px;
+    @include fontMedium(1.4em, 1em, $vesti-700);
+  }
+  i {
+    color: $vesti-700;
+    font-size: 1.4em;
+  }
 }

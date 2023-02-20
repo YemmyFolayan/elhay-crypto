@@ -112,3 +112,10 @@ export const nairapattern = require('./svg/nairapattern.svg');
 export const usd = require('./svg/naira.svg');
 
 export const founders = require('./svg/naira.svg');
+
+
+export const talts = require('./svg/talts.svg');
+
+export const tgift = require('./svg/tgift-card.svg');
+
+export const tbitcoin = require('./svg/tbitcoin-logo.svg');

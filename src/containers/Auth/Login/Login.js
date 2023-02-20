@@ -260,7 +260,7 @@ class Login extends Component {
               <img src={logoblack} alt="netwebpay" width="6%" height="6%" />
 
               <div className="d-flex pt-2">
-                <a className="text-dark title_text main_font_family" href="/">
+                <a className="section-heading title_text main_font_family" href="/">
                   Elhay Limited
                 </a>
               </div>
