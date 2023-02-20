@@ -160,8 +160,7 @@ input {
 }
 
 .home_sidebar_icon {
- 
-  color: #E4AD50 !important; 
+  color: #e4ad50 !important;
 }
 
 .mini_side_box {
@@ -240,11 +239,10 @@ input {
 
 .text_manrope {
   font-family: 'Manrope';
-font-style: normal;
-font-weight: 1000;
-font-size: 14px;
-line-height: 150%;
-
+  font-style: normal;
+  font-weight: 1000;
+  font-size: 14px;
+  line-height: 150%;
 }
 
 .white_subtitle_txt {
@@ -277,68 +275,62 @@ line-height: 150%;
 }
 
 .wallet_white_details {
-position: relative;
-width: 500px;
-height: 90px;
-left: 0px;
-top: 0px;
+  position: relative;
+  width: 500px;
+  height: 90px;
+  left: 0px;
+  top: 0px;
 
-background: #FFFFFF;
-border-radius: 15.2752px;
+  background: #ffffff;
+  border-radius: 15.2752px;
 }
 
 .dashboard_trade_container {
- 
-border: 1px solid #E4ECF3;
-border-radius: 17.48px;
-width: 40%;
-height: 80%;
-margin-top: 8%;
-margin-bottom: 0;
-padding-bottom: 0;
+  border: 1px solid #e4ecf3;
+  border-radius: 17.48px;
+  width: 40%;
+  height: 80%;
+  margin-top: 8%;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .dashboard_trade {
+  padding: 1%;
+  margin: 6%;
+  width: 90%;
+  height: 20%;
 
-padding: 1%;
-margin: 6%;
-width: 90%;
-height: 20%;
+  background: #ffe8c2;
+  border-radius: 14.5924px;
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15.8066px;
+  line-height: 20px;
+  /* or 129% */
 
+  display: flex;
+  align-items: center;
 
-background: #FFE8C2;
-border-radius: 14.5924px;
-font-family: 'Plus Jakarta Sans';
-font-style: normal;
-font-weight: 700;
-font-size: 15.8066px;
-line-height: 20px;
-/* or 129% */
+  /* Brand Color/Primary */
 
-display: flex;
-align-items: center;
-
-/* Brand Color/Primary */
-
-color: #202734;
+  color: #202734;
 }
 
-
-.dashboard_trade img{
-
+.dashboard_trade img {
   width: 45.16px;
   height: 45.16px;
   left: 17.51px;
   top: 12.65px;
   padding: 2%;
   margin: 0;
-  background: #FFFFFF;
+  background: #ffffff;
   backdrop-filter: blur(150.728px);
   /* Note: backdrop-filter has minimal browser support */
-  
-  border-radius: 5.64523px;
-  }
 
+  border-radius: 5.64523px;
+}
 
 .nairapattern {
   position: absolute;
@@ -431,7 +423,6 @@ color: #202734;
   top: 952px;
 }
 
-
 .instruction_text {
   width: 80%;
   height: 42px;
@@ -450,8 +441,19 @@ color: #202734;
   color: #000000 !important;
 }
 
+.viewall_transactions {
+  /* position: absolute; */
 
 
+  display: flex;
+  justify-content: flex-end;
+  
+   width: 90%;
+  /* Greyscale / 50 */
+  color: #000000;
+  background: #fafafa;
+  border-radius: 8.74053px;
+}
 
 .footer_text_signup {
   gap: 80%;

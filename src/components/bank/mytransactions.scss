@@ -5,6 +5,13 @@
     width: 100%;
     margin-top: 80px;
     margin-bottom: 50px;
+    background: #FFFFFF;
+/* Greyscale / 200 */
+
+border: 1.09257px solid #EDF2F7;
+border-radius: 17.4811px;
+padding: 2%;
+width: 90%;
     @include colflexx(flex-start);
     overflow-x: auto !important;
     // background-color: red;

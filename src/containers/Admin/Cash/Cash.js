@@ -731,7 +731,7 @@ const Cash = props => {
             style={{ height: 'fit-content', width: '100%' }}
           >
             <div className=" flex_page_container d-flex justify-content-center ">
-              <div className=" px-3 w-100">
+              <div className="px-3 w-100 main_transaction_box">
                 {/* main start */}
                 <div className="row bank-cont">
                   <div className="col-10 col-lg-5 col-md-10 pt-3">
@@ -890,9 +890,15 @@ const Cash = props => {
                 ) : (
                   <Mytransactions balance={userData.walletInNGNKobo} />
                 )}
+              
               </div>
+              
             </div>
+            <Link to={`/`}>
+                  <div className="viewall_transactions"> View all ﹥</div>
+                </Link>
           </div>
+        
         </div>
       </Layout>
     </>
