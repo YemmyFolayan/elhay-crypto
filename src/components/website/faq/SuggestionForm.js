@@ -7,7 +7,7 @@ const SuggestionForm = props => {
     <Form style={{ width: '100%' }}>
       <div className="w-100 flex-fill pt-4" style={{ width: '100%' }}>
         <h1 style={{ color: '#000000' }}>Suggestion Box</h1>
-        <p style={{ color: '#000080' }}>
+        <p style={{ color: '#000000' }}>
           Create a unique handle to identify the end-user and check to ensure it
           is available.
         </p>

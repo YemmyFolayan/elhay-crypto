@@ -85,7 +85,7 @@ export default JapaWithSense;
 //                 <div className="card-body">
 //                     <img className="img-fluid" src={props.image} alt="" />
 //                     <h5 className="card-title mb-2" style= {{color: "#000000"}}>Japa With Sense</h5>
-//                     <p className="card-text fw-bold" style= {{color: "#000080"}} >Featuring: Sola Amusan & Steve Harris <span className="text-muted">Sat, Jul 30 • 11:00PM CAT</span></p>
+//                     <p className="card-text fw-bold" style= {{color: "#000000"}} >Featuring: Sola Amusan & Steve Harris <span className="text-muted">Sat, Jul 30 • 11:00PM CAT</span></p>
 //                     <a style= {{color: "#000000"}} href="#/">Watch Webinar<img src={arrowright} alt="arrowright"/></a>
 //                 </div>
 //             </div>

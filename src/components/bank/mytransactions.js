@@ -27,7 +27,7 @@ export const Mytransactions = props => {
     return (
       <div className="mytransactions-container">
         <Titlesubtitle
-          title="My Transactions"
+          title="Open Trades"
           subtitle="See all transactions you've carried out on NetWebPay."
         />
         <div className="mytransactions-center-container">
@@ -39,7 +39,7 @@ export const Mytransactions = props => {
     return (
       <div className="mytransactions-container">
         <Titlesubtitle
-          title="My Transactions"
+          title="Open Trades"
           subtitle="See all transactions you've carried out on NetWebPay."
         />
 
@@ -93,7 +93,7 @@ export const Mytransactions = props => {
   } else {
     return (
       <div className="mytransactions-container">
-        <p className="mytransactions-container__title">My Transactions</p>
+        <p className="mytransactions-container__title">Open Trades</p>
         <div className="mytransactions-center-container">
           <Empty
             title="No Transaction Found"

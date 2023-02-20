@@ -45,7 +45,7 @@ const BalanceCard = ({
             border: '0.5px solid #E4AD50',
             borderRadius: '5px',
             padding: '5px 8px',
-            color: '#518C36',
+            color: '#000000',
           }}
         >
           <span

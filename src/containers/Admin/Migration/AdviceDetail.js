@@ -209,7 +209,7 @@ const AdviceDetailComponent = ({
               height: '30px',
               width: '30px',
               borderRadius: '50vw',
-              border: '1px solid #000080',
+              border: '1px solid #000000',
             }}
             src={profilePicture}
             alt="profile"

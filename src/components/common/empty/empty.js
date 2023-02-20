@@ -1,6 +1,6 @@
 import React from 'react';
 import './empty.scss';
-import empty from '../../../assets/empty.svg';
+import empty from '../../../assets/svg/empty.svg';
 import sempty from '../../../assets/smallempty.svg';
 import { Platformbutton } from '../button/button';
 export const Empty = props => {
@@ -28,7 +28,7 @@ export const Smallempty = props => {
   return (
     <div className="smallempty">
       <div className="smallempty__inner">
-        <img src={sempty} alt="Empty SVG" />
+        <img src={empty} alt="Empty SVG" />
         <span className="smallempty__detail">
           <p className="smallempty__title">{props.title}</p>
           <p className="smallempty__subtitle">{props.subtitle}</p>

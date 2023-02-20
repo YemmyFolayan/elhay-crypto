@@ -220,7 +220,7 @@ const ServiceDetailComponent = props => {
           style={{
             //   fontWeight: 500,
             //   fontSize: '30px',
-            //   color: '#000080',
+            //   color: '#000000',
             maxWidth: 'fit-content',
           }}
           className="service-detail-title mb-3"
