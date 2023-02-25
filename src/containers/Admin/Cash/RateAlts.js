@@ -92,7 +92,7 @@ const useFetchUser = () => {
   return { isLoading, userData, refetch };
 };
 
-const Rate = props => {
+const RateAlts = props => {
   const path = window.location.pathname;
   const [state, setState] = useState({
     modal: false,
@@ -751,13 +751,7 @@ const Rate = props => {
 
                     <div className="d-flex gba_sidebar_container">
                       <NavLink to="/rates">
-                        <div
-                          className={`gba_sidebar ${
-                            path.startsWith('/rate') ? 'active_gba_sidebar' : ''
-                          }`}
-                        >
-                          GiftCard
-                        </div>
+                        <div className="gba_sidebar">GiftCard</div>
                       </NavLink>
 
                       <NavLink to="/ratebitcoin">
@@ -784,32 +778,7 @@ const Rate = props => {
                         </div>
                       </NavLink>
                     </div>
-                    {/* <Newbalancecard
-                      title ={`Your ${currency ? 'NGN':'USD'} vesti balance`}
-                      onClick={toggle}
-                      reveal={state.modal}
-                      nairaAmount={userData.walletInNGNKobo / 100}
-                      dollarAmount={userData.walletAmountInUSCents / 100}
-                      accountNumber = {userData.providusAccountNumber}
-                      currency={ currency}
-                      toggleCurrency={toggleCurrency}
-                      request = {accountRequest}
-                      foundersBalance={balance/100}
-                      // toggle() redirectTransfer() showWithdrawalModal()
-                      deposit={() => userData.verifiedKyc === "APPROVED" || userData.verifiedKyc === true ? currency ? toggle() :  dispatch(walletUsdAction({usdOpen:true,action:'deposit'})) :openUpdateModal()}
-                      send={() => userData.verifiedKyc === "APPROVED" || userData.verifiedKyc === true ? redirectTransfer() :openUpdateModal()}
-                      withdraw ={() => userData.verifiedKyc === "APPROVED" || userData.verifiedKyc === true ? currency? showWithdrawalModal() : setUsdmodal(true) : openUpdateModal()}
-                      setUpload={setUpload}
-                      loanAmount={userData.loanAmount / 100}
-                      loanAmountPaid={userData.loanInterestPaid / 100}
-                      loanForm= {userData.isLoanFormUploaded}
-                      rate={rate}
-                      userdata={userData}
-                      convert = {()=> setFundmodal({...fundmodal, currency:'NGN', value:true})}
-                      stripeVirtualAccountNumber ={userData.stripeVirtualAccountNumber}
-                      active={activeAccount}
-                      setActive ={setActiveAccount}
-                    /> */}
+              
 
                     {loading ? (
                       <Loader />
@@ -848,54 +817,30 @@ const Rate = props => {
                               <div className="justify-content-between rate_giftcard_container">
                                 <div className="w-100 bottom_border">
                                   <Field
-                                    className="form_element_rate w-100"
+                                    className="w-100"
                                     component={() => (
                                       <Select
                                         className="form_element_rate form_select_1 w-100"
-                                        name="cardbrand"
-                                        placeholder="Select a Card Brand*"
+                                        name="atltype"
+                                        placeholder="Select Alts*"
                                         //defaultValue={gender}
                                         onChange={e =>
                                           this.setState({ gender: e })
                                         }
                                         options={[
-                                          { label: 'Amex', value: 'Amex' },
                                           {
-                                            label: 'Sephora',
-                                            value: 'Sephora',
+                                            label: 'BRC20',
+                                            value: 'BRC21',
                                           },
-                                          { label: 'Other', value: 'other' },
+                                          { label: 'BRC20', value: 'BRC20' },
+
+                                          { label: 'BRC21', value: 'BRC21' },
                                         ]}
                                       />
                                     )}
                                   />
                                   <ErrorMessage
-                                    name="cardbrand"
-                                    component="div"
-                                    className="text-red-500 text-xs"
-                                  />
-                                </div>
-
-                                <div className="w-100 bottom_border">
-                                  <div className="countryflagselect small_flag_space">
-                                    <RegionSelect
-                                      countryOnly
-                                      selectedCountryCode=""
-                                      handleChange={handleCitizenship}
-                                      className="form_element_rate form_select_1 w-100"
-                                      name="cardcountry"
-                                    />
-
-                                    <img
-                                      className="down_ico"
-                                      src={ChevDIco}
-                                      alt="down"
-                                      width="20"
-                                      height="20"
-                                    />
-                                  </div>
-                                  <ErrorMessage
-                                    name="cardcountry"
+                                    name="atltype"
                                     component="div"
                                     className="text-red-500 text-xs"
                                   />
@@ -907,26 +852,26 @@ const Rate = props => {
                                     component={() => (
                                       <Select
                                         className="form_element_rate form_select_1 w-100"
-                                        name="cardtype"
-                                        placeholder="Select a Card Type*"
+                                        name="wallettype"
+                                        placeholder="Select Wallet Type*"
                                         //defaultValue={gender}
                                         onChange={e =>
                                           this.setState({ gender: e })
                                         }
                                         options={[
                                           {
-                                            label: 'MasterCard',
-                                            value: 'MasterCard',
+                                            label: 'BRC20',
+                                            value: 'BRC21',
                                           },
-                                          { label: 'Visa', value: 'Visa' },
+                                          { label: 'BRC20', value: 'BRC20' },
 
-                                          { label: 'Other', value: 'other' },
+                                          { label: 'BRC21', value: 'BRC21' },
                                         ]}
                                       />
                                     )}
                                   />
                                   <ErrorMessage
-                                    name="cardtype"
+                                    name="wallettype"
                                     component="div"
                                     className="text-red-500 text-xs"
                                   />
@@ -960,74 +905,15 @@ const Rate = props => {
                               >
                                 Check Rates
                               </button>
+
+                              <div className="rate_bitcoin_word"> Amount you will receive </div>
+
+                              <div className="rate_bitcoin_total"> $850.00 </div>
                             </Form>
                           </>
                         )}
                       </Formik>
                     )}
-                  </div>
-                  <div className="col-10 col-lg-7 col-md-10 pt-3">
-                    <div className="rate_calculation_container">
-                    <div className="rate_calculation_header">Rate Calculation</div>
-                   
-                      <div className="table-container">
-                        <table className="transactions-table">
-                               <thead>
-                            <tr>
-                              <th></th>
-                          
-                            </tr>
-                          </thead>
-
-                          <tbody>
-                            <tr>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>Card Brand</td>
-
-                              <td className="rate_calculation_value">ITUNES</td>
-                            </tr>
-                            <tr>
-                        
-                              <td>Card Country</td>
-
-                              <td className="rate_calculation_value">GERMANY</td>
-                            </tr>
-                            <tr>
-                              <td> Card Type</td>
-
-                              <td className="rate_calculation_value">ECODE</td>
-                            </tr>
-                            <tr>
-                              <td > Card Value</td>
-
-                              <td className="rate_calculation_value">2550.0</td>
-                            </tr>
-                            <tr>
-                              <td> Rate</td>
-
-                              <td className="rate_calculation_value">360.0/$</td>
-                            </tr>
-                            <tr>
-                              <td> Amount to Recieve</td>
-
-                              <td className="rate_calculation_value">N 918,000.00</td>
-                            </tr>
-                          </tbody>
-                          {/* <tbody>
-                {data.data.map((item, index) => (
-                  <Trow
-                    key={index}
-                    type={item.billerType}
-                    currency={item.currency}
-                 
-                  />
-                ))}
-              </tbody> */}
-                        </table>
-                      </div>
-                    </div>
                   </div>
 
                   {/* {!userData.stripeVirtualAccountNumber && (
@@ -1109,4 +995,4 @@ const mapDispatchToProps = {
   openUpdateBox,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Rate);
+export default connect(mapStateToProps, mapDispatchToProps)(RateAlts);

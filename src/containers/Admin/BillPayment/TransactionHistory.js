@@ -46,7 +46,7 @@ export const TransactionHistory = props => {
       <div className="mytransactions-container">
         <Titlesubtitle
           title="My Transaction History"
-          subtitle="See all bills payment transactions you've carried out on NetWebPay."
+          subtitle="See all bills payment transactions you've carried out on elhay"
         />
         <div className="mytransactions-center-container">
           <Loader />
@@ -58,7 +58,7 @@ export const TransactionHistory = props => {
       <div className="mytransactions-container">
         <Titlesubtitle
           title="My Transaction History"
-          subtitle="See all bills payment transactions you've carried out on NetWebPay."
+          subtitle="See all bills payment transactions you've carried out on elhay"
         />
 
         <div className="mytransactions-inner-container">

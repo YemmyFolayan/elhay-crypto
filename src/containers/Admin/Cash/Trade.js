@@ -11,13 +11,7 @@ import { redirectTransfer } from 'routes/RedirectRoutes';
 import Layout from 'components/common/DashboardLayout';
 import { addCashToWallet } from './actions/index';
 import VirtualCardModal from './VirtualCardModal';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import RegionSelect from 'react-region-flag-select';
-import Select from 'react-select';
-import { Tooltip } from 'antd';
-import * as Yup from 'yup';
-import _ from 'lodash';
-import Inputfloat from 'components/common/inputs/inputfloat';
+// import { useFounders } from 'helpers/hooks';
 import Ordercard from 'components/vesticards/selectcard';
 import { Mytransactions } from 'components/bank/mytransactions';
 import { Depositwallet, Providusaccount } from 'components/deposit/deposit';
@@ -74,12 +68,7 @@ import {
   tbitcoin,
   tgift,
   logoblack,
-  ChevDIco,
 } from '../../../assets/assets';
-
-const RateSchema = Yup.object().shape({
-  amount: Yup.string().required('Amount is required'),
-});
 
 const useFetchUser = () => {
   const { isLoading, data: userData, refetch } = useQuery(
@@ -92,8 +81,7 @@ const useFetchUser = () => {
   return { isLoading, userData, refetch };
 };
 
-const Rate = props => {
-  const path = window.location.pathname;
+const Trade = props => {
   const [state, setState] = useState({
     modal: false,
     withdrawalModal: false,
@@ -153,109 +141,106 @@ const Rate = props => {
 
   const { userDatas, refetch } = useFetchUser();
 
-  const userData = {
-    id: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79f',
-    firstName: 'Yemi',
-    lastName: 'Folayan',
-    email: 'foyemc@gmail.com',
-    username: 'folayanyemi',
-    emailVerified: true,
-    wasReferred: null,
-    blacklisted: false,
-    superAdmin: false,
-    FactorAuth: true,
-    FactorAuthCode: '826576',
-    providusAccountNumber: '9989238879',
-    adminType: 'SUPERADMIN_INTEGRATOR',
-    userType: 'PROVIDER',
-    planType: 'PLATINUM_USER',
-    dob: '1998-05-16',
-    location: 'USA',
-    nextOfKin: 'yemi',
-    profilePictureURL: null,
-    country: 'NIGERIA',
-    rewardCode: '172693VESTI',
-    juiceUserId: '6e8fbd24-789f-4be5-b6ce-1dad382c6cda',
-    phoneNumber: '+2348103817187',
-    gender: 'male',
-    referalCode: 'Y-iih5S9mm',
-    totalReffered: '0',
-    ReferalLink: 'https://app.wevesti.com/register?referalCode=Y-iih5S9m',
-    walletAmountInUSCents: '68',
-    walletInNGNKobo: '85414',
-    ngnWithdrawalLimit: '50000000',
-    ngnDailyLimit: '3000000000',
-    usdWithdrawalLimit: '100000',
-    usdDailyWithdrawalLimit: '200000',
-    ngnTransaferLimit: '500000000',
-    usdTransaferLimit: '100000',
-    ngnDailyTransferLimit: '3000000000',
-    usdDailyTransferLimit: '250000',
-    isNewApp: 'true',
-    deviceType: 'website',
-    achbankName: null,
-    achAccountName: null,
-    achAccountNumber: null,
-    achRoutingNumber: null,
-    achWithdrawalAmount: null,
-    achTransactionId: null,
-    countryofChoice: '[ { "usa","London","canada" }]',
-    cardBalance: '97',
-    hasVirtualCard: 'true',
-    kycLevel: 'Level3',
-    passedKyc: true,
-    kycDocumentStatus: 'APPROVED',
-    silaAccountName: null,
-    silaNickName: null,
-    silaHandle: null,
-    silaKycStatus: null,
-    silaWallet: null,
-    silaWalletAddress: null,
-    silaWalletKey: null,
-    silaDocumentVerified: null,
-    silaDocumentId: null,
-    isLoanApplicant: true,
-    apto_cardholder_id: null,
-    apto_card_application_id: null,
-    creditData: null,
-    level1Kyc: null,
-    apto_cardholder_token: null,
-    virtualCardWaitlistStatus: null,
-    isLoanInterestPaid: null,
-    loanInterestPaid: null,
-    verificationId: null,
-    verificationType: 'BVN',
-    verificationNumber: 'U2FsdGVkX1/frZA80XoTqDS/PJx308eeLBRriS9icHg=',
-    loanAmount: null,
-    isLoanFormUploaded: null,
-    accountDeleted: null,
-    stripeVirtualAccountNumber: '9670003031',
-    stripeVirtualAccountRoutingNumber: '084106768',
-    stripeVirtualBankName: 'Evolve Bank and Trust',
-    stripeVirtualSwiftCode: '084106768',
-    monoAccountId: null,
-    monoCardHolderId: '6347f983102bb597ab6d0d0d',
-    foundersFinancialBalance: '17521',
-    stripeAccountStatus: 'VERIFIED',
-    stripeAccountId: 'acct_1LXYfQQkcsIbX10W',
-    integratorJWTAuthentication:
-      'live_sk$2a$08$hKK9SO7vHwlm00oqwjQHr.S9QjQSAeoHcoWouE.miFLbvSzgxrMcG',
-    sandboxIntegratorJWTAuthentication:
-      'sandbox_sk$2a$08$Z083le6grscAcKBv3t0GBupvcnsQ.V1efvpm0bkcrxVjlFnTZkvWW',
-    integratorMode: 'SANDBOX',
-    webhookUrl: null,
-    isExternalIntegrator: true,
-    stripeSourceId: null,
-    stripeVerificationToken: null,
-    stripeFinancialAccountId: 'fa_1LXrAcQkcsIbX10Wqq3g78L4',
-    createdAt: '2021-05-01T18:41:04.932Z',
-    updatedAt: '2023-02-17T08:57:19.955Z',
-    isAdmin: false,
-    hasTransactionPin: true,
-    hasVerifiedKyc: true,
-    registrationToken:
-      'cxmh8z8hRbCb1dtNaU4yJD:APA91bFFWGcGMxPtoC8SC7Ate4vfADxpMW7EQpbuS7mADIwAbJhshnWjYGPBN0k0R6mZVUj17u1K9TNAGDM23vc-IHYFcss55rMbpDhpVvNOq5GuwoGH4KOY5KplJzorqv55O60gksDT',
-  };
+  const userData =   {
+    "id": "6a1a8c22-0a1e-4f37-9bd9-a0963f48d79f",
+    "firstName": "Yemi",
+    "lastName": "Folayan",
+    "email": "foyemc@gmail.com",
+    "username": "folayanyemi",
+    "emailVerified": true,
+    "wasReferred": null,
+    "blacklisted": false,
+    "superAdmin": false,
+    "FactorAuth": true,
+    "FactorAuthCode": "826576",
+    "providusAccountNumber": "9989238879",
+    "adminType": "SUPERADMIN_INTEGRATOR",
+    "userType": "PROVIDER",
+    "planType": "PLATINUM_USER",
+    "dob": "1998-05-16",
+    "location": "USA",
+    "nextOfKin": "yemi",
+    "profilePictureURL": null,
+    "country": "NIGERIA",
+    "rewardCode": "172693VESTI",
+    "juiceUserId": "6e8fbd24-789f-4be5-b6ce-1dad382c6cda",
+    "phoneNumber": "+2348103817187",
+    "gender": "male",
+    "referalCode": "Y-iih5S9mm",
+    "totalReffered": "0",
+    "ReferalLink": "https://app.wevesti.com/register?referalCode=Y-iih5S9m",
+    "walletAmountInUSCents": "68",
+    "walletInNGNKobo": "85414",
+    "ngnWithdrawalLimit": "50000000",
+    "ngnDailyLimit": "3000000000",
+    "usdWithdrawalLimit": "100000",
+    "usdDailyWithdrawalLimit": "200000",
+    "ngnTransaferLimit": "500000000",
+    "usdTransaferLimit": "100000",
+    "ngnDailyTransferLimit": "3000000000",
+    "usdDailyTransferLimit": "250000",
+    "isNewApp": "true",
+    "deviceType": "website",
+    "achbankName": null,
+    "achAccountName": null,
+    "achAccountNumber": null,
+    "achRoutingNumber": null,
+    "achWithdrawalAmount": null,
+    "achTransactionId": null,
+    "countryofChoice": "[ { \"usa\",\"London\",\"canada\" }]",
+    "cardBalance": "97",
+    "hasVirtualCard": "true",
+    "kycLevel": "Level3",
+    "passedKyc": true,
+    "kycDocumentStatus": "APPROVED",
+    "silaAccountName": null,
+    "silaNickName": null,
+    "silaHandle": null,
+    "silaKycStatus": null,
+    "silaWallet": null,
+    "silaWalletAddress": null,
+    "silaWalletKey": null,
+    "silaDocumentVerified": null,
+    "silaDocumentId": null,
+    "isLoanApplicant": true,
+    "apto_cardholder_id": null,
+    "apto_card_application_id": null,
+    "creditData": null,
+    "level1Kyc": null,
+    "apto_cardholder_token": null,
+    "virtualCardWaitlistStatus": null,
+    "isLoanInterestPaid": null,
+    "loanInterestPaid": null,
+    "verificationId": null,
+    "verificationType": "BVN",
+    "verificationNumber": "U2FsdGVkX1/frZA80XoTqDS/PJx308eeLBRriS9icHg=",
+    "loanAmount": null,
+    "isLoanFormUploaded": null,
+    "accountDeleted": null,
+    "stripeVirtualAccountNumber": "9670003031",
+    "stripeVirtualAccountRoutingNumber": "084106768",
+    "stripeVirtualBankName": "Evolve Bank and Trust",
+    "stripeVirtualSwiftCode": "084106768",
+    "monoAccountId": null,
+    "monoCardHolderId": "6347f983102bb597ab6d0d0d",
+    "foundersFinancialBalance": "17521",
+    "stripeAccountStatus": "VERIFIED",
+    "stripeAccountId": "acct_1LXYfQQkcsIbX10W",
+    "integratorJWTAuthentication": "live_sk$2a$08$hKK9SO7vHwlm00oqwjQHr.S9QjQSAeoHcoWouE.miFLbvSzgxrMcG",
+    "sandboxIntegratorJWTAuthentication": "sandbox_sk$2a$08$Z083le6grscAcKBv3t0GBupvcnsQ.V1efvpm0bkcrxVjlFnTZkvWW",
+    "integratorMode": "SANDBOX",
+    "webhookUrl": null,
+    "isExternalIntegrator": true,
+    "stripeSourceId": null,
+    "stripeVerificationToken": null,
+    "stripeFinancialAccountId": "fa_1LXrAcQkcsIbX10Wqq3g78L4",
+    "createdAt": "2021-05-01T18:41:04.932Z",
+    "updatedAt": "2023-02-17T08:57:19.955Z",
+    "isAdmin": false,
+    "hasTransactionPin": true,
+    "hasVerifiedKyc": true,
+    "registrationToken": "cxmh8z8hRbCb1dtNaU4yJD:APA91bFFWGcGMxPtoC8SC7Ate4vfADxpMW7EQpbuS7mADIwAbJhshnWjYGPBN0k0R6mZVUj17u1K9TNAGDM23vc-IHYFcss55rMbpDhpVvNOq5GuwoGH4KOY5KplJzorqv55O60gksDT"
+};
   // const { balance, foundersRefetch } = useFounders(
   //   userData.id,
   //   userData.stripeAccountStatus,
@@ -469,15 +454,14 @@ const Rate = props => {
       .catch(err => {
         console.log(err);
       });
+
+    // eslint-disable-next-line
   }, []);
 
-  var handleLocation = data => {
-    this.setState({ location: data });
-  };
-
-  var handleCitizenship = data => {
-    this.setState({ citizen: data });
-  };
+  // useEffect(()=> {
+  //   foundersRefetch()
+  //   // eslint-disable-next-line
+  // },[userData.id, !isPreviousFoundersData])
 
   return (
     <>
@@ -575,7 +559,7 @@ const Rate = props => {
             myData={localStorage.getItem('userData')}
           />
         </Simplemodal>
-        {/* 
+{/* 
         <Simplemodal
           onClick={() => {
             // foundersRefetch();
@@ -747,43 +731,7 @@ const Rate = props => {
                 {/* main start */}
                 <div className="row bank-cont">
                   <div className="col-10 col-lg-5 col-md-10 pt-3">
-                    <div className="section-heading">Rate Calculator</div>
-
-                    <div className="d-flex gba_sidebar_container">
-                      <NavLink to="/rates">
-                        <div
-                          className={`gba_sidebar ${
-                            path.startsWith('/rate') ? 'active_gba_sidebar' : ''
-                          }`}
-                        >
-                          GiftCard
-                        </div>
-                      </NavLink>
-
-                      <NavLink to="/ratebitcoin">
-                        <div
-                          className={`gba_sidebar ${
-                            path.startsWith('/ratebitcoin')
-                              ? 'active_gba_sidebar'
-                              : ''
-                          }`}
-                        >
-                          Bitcoins
-                        </div>
-                      </NavLink>
-
-                      <NavLink to="/ratealts">
-                        <div
-                          className={`gba_sidebar ${
-                            path.startsWith('/ratealts')
-                              ? 'active_gba_sidebar'
-                              : ''
-                          }`}
-                        >
-                          Alts
-                        </div>
-                      </NavLink>
-                    </div>
+                    <div className="section-heading">My Trades </div>
                     {/* <Newbalancecard
                       title ={`Your ${currency ? 'NGN':'USD'} vesti balance`}
                       onClick={toggle}
@@ -810,227 +758,97 @@ const Rate = props => {
                       active={activeAccount}
                       setActive ={setActiveAccount}
                     /> */}
-
-                    {loading ? (
-                      <Loader />
-                    ) : (
-                      <Formik
-                        enableReinitialize
-                        initialValues={{
-                          amount: '',
-                          cardbrand: '',
-                          cardnumber: '',
-                          cardtype: '',
-                          cardcountry: '',
-                        }}
-                        validationSchema={RateSchema}
-                        onSubmit={(values, { setSubmitting, resetForm }) => {
-                          setSubmitting(true);
-
-                          const { countryData } = values.location;
-                          const data = {
-                            ...values,
-                          };
-                          this.props.giftCardRate(data);
-                          setSubmitting(false);
-                        }}
-                      >
-                        {props => (
-                          <>
-                            <div className="ErrorMessageFormik">
-                              {!_.isEmpty(props.errors)
-                                ? `Errors: ${Object.values(props.errors).join(
-                                    ', ',
-                                  )}`
-                                : ''}
-                            </div>
-                            <Form>
-                              <div className="justify-content-between rate_giftcard_container">
-                                <div className="w-100 bottom_border">
-                                  <Field
-                                    className="form_element_rate w-100"
-                                    component={() => (
-                                      <Select
-                                        className="form_element_rate form_select_1 w-100"
-                                        name="cardbrand"
-                                        placeholder="Select a Card Brand*"
-                                        //defaultValue={gender}
-                                        onChange={e =>
-                                          this.setState({ gender: e })
-                                        }
-                                        options={[
-                                          { label: 'Amex', value: 'Amex' },
-                                          {
-                                            label: 'Sephora',
-                                            value: 'Sephora',
-                                          },
-                                          { label: 'Other', value: 'other' },
-                                        ]}
-                                      />
-                                    )}
-                                  />
-                                  <ErrorMessage
-                                    name="cardbrand"
-                                    component="div"
-                                    className="text-red-500 text-xs"
-                                  />
-                                </div>
-
-                                <div className="w-100 bottom_border">
-                                  <div className="countryflagselect small_flag_space">
-                                    <RegionSelect
-                                      countryOnly
-                                      selectedCountryCode=""
-                                      handleChange={handleCitizenship}
-                                      className="form_element_rate form_select_1 w-100"
-                                      name="cardcountry"
-                                    />
-
-                                    <img
-                                      className="down_ico"
-                                      src={ChevDIco}
-                                      alt="down"
-                                      width="20"
-                                      height="20"
-                                    />
-                                  </div>
-                                  <ErrorMessage
-                                    name="cardcountry"
-                                    component="div"
-                                    className="text-red-500 text-xs"
-                                  />
-                                </div>
-
-                                <div className="w-100 bottom_border">
-                                  <Field
-                                    className="w-100"
-                                    component={() => (
-                                      <Select
-                                        className="form_element_rate form_select_1 w-100"
-                                        name="cardtype"
-                                        placeholder="Select a Card Type*"
-                                        //defaultValue={gender}
-                                        onChange={e =>
-                                          this.setState({ gender: e })
-                                        }
-                                        options={[
-                                          {
-                                            label: 'MasterCard',
-                                            value: 'MasterCard',
-                                          },
-                                          { label: 'Visa', value: 'Visa' },
-
-                                          { label: 'Other', value: 'other' },
-                                        ]}
-                                      />
-                                    )}
-                                  />
-                                  <ErrorMessage
-                                    name="cardtype"
-                                    component="div"
-                                    className="text-red-500 text-xs"
-                                  />
-                                </div>
-
-                                <div className="w-100 bottom_border">
-                                  <Field
-                                    label="amount"
-                                    className="form_element_rate form_select_1 w-100"
-                                    type="text"
-                                    placeholder="Enter Amount in USD*"
-                                    name="amount"
-                                  />
-
-                                  <ErrorMessage
-                                    name="amount"
-                                    component="div"
-                                    className="text-red-500 text-xs"
-                                  />
-                                </div>
-                              </div>
-
-                              <button
-                                type="submit"
-                                className="btn w-100 mb-4 mt-4 primary_btn"
-                                disabled={
-                                  !props.dirty ||
-                                  !_.isEmpty(props.errors) ||
-                                  props.isSubmitting
-                                }
-                              >
-                                Check Rates
-                              </button>
-                            </Form>
-                          </>
-                        )}
-                      </Formik>
-                    )}
+                    <Wallets
+                      nairaAmount={userData.walletInNGNKobo / 100}
+                      dollarAmount={userData.walletAmountInUSCents / 100}
+                      accountNumber={userData.providusAccountNumber}
+                      request={accountRequest}
+                      //foundersBalance={balance / 100}
+                      depositUsd={() =>
+                        userData.verifiedKyc === 'APPROVED' ||
+                        userData.verifiedKyc === true
+                          ? dispatch(
+                              walletUsdAction({
+                                usdOpen: true,
+                                action: 'deposit',
+                              }),
+                            )
+                          : openUpdateModal()
+                      }
+                      withdrawUsd={() =>
+                        userData.verifiedKyc === 'APPROVED' ||
+                        userData.verifiedKyc === true
+                          ? setUsdmodal(true)
+                          : openUpdateModal()
+                      }
+                      // sendUsd={() => userData.verifiedKyc === "APPROVED" || userData.verifiedKyc === true ? dispatch(walletUsdAction({usdOpen:true,action:'withdraw'})) :openUpdateModal()}
+                      deposit={() =>
+                        userData.verifiedKyc === 'APPROVED' ||
+                        userData.verifiedKyc === true
+                          ? toggle()
+                          : openUpdateModal()
+                      }
+                      send={() =>
+                        userData.verifiedKyc === 'APPROVED' ||
+                        userData.verifiedKyc === true
+                          ? redirectTransfer()
+                          : openUpdateModal()
+                      }
+                      withdraw={() =>
+                        userData.verifiedKyc === 'APPROVED' ||
+                        userData.verifiedKyc === true
+                          ? currency
+                            ? showWithdrawalModal()
+                            : setUsdmodal(true)
+                          : openUpdateModal()
+                      }
+                      userdata={userData}
+                      stripeVirtualAccountNumber={
+                        userData.stripeVirtualAccountNumber
+                      }
+                      nairaAccount={() => setAccount(true)}
+                      active={activeAccount}
+                      setActive={setActiveAccount}
+                    />
                   </div>
                   <div className="col-10 col-lg-7 col-md-10 pt-3">
-                    <div className="rate_calculation_container">
-                    <div className="rate_calculation_header">Rate Calculation</div>
-                   
-                      <div className="table-container">
-                        <table className="transactions-table">
-                               <thead>
-                            <tr>
-                              <th></th>
-                          
-                            </tr>
-                          </thead>
+                    <div className="dashboard_trade_container">
+                      <Link to={`/`}>
+                        <div className="dashboard_trade">
+                          <img
+                            src={tgift}
+                            alt="trade SVG"
+                            className="mr-4 ml-2"
+                          />
+                          Trade Gift Card
+                        </div>
+                      </Link>
 
-                          <tbody>
-                            <tr>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>Card Brand</td>
-
-                              <td className="rate_calculation_value">ITUNES</td>
-                            </tr>
-                            <tr>
-                        
-                              <td>Card Country</td>
-
-                              <td className="rate_calculation_value">GERMANY</td>
-                            </tr>
-                            <tr>
-                              <td> Card Type</td>
-
-                              <td className="rate_calculation_value">ECODE</td>
-                            </tr>
-                            <tr>
-                              <td > Card Value</td>
-
-                              <td className="rate_calculation_value">2550.0</td>
-                            </tr>
-                            <tr>
-                              <td> Rate</td>
-
-                              <td className="rate_calculation_value">360.0/$</td>
-                            </tr>
-                            <tr>
-                              <td> Amount to Recieve</td>
-
-                              <td className="rate_calculation_value">N 918,000.00</td>
-                            </tr>
-                          </tbody>
-                          {/* <tbody>
-                {data.data.map((item, index) => (
-                  <Trow
-                    key={index}
-                    type={item.billerType}
-                    currency={item.currency}
-                 
-                  />
-                ))}
-              </tbody> */}
-                        </table>
-                      </div>
+                      <Link to={`/`}>
+                        <div className="dashboard_trade">
+                          <img
+                            src={tbitcoin}
+                            alt="trade SVG"
+                            className="mr-4 ml-2"
+                          />
+                          Trade Gift Bitcoin
+                        </div>
+                      </Link>
+                      <Link to={`/`}>
+                        <div className="dashboard_trade">
+                          <img
+                            src={talts}
+                            alt="trade SVG"
+                            className="mr-4 ml-2"
+                          />
+                          Trade Alts
+                        </div>
+                      </Link>
                     </div>
                   </div>
+                </div>
 
-                  {/* {!userData.stripeVirtualAccountNumber && (
+                {/* {!userData.stripeVirtualAccountNumber && (
                   <Newfeature
                     // status="APPROVED"
                     stripeStatus={userData.stripeAccountStatus}
@@ -1063,24 +881,25 @@ const Rate = props => {
                       : openUpdateModal
                   }
                 /> */}
-                </div>
+                
+                  <Mytransactions balance={userData.walletInNGNKobo} />
+                
+
+                
+              
               </div>
+              
             </div>
+            <Link to={`/`}>
+                  <div className="viewall_transactions"> View all ﹥</div>
+                </Link>
           </div>
+        
         </div>
       </Layout>
     </>
   );
 };
-
-const NavLink = props => (
-  <Link
-    {...props}
-    getProps={({ isCurrent }) => ({
-      className: isCurrent ? 'active' : '',
-    })}
-  />
-);
 
 const mapStateToProps = ({ auth, common, transactions, domore, wallets }) => {
   const { authUser } = auth;
@@ -1109,4 +928,4 @@ const mapDispatchToProps = {
   openUpdateBox,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Rate);
+export default connect(mapStateToProps, mapDispatchToProps)(Trade);

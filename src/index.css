@@ -118,7 +118,7 @@ button {
   overflow: hidden !important;
 
   background: #faf9f9 !important;
-  border-radius: 20px !important;
+ 
   appearance: none !important;
   height: 60px;
   border: none !important;
@@ -129,9 +129,7 @@ button {
 .countryflagselect button {
   overflow: hidden !important;
 
-  background: #faf9f9 !important;
-  border-radius: 20px !important;
-  height: 65px;
+ 
   border: none !important;
   outline: none !important;
 }
@@ -194,14 +192,15 @@ button {
 }
 .small_flag_space button img {
   transform: scale(1.7);
-  border-radius: 14px;
+
   overflow: hidden;
   margin: 0 2em;
 }
 
-.small_flag_space button {
-  width: 250px !important;
-}
+/* .small_flag_space button {
+  width: 424px !important;
+  height: 70px !important;
+} */
 
 .datepickerselect .ant-picker-input {
   font-family: Lato;
@@ -214,7 +213,7 @@ button {
 
   color: #000000;
 
-  background: #faf9f9;
+
   border-radius: 20px;
   appearance: none !important;
   border: none;
@@ -238,20 +237,63 @@ button {
   font-weight: normal;
   font-size: 14px;
   line-height: 30px;
-  padding-left: 0em;
+
+  border: none;
+  color: #000000;
+
+  
+  
+  appearance: none !important;
+  height: 70px;
+
+
+  box-shadow: none !important;
+}
+
+.form_element {
+  /* z-index: 8000 !important; */
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 30px;
+  padding-left: 2em;
 
   color: #000000;
 
-  background: #faf9f9;
+
   border-radius: 20px;
   appearance: none !important;
   border: none;
   height: 70px;
-  margin: 0.4em 0;
-  border: none !important;
-  box-shadow: none !important;
+  margin: 1em 0;
 }
 
+
+.form_element_rate {
+  /* z-index: 8000 !important; */
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 30px;
+  padding-left: 2em;
+
+  color: #000000;
+
+  border: none;
+
+
+  appearance: none !important;
+
+  height: 70px;
+  margin: 1em 0;
+}
+
+.bottom_border{
+  border: none;
+  border-bottom: 1px solid rgb(28, 27, 27);
+}
 .ErrorMessageFormik{
   color: #cb1717;
 

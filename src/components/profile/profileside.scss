@@ -55,9 +55,7 @@
                     border-width: 0px 10px 0px 0px;
                 }
 
-                img {
-                    filter: invert(58%) sepia(36%) saturate(640%) hue-rotate(57deg) brightness(95%) contrast(88%);
-                }
+              
                 p{
                     @include fontMedium(1.2em, 1em, $vesti-700);
                 }

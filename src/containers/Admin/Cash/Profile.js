@@ -11,13 +11,7 @@ import { redirectTransfer } from 'routes/RedirectRoutes';
 import Layout from 'components/common/DashboardLayout';
 import { addCashToWallet } from './actions/index';
 import VirtualCardModal from './VirtualCardModal';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import RegionSelect from 'react-region-flag-select';
-import Select from 'react-select';
-import { Tooltip } from 'antd';
-import * as Yup from 'yup';
-import _ from 'lodash';
-import Inputfloat from 'components/common/inputs/inputfloat';
+// import { useFounders } from 'helpers/hooks';
 import Ordercard from 'components/vesticards/selectcard';
 import { Mytransactions } from 'components/bank/mytransactions';
 import { Depositwallet, Providusaccount } from 'components/deposit/deposit';
@@ -26,6 +20,7 @@ import api from 'appRedux/api';
 import { openUpdateBox } from 'appRedux/actions/update';
 import { Domore } from 'components/bank/domore/domore';
 import './cash.scss';
+import dummyAvatar from '../../../assets/dummy-avatar.png';
 import { Link } from '@reach/router';
 import { useQuery } from 'react-query';
 import {
@@ -74,12 +69,8 @@ import {
   tbitcoin,
   tgift,
   logoblack,
-  ChevDIco,
 } from '../../../assets/assets';
-
-const RateSchema = Yup.object().shape({
-  amount: Yup.string().required('Amount is required'),
-});
+import { Avatar, Button } from 'antd';
 
 const useFetchUser = () => {
   const { isLoading, data: userData, refetch } = useQuery(
@@ -92,8 +83,7 @@ const useFetchUser = () => {
   return { isLoading, userData, refetch };
 };
 
-const Rate = props => {
-  const path = window.location.pathname;
+const Profile = props => {
   const [state, setState] = useState({
     modal: false,
     withdrawalModal: false,
@@ -469,15 +459,14 @@ const Rate = props => {
       .catch(err => {
         console.log(err);
       });
+
+    // eslint-disable-next-line
   }, []);
 
-  var handleLocation = data => {
-    this.setState({ location: data });
-  };
-
-  var handleCitizenship = data => {
-    this.setState({ citizen: data });
-  };
+  // useEffect(()=> {
+  //   foundersRefetch()
+  //   // eslint-disable-next-line
+  // },[userData.id, !isPreviousFoundersData])
 
   return (
     <>
@@ -747,322 +736,68 @@ const Rate = props => {
                 {/* main start */}
                 <div className="row bank-cont">
                   <div className="col-10 col-lg-5 col-md-10 pt-3">
-                    <div className="section-heading">Rate Calculator</div>
+                    <div className="section-heading">My Profile</div>
 
-                    <div className="d-flex gba_sidebar_container">
-                      <NavLink to="/rates">
-                        <div
-                          className={`gba_sidebar ${
-                            path.startsWith('/rate') ? 'active_gba_sidebar' : ''
-                          }`}
-                        >
-                          GiftCard
-                        </div>
-                      </NavLink>
+                    <div className="profile_container">
+                      <img
+                        src={dummyAvatar}
+                        alt="netwebpay"
+                        width="6%"
+                        height="6%"
+                      />
 
-                      <NavLink to="/ratebitcoin">
-                        <div
-                          className={`gba_sidebar ${
-                            path.startsWith('/ratebitcoin')
-                              ? 'active_gba_sidebar'
-                              : ''
-                          }`}
-                        >
-                          Bitcoins
-                        </div>
-                      </NavLink>
+                      <div className="rate_calculation_header">Tolu Wade</div>
 
-                      <NavLink to="/ratealts">
-                        <div
-                          className={`gba_sidebar ${
-                            path.startsWith('/ratealts')
-                              ? 'active_gba_sidebar'
-                              : ''
-                          }`}
-                        >
-                          Alts
-                        </div>
-                      </NavLink>
+                      <div className="rate_calculation_header">
+                        {' '}
+                        hello@toluwade.com{' '}
+                      </div>
+
+                      <Button> Edit Profile </Button>
+
+                      <div className="profile_container_white "></div>
                     </div>
-                    {/* <Newbalancecard
-                      title ={`Your ${currency ? 'NGN':'USD'} vesti balance`}
-                      onClick={toggle}
-                      reveal={state.modal}
-                      nairaAmount={userData.walletInNGNKobo / 100}
-                      dollarAmount={userData.walletAmountInUSCents / 100}
-                      accountNumber = {userData.providusAccountNumber}
-                      currency={ currency}
-                      toggleCurrency={toggleCurrency}
-                      request = {accountRequest}
-                      foundersBalance={balance/100}
-                      // toggle() redirectTransfer() showWithdrawalModal()
-                      deposit={() => userData.verifiedKyc === "APPROVED" || userData.verifiedKyc === true ? currency ? toggle() :  dispatch(walletUsdAction({usdOpen:true,action:'deposit'})) :openUpdateModal()}
-                      send={() => userData.verifiedKyc === "APPROVED" || userData.verifiedKyc === true ? redirectTransfer() :openUpdateModal()}
-                      withdraw ={() => userData.verifiedKyc === "APPROVED" || userData.verifiedKyc === true ? currency? showWithdrawalModal() : setUsdmodal(true) : openUpdateModal()}
-                      setUpload={setUpload}
-                      loanAmount={userData.loanAmount / 100}
-                      loanAmountPaid={userData.loanInterestPaid / 100}
-                      loanForm= {userData.isLoanFormUploaded}
-                      rate={rate}
-                      userdata={userData}
-                      convert = {()=> setFundmodal({...fundmodal, currency:'NGN', value:true})}
-                      stripeVirtualAccountNumber ={userData.stripeVirtualAccountNumber}
-                      active={activeAccount}
-                      setActive ={setActiveAccount}
-                    /> */}
 
-                    {loading ? (
-                      <Loader />
-                    ) : (
-                      <Formik
-                        enableReinitialize
-                        initialValues={{
-                          amount: '',
-                          cardbrand: '',
-                          cardnumber: '',
-                          cardtype: '',
-                          cardcountry: '',
-                        }}
-                        validationSchema={RateSchema}
-                        onSubmit={(values, { setSubmitting, resetForm }) => {
-                          setSubmitting(true);
-
-                          const { countryData } = values.location;
-                          const data = {
-                            ...values,
-                          };
-                          this.props.giftCardRate(data);
-                          setSubmitting(false);
-                        }}
-                      >
-                        {props => (
-                          <>
-                            <div className="ErrorMessageFormik">
-                              {!_.isEmpty(props.errors)
-                                ? `Errors: ${Object.values(props.errors).join(
-                                    ', ',
-                                  )}`
-                                : ''}
-                            </div>
-                            <Form>
-                              <div className="justify-content-between rate_giftcard_container">
-                                <div className="w-100 bottom_border">
-                                  <Field
-                                    className="form_element_rate w-100"
-                                    component={() => (
-                                      <Select
-                                        className="form_element_rate form_select_1 w-100"
-                                        name="cardbrand"
-                                        placeholder="Select a Card Brand*"
-                                        //defaultValue={gender}
-                                        onChange={e =>
-                                          this.setState({ gender: e })
-                                        }
-                                        options={[
-                                          { label: 'Amex', value: 'Amex' },
-                                          {
-                                            label: 'Sephora',
-                                            value: 'Sephora',
-                                          },
-                                          { label: 'Other', value: 'other' },
-                                        ]}
-                                      />
-                                    )}
-                                  />
-                                  <ErrorMessage
-                                    name="cardbrand"
-                                    component="div"
-                                    className="text-red-500 text-xs"
-                                  />
-                                </div>
-
-                                <div className="w-100 bottom_border">
-                                  <div className="countryflagselect small_flag_space">
-                                    <RegionSelect
-                                      countryOnly
-                                      selectedCountryCode=""
-                                      handleChange={handleCitizenship}
-                                      className="form_element_rate form_select_1 w-100"
-                                      name="cardcountry"
-                                    />
-
-                                    <img
-                                      className="down_ico"
-                                      src={ChevDIco}
-                                      alt="down"
-                                      width="20"
-                                      height="20"
-                                    />
-                                  </div>
-                                  <ErrorMessage
-                                    name="cardcountry"
-                                    component="div"
-                                    className="text-red-500 text-xs"
-                                  />
-                                </div>
-
-                                <div className="w-100 bottom_border">
-                                  <Field
-                                    className="w-100"
-                                    component={() => (
-                                      <Select
-                                        className="form_element_rate form_select_1 w-100"
-                                        name="cardtype"
-                                        placeholder="Select a Card Type*"
-                                        //defaultValue={gender}
-                                        onChange={e =>
-                                          this.setState({ gender: e })
-                                        }
-                                        options={[
-                                          {
-                                            label: 'MasterCard',
-                                            value: 'MasterCard',
-                                          },
-                                          { label: 'Visa', value: 'Visa' },
-
-                                          { label: 'Other', value: 'other' },
-                                        ]}
-                                      />
-                                    )}
-                                  />
-                                  <ErrorMessage
-                                    name="cardtype"
-                                    component="div"
-                                    className="text-red-500 text-xs"
-                                  />
-                                </div>
-
-                                <div className="w-100 bottom_border">
-                                  <Field
-                                    label="amount"
-                                    className="form_element_rate form_select_1 w-100"
-                                    type="text"
-                                    placeholder="Enter Amount in USD*"
-                                    name="amount"
-                                  />
-
-                                  <ErrorMessage
-                                    name="amount"
-                                    component="div"
-                                    className="text-red-500 text-xs"
-                                  />
-                                </div>
-                              </div>
-
-                              <button
-                                type="submit"
-                                className="btn w-100 mb-4 mt-4 primary_btn"
-                                disabled={
-                                  !props.dirty ||
-                                  !_.isEmpty(props.errors) ||
-                                  props.isSubmitting
-                                }
-                              >
-                                Check Rates
-                              </button>
-                            </Form>
-                          </>
-                        )}
-                      </Formik>
-                    )}
+               
                   </div>
+
+
                   <div className="col-10 col-lg-7 col-md-10 pt-3">
-                    <div className="rate_calculation_container">
-                    <div className="rate_calculation_header">Rate Calculation</div>
-                   
-                      <div className="table-container">
-                        <table className="transactions-table">
-                               <thead>
-                            <tr>
-                              <th></th>
-                          
-                            </tr>
-                          </thead>
+                      <div className="profile_container_yellow">
+                        <div className="profile_container_popup_title">
+                          Add Multiple Account
+                        </div>
 
-                          <tbody>
-                            <tr>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>Card Brand</td>
+                        <div className="profile_container_popup_text">
+                          Input another bank information
+                        </div>
 
-                              <td className="rate_calculation_value">ITUNES</td>
-                            </tr>
-                            <tr>
-                        
-                              <td>Card Country</td>
+                        <div className="profile_container_popup_title">
+                          Support
+                        </div>
 
-                              <td className="rate_calculation_value">GERMANY</td>
-                            </tr>
-                            <tr>
-                              <td> Card Type</td>
+                        <div className="profile_container_popup_text">
+                          Contact us on anything
+                        </div>
 
-                              <td className="rate_calculation_value">ECODE</td>
-                            </tr>
-                            <tr>
-                              <td > Card Value</td>
+                        <div className="profile_container_popup_title">
+                          Report a bug
+                        </div>
 
-                              <td className="rate_calculation_value">2550.0</td>
-                            </tr>
-                            <tr>
-                              <td> Rate</td>
+                        <div className="profile_container_popup_text">
+                          Find a glitch or issue , reach out.
+                        </div>
 
-                              <td className="rate_calculation_value">360.0/$</td>
-                            </tr>
-                            <tr>
-                              <td> Amount to Recieve</td>
+                        <div className="profile_container_popup_title">
+                          Term of use
+                        </div>
 
-                              <td className="rate_calculation_value">N 918,000.00</td>
-                            </tr>
-                          </tbody>
-                          {/* <tbody>
-                {data.data.map((item, index) => (
-                  <Trow
-                    key={index}
-                    type={item.billerType}
-                    currency={item.currency}
-                 
-                  />
-                ))}
-              </tbody> */}
-                        </table>
+                        <div className="profile_container_popup_text">
+                          Find our term of use and get familiar with it
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* {!userData.stripeVirtualAccountNumber && (
-                  <Newfeature
-                    // status="APPROVED"
-                    stripeStatus={userData.stripeAccountStatus}
-                    // stripeStatus="UNVERIFIED"
-                    status={userData.virtualCardWaitlistStatus}
-                    waitlist={
-                      userData.verifiedKyc === 'APPROVED' ||
-                      userData.verifiedKyc === true
-                        ? () => dispatch(openWaitlist())
-                        : openUpdateModal
-                    }
-                  />
-                )}
-                <Domore
-                  loan={userData.isLoanInterestPaid}
-                  loanA={userData.isLoanApplicant}
-                  // approved="APPROVED"
-                  userData={userData}
-                  refetch={refetch}
-                  create={
-                    userData.verifiedKyc === 'APPROVED' ||
-                    userData.verifiedKyc === true
-                      ? value => dispatch(openVirtual(value))
-                      : openUpdateModal
-                  }
-                  waitlistCard={
-                    userData.verifiedKyc === 'APPROVED' ||
-                    userData.verifiedKyc === true
-                      ? () => dispatch(openWaitlist())
-                      : openUpdateModal
-                  }
-                /> */}
                 </div>
               </div>
             </div>
@@ -1072,15 +807,6 @@ const Rate = props => {
     </>
   );
 };
-
-const NavLink = props => (
-  <Link
-    {...props}
-    getProps={({ isCurrent }) => ({
-      className: isCurrent ? 'active' : '',
-    })}
-  />
-);
 
 const mapStateToProps = ({ auth, common, transactions, domore, wallets }) => {
   const { authUser } = auth;
@@ -1109,4 +835,4 @@ const mapDispatchToProps = {
   openUpdateBox,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Rate);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

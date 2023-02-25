@@ -58,16 +58,15 @@ export default function SideBar() {
             <NavLink to="/mydashboard">
               <div
                 className={`sidebar-links ${
-                  path.startsWith('/mydashboard') ? 'home_sidebar' : ''
+                  path.startsWith('/mydashboard') ? 'home_sidebar text-white-f' : ''
                 }`}
               >
                
                   <img
-                    className="home_sidebar_icon"
                     src={home}
                     alt="Home SVG"
                   />
-                  <p className="side_sub_txt text-white text_manrope">Home</p>
+                  <p className="side_sub_txt text_manrope ">Home</p>
             
               </div>
               </NavLink>
@@ -77,7 +76,7 @@ export default function SideBar() {
               <NavLink to="/trades" activeClassName="home_sidebar">
               <div
                 className={`sidebar-links ${
-                  path.startsWith('/trades') ? 'home_sidebar' : ''
+                  path.startsWith('/trades') ? 'home_sidebar text-white-f' : ''
                 }`}
               >
                   <img src={trades} alt="Feeds SVG" />
@@ -90,7 +89,7 @@ export default function SideBar() {
             <NavLink to="/rates">
               <div
                 className={`sidebar-links ${
-                  path.startsWith('/rates') ? 'home_sidebar' : ''
+                  path.startsWith('/rates') ? 'home_sidebar text-white-f' : ''
                 }`}
               >
               
@@ -105,7 +104,7 @@ export default function SideBar() {
               <NavLink to="/myprofile">
               <div
                 className={`sidebar-links ${
-                  path.startsWith('/myprofile') ? 'home_sidebar' : ''
+                  path.startsWith('/myprofile') ? 'home_sidebar text-white-f' : ''
                 }`}
               >
                   <img src={profile} alt="Profile SVG" />

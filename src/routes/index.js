@@ -7,8 +7,12 @@ import Twofactor from 'containers/Auth/Login/twofactor';
 import Register from 'containers/Auth/Signup/SignUp';
 
 // import Verification from '../containers/Verification/Verification';
-import Cash from 'containers/Admin/Cash';
+import Cash from 'containers/Admin//Cash/Cash';
 import Rate from 'containers/Admin/Cash/Rate';
+import RateAlts from 'containers/Admin/Cash/RateAlts';
+import RateBitcoin from 'containers/Admin/Cash/RateBitcoin';
+import Trade from 'containers/Admin/Cash/Trade';
+import Profile from 'containers/Admin/Cash/Profile';
 // import Account from 'containers/Admin/Accounts';
 // import AccountSettings from 'containers/Admin/Accounts/Settings';
 import Transfer from 'containers/Admin/Cash/Transfer';
@@ -91,7 +95,6 @@ const Routes = [
   // { path: '/fry/:postId', component: Singlefry },
   // { path: '/group/:id', component: Groupfeeds, auth: true },
   // { path: '/creditcard', component: VestiCreditCards },
-
   // Pathways
   // { path: '/pathways', component: Pathways, auth: true },
   // { path: '/pathwaydesc/:id', component: Aboutpathway, auth: true },
@@ -103,19 +106,22 @@ const Routes = [
   { path: '/provider', component: Provider, auth: true },
   { path: '/mydashboard', component: Cash, auth: false },
   { path: '/rates', component: Rate, auth: false },
-
+  { path: '/ratebitcoin', component: RateBitcoin, auth: false },
+  { path: '/ratealts', component: RateAlts, auth: false },
+  { path: '/trades', component: Trade, auth: false },
+  { path: '/myprofile', component: Profile, auth: false },
+  
   // { path: '/advice', component: Advice, auth: true },
   // { path: '/advice/:countryId', component: AdviceDetail, auth: true },
   // { path: '/service/:id', component: ServiceDetail, auth: true },
   // { path: '/webinar', component: ScrollableTabsButtonAuto, auth: true },
   // { path: '/accounts', component: Account, auth: true },
-  { path: '/myprofile', component: Userprofile, auth: true },
+  { path: '/myprofiles', component: Userprofile, auth: false },
   // { path: '/accounts/settings', component: AccountSettings, auth: true },
   { path: '/merchants', component: Merchants, auth: true },
   { path: '/buy-airtime', component: Airtime, auth: true },
   { path: '/bills-payment', component: BillPaymentHome, auth: true },
   { path: '/airtime', component: AirtimePurchase, auth: true },
-
   // //shared post
   // { path: '/sharedpost/:postId', component: Sharedpost },
   // { path: '/fullpost/:postId', component: Fullpost },

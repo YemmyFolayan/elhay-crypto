@@ -80,7 +80,7 @@ export const rates = require('./svg/Rates.svg');
 
 export const profile = require('./svg/Profile.svg');
 
-export const home = require('./svg/HomeFilled.svg');
+export const home = require('./svg/home.svg');
 export const goldbg = require('./svg/goldbg.svg');
 
 export const phonetrade = require('./svg/phonetrade.svg');
