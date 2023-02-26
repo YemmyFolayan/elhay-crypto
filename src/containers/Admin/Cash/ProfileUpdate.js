@@ -6,6 +6,9 @@ import '../Admin.css';
 import { fetchTransactions } from 'appRedux/actions/transactions';
 import { getProfile } from 'appRedux/actions/auth';
 import Loader from 'components/Loader';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import Select from 'react-select';
+import _ from 'lodash';
 // import TransactionTable from 'components/common/TransactionTable';
 import { redirectTransfer } from 'routes/RedirectRoutes';
 import Layout from 'components/common/DashboardLayout';
@@ -738,13 +741,6 @@ const Profile = props => {
                   <div className="section-heading">My Profile</div>
 
                   <div className="profile_container">
-                    <img
-                      src={dummyAvatar}
-                      alt="netwebpay"
-                      width="6%"
-                      height="6%"
-                    />
-
                     <div className="rate_calculation_header">Tolu Wade</div>
 
                     <div className="rate_calculation_header">
@@ -752,125 +748,171 @@ const Profile = props => {
                       hello@toluwade.com{' '}
                     </div>
 
-                    <Button
-                    className=""
-                    onClick={() => navigate('/editprofile')}
+                    <div className="w-50">
+                      <Formik
+                        enableReinitialize
+                        initialValues={{
+                          amount: '',
+                          cardbrand: '',
+                          cardnumber: '',
+                          cardtype: '',
+                          cardcountry: '',
+                        }}
+                        //validationSchema={ProSchema}
+                        onSubmit={(values, { setSubmitting, resetForm }) => {
+                          setSubmitting(true);
 
-                    > Edit Profile </Button>
+                          const { countryData } = values.location;
+                          const data = {
+                            ...values,
+                          };
+                          this.props.giftCardRate(data);
+                          setSubmitting(false);
+                        }}
+                      >
+                        {props => (
+                          <>
+                            <div className="ErrorMessageFormik">
+                              {!_.isEmpty(props.errors)
+                                ? `Errors: ${Object.values(props.errors).join(
+                                    ', ',
+                                  )}`
+                                : ''}
+                            </div>
+                            <Form>
+                              <div className="justify-content-between rate_giftcard_container">
+                        
+                            
 
-                    <div className="col-10 col-lg-5 col-md-10 pt-3">
-                      <div className="profile_container_white ">
-                        <div className="table-container">
-                          <table className="transactions-table">
-                            <thead>
-                              <tr>
-                                <th></th>
-                              </tr>
-                            </thead>
+                                <div className="w-100 bottom_border">
+                                  <Field
+                                    label="name"
+                                    className="form_element_rate form_select_1 w-100"
+                                    type="text"
+                                    placeholder="Tolu Wade"
+                                    name="name"
+                                  />
 
-                            <tbody>
-                              <tr>
-                                <td></td>
-                              </tr>
-                              <tr>
-                                <td>Name</td>
+                                  <ErrorMessage
+                                    name="name"
+                                    component="div"
+                                    className="text-red-500 text-xs"
+                                  />
+                                </div>
 
-                                <td className="profile_white_value">
-                                  Robert Smith
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>Email</td>
+                                <div className="w-100 bottom_border">
+                                  <Field
+                                    label="email"
+                                    className="form_element_rate form_select_1 w-100"
+                                    type="text"
+                                    placeholder="hello@toluwade.com*"
+                                    name="email"
+                                  />
 
-                                <td className="profile_white_value">
-                                  robertsmith@mail.com
-                                </td>
-                              </tr>
-                              <tr>
-                                <td> Password</td>
+                                  <ErrorMessage
+                                    name="email"
+                                    component="div"
+                                    className="text-red-500 text-xs"
+                                  />
+                                </div>
 
-                                <td className="profile_white_value">
-                                  ********
-                                </td>
-                              </tr>
-                              <tr>
-                                <td> Date of Birth </td>
+                                <div className="w-100 bottom_border">
+                                  <Field
+                                    label="phonenumber"
+                                    className="form_element_rate form_select_1 w-100"
+                                    type="text"
+                                    placeholder="085 444 222 666"
+                                    name="phonenumber"
+                                  />
 
-                                <td className="profile_white_value">
-                                  {' '}
-                                  November 15th, 1992{' '}
-                                </td>
-                              </tr>
-                              <tr>
-                                <td> Bank Name </td>
+                                  <ErrorMessage
+                                    name="phonenumber"
+                                    component="div"
+                                    className="text-red-500 text-xs"
+                                  />
+                                </div>
 
-                                <td className="profile_white_value">
-                                  {' '}
-                                  Bank Syariah Indonesia{' '}
-                                </td>
-                              </tr>
-                              <tr>
-                                <td> Card Number </td>
+                                <div className="w-100 bottom_border">
+                                  <Field
+                                    label="password"
+                                    className="form_element_rate form_select_1 w-100"
+                                    type="password"
+                                    placeholder="*********"
+                                    name="password"
+                                  />
 
-                                <td className="profile_white_value">
-                                  {' '}
-                                  156519384332{' '}
-                                </td>
-                              </tr>
-                            </tbody>
-                            {/* <tbody>
-                                    {data.data.map((item, index) => (
-                                      <Trow
-                                        key={index}
-                                        type={item.billerType}
-                                        currency={item.currency}
-                                    
+                                  <ErrorMessage
+                                    name="password"
+                                    component="div"
+                                    className="text-red-500 text-xs"
+                                  />
+                                </div>
+                              </div>
+
+
+                              <div className="w-100 bottom_border">
+                                  <Field
+                                    className="w-100"
+                                    component={() => (
+                                      <Select
+                                        className="form_element_rate form_select_1 w-100"
+                                        name="banktype"
+                                        placeholder="Select a Bank*"
+                                        //defaultValue={gender}
+                                        onChange={e =>
+                                          this.setState({ gender: e })
+                                        }
+                                        options={[
+                                          {
+                                            label: 'Bank Syariah Indonesia',
+                                            value: 'Bank Of America',
+                                          },
+                                          { label: 'Bank Syariah Indonesia', value: 'Bank Syariah Indonesia' },
+
+                                          { label: 'Bank Of America', value: 'Bank Of America' },
+                                        ]}
                                       />
-                                    ))}
-                                  </tbody> */}
-                          </table>
+                                    )}
+                                  />
+                                  <ErrorMessage
+                                    name="cardtype"
+                                    component="div"
+                                    className="text-red-500 text-xs"
+                                  />
+                                </div>
 
-                          <Button> Log Out</Button>
-                        </div>
-                      </div>
-               
+                                <div className="w-100 bottom_border">
+                                  <Field
+                                    label="accountnumber"
+                                    className="form_element_rate form_select_1 w-100"
+                                    type="text"
+                                    placeholder="156519384332"
+                                    name="accountnumber"
+                                  />
+
+                                  <ErrorMessage
+                                    name="accountnumber"
+                                    component="div"
+                                    className="text-red-500 text-xs"
+                                  />
+                                </div>
+
+                              <button
+                                type="submit"
+                                className="btn w-100 mb-4 mt-4 primary_btn"
+                                disabled={
+                                  !props.dirty ||
+                                  !_.isEmpty(props.errors) ||
+                                  props.isSubmitting
+                                }
+                              >
+                                Update Changes
+                              </button>
+                            </Form>
+                          </>
+                        )}
+                      </Formik>
                     </div>
-
-                    <div className="d-flex col-10 col-lg-7 col-md-10 pt-3">
-                        <div className="profile_container_yellow">
-                          <div className="profile_container_popup_title">
-                            Add Multiple Account
-                          </div>
-
-                          <div className="profile_container_popup_text">
-                            Input another bank information
-                          </div>
-
-                          <div className="profile_container_popup_title">
-                            Support
-                          </div>
-
-                          <div className="profile_container_popup_text">
-                            Contact us on anything
-                          </div>
-
-                          <div className="profile_container_popup_title">
-                            Report a bug
-                          </div>
-
-                          <div className="profile_container_popup_text">
-                            Find a glitch or issue , reach out.
-                          </div>
-
-                          <div className="profile_container_popup_title">
-                            Term of use
-                          </div>
-
-                          <div className="profile_container_popup_text">
-                            Find our term of use and get familiar with it
-                          </div>
-                        </div>
-                      </div>
                   </div>
                 </div>
               </div>

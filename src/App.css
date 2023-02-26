@@ -137,6 +137,18 @@ input {
 
   color: #1a202c;
 }
+.profile_white_value {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17.3851px;
+  line-height: 24px;
+  text-align: right;
+  margin-left: 20%;
+
+  color: #465064;
+}
+
 .rate_calculation_value {
   font-family: 'Plus Jakarta Sans';
   font-style: normal;
@@ -173,8 +185,8 @@ input {
 
 .profile_container {
   /* position: absolute; */
-  width: 936px;
-  height: 624px;
+  width: 90%;
+  height: 100%;
   left: 440px;
   top: 264px;
 
@@ -194,8 +206,8 @@ input {
 }
 
 .profile_container_yellow {
-  margin-top: 30%;
-  margin-right: 40%;
+  /* margin-top: 30%;
+  margin-right: 40%; */
   width: 55%;
   height: 60%;
   align-content: center;

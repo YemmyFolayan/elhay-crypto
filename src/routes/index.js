@@ -13,6 +13,7 @@ import RateAlts from 'containers/Admin/Cash/RateAlts';
 import RateBitcoin from 'containers/Admin/Cash/RateBitcoin';
 import Trade from 'containers/Admin/Cash/Trade';
 import Profile from 'containers/Admin/Cash/Profile';
+import ProfileUpdate from 'containers/Admin/Cash/ProfileUpdate';
 // import Account from 'containers/Admin/Accounts';
 // import AccountSettings from 'containers/Admin/Accounts/Settings';
 import Transfer from 'containers/Admin/Cash/Transfer';
@@ -74,6 +75,7 @@ import VestiCreditCards from 'containers/website/VestiCreditCards';
 import BillPaymentHome from 'containers/Admin/BillPayment/BillPaymentHome';
 import AirtimePurchase from 'containers/Admin/BillPayment/Airtime/AirtimePurchase';
 
+
 const Routes = [
   { path: '/', component: Login, auth: false },
   { path: '/twofactor', component: Twofactor},
@@ -110,6 +112,8 @@ const Routes = [
   { path: '/ratealts', component: RateAlts, auth: false },
   { path: '/trades', component: Trade, auth: false },
   { path: '/myprofile', component: Profile, auth: false },
+
+  { path: '/editprofile', component: ProfileUpdate, auth: false },
   
   // { path: '/advice', component: Advice, auth: true },
   // { path: '/advice/:countryId', component: AdviceDetail, auth: true },
