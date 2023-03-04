@@ -11,7 +11,13 @@ import { redirectTransfer } from 'routes/RedirectRoutes';
 import Layout from 'components/common/DashboardLayout';
 import { addCashToWallet } from './actions/index';
 import VirtualCardModal from './VirtualCardModal';
-// import { useFounders } from 'helpers/hooks';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import RegionSelect from 'react-region-flag-select';
+import Select from 'react-select';
+import { Tooltip } from 'antd';
+import * as Yup from 'yup';
+import _ from 'lodash';
+import Inputfloat from 'components/common/inputs/inputfloat';
 import Ordercard from 'components/vesticards/selectcard';
 import { Mytransactions } from 'components/bank/mytransactions';
 import { Depositwallet, Providusaccount } from 'components/deposit/deposit';
@@ -20,14 +26,12 @@ import api from 'appRedux/api';
 import { openUpdateBox } from 'appRedux/actions/update';
 import { Domore } from 'components/bank/domore/domore';
 import './cash.scss';
-import dummyAvatar from '../../../assets/dummy-avatar.png';
-import { Link, navigate } from '@reach/router';
+import { Link } from '@reach/router';
 import { useQuery } from 'react-query';
 import {
   openNotificationWithIcon,
   openNotificationWithIconErr,
 } from '../../../appRedux/actions/Common';
-import _ from 'lodash';
 import { errorMessage } from 'helpers/utils';
 import { Simplemodal } from '../../../components/common/simplifiedmodal';
 import Fundcard from './carddetails/fundcard';
@@ -70,8 +74,12 @@ import {
   tbitcoin,
   tgift,
   logoblack,
+  ChevDIco,
 } from '../../../assets/assets';
-import { Avatar, Button } from 'antd';
+
+const RateSchema = Yup.object().shape({
+  amount: Yup.string().required('Amount is required'),
+});
 
 const useFetchUser = () => {
   const { isLoading, data: userData, refetch } = useQuery(
@@ -84,7 +92,8 @@ const useFetchUser = () => {
   return { isLoading, userData, refetch };
 };
 
-const Profile = props => {
+const Rate = props => {
+  const path = window.location.pathname;
   const [state, setState] = useState({
     modal: false,
     withdrawalModal: false,
@@ -460,14 +469,15 @@ const Profile = props => {
       .catch(err => {
         console.log(err);
       });
-
-    // eslint-disable-next-line
   }, []);
 
-  // useEffect(()=> {
-  //   foundersRefetch()
-  //   // eslint-disable-next-line
-  // },[userData.id, !isPreviousFoundersData])
+  var handleLocation = data => {
+    this.setState({ location: data });
+  };
+
+  var handleCitizenship = data => {
+    this.setState({ citizen: data });
+  };
 
   return (
     <>
@@ -732,158 +742,47 @@ const Profile = props => {
             className=" isw-container"
             style={{ height: 'fit-content', width: '100%' }}
           >
-            <div className="flex_page_container d-flex justify-content-center ">
+            <div className=" flex_page_container d-flex justify-content-center ">
               <div className="px-3 w-100 main_transaction_box">
                 {/* main start */}
-                <div className="row">
-                  <div className="section-heading">My Profile</div>
+                <div className="row bank-cont">
+                  <div className="col-10 col-lg-5 col-md-10 pt-3">
+                    <div className="section-heading"> My Trades </div>
 
-                  <div className="profile_container">
-                    <div className="rate_calculation_header">
-                      
-                      <img
-                        src={dummyAvatar}
-                        alt="netwebpay"
-                        width="6%"
-                        height="6%"
-                      />
+                    <div className="d-flex gba_sidebar_container">
+                      <NavLink to="/trades">
+                        <div className="gba_sidebar">GiftCard</div>
+                      </NavLink>
+
+                      <NavLink to="/tradesbitcoin">
+                        <div
+                          className={`gba_sidebar ${
+                            path.startsWith('/tradesbitcoin')
+                              ? 'active_gba_sidebar'
+                              : ''
+                          }`}
+                        >
+                          Bitcoins
+                        </div>
+                      </NavLink>
+
+                      <NavLink to="/tradesalts">
+                        <div
+                          className={`gba_sidebar ${
+                            path.startsWith('/tradesalts')
+                              ? 'active_gba_sidebar'
+                              : ''
+                          }`}
+                        >
+                          Alts
+                        </div>
+                      </NavLink>
                     </div>
 
-                    <div className="rate_calculation_header">Tolu Wade</div>
 
-                    <div className="rate_calculation_header">
-                      
-                      hello@toluwade.com
-                    </div>
-
-                   
-                     
-
-
-                      <button
-                                type="submit"
-                                className="btn w-20 mb-4 mt-4 primary_btn edit_profile_button"
-                          
-                                onClick={() => navigate('/editprofile')}
-                               
-                              >
-                              Edit Profile
-                              </button>
-              
-
-                    <div className="col-10 col-lg-5 col-md-10 pt-3">
-                      <div className="profile_container_white ">
-                        <div className="table-container">
-                          <table className="transactions-table">
-                            <thead>
-                              <tr>
-                                <th></th>
-                              </tr>
-                            </thead>
-
-                            <tbody>
-                              <tr>
-                                <td></td>
-                              </tr>
-                              <tr>
-                                <td>Name</td>
-
-                                <td className="profile_white_value">
-                                  Robert Smith
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>Email</td>
-
-                                <td className="profile_white_value">
-                                  robertsmith@mail.com
-                                </td>
-                              </tr>
-                              <tr>
-                                <td> Password</td>
-
-                                <td className="profile_white_value">
-                                  ********
-                                </td>
-                              </tr>
-                              <tr>
-                                <td> Date of Birth </td>
-
-                                <td className="profile_white_value">
-                                  
-                                  November 15th, 1992
-                                </td>
-                              </tr>
-                              <tr>
-                                <td> Bank Name </td>
-
-                                <td className="profile_white_value">
-                                  
-                                  Bank Syariah Indonesia
-                                </td>
-                              </tr>
-                              <tr>
-                                <td> Card Number </td>
-
-                                <td className="profile_white_value">
-                                  
-                                  156519384332
-                                </td>
-                              </tr>
-                            </tbody>
-                            {/* <tbody>
-                                    {data.data.map((item, index) => (
-                                      <Trow
-                                        key={index}
-                                        type={item.billerType}
-                                        currency={item.currency}
-                                    
-                                      />
-                                    ))}
-                                  </tbody> */}
-                          </table>
-
-                          <Button> Log Out</Button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="d-flex col-10 col-lg-7 col-md-10 pt-3">
-                      <div className="profile_container_yellow">
-                        <div className="profile_container_popup_title">
-                          Add Multiple Account
-                        </div>
-
-                        <div className="profile_container_popup_text">
-                          Input another bank information
-                        </div>
-
-                        <div className="profile_container_popup_title">
-                          Support
-                        </div>
-
-                        <div className="profile_container_popup_text">
-                          Contact us on anything
-                        </div>
-
-                        <div className="profile_container_popup_title">
-                          Report a bug
-                        </div>
-
-                        <div className="profile_container_popup_text">
-                          Find a glitch or issue , reach out.
-                        </div>
-
-                        <div className="profile_container_popup_title">
-                          Term of use
-                        </div>
-
-                        <div className="profile_container_popup_text">
-                          Find our term of use and get familiar with it
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                    <Mytransactions balance={userData.walletInNGNKobo} />
+                    
+                   </div>
                 </div>
               </div>
             </div>
@@ -893,6 +792,15 @@ const Profile = props => {
     </>
   );
 };
+
+const NavLink = props => (
+  <Link
+    {...props}
+    getProps={({ isCurrent }) => ({
+      className: isCurrent ? 'active' : '',
+    })}
+  />
+);
 
 const mapStateToProps = ({ auth, common, transactions, domore, wallets }) => {
   const { authUser } = auth;
@@ -921,4 +829,4 @@ const mapDispatchToProps = {
   openUpdateBox,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default connect(mapStateToProps, mapDispatchToProps)(Rate);

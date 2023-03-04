@@ -74,6 +74,8 @@ import Credithistory from 'containers/Admin/credits/credithistory';
 import VestiCreditCards from 'containers/website/VestiCreditCards';
 import BillPaymentHome from 'containers/Admin/BillPayment/BillPaymentHome';
 import AirtimePurchase from 'containers/Admin/BillPayment/Airtime/AirtimePurchase';
+import TradeAlts from 'containers/Admin/Cash/TradeAlts';
+import TradeBitcoin from 'containers/Admin/Cash/TradeBitcoin';
 
 
 const Routes = [
@@ -111,6 +113,10 @@ const Routes = [
   { path: '/ratebitcoin', component: RateBitcoin, auth: false },
   { path: '/ratealts', component: RateAlts, auth: false },
   { path: '/trades', component: Trade, auth: false },
+  { path: '/tradesbitcoin', component: TradeBitcoin, auth: false },
+  { path: '/tradesalts', component: TradeAlts, auth: false },
+
+  
   { path: '/myprofile', component: Profile, auth: false },
 
   { path: '/editprofile', component: ProfileUpdate, auth: false },

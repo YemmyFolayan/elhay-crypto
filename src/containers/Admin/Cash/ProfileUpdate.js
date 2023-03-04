@@ -72,6 +72,12 @@ import {
   tbitcoin,
   tgift,
   logoblack,
+  cardeditprofile,
+  emaileditprofile,
+  headeditprofile,
+  passwordeditprofile,
+  phoneeditprofile,
+  bankeditprofile
 } from '../../../assets/assets';
 import { Avatar, Button } from 'antd';
 
@@ -741,6 +747,15 @@ const Profile = props => {
                   <div className="section-heading">My Profile</div>
 
                   <div className="profile_container">
+                    <div className="rate_calculation_header">
+                      <img
+                        src={dummyAvatar}
+                        alt="netwebpay"
+                        width="6%"
+                        height="6%"
+                      />
+                    </div>
+
                     <div className="rate_calculation_header">Tolu Wade</div>
 
                     <div className="rate_calculation_header">
@@ -779,18 +794,22 @@ const Profile = props => {
                                   )}`
                                 : ''}
                             </div>
-                            <Form>
+                            <Form className="edit_profile_form">
                               <div className="justify-content-between rate_giftcard_container">
-                        
-                            
-
-                                <div className="w-100 bottom_border">
+                                <div className="w-100 bottom_border_editprofile">
                                   <Field
                                     label="name"
-                                    className="form_element_rate form_select_1 w-100"
+                                    className="form_element_editprofile form_select_editprofile w-100"
                                     type="text"
                                     placeholder="Tolu Wade"
                                     name="name"
+                                    icon={
+                                      <img
+                                        src={headeditprofile}
+                                        alt="name"
+                                        className="profile_update_form_icon"
+                                      ></img>
+                                    }
                                   />
 
                                   <ErrorMessage
@@ -800,13 +819,20 @@ const Profile = props => {
                                   />
                                 </div>
 
-                                <div className="w-100 bottom_border">
+                                <div className="w-100 bottom_border_editprofile">
                                   <Field
                                     label="email"
-                                    className="form_element_rate form_select_1 w-100"
+                                    className="form_element_editprofile form_select_editprofile w-100"
                                     type="text"
                                     placeholder="hello@toluwade.com*"
                                     name="email"
+                                    icon={
+                                      <img
+                                        src={emaileditprofile}
+                                        alt="email"
+                                        className="profile_update_form_icon"
+                                      ></img>
+                                    }
                                   />
 
                                   <ErrorMessage
@@ -816,13 +842,20 @@ const Profile = props => {
                                   />
                                 </div>
 
-                                <div className="w-100 bottom_border">
+                                <div className="w-100 bottom_border_editprofile">
                                   <Field
                                     label="phonenumber"
-                                    className="form_element_rate form_select_1 w-100"
+                                    className="form_element_editprofile form_select_editprofile w-100"
                                     type="text"
                                     placeholder="085 444 222 666"
                                     name="phonenumber"
+                                    icon={
+                                      <img
+                                        src={phoneeditprofile}
+                                        alt="phonenumber"
+                                        className="profile_update_form_icon"
+                                      ></img>
+                                    }
                                   />
 
                                   <ErrorMessage
@@ -832,13 +865,20 @@ const Profile = props => {
                                   />
                                 </div>
 
-                                <div className="w-100 bottom_border">
+                                <div className="w-100 bottom_border_editprofile">
                                   <Field
                                     label="password"
-                                    className="form_element_rate form_select_1 w-100"
+                                    className="form_element_editprofile form_select_editprofile w-100"
                                     type="password"
                                     placeholder="*********"
                                     name="password"
+                                    icon={
+                                      <img
+                                        src={passwordeditprofile}
+                                        alt="password"
+                                        className="profile_update_form_icon"
+                                      ></img>
+                                    }
                                   />
 
                                   <ErrorMessage
@@ -849,53 +889,72 @@ const Profile = props => {
                                 </div>
                               </div>
 
+                              <div className="w-100 bottom_border_editprofile">
+                                <Field
+                                  className="w-100"
+                                  component={() => (
+                                    <Select
+                                      className="form_element_editprofile form_select_editprofile w-100"
+                                      name="banktype"
+                                      icon={
+                                        <img
+                                          src={bankeditprofile}
+                                          alt="banktype"
+                                          className="profile_update_form_icon"
+                                        ></img>
+                                      }
+                                      placeholder="Select a Bank*"
+                                      //defaultValue={gender}
+                                      onChange={e =>
+                                        this.setState({ gender: e })
+                                      }
+                                      options={[
+                                        {
+                                          label: 'Bank Syariah Indonesia',
+                                          value: 'Bank Of America',
+                                        },
+                                        {
+                                          label: 'Bank Syariah Indonesia',
+                                          value: 'Bank Syariah Indonesia',
+                                        },
 
-                              <div className="w-100 bottom_border">
-                                  <Field
-                                    className="w-100"
-                                    component={() => (
-                                      <Select
-                                        className="form_element_rate form_select_1 w-100"
-                                        name="banktype"
-                                        placeholder="Select a Bank*"
-                                        //defaultValue={gender}
-                                        onChange={e =>
-                                          this.setState({ gender: e })
-                                        }
-                                        options={[
-                                          {
-                                            label: 'Bank Syariah Indonesia',
-                                            value: 'Bank Of America',
-                                          },
-                                          { label: 'Bank Syariah Indonesia', value: 'Bank Syariah Indonesia' },
+                                        {
+                                          label: 'Bank Of America',
+                                          value: 'Bank Of America',
+                                        },
+                                      ]}
+                                    />
+                                  )}
+                                />
+                                <ErrorMessage
+                                  name="cardtype"
+                                  component="div"
+                                  className="text-red-500 text-xs"
+                                />
+                              </div>
 
-                                          { label: 'Bank Of America', value: 'Bank Of America' },
-                                        ]}
-                                      />
-                                    )}
-                                  />
-                                  <ErrorMessage
-                                    name="cardtype"
-                                    component="div"
-                                    className="text-red-500 text-xs"
-                                  />
-                                </div>
+                              <div className="w-100 bottom_border_editprofile">
+                                <Field
+                                  label="accountnumber"
+                                  className="form_element_editprofile form_select_editprofile w-100"
+                                  type="text"
+                                  placeholder="156519384332"
+                                  name="accountnumber"
+                                  icon={
+                                    <img
+                                      src={cardeditprofile}
+                                      alt="accountnumber"
+                                      className="profile_update_form_icon"
+                                    ></img>
+                                  }
+                                />
 
-                                <div className="w-100 bottom_border">
-                                  <Field
-                                    label="accountnumber"
-                                    className="form_element_rate form_select_1 w-100"
-                                    type="text"
-                                    placeholder="156519384332"
-                                    name="accountnumber"
-                                  />
-
-                                  <ErrorMessage
-                                    name="accountnumber"
-                                    component="div"
-                                    className="text-red-500 text-xs"
-                                  />
-                                </div>
+                                <ErrorMessage
+                                  name="accountnumber"
+                                  component="div"
+                                  className="text-red-500 text-xs"
+                                />
+                              </div>
 
                               <button
                                 type="submit"

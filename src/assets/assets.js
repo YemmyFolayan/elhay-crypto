@@ -118,4 +118,17 @@ export const talts = require('./svg/talts.svg');
 
 export const tgift = require('./svg/tgift-card.svg');
 
+
 export const tbitcoin = require('./svg/tbitcoin-logo.svg');
+
+export const cardeditprofile = require('./svg/cardeditprofile.svg');
+
+export const emaileditprofile = require('./svg/emaileditprofile.svg');
+
+export const headeditprofile = require('./svg/headeditprofile.svg');
+
+export const passwordeditprofile = require('./svg/passwordeditprofile.svg');
+
+export const phoneeditprofile = require('./svg/phoneeditprofile.svg');
+
+export const bankeditprofile = require('./svg/bankeditprofile.svg');

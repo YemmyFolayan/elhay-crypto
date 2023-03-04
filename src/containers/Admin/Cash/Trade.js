@@ -11,7 +11,13 @@ import { redirectTransfer } from 'routes/RedirectRoutes';
 import Layout from 'components/common/DashboardLayout';
 import { addCashToWallet } from './actions/index';
 import VirtualCardModal from './VirtualCardModal';
-// import { useFounders } from 'helpers/hooks';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import RegionSelect from 'react-region-flag-select';
+import Select from 'react-select';
+import { Tooltip } from 'antd';
+import * as Yup from 'yup';
+import _ from 'lodash';
+import Inputfloat from 'components/common/inputs/inputfloat';
 import Ordercard from 'components/vesticards/selectcard';
 import { Mytransactions } from 'components/bank/mytransactions';
 import { Depositwallet, Providusaccount } from 'components/deposit/deposit';
@@ -68,7 +74,12 @@ import {
   tbitcoin,
   tgift,
   logoblack,
+  ChevDIco,
 } from '../../../assets/assets';
+
+const RateSchema = Yup.object().shape({
+  amount: Yup.string().required('Amount is required'),
+});
 
 const useFetchUser = () => {
   const { isLoading, data: userData, refetch } = useQuery(
@@ -81,7 +92,8 @@ const useFetchUser = () => {
   return { isLoading, userData, refetch };
 };
 
-const Trade = props => {
+const Rate = props => {
+  const path = window.location.pathname;
   const [state, setState] = useState({
     modal: false,
     withdrawalModal: false,
@@ -141,106 +153,109 @@ const Trade = props => {
 
   const { userDatas, refetch } = useFetchUser();
 
-  const userData =   {
-    "id": "6a1a8c22-0a1e-4f37-9bd9-a0963f48d79f",
-    "firstName": "Yemi",
-    "lastName": "Folayan",
-    "email": "foyemc@gmail.com",
-    "username": "folayanyemi",
-    "emailVerified": true,
-    "wasReferred": null,
-    "blacklisted": false,
-    "superAdmin": false,
-    "FactorAuth": true,
-    "FactorAuthCode": "826576",
-    "providusAccountNumber": "9989238879",
-    "adminType": "SUPERADMIN_INTEGRATOR",
-    "userType": "PROVIDER",
-    "planType": "PLATINUM_USER",
-    "dob": "1998-05-16",
-    "location": "USA",
-    "nextOfKin": "yemi",
-    "profilePictureURL": null,
-    "country": "NIGERIA",
-    "rewardCode": "172693VESTI",
-    "juiceUserId": "6e8fbd24-789f-4be5-b6ce-1dad382c6cda",
-    "phoneNumber": "+2348103817187",
-    "gender": "male",
-    "referalCode": "Y-iih5S9mm",
-    "totalReffered": "0",
-    "ReferalLink": "https://app.wevesti.com/register?referalCode=Y-iih5S9m",
-    "walletAmountInUSCents": "68",
-    "walletInNGNKobo": "85414",
-    "ngnWithdrawalLimit": "50000000",
-    "ngnDailyLimit": "3000000000",
-    "usdWithdrawalLimit": "100000",
-    "usdDailyWithdrawalLimit": "200000",
-    "ngnTransaferLimit": "500000000",
-    "usdTransaferLimit": "100000",
-    "ngnDailyTransferLimit": "3000000000",
-    "usdDailyTransferLimit": "250000",
-    "isNewApp": "true",
-    "deviceType": "website",
-    "achbankName": null,
-    "achAccountName": null,
-    "achAccountNumber": null,
-    "achRoutingNumber": null,
-    "achWithdrawalAmount": null,
-    "achTransactionId": null,
-    "countryofChoice": "[ { \"usa\",\"London\",\"canada\" }]",
-    "cardBalance": "97",
-    "hasVirtualCard": "true",
-    "kycLevel": "Level3",
-    "passedKyc": true,
-    "kycDocumentStatus": "APPROVED",
-    "silaAccountName": null,
-    "silaNickName": null,
-    "silaHandle": null,
-    "silaKycStatus": null,
-    "silaWallet": null,
-    "silaWalletAddress": null,
-    "silaWalletKey": null,
-    "silaDocumentVerified": null,
-    "silaDocumentId": null,
-    "isLoanApplicant": true,
-    "apto_cardholder_id": null,
-    "apto_card_application_id": null,
-    "creditData": null,
-    "level1Kyc": null,
-    "apto_cardholder_token": null,
-    "virtualCardWaitlistStatus": null,
-    "isLoanInterestPaid": null,
-    "loanInterestPaid": null,
-    "verificationId": null,
-    "verificationType": "BVN",
-    "verificationNumber": "U2FsdGVkX1/frZA80XoTqDS/PJx308eeLBRriS9icHg=",
-    "loanAmount": null,
-    "isLoanFormUploaded": null,
-    "accountDeleted": null,
-    "stripeVirtualAccountNumber": "9670003031",
-    "stripeVirtualAccountRoutingNumber": "084106768",
-    "stripeVirtualBankName": "Evolve Bank and Trust",
-    "stripeVirtualSwiftCode": "084106768",
-    "monoAccountId": null,
-    "monoCardHolderId": "6347f983102bb597ab6d0d0d",
-    "foundersFinancialBalance": "17521",
-    "stripeAccountStatus": "VERIFIED",
-    "stripeAccountId": "acct_1LXYfQQkcsIbX10W",
-    "integratorJWTAuthentication": "live_sk$2a$08$hKK9SO7vHwlm00oqwjQHr.S9QjQSAeoHcoWouE.miFLbvSzgxrMcG",
-    "sandboxIntegratorJWTAuthentication": "sandbox_sk$2a$08$Z083le6grscAcKBv3t0GBupvcnsQ.V1efvpm0bkcrxVjlFnTZkvWW",
-    "integratorMode": "SANDBOX",
-    "webhookUrl": null,
-    "isExternalIntegrator": true,
-    "stripeSourceId": null,
-    "stripeVerificationToken": null,
-    "stripeFinancialAccountId": "fa_1LXrAcQkcsIbX10Wqq3g78L4",
-    "createdAt": "2021-05-01T18:41:04.932Z",
-    "updatedAt": "2023-02-17T08:57:19.955Z",
-    "isAdmin": false,
-    "hasTransactionPin": true,
-    "hasVerifiedKyc": true,
-    "registrationToken": "cxmh8z8hRbCb1dtNaU4yJD:APA91bFFWGcGMxPtoC8SC7Ate4vfADxpMW7EQpbuS7mADIwAbJhshnWjYGPBN0k0R6mZVUj17u1K9TNAGDM23vc-IHYFcss55rMbpDhpVvNOq5GuwoGH4KOY5KplJzorqv55O60gksDT"
-};
+  const userData = {
+    id: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79f',
+    firstName: 'Yemi',
+    lastName: 'Folayan',
+    email: 'foyemc@gmail.com',
+    username: 'folayanyemi',
+    emailVerified: true,
+    wasReferred: null,
+    blacklisted: false,
+    superAdmin: false,
+    FactorAuth: true,
+    FactorAuthCode: '826576',
+    providusAccountNumber: '9989238879',
+    adminType: 'SUPERADMIN_INTEGRATOR',
+    userType: 'PROVIDER',
+    planType: 'PLATINUM_USER',
+    dob: '1998-05-16',
+    location: 'USA',
+    nextOfKin: 'yemi',
+    profilePictureURL: null,
+    country: 'NIGERIA',
+    rewardCode: '172693VESTI',
+    juiceUserId: '6e8fbd24-789f-4be5-b6ce-1dad382c6cda',
+    phoneNumber: '+2348103817187',
+    gender: 'male',
+    referalCode: 'Y-iih5S9mm',
+    totalReffered: '0',
+    ReferalLink: 'https://app.wevesti.com/register?referalCode=Y-iih5S9m',
+    walletAmountInUSCents: '68',
+    walletInNGNKobo: '85414',
+    ngnWithdrawalLimit: '50000000',
+    ngnDailyLimit: '3000000000',
+    usdWithdrawalLimit: '100000',
+    usdDailyWithdrawalLimit: '200000',
+    ngnTransaferLimit: '500000000',
+    usdTransaferLimit: '100000',
+    ngnDailyTransferLimit: '3000000000',
+    usdDailyTransferLimit: '250000',
+    isNewApp: 'true',
+    deviceType: 'website',
+    achbankName: null,
+    achAccountName: null,
+    achAccountNumber: null,
+    achRoutingNumber: null,
+    achWithdrawalAmount: null,
+    achTransactionId: null,
+    countryofChoice: '[ { "usa","London","canada" }]',
+    cardBalance: '97',
+    hasVirtualCard: 'true',
+    kycLevel: 'Level3',
+    passedKyc: true,
+    kycDocumentStatus: 'APPROVED',
+    silaAccountName: null,
+    silaNickName: null,
+    silaHandle: null,
+    silaKycStatus: null,
+    silaWallet: null,
+    silaWalletAddress: null,
+    silaWalletKey: null,
+    silaDocumentVerified: null,
+    silaDocumentId: null,
+    isLoanApplicant: true,
+    apto_cardholder_id: null,
+    apto_card_application_id: null,
+    creditData: null,
+    level1Kyc: null,
+    apto_cardholder_token: null,
+    virtualCardWaitlistStatus: null,
+    isLoanInterestPaid: null,
+    loanInterestPaid: null,
+    verificationId: null,
+    verificationType: 'BVN',
+    verificationNumber: 'U2FsdGVkX1/frZA80XoTqDS/PJx308eeLBRriS9icHg=',
+    loanAmount: null,
+    isLoanFormUploaded: null,
+    accountDeleted: null,
+    stripeVirtualAccountNumber: '9670003031',
+    stripeVirtualAccountRoutingNumber: '084106768',
+    stripeVirtualBankName: 'Evolve Bank and Trust',
+    stripeVirtualSwiftCode: '084106768',
+    monoAccountId: null,
+    monoCardHolderId: '6347f983102bb597ab6d0d0d',
+    foundersFinancialBalance: '17521',
+    stripeAccountStatus: 'VERIFIED',
+    stripeAccountId: 'acct_1LXYfQQkcsIbX10W',
+    integratorJWTAuthentication:
+      'live_sk$2a$08$hKK9SO7vHwlm00oqwjQHr.S9QjQSAeoHcoWouE.miFLbvSzgxrMcG',
+    sandboxIntegratorJWTAuthentication:
+      'sandbox_sk$2a$08$Z083le6grscAcKBv3t0GBupvcnsQ.V1efvpm0bkcrxVjlFnTZkvWW',
+    integratorMode: 'SANDBOX',
+    webhookUrl: null,
+    isExternalIntegrator: true,
+    stripeSourceId: null,
+    stripeVerificationToken: null,
+    stripeFinancialAccountId: 'fa_1LXrAcQkcsIbX10Wqq3g78L4',
+    createdAt: '2021-05-01T18:41:04.932Z',
+    updatedAt: '2023-02-17T08:57:19.955Z',
+    isAdmin: false,
+    hasTransactionPin: true,
+    hasVerifiedKyc: true,
+    registrationToken:
+      'cxmh8z8hRbCb1dtNaU4yJD:APA91bFFWGcGMxPtoC8SC7Ate4vfADxpMW7EQpbuS7mADIwAbJhshnWjYGPBN0k0R6mZVUj17u1K9TNAGDM23vc-IHYFcss55rMbpDhpVvNOq5GuwoGH4KOY5KplJzorqv55O60gksDT',
+  };
   // const { balance, foundersRefetch } = useFounders(
   //   userData.id,
   //   userData.stripeAccountStatus,
@@ -454,14 +469,15 @@ const Trade = props => {
       .catch(err => {
         console.log(err);
       });
-
-    // eslint-disable-next-line
   }, []);
 
-  // useEffect(()=> {
-  //   foundersRefetch()
-  //   // eslint-disable-next-line
-  // },[userData.id, !isPreviousFoundersData])
+  var handleLocation = data => {
+    this.setState({ location: data });
+  };
+
+  var handleCitizenship = data => {
+    this.setState({ citizen: data });
+  };
 
   return (
     <>
@@ -559,7 +575,7 @@ const Trade = props => {
             myData={localStorage.getItem('userData')}
           />
         </Simplemodal>
-{/* 
+        {/* 
         <Simplemodal
           onClick={() => {
             // foundersRefetch();
@@ -731,175 +747,68 @@ const Trade = props => {
                 {/* main start */}
                 <div className="row bank-cont">
                   <div className="col-10 col-lg-5 col-md-10 pt-3">
-                    <div className="section-heading">My Trades </div>
-                    {/* <Newbalancecard
-                      title ={`Your ${currency ? 'NGN':'USD'} vesti balance`}
-                      onClick={toggle}
-                      reveal={state.modal}
-                      nairaAmount={userData.walletInNGNKobo / 100}
-                      dollarAmount={userData.walletAmountInUSCents / 100}
-                      accountNumber = {userData.providusAccountNumber}
-                      currency={ currency}
-                      toggleCurrency={toggleCurrency}
-                      request = {accountRequest}
-                      foundersBalance={balance/100}
-                      // toggle() redirectTransfer() showWithdrawalModal()
-                      deposit={() => userData.verifiedKyc === "APPROVED" || userData.verifiedKyc === true ? currency ? toggle() :  dispatch(walletUsdAction({usdOpen:true,action:'deposit'})) :openUpdateModal()}
-                      send={() => userData.verifiedKyc === "APPROVED" || userData.verifiedKyc === true ? redirectTransfer() :openUpdateModal()}
-                      withdraw ={() => userData.verifiedKyc === "APPROVED" || userData.verifiedKyc === true ? currency? showWithdrawalModal() : setUsdmodal(true) : openUpdateModal()}
-                      setUpload={setUpload}
-                      loanAmount={userData.loanAmount / 100}
-                      loanAmountPaid={userData.loanInterestPaid / 100}
-                      loanForm= {userData.isLoanFormUploaded}
-                      rate={rate}
-                      userdata={userData}
-                      convert = {()=> setFundmodal({...fundmodal, currency:'NGN', value:true})}
-                      stripeVirtualAccountNumber ={userData.stripeVirtualAccountNumber}
-                      active={activeAccount}
-                      setActive ={setActiveAccount}
-                    /> */}
-                    <Wallets
-                      nairaAmount={userData.walletInNGNKobo / 100}
-                      dollarAmount={userData.walletAmountInUSCents / 100}
-                      accountNumber={userData.providusAccountNumber}
-                      request={accountRequest}
-                      //foundersBalance={balance / 100}
-                      depositUsd={() =>
-                        userData.verifiedKyc === 'APPROVED' ||
-                        userData.verifiedKyc === true
-                          ? dispatch(
-                              walletUsdAction({
-                                usdOpen: true,
-                                action: 'deposit',
-                              }),
-                            )
-                          : openUpdateModal()
-                      }
-                      withdrawUsd={() =>
-                        userData.verifiedKyc === 'APPROVED' ||
-                        userData.verifiedKyc === true
-                          ? setUsdmodal(true)
-                          : openUpdateModal()
-                      }
-                      // sendUsd={() => userData.verifiedKyc === "APPROVED" || userData.verifiedKyc === true ? dispatch(walletUsdAction({usdOpen:true,action:'withdraw'})) :openUpdateModal()}
-                      deposit={() =>
-                        userData.verifiedKyc === 'APPROVED' ||
-                        userData.verifiedKyc === true
-                          ? toggle()
-                          : openUpdateModal()
-                      }
-                      send={() =>
-                        userData.verifiedKyc === 'APPROVED' ||
-                        userData.verifiedKyc === true
-                          ? redirectTransfer()
-                          : openUpdateModal()
-                      }
-                      withdraw={() =>
-                        userData.verifiedKyc === 'APPROVED' ||
-                        userData.verifiedKyc === true
-                          ? currency
-                            ? showWithdrawalModal()
-                            : setUsdmodal(true)
-                          : openUpdateModal()
-                      }
-                      userdata={userData}
-                      stripeVirtualAccountNumber={
-                        userData.stripeVirtualAccountNumber
-                      }
-                      nairaAccount={() => setAccount(true)}
-                      active={activeAccount}
-                      setActive={setActiveAccount}
-                    />
-                  </div>
-                  <div className="col-10 col-lg-7 col-md-10 pt-3">
-                    <div className="dashboard_trade_container">
-                      <Link to={`/`}>
-                        <div className="dashboard_trade">
-                          <img
-                            src={tgift}
-                            alt="trade SVG"
-                            className="mr-4 ml-2"
-                          />
-                          Trade Gift Card
-                        </div>
-                      </Link>
+                    <div className="section-heading"> My Trades </div>
 
-                      <Link to={`/`}>
-                        <div className="dashboard_trade">
-                          <img
-                            src={tbitcoin}
-                            alt="trade SVG"
-                            className="mr-4 ml-2"
-                          />
-                          Trade Gift Bitcoin
+                    <div className="d-flex gba_sidebar_container">
+                      <NavLink to="/trades">
+                        <div
+                          className={`gba_sidebar ${
+                            path.startsWith('/trade')
+                              ? 'active_gba_sidebar'
+                              : ''
+                          }`}
+                        >
+                          GiftCard
                         </div>
-                      </Link>
-                      <Link to={`/`}>
-                        <div className="dashboard_trade">
-                          <img
-                            src={talts}
-                            alt="trade SVG"
-                            className="mr-4 ml-2"
-                          />
-                          Trade Alts
+                      </NavLink>
+
+                      <NavLink to="/tradesbitcoin">
+                        <div
+                          className={`gba_sidebar ${
+                            path.startsWith('/tradesbitcoin')
+                              ? 'active_gba_sidebar'
+                              : ''
+                          }`}
+                        >
+                          Bitcoins
                         </div>
-                      </Link>
+                      </NavLink>
+
+                      <NavLink to="/tradesalts">
+                        <div
+                          className={`gba_sidebar ${
+                            path.startsWith('/tradesalts')
+                              ? 'active_gba_sidebar'
+                              : ''
+                          }`}
+                        >
+                          Alts
+                        </div>
+                      </NavLink>
                     </div>
-                  </div>
+
+                    <Mytransactions balance={userData.walletInNGNKobo} />
+                
+
+               </div>   
                 </div>
-
-                {/* {!userData.stripeVirtualAccountNumber && (
-                  <Newfeature
-                    // status="APPROVED"
-                    stripeStatus={userData.stripeAccountStatus}
-                    // stripeStatus="UNVERIFIED"
-                    status={userData.virtualCardWaitlistStatus}
-                    waitlist={
-                      userData.verifiedKyc === 'APPROVED' ||
-                      userData.verifiedKyc === true
-                        ? () => dispatch(openWaitlist())
-                        : openUpdateModal
-                    }
-                  />
-                )}
-                <Domore
-                  loan={userData.isLoanInterestPaid}
-                  loanA={userData.isLoanApplicant}
-                  // approved="APPROVED"
-                  userData={userData}
-                  refetch={refetch}
-                  create={
-                    userData.verifiedKyc === 'APPROVED' ||
-                    userData.verifiedKyc === true
-                      ? value => dispatch(openVirtual(value))
-                      : openUpdateModal
-                  }
-                  waitlistCard={
-                    userData.verifiedKyc === 'APPROVED' ||
-                    userData.verifiedKyc === true
-                      ? () => dispatch(openWaitlist())
-                      : openUpdateModal
-                  }
-                /> */}
-                
-                  <Mytransactions balance={userData.walletInNGNKobo} />
-                
-
-                
-              
               </div>
-              
             </div>
-            <Link to={`/`}>
-                  <div className="viewall_transactions"> View all ﹥</div>
-                </Link>
           </div>
-        
         </div>
       </Layout>
     </>
   );
 };
+
+const NavLink = props => (
+  <Link
+    {...props}
+    getProps={({ isCurrent }) => ({
+      className: isCurrent ? 'active' : '',
+    })}
+  />
+);
 
 const mapStateToProps = ({ auth, common, transactions, domore, wallets }) => {
   const { authUser } = auth;
@@ -928,4 +837,4 @@ const mapDispatchToProps = {
   openUpdateBox,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Trade);
+export default connect(mapStateToProps, mapDispatchToProps)(Rate);

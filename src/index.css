@@ -250,6 +250,27 @@ button {
   box-shadow: none !important;
 }
 
+
+.form_select_editprofile .css-yk16xz-control,
+.form_select_editprofile .css-1pahdxg-control {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 30px;
+
+  border: none;
+  color: #000000;
+  background: #FFF9F0;
+  
+  
+  appearance: none !important;
+  height: 70px;
+
+
+  box-shadow: none !important;
+}
+
 .form_element {
   /* z-index: 8000 !important; */
   font-family: Lato;
@@ -290,9 +311,38 @@ button {
   margin: 1em 0;
 }
 
+.form_element_editprofile {
+  /* z-index: 8000 !important; */
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 30px;
+  padding-left: 2em;
+  color: #000000;
+  background: #FFF9F0;
+  border: none;
+  appearance: none !important;
+  height: 70px;
+  margin: 1em 0;
+}
+
 .bottom_border{
   border: none;
   border-bottom: 1px solid rgb(28, 27, 27);
+}
+
+.bottom_border_editprofile{
+  border: none;
+  border-bottom: 1px solid rgb(28, 27, 27);
+  background: #FFF9F0;
+   
+  box-shadow: 0px 1.03093px 0px #000000;
+}
+
+.edit_profile_form{
+
+  background: #FFF9F0;
 }
 .ErrorMessageFormik{
   color: #cb1717;

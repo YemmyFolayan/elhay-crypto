@@ -189,7 +189,7 @@ input {
   height: 100%;
   left: 440px;
   top: 264px;
-
+  margin: 20px;
   background: #fff9f0;
   border-radius: 30px;
 }
@@ -205,6 +205,7 @@ input {
   margin-left: 5%;
 }
 
+
 .profile_container_yellow {
   /* margin-top: 30%;
   margin-right: 40%; */
@@ -213,6 +214,24 @@ input {
   align-content: center;
   align-self: center;
   align-items: center;
+}
+
+.edit_profile_button {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 123px;
+  gap: 10px;
+  
+  width: 233px;
+  height: 54px;
+  /* left: 791px;
+  top: 411px; */
+  color: #000000;
+  background: #E4AD50;
+  border-radius: 8px;
 }
 
 .rate_bitcoin_word {
