@@ -745,10 +745,15 @@ const Rate = props => {
             <div className=" flex_page_container d-flex justify-content-center ">
               <div className="px-3 w-100 main_transaction_box">
                 {/* main start */}
+
+                
                 <div className="row bank-cont">
-                  <div className="col-10 col-lg-5 col-md-10 pt-3">
+{/*               
+                <div className="col-10 col-lg-5 col-md-10 pt-3">  */}
+                 <div className="">
                     <div className="section-heading"> My Trades </div>
 
+                  
                     <div className="d-flex gba_sidebar_container">
                       <NavLink to="/trades">
                         <div
@@ -788,9 +793,7 @@ const Rate = props => {
                     </div>
 
                     <Mytransactions balance={userData.walletInNGNKobo} />
-                
-
-               </div>   
+                  </div>
                 </div>
               </div>
             </div>

@@ -968,14 +968,15 @@ const Rate = props => {
                   </div>
                   <div className="col-10 col-lg-7 col-md-10 pt-3">
                     <div className="rate_calculation_container">
-                    <div className="rate_calculation_header">Rate Calculation</div>
-                   
+                      <div className="rate_calculation_header">
+                        Rate Calculation
+                      </div>
+
                       <div className="table-container">
                         <table className="transactions-table">
-                               <thead>
+                          <thead>
                             <tr>
                               <th></th>
-                          
                             </tr>
                           </thead>
 
@@ -989,10 +990,11 @@ const Rate = props => {
                               <td className="rate_calculation_value">ITUNES</td>
                             </tr>
                             <tr>
-                        
                               <td>Card Country</td>
 
-                              <td className="rate_calculation_value">GERMANY</td>
+                              <td className="rate_calculation_value">
+                                GERMANY
+                              </td>
                             </tr>
                             <tr>
                               <td> Card Type</td>
@@ -1000,19 +1002,23 @@ const Rate = props => {
                               <td className="rate_calculation_value">ECODE</td>
                             </tr>
                             <tr>
-                              <td > Card Value</td>
+                              <td> Card Value</td>
 
                               <td className="rate_calculation_value">2550.0</td>
                             </tr>
                             <tr>
                               <td> Rate</td>
 
-                              <td className="rate_calculation_value">360.0/$</td>
+                              <td className="rate_calculation_value">
+                                360.0/$
+                              </td>
                             </tr>
                             <tr>
                               <td> Amount to Recieve</td>
 
-                              <td className="rate_calculation_value">N 918,000.00</td>
+                              <td className="rate_calculation_value">
+                                N 918,000.00
+                              </td>
                             </tr>
                           </tbody>
                           {/* <tbody>

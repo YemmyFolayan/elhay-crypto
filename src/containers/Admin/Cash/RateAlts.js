@@ -746,7 +746,7 @@ const RateAlts = props => {
               <div className="px-3 w-100 main_transaction_box">
                 {/* main start */}
                 <div className="row bank-cont">
-                  <div className="col-10 col-lg-5 col-md-10 pt-3">
+         
                     <div className="section-heading">Rate Calculator</div>
 
                     <div className="d-flex gba_sidebar_container">
@@ -779,7 +779,7 @@ const RateAlts = props => {
                       </NavLink>
                     </div>
               
-
+                    <div className="col-10 col-lg-5 col-md-10 pt-3"> 
                     {loading ? (
                       <Loader />
                     ) : (

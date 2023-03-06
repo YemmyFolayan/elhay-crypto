@@ -746,39 +746,38 @@ const RateBitcoin = props => {
               <div className="px-3 w-100 main_transaction_box">
                 {/* main start */}
                 <div className="row bank-cont">
-                  <div className="col-10 col-lg-5 col-md-10 pt-3">
-                    <div className="section-heading">Rate Calculator</div>
+                  <div className="section-heading">Rate Calculator</div>
 
-                    <div className="d-flex gba_sidebar_container">
-                      <NavLink to="/rates">
-                        <div className="gba_sidebar">GiftCard</div>
-                      </NavLink>
+                  <div className="d-flex gba_sidebar_container">
+                    <NavLink to="/rates">
+                      <div className="gba_sidebar">GiftCard</div>
+                    </NavLink>
 
-                      <NavLink to="/ratebitcoin">
-                        <div
-                          className={`gba_sidebar ${
-                            path.startsWith('/ratebitcoin')
-                              ? 'active_gba_sidebar'
-                              : ''
-                          }`}
-                        >
-                          Bitcoins
-                        </div>
-                      </NavLink>
+                    <NavLink to="/ratebitcoin">
+                      <div
+                        className={`gba_sidebar ${
+                          path.startsWith('/ratebitcoin')
+                            ? 'active_gba_sidebar'
+                            : ''
+                        }`}
+                      >
+                        Bitcoins
+                      </div>
+                    </NavLink>
 
-                      <NavLink to="/ratealts">
-                        <div
-                          className={`gba_sidebar ${
-                            path.startsWith('/ratealts')
-                              ? 'active_gba_sidebar'
-                              : ''
-                          }`}
-                        >
-                          Alts
-                        </div>
-                      </NavLink>
-                    </div>
-                    {/* <Newbalancecard
+                    <NavLink to="/ratealts">
+                      <div
+                        className={`gba_sidebar ${
+                          path.startsWith('/ratealts')
+                            ? 'active_gba_sidebar'
+                            : ''
+                        }`}
+                      >
+                        Alts
+                      </div>
+                    </NavLink>
+                  </div>
+                  {/* <Newbalancecard
                       title ={`Your ${currency ? 'NGN':'USD'} vesti balance`}
                       onClick={toggle}
                       reveal={state.modal}
@@ -805,6 +804,7 @@ const RateBitcoin = props => {
                       setActive ={setActiveAccount}
                     /> */}
 
+                  <div className="col-10 col-lg-5 col-md-10 pt-3">
                     {loading ? (
                       <Loader />
                     ) : (
@@ -900,9 +900,15 @@ const RateBitcoin = props => {
                                 Check Rates
                               </button>
 
-                              <div className="rate_bitcoin_word"> Amount you will receive </div>
+                              <div className="rate_bitcoin_word">
+                                {' '}
+                                Amount you will receive{' '}
+                              </div>
 
-                              <div className="rate_bitcoin_total"> $850.00 </div>
+                              <div className="rate_bitcoin_total">
+                                {' '}
+                                $850.00{' '}
+                              </div>
                             </Form>
                           </>
                         )}

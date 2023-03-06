@@ -771,7 +771,7 @@ const Profile = props => {
                               </button>
               
 
-                    <div className="col-10 col-lg-5 col-md-10 pt-3">
+                       {/*<div className="col-10 col-lg-5 col-md-10 pt-3">  */}   <div className="">
                       <div className="profile_container_white ">
                         <div className="table-container">
                           <table className="transactions-table">

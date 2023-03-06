@@ -10,15 +10,14 @@ import yellow from 'assets/vcards/gg-yellow.svg';
 import save from 'assets/save_tr.svg';
 import deposit from 'assets/deposit_tr.svg';
 import withdraw from 'assets/withdraw_tr.svg';
+
 import airtime from 'assets/airtime_tr.svg';
 import transfer from 'assets/transfer_tr.svg';
+import bitcoin from 'assets/svg/bitcoin_tr.svg';
+import paypal from 'assets/svg/paypal_tr.svg';
+import alts from 'assets/svg/alts_tr.svg';
 
-import {
-  usd,
-  naira,
-  nairapattern,
-  founders
-} from 'assets/assets';
+import { usd, naira, nairapattern, founders } from 'assets/assets';
 
 export const objectValuesStringify = obj => Object.values(obj).join(', ');
 
@@ -212,12 +211,29 @@ export const returnAmount = value => {
 };
 
 export const transImg = value => {
+
+  console.log("value: ", value);
+
   switch (value) {
-    case 'WITHDRAWAL':
+    
+    case 'PAYPAL':
     case 'DEBIT':
     case 'LIEN':
     case 'PLACE':
-      return withdraw;
+      return paypal;
+
+      case 'WITHDRAWAL':
+        case 'DEBIT':
+        case 'LIEN':
+        case 'PLACE':
+          return withdraw;
+
+    case 'BITCOIN':
+      return bitcoin;
+
+    case 'ALTS':
+      return alts;
+
     case 'TRANSFER':
       return transfer;
     case 'SAVING':

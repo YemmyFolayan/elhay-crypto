@@ -30,6 +30,10 @@ export const Myfintransactions = props => {
   }, [props.balance, page]);
 
   if (loading) {
+
+
+    console.log("Inside loading finacial transaction");
+
     return (
       <div className="mytransactions-container">
         <Titlesubtitle
@@ -42,6 +46,10 @@ export const Myfintransactions = props => {
       </div>
     );
   } else if (data.transactions && data.transactions.length > 0) {
+
+
+    console.log("Inside data financial transaction");
+
     return (
       <div className="mytransactions-container">
         <Titlesubtitle

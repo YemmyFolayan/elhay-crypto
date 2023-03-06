@@ -77,7 +77,7 @@ import {
   headeditprofile,
   passwordeditprofile,
   phoneeditprofile,
-  bankeditprofile
+  bankeditprofile,
 } from '../../../assets/assets';
 import { Avatar, Button } from 'antd';
 
@@ -797,6 +797,12 @@ const Profile = props => {
                             <Form className="edit_profile_form">
                               <div className="justify-content-between rate_giftcard_container">
                                 <div className="w-100 bottom_border_editprofile">
+                                  <img
+                                    src={headeditprofile}
+                                    alt="name"
+                                    className="profile_update_form_icon"
+                                  ></img>
+
                                   <Field
                                     label="name"
                                     className="form_element_editprofile form_select_editprofile w-100"
@@ -820,6 +826,12 @@ const Profile = props => {
                                 </div>
 
                                 <div className="w-100 bottom_border_editprofile">
+                                  <img
+                                    src={emaileditprofile}
+                                    alt="email"
+                                    className="profile_update_form_icon"
+                                  ></img>
+
                                   <Field
                                     label="email"
                                     className="form_element_editprofile form_select_editprofile w-100"
@@ -843,6 +855,11 @@ const Profile = props => {
                                 </div>
 
                                 <div className="w-100 bottom_border_editprofile">
+                                  <img
+                                    src={phoneeditprofile}
+                                    alt="phonenumber"
+                                    className="profile_update_form_icon"
+                                  ></img>
                                   <Field
                                     label="phonenumber"
                                     className="form_element_editprofile form_select_editprofile w-100"
@@ -866,6 +883,11 @@ const Profile = props => {
                                 </div>
 
                                 <div className="w-100 bottom_border_editprofile">
+                                  <img
+                                    src={passwordeditprofile}
+                                    alt="password"
+                                    className="profile_update_form_icon"
+                                  ></img>
                                   <Field
                                     label="password"
                                     className="form_element_editprofile form_select_editprofile w-100"
@@ -890,6 +912,11 @@ const Profile = props => {
                               </div>
 
                               <div className="w-100 bottom_border_editprofile">
+                                <img
+                                  src={bankeditprofile}
+                                  alt="banktype"
+                                  className="profile_update_form_icon"
+                                ></img>
                                 <Field
                                   className="w-100"
                                   component={() => (
@@ -934,6 +961,11 @@ const Profile = props => {
                               </div>
 
                               <div className="w-100 bottom_border_editprofile">
+                                <img
+                                  src={cardeditprofile}
+                                  alt="accountnumber"
+                                  className="profile_update_form_icon"
+                                ></img>
                                 <Field
                                   label="accountnumber"
                                   className="form_element_editprofile form_select_editprofile w-100"

@@ -141,106 +141,109 @@ const Cash = props => {
 
   const { userDatas, refetch } = useFetchUser();
 
-  const userData =   {
-    "id": "6a1a8c22-0a1e-4f37-9bd9-a0963f48d79f",
-    "firstName": "Yemi",
-    "lastName": "Folayan",
-    "email": "foyemc@gmail.com",
-    "username": "folayanyemi",
-    "emailVerified": true,
-    "wasReferred": null,
-    "blacklisted": false,
-    "superAdmin": false,
-    "FactorAuth": true,
-    "FactorAuthCode": "826576",
-    "providusAccountNumber": "9989238879",
-    "adminType": "SUPERADMIN_INTEGRATOR",
-    "userType": "PROVIDER",
-    "planType": "PLATINUM_USER",
-    "dob": "1998-05-16",
-    "location": "USA",
-    "nextOfKin": "yemi",
-    "profilePictureURL": null,
-    "country": "NIGERIA",
-    "rewardCode": "172693VESTI",
-    "juiceUserId": "6e8fbd24-789f-4be5-b6ce-1dad382c6cda",
-    "phoneNumber": "+2348103817187",
-    "gender": "male",
-    "referalCode": "Y-iih5S9mm",
-    "totalReffered": "0",
-    "ReferalLink": "https://app.wevesti.com/register?referalCode=Y-iih5S9m",
-    "walletAmountInUSCents": "68",
-    "walletInNGNKobo": "85414",
-    "ngnWithdrawalLimit": "50000000",
-    "ngnDailyLimit": "3000000000",
-    "usdWithdrawalLimit": "100000",
-    "usdDailyWithdrawalLimit": "200000",
-    "ngnTransaferLimit": "500000000",
-    "usdTransaferLimit": "100000",
-    "ngnDailyTransferLimit": "3000000000",
-    "usdDailyTransferLimit": "250000",
-    "isNewApp": "true",
-    "deviceType": "website",
-    "achbankName": null,
-    "achAccountName": null,
-    "achAccountNumber": null,
-    "achRoutingNumber": null,
-    "achWithdrawalAmount": null,
-    "achTransactionId": null,
-    "countryofChoice": "[ { \"usa\",\"London\",\"canada\" }]",
-    "cardBalance": "97",
-    "hasVirtualCard": "true",
-    "kycLevel": "Level3",
-    "passedKyc": true,
-    "kycDocumentStatus": "APPROVED",
-    "silaAccountName": null,
-    "silaNickName": null,
-    "silaHandle": null,
-    "silaKycStatus": null,
-    "silaWallet": null,
-    "silaWalletAddress": null,
-    "silaWalletKey": null,
-    "silaDocumentVerified": null,
-    "silaDocumentId": null,
-    "isLoanApplicant": true,
-    "apto_cardholder_id": null,
-    "apto_card_application_id": null,
-    "creditData": null,
-    "level1Kyc": null,
-    "apto_cardholder_token": null,
-    "virtualCardWaitlistStatus": null,
-    "isLoanInterestPaid": null,
-    "loanInterestPaid": null,
-    "verificationId": null,
-    "verificationType": "BVN",
-    "verificationNumber": "U2FsdGVkX1/frZA80XoTqDS/PJx308eeLBRriS9icHg=",
-    "loanAmount": null,
-    "isLoanFormUploaded": null,
-    "accountDeleted": null,
-    "stripeVirtualAccountNumber": "9670003031",
-    "stripeVirtualAccountRoutingNumber": "084106768",
-    "stripeVirtualBankName": "Evolve Bank and Trust",
-    "stripeVirtualSwiftCode": "084106768",
-    "monoAccountId": null,
-    "monoCardHolderId": "6347f983102bb597ab6d0d0d",
-    "foundersFinancialBalance": "17521",
-    "stripeAccountStatus": "VERIFIED",
-    "stripeAccountId": "acct_1LXYfQQkcsIbX10W",
-    "integratorJWTAuthentication": "live_sk$2a$08$hKK9SO7vHwlm00oqwjQHr.S9QjQSAeoHcoWouE.miFLbvSzgxrMcG",
-    "sandboxIntegratorJWTAuthentication": "sandbox_sk$2a$08$Z083le6grscAcKBv3t0GBupvcnsQ.V1efvpm0bkcrxVjlFnTZkvWW",
-    "integratorMode": "SANDBOX",
-    "webhookUrl": null,
-    "isExternalIntegrator": true,
-    "stripeSourceId": null,
-    "stripeVerificationToken": null,
-    "stripeFinancialAccountId": "fa_1LXrAcQkcsIbX10Wqq3g78L4",
-    "createdAt": "2021-05-01T18:41:04.932Z",
-    "updatedAt": "2023-02-17T08:57:19.955Z",
-    "isAdmin": false,
-    "hasTransactionPin": true,
-    "hasVerifiedKyc": true,
-    "registrationToken": "cxmh8z8hRbCb1dtNaU4yJD:APA91bFFWGcGMxPtoC8SC7Ate4vfADxpMW7EQpbuS7mADIwAbJhshnWjYGPBN0k0R6mZVUj17u1K9TNAGDM23vc-IHYFcss55rMbpDhpVvNOq5GuwoGH4KOY5KplJzorqv55O60gksDT"
-};
+  const userData = {
+    id: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79f',
+    firstName: 'Yemi',
+    lastName: 'Folayan',
+    email: 'foyemc@gmail.com',
+    username: 'folayanyemi',
+    emailVerified: true,
+    wasReferred: null,
+    blacklisted: false,
+    superAdmin: false,
+    FactorAuth: true,
+    FactorAuthCode: '826576',
+    providusAccountNumber: '9989238879',
+    adminType: 'SUPERADMIN_INTEGRATOR',
+    userType: 'PROVIDER',
+    planType: 'PLATINUM_USER',
+    dob: '1998-05-16',
+    location: 'USA',
+    nextOfKin: 'yemi',
+    profilePictureURL: null,
+    country: 'NIGERIA',
+    rewardCode: '172693VESTI',
+    juiceUserId: '6e8fbd24-789f-4be5-b6ce-1dad382c6cda',
+    phoneNumber: '+2348103817187',
+    gender: 'male',
+    referalCode: 'Y-iih5S9mm',
+    totalReffered: '0',
+    ReferalLink: 'https://app.wevesti.com/register?referalCode=Y-iih5S9m',
+    walletAmountInUSCents: '68',
+    walletInNGNKobo: '85414',
+    ngnWithdrawalLimit: '50000000',
+    ngnDailyLimit: '3000000000',
+    usdWithdrawalLimit: '100000',
+    usdDailyWithdrawalLimit: '200000',
+    ngnTransaferLimit: '500000000',
+    usdTransaferLimit: '100000',
+    ngnDailyTransferLimit: '3000000000',
+    usdDailyTransferLimit: '250000',
+    isNewApp: 'true',
+    deviceType: 'website',
+    achbankName: null,
+    achAccountName: null,
+    achAccountNumber: null,
+    achRoutingNumber: null,
+    achWithdrawalAmount: null,
+    achTransactionId: null,
+    countryofChoice: '[ { "usa","London","canada" }]',
+    cardBalance: '97',
+    hasVirtualCard: 'true',
+    kycLevel: 'Level3',
+    passedKyc: true,
+    kycDocumentStatus: 'APPROVED',
+    silaAccountName: null,
+    silaNickName: null,
+    silaHandle: null,
+    silaKycStatus: null,
+    silaWallet: null,
+    silaWalletAddress: null,
+    silaWalletKey: null,
+    silaDocumentVerified: null,
+    silaDocumentId: null,
+    isLoanApplicant: true,
+    apto_cardholder_id: null,
+    apto_card_application_id: null,
+    creditData: null,
+    level1Kyc: null,
+    apto_cardholder_token: null,
+    virtualCardWaitlistStatus: null,
+    isLoanInterestPaid: null,
+    loanInterestPaid: null,
+    verificationId: null,
+    verificationType: 'BVN',
+    verificationNumber: 'U2FsdGVkX1/frZA80XoTqDS/PJx308eeLBRriS9icHg=',
+    loanAmount: null,
+    isLoanFormUploaded: null,
+    accountDeleted: null,
+    stripeVirtualAccountNumber: '9670003031',
+    stripeVirtualAccountRoutingNumber: '084106768',
+    stripeVirtualBankName: 'Evolve Bank and Trust',
+    stripeVirtualSwiftCode: '084106768',
+    monoAccountId: null,
+    monoCardHolderId: '6347f983102bb597ab6d0d0d',
+    foundersFinancialBalance: '17521',
+    stripeAccountStatus: 'VERIFIED',
+    stripeAccountId: 'acct_1LXYfQQkcsIbX10W',
+    integratorJWTAuthentication:
+      'live_sk$2a$08$hKK9SO7vHwlm00oqwjQHr.S9QjQSAeoHcoWouE.miFLbvSzgxrMcG',
+    sandboxIntegratorJWTAuthentication:
+      'sandbox_sk$2a$08$Z083le6grscAcKBv3t0GBupvcnsQ.V1efvpm0bkcrxVjlFnTZkvWW',
+    integratorMode: 'SANDBOX',
+    webhookUrl: null,
+    isExternalIntegrator: true,
+    stripeSourceId: null,
+    stripeVerificationToken: null,
+    stripeFinancialAccountId: 'fa_1LXrAcQkcsIbX10Wqq3g78L4',
+    createdAt: '2021-05-01T18:41:04.932Z',
+    updatedAt: '2023-02-17T08:57:19.955Z',
+    isAdmin: false,
+    hasTransactionPin: true,
+    hasVerifiedKyc: true,
+    registrationToken:
+      'cxmh8z8hRbCb1dtNaU4yJD:APA91bFFWGcGMxPtoC8SC7Ate4vfADxpMW7EQpbuS7mADIwAbJhshnWjYGPBN0k0R6mZVUj17u1K9TNAGDM23vc-IHYFcss55rMbpDhpVvNOq5GuwoGH4KOY5KplJzorqv55O60gksDT',
+  };
   // const { balance, foundersRefetch } = useFounders(
   //   userData.id,
   //   userData.stripeAccountStatus,
@@ -559,7 +562,7 @@ const Cash = props => {
             myData={localStorage.getItem('userData')}
           />
         </Simplemodal>
-{/* 
+        {/* 
         <Simplemodal
           onClick={() => {
             // foundersRefetch();
@@ -730,9 +733,8 @@ const Cash = props => {
               <div className="px-3 w-100 main_transaction_box">
                 {/* main start */}
                 <div className="row bank-cont">
-                  <div className="col-10 col-lg-5 col-md-10 pt-3">
-                    <div className="section-heading">My Dashboard</div>
-                    {/* <Newbalancecard
+                  <div className="section-heading">My Dashboard</div>
+                  {/* <Newbalancecard
                       title ={`Your ${currency ? 'NGN':'USD'} vesti balance`}
                       onClick={toggle}
                       reveal={state.modal}
@@ -758,6 +760,8 @@ const Cash = props => {
                       active={activeAccount}
                       setActive ={setActiveAccount}
                     /> */}
+
+                  <div className="col-10 col-lg-5 col-md-10 pt-3">
                     <Wallets
                       nairaAmount={userData.walletInNGNKobo / 100}
                       dollarAmount={userData.walletAmountInUSCents / 100}
@@ -881,20 +885,14 @@ const Cash = props => {
                       : openUpdateModal
                   }
                 /> */}
-                
-                  <Mytransactions balance={userData.walletInNGNKobo} />
-                
 
-                
-              
+                <Mytransactions balance={userData.walletInNGNKobo} />
               </div>
-              
             </div>
             <Link to={`/`}>
-                  <div className="viewall_transactions"> View all ﹥</div>
-                </Link>
+              <div className="viewall_transactions"> View all ﹥</div>
+            </Link>
           </div>
-        
         </div>
       </Layout>
     </>
