@@ -8,10 +8,7 @@ import { Titlesubtitle } from 'components/common/titlesubtitle/titlesubtitle';
 import Newpagination from './pagination/newpagination';
 import { transColor, transImg, transSign } from 'helpers/utils';
 
-console.log("transactions page");
-
-
-
+console.log('transactions page');
 
 // console.log("transactions page");
 
@@ -23,151 +20,270 @@ export const Mytransactions = props => {
   const [data, setData] = useState([]);
   var fetchTransactions = () => {
     // api.get(`/transactions?page=${page}&page_limit=15`).then(response => {
-      //const rawData = response.data;
+    //const rawData = response.data;
 
-      const rawData = {
-        message: 'Successfully retrieved transactions',
-        data: [
-          {
-            id: '5d2251e5-b016-4bba-96bc-55e1190c22ee',
-            type: 'PAYPAL_TRANSACTION',
-            amount: '2000',
-            userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
-            currency: 'USD_CENTS',
-            status: 'SUCCESS',
-            receiverId: null,
-            createdAt: '2023-02-18T22:47:56.893Z',
-            updatedAt: '2023-02-18T22:47:56.893Z',
-          },
-          {
-            id: '18a79488-9d51-463c-9ed1-88c92a51aa78',
-            type: 'BITCOIN',
-            amount: '221',
-            userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
-            currency: 'USD_CENTS',
-            status: 'SUCCESS',
-            receiverId: null,
-            createdAt: '2023-02-18T22:47:56.888Z',
-            updatedAt: '2023-02-18T22:47:56.888Z',
-          },
-          {
-            id: '9d3b7231-0654-4fa3-8291-9d212123aded',
-            type: 'ALTS_TRANSACTION',
-            amount: '7630',
-            userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
-            currency: 'USD_CENTS',
-            status: 'PENDING',
-            receiverId: null,
-            createdAt: '2023-02-18T22:47:56.883Z',
-            updatedAt: '2023-02-18T22:47:56.883Z',
-          },
-          {
-            id: '946f009c-7c34-4ec7-9ae2-f628eefd5657',
-            type: 'WITHDRAWAL_TO_BANK',
-            amount: '2000',
-            userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
-            currency: 'USD_CENTS',
-            status: 'SUCCESS',
-            receiverId: null,
-            createdAt: '2023-02-18T22:39:41.964Z',
-            updatedAt: '2023-02-18T22:39:41.964Z',
-          },
-          {
-            id: '2061f3cd-c19d-466a-8908-74481fcf68fa',
-            type: 'PAYPAL_TRANSACTION',
-            amount: '221',
-            userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
-            currency: 'USD_CENTS',
-            status: 'SUCCESS',
-            receiverId: null,
-            createdAt: '2023-02-18T22:39:41.959Z',
-            updatedAt: '2023-02-18T22:39:41.959Z',
-          },
-          {
-            id: 'eb36ad54-9c8f-44ef-8324-49535b99f085',
-            type: 'PAYPAL_TRANSACTION',
-            amount: '7630',
-            userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
-            currency: 'USD_CENTS',
-            status: 'PENDING',
-            receiverId: null,
-            createdAt: '2023-02-18T22:39:41.954Z',
-            updatedAt: '2023-02-18T22:39:41.954Z',
-          },
-          {
-            id: '076e67a0-ae86-4917-bfc0-3a6a167718f2',
-            type: 'DEPOSIT_TO_WALLET',
-            amount: '200',
-            userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
-            currency: 'USD_CENTS',
-            status: 'SUCCESS',
-            receiverId: null,
-            createdAt: '2023-02-18T22:35:22.083Z',
-            updatedAt: '2023-02-18T22:35:22.083Z',
-          },
-          {
-            id: '1c338683-1929-4485-a688-ca5d5e4c1db0',
-            type: 'DEPOSIT_TO_WALLET',
-            amount: '221',
-            userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
-            currency: 'USD_CENTS',
-            status: 'SUCCESS',
-            receiverId: null,
-            createdAt: '2023-02-18T22:35:22.072Z',
-            updatedAt: '2023-02-18T22:35:22.072Z',
-          },
-          {
-            id: 'dd4bf3c4-53d7-469c-a715-13bfdfb33a69',
-            type: 'DEPOSIT_TO_WALLET',
-            amount: '7630',
-            userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
-            currency: 'USD_CENTS',
-            status: 'FAILED',
-            receiverId: null,
-            createdAt: '2023-02-18T22:35:22.051Z',
-            updatedAt: '2023-02-18T22:35:22.051Z',
-          },
-          {
-            id: '758605c7-2fb9-4059-b68c-175b71296609',
-            type: 'DEPOSIT_TO_WALLET',
-            amount: '0',
-            userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
-            currency: 'USD_CENTS',
-            status: 'SUCCESS',
-            receiverId: null,
-            createdAt: '2023-02-18T22:22:16.240Z',
-            updatedAt: '2023-02-18T22:22:16.240Z',
-          },
-          {
-            id: '37780cd9-988c-4fbe-b28a-cbce71c672d3',
-            type: 'WITHDRAWAL_TO_BANK',
-            amount: '221',
-            userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
-            currency: 'USD_CENTS',
-            status: 'SUCCESS',
-            receiverId: null,
-            createdAt: '2023-02-18T22:22:16.234Z',
-            updatedAt: '2023-02-18T22:22:16.234Z',
-          },
-          {
-            id: '88492250-9b51-4b2d-8a22-9e36a5cd2b7c',
-            type: 'PAYPAL_TRANSACTION',
-            amount: '7630',
-            userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
-            currency: 'USD_CENTS',
-            status: 'PENDING',
-            receiverId: null,
-            createdAt: '2023-02-18T22:22:16.228Z',
-            updatedAt: '2023-02-18T22:22:16.228Z',
-          },
-        ]
-      };
+    const rawData = {
+      message: 'Successfully retrieved transactions',
+      data: [
+        {
+          id: '5d2251e5-b016-4bba-96bc-55e1190c22ee',
+          type: 'PAYPAL_TRANSACTION',
+          amount: '2000',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'SUCCESS',
+          receiverId: null,
+          createdAt: '2023-02-18T22:47:56.893Z',
+          updatedAt: '2023-02-18T22:47:56.893Z',
+        },
+        {
+          id: '18a79488-9d51-463c-9ed1-88c92a51aa78',
+          type: 'BITCOIN',
+          amount: '221',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'SUCCESS',
+          receiverId: null,
+          createdAt: '2023-02-18T22:47:56.888Z',
+          updatedAt: '2023-02-18T22:47:56.888Z',
+        },
+        {
+          id: '9d3b7231-0654-4fa3-8291-9d212123aded',
+          type: 'ALTS_TRANSACTION',
+          amount: '7630',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'PENDING',
+          receiverId: null,
+          createdAt: '2023-02-18T22:47:56.883Z',
+          updatedAt: '2023-02-18T22:47:56.883Z',
+        },
+        {
+          id: '946f009c-7c34-4ec7-9ae2-f628eefd5657',
+          type: 'WITHDRAWAL_TO_BANK',
+          amount: '2000',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'SUCCESS',
+          receiverId: null,
+          createdAt: '2023-02-18T22:39:41.964Z',
+          updatedAt: '2023-02-18T22:39:41.964Z',
+        },
+        {
+          id: '2061f3cd-c19d-466a-8908-74481fcf68fa',
+          type: 'PAYPAL_TRANSACTION',
+          amount: '221',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'SUCCESS',
+          receiverId: null,
+          createdAt: '2023-02-18T22:39:41.959Z',
+          updatedAt: '2023-02-18T22:39:41.959Z',
+        },
+        {
+          id: 'eb36ad54-9c8f-44ef-8324-49535b99f085',
+          type: 'PAYPAL_TRANSACTION',
+          amount: '7630',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'PENDING',
+          receiverId: null,
+          createdAt: '2023-02-18T22:39:41.954Z',
+          updatedAt: '2023-02-18T22:39:41.954Z',
+        },
+        {
+          id: '076e67a0-ae86-4917-bfc0-3a6a167718f2',
+          type: 'DEPOSIT_TO_WALLET',
+          amount: '200',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'SUCCESS',
+          receiverId: null,
+          createdAt: '2023-02-18T22:35:22.083Z',
+          updatedAt: '2023-02-18T22:35:22.083Z',
+        },
+        {
+          id: '1c338683-1929-4485-a688-ca5d5e4c1db0',
+          type: 'DEPOSIT_TO_WALLET',
+          amount: '221',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'SUCCESS',
+          receiverId: null,
+          createdAt: '2023-02-18T22:35:22.072Z',
+          updatedAt: '2023-02-18T22:35:22.072Z',
+        },
+        {
+          id: 'dd4bf3c4-53d7-469c-a715-13bfdfb33a69',
+          type: 'DEPOSIT_TO_WALLET',
+          amount: '7630',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'FAILED',
+          receiverId: null,
+          createdAt: '2023-02-18T22:35:22.051Z',
+          updatedAt: '2023-02-18T22:35:22.051Z',
+        },
+        {
+          id: '758605c7-2fb9-4059-b68c-175b71296609',
+          type: 'DEPOSIT_TO_WALLET',
+          amount: '0',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'SUCCESS',
+          receiverId: null,
+          createdAt: '2023-02-18T22:22:16.240Z',
+          updatedAt: '2023-02-18T22:22:16.240Z',
+        },
+        {
+          id: '37780cd9-988c-4fbe-b28a-cbce71c672d3',
+          type: 'WITHDRAWAL_TO_BANK',
+          amount: '221',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'SUCCESS',
+          receiverId: null,
+          createdAt: '2023-02-18T22:22:16.234Z',
+          updatedAt: '2023-02-18T22:22:16.234Z',
+        },
+        {
+          id: '88492250-9b51-4b2d-8a22-9e36a5cd2b7c',
+          type: 'PAYPAL_TRANSACTION',
+          amount: '7630',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'PENDING',
+          receiverId: null,
+          createdAt: '2023-02-18T22:22:16.228Z',
+          updatedAt: '2023-02-18T22:22:16.228Z',
+        },
+        {
+          id: '9d3b7231-0654-4fa3-8291-9d212123aded',
+          type: 'ALTS_TRANSACTION',
+          amount: '7630',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'PENDING',
+          receiverId: null,
+          createdAt: '2023-02-18T22:47:56.883Z',
+          updatedAt: '2023-02-18T22:47:56.883Z',
+        },
+        {
+          id: '946f009c-7c34-4ec7-9ae2-f628eefd5657',
+          type: 'WITHDRAWAL_TO_BANK',
+          amount: '2000',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'SUCCESS',
+          receiverId: null,
+          createdAt: '2023-02-18T22:39:41.964Z',
+          updatedAt: '2023-02-18T22:39:41.964Z',
+        },
+        {
+          id: '2061f3cd-c19d-466a-8908-74481fcf68fa',
+          type: 'PAYPAL_TRANSACTION',
+          amount: '221',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'SUCCESS',
+          receiverId: null,
+          createdAt: '2023-02-18T22:39:41.959Z',
+          updatedAt: '2023-02-18T22:39:41.959Z',
+        },
+        {
+          id: 'eb36ad54-9c8f-44ef-8324-49535b99f085',
+          type: 'PAYPAL_TRANSACTION',
+          amount: '7630',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'PENDING',
+          receiverId: null,
+          createdAt: '2023-02-18T22:39:41.954Z',
+          updatedAt: '2023-02-18T22:39:41.954Z',
+        },
+        {
+          id: '076e67a0-ae86-4917-bfc0-3a6a167718f2',
+          type: 'DEPOSIT_TO_WALLET',
+          amount: '200',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'SUCCESS',
+          receiverId: null,
+          createdAt: '2023-02-18T22:35:22.083Z',
+          updatedAt: '2023-02-18T22:35:22.083Z',
+        },
+        {
+          id: '1c338683-1929-4485-a688-ca5d5e4c1db0',
+          type: 'DEPOSIT_TO_WALLET',
+          amount: '221',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'SUCCESS',
+          receiverId: null,
+          createdAt: '2023-02-18T22:35:22.072Z',
+          updatedAt: '2023-02-18T22:35:22.072Z',
+        },
+        {
+          id: 'dd4bf3c4-53d7-469c-a715-13bfdfb33a69',
+          type: 'DEPOSIT_TO_WALLET',
+          amount: '7630',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'FAILED',
+          receiverId: null,
+          createdAt: '2023-02-18T22:35:22.051Z',
+          updatedAt: '2023-02-18T22:35:22.051Z',
+        },
+        {
+          id: '758605c7-2fb9-4059-b68c-175b71296609',
+          type: 'DEPOSIT_TO_WALLET',
+          amount: '0',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'SUCCESS',
+          receiverId: null,
+          createdAt: '2023-02-18T22:22:16.240Z',
+          updatedAt: '2023-02-18T22:22:16.240Z',
+        },
+        {
+          id: '37780cd9-988c-4fbe-b28a-cbce71c672d3',
+          type: 'WITHDRAWAL_TO_BANK',
+          amount: '221',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'SUCCESS',
+          receiverId: null,
+          createdAt: '2023-02-18T22:22:16.234Z',
+          updatedAt: '2023-02-18T22:22:16.234Z',
+        },
+        {
+          id: '88492250-9b51-4b2d-8a22-9e36a5cd2b7c',
+          type: 'PAYPAL_TRANSACTION',
+          amount: '7630',
+          userId: '6a1a8c22-0a1e-4f37-9bd9-a0963f48d79d',
+          currency: 'USD_CENTS',
+          status: 'PENDING',
+          receiverId: null,
+          createdAt: '2023-02-18T22:22:16.228Z',
+          updatedAt: '2023-02-18T22:22:16.228Z',
+        },
+      ],
 
-      console.log("transactions page");
+      paginationMeta: {
+        currentPage: 2,
+        nextPage: 3,
+        previousPage: 1,
+        totalObjects: 60,
+        totalPages: 4,
+        maxObjectsPerPage: 12,
+      },
+    };
 
-      setData(rawData);
-      console.log("transaction Data", rawData.data);
-      setLoading(false);
+    console.log('transactions page');
+
+    setData(rawData);
+    console.log('transaction Data', rawData.data);
+    setLoading(false);
     //});
   };
   useEffect(() => {
@@ -175,10 +291,9 @@ export const Mytransactions = props => {
     // eslint-disable-next-line
   }, [props.balance, page]);
 
-
   if (loading) {
-    console.log("transaction Data loading", data);
-    console.log("Inside loading transaction");
+    console.log('transaction Data loading', data);
+    console.log('Inside loading transaction');
     return (
       <div className="mytransactions-container">
         <Titlesubtitle
@@ -191,9 +306,7 @@ export const Mytransactions = props => {
       </div>
     );
   } else if (data.data.length > 0) {
-
-
-    console.log("Inside data transaction");
+    console.log('Inside data transaction');
 
     return (
       <div className="mytransactions-container">
@@ -234,22 +347,28 @@ export const Mytransactions = props => {
           </div>
 
           {/* <Pagination
-                            totalPages={data.paginationMeta.totalPages}
-                            page={page}
-                            setPage={setPage}
-                        /> */}
-{/* 
+            totalPages={data.paginationMeta.totalPages}
+            page={page}
+            setPage={setPage}
+          /> */}
+
+
+          {/* <div className="pagination-container pagination-item arrow right">
+        
+              <div className="viewall_transactions"> View all ﹥</div>
+          
+
+          </div> */}
+
           <Newpagination
             className="pagination-bar"
             currentPage={page}
             totalCount={data.paginationMeta.totalObjects}
             pageSize={15}
             onPageChange={page => setPage(page)}
-          /> */}
-
-
-
-{/* <Newpagination
+          />
+{/* 
+          <Newpagination
             className="pagination-bar"
             currentPage={page}
             totalCount={data.paginationMeta.totalObjects}
@@ -288,7 +407,7 @@ const Trow = props => {
 
   var tr_type = props.type.split('_')[0];
 
-  console.log("tr_type", tr_type);
+  console.log('tr_type', tr_type);
 
   return (
     <tr>

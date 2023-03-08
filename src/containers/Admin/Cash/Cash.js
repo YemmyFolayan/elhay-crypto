@@ -889,9 +889,7 @@ const Cash = props => {
                 <Mytransactions balance={userData.walletInNGNKobo} />
               </div>
             </div>
-            <Link to={`/`}>
-              <div className="viewall_transactions"> View all ﹥</div>
-            </Link>
+           
           </div>
         </div>
       </Layout>
