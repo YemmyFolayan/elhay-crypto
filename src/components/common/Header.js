@@ -214,7 +214,7 @@ const Header = ({ info, link, info2, link2 }) => {
                   position: 'absolute',
                   right: '0px',
                   width: '232px',
-                  height: '263px',
+                  height: '200px',
                   top: '91px',
                   zIndex: 1,
                   borderRadius: '5px',
@@ -222,7 +222,7 @@ const Header = ({ info, link, info2, link2 }) => {
                   boxShadow: '8px 20px 25px rgba(113, 128, 150, 0.25)',
                 }}
               >
-                <ul style={{ listStyle: 'none', padding: 0, margin: '40px' }}>
+                <ul style={{ listStyle: 'none', padding: 0, margin: '30px' }}>
                   <li style={{ margin: '5px' }} onClick={handleMenuClick}>
                     <span style={{ marginRight: '5px' }}>
                       <img src={dropdownrightprofile} alt="trade SVG" />
