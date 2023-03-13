@@ -131,4 +131,12 @@ export const passwordeditprofile = require('./svg/passwordeditprofile.svg');
 
 export const phoneeditprofile = require('./svg/phoneeditprofile.svg');
 
-export const bankeditprofile = require('./svg/bankeditprofile.svg');
+export const dropdownrightbank = require('./svg/dropdownrightbank.svg');
+
+export const dropdownrightprofile = require('./svg/dropdownrightprofile.svg');
+
+export const dropdownrightlogout = require('./svg/dropdownrightlogout.svg');
+
+export const dropdownrightpassword = require('./svg/dropdownrightpassword.svg');
+
+export const dropdownrightphone = require('./svg/dropdownrightphone.svg');

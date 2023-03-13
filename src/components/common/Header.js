@@ -9,14 +9,14 @@ import { useUserData } from 'helpers/hooks';
 import { Link } from '@reach/router';
 import Empty from '../../assets/empty-gray.svg';
 import dummy from 'assets/dummy-avatar.png';
-
-
 import {
+  dropdownrightbank,
+  dropdownrightprofile,
+  dropdownrightlogout,
+  dropdownrightpassword,
+  dropdownrightphone
 
-  tgift
 } from '../../assets/assets';
-
-
 import api from 'appRedux/api';
 import {
   openNotificationWithIcon,
@@ -225,33 +225,32 @@ const Header = ({ info, link, info2, link2 }) => {
                 <ul style={{ listStyle: 'none', padding: 0, margin: '40px' }}>
                   <li style={{ margin: '5px' }} onClick={handleMenuClick}>
                     <span style={{ marginRight: '5px' }}>
-                      <img src={tgift} alt="trade SVG" />
+                      <img src={dropdownrightprofile} alt="trade SVG" />
                     </span>
                     My Account
                   </li>
                   <li style={{ margin: '5px' }} onClick={handleMenuClick}>
                   <span style={{ marginRight: '5px' }}>
-                      <img src={tgift} alt="trade SVG" />
+                      <img src={dropdownrightbank} alt="trade SVG" />
                     </span>
                     Bank Accounts
                   </li>
                   <li style={{ margin: '5px' }} onClick={handleMenuClick}>
                   <span style={{ marginRight: '5px' }}>
-                      <img src={tgift} alt="trade SVG" />
+                      <img src={dropdownrightpassword} alt="trade SVG" />
                     </span>
                     Change Password
                   </li>
                   <li style={{ margin: '5px' }} onClick={handleMenuClick}>
                   <span style={{ marginRight: '5px' }}>
-                      <img src={tgift} alt="trade SVG" />
+                      <img src={dropdownrightphone} alt="trade SVG" />
                     </span>
                     Support
                   </li>
                   <li style={{ margin: '5px' }} onClick={handleMenuClick}>
                   <span style={{ marginRight: '5px' }}>
-                      <img src={tgift} alt="trade SVG" />
+                      <img src={dropdownrightlogout} alt="trade SVG" />
                     </span>
-                    
                     Log out
                   </li>
                 </ul>
