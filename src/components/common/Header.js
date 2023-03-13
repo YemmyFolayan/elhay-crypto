@@ -9,6 +9,14 @@ import { useUserData } from 'helpers/hooks';
 import { Link } from '@reach/router';
 import Empty from '../../assets/empty-gray.svg';
 import dummy from 'assets/dummy-avatar.png';
+
+
+import {
+
+  tgift
+} from '../../assets/assets';
+
+
 import api from 'appRedux/api';
 import {
   openNotificationWithIcon,
@@ -31,12 +39,21 @@ const useFetchNots = () => {
   return { isLoading, userNotifications, refetch };
 };
 
-const Header = ({ toggleMenu, info, link, info2, link2 }) => {
+const Header = ({ info, link, info2, link2 }) => {
   // const [notifications, setNots] = useState([])
   const [open, setOpen] = useState(false);
   const { userData } = useUserData();
 
   const { userNotifications, refetch } = useFetchNots();
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const handleMenuClick = () => {
+    // Handle menu item click
+    setIsMenuOpen(false);
+  };
 
   var deleteNotification = async id => {
     try {
@@ -131,7 +148,7 @@ const Header = ({ toggleMenu, info, link, info2, link2 }) => {
                   <div className="notification-box_inner">
                     <img src={Empty} alt="Empty Gray" />
                     <p className="empty">
-                      Notification is empty, Nothing to show yet{' '}
+                      Notification is empty, Nothing to show yet
                     </p>
                   </div>
                 ) : (
@@ -158,36 +175,89 @@ const Header = ({ toggleMenu, info, link, info2, link2 }) => {
                 <div className="notification-box_inner">
                   <img src={Empty} alt="Empty Gray" />
                   <p className="empty">
-                    Notification is empty, Nothing to show yet{' '}
+                    Notification is empty, Nothing to show yet
                   </p>
                 </div>
               )}
             </div>
           </div> */}
-          <Link to="/myprofile" className="notif_cont ml-3 notif_userprofile">
-          
-            <img
-              src={
-                userData.profilePictureURL ? userData.profilePictureURL : dummy
-              }
-              alt=""
-              style={{
-                width: '50px',
-                height: '50px',
-                borderRadius: '50vw',
-                objectFit: 'cover',
-              }}
-            />
 
-         {' '}
-         Hi{' '}, John Doe
-         {userData && userData.firstName === 'User'
-           ? 'there'
-           : userData.firstName}{' '}
-         <b className="fw-bolder">﹀</b>{' '}
-            
-          
-          </Link>
+          <div style={{ position: 'relative' }}>
+            <div
+              onClick={toggleMenu}
+              className="notif_cont ml-3 notif_userprofile"
+              style={{ cursor: 'pointer' }}
+            >
+              <img
+                src={
+                  userData.profilePictureURL
+                    ? userData.profilePictureURL
+                    : dummy
+                }
+                alt=""
+                style={{
+                  width: '50px',
+                  height: '50px',
+                  borderRadius: '50vw',
+                  objectFit: 'cover',
+                }}
+              />
+              Hi , John Doe
+              {userData && userData.firstName === 'User'
+                ? 'there'
+                : userData.firstName}
+              <b className="fw-bolder">﹀</b>
+            </div>
+            {isMenuOpen && (
+              <div
+                style={{
+                  position: 'absolute',
+                  right: '0px',
+                  width: '232px',
+                  height: '263px',
+                  top: '91px',
+                  zIndex: 1,
+                  borderRadius: '5px',
+                  backgroundColor: '#FFFFFF',
+                  boxShadow: '8px 20px 25px rgba(113, 128, 150, 0.25)',
+                }}
+              >
+                <ul style={{ listStyle: 'none', padding: 0, margin: '40px' }}>
+                  <li style={{ margin: '5px' }} onClick={handleMenuClick}>
+                    <span style={{ marginRight: '5px' }}>
+                      <img src={tgift} alt="trade SVG" />
+                    </span>
+                    My Account
+                  </li>
+                  <li style={{ margin: '5px' }} onClick={handleMenuClick}>
+                  <span style={{ marginRight: '5px' }}>
+                      <img src={tgift} alt="trade SVG" />
+                    </span>
+                    Bank Accounts
+                  </li>
+                  <li style={{ margin: '5px' }} onClick={handleMenuClick}>
+                  <span style={{ marginRight: '5px' }}>
+                      <img src={tgift} alt="trade SVG" />
+                    </span>
+                    Change Password
+                  </li>
+                  <li style={{ margin: '5px' }} onClick={handleMenuClick}>
+                  <span style={{ marginRight: '5px' }}>
+                      <img src={tgift} alt="trade SVG" />
+                    </span>
+                    Support
+                  </li>
+                  <li style={{ margin: '5px' }} onClick={handleMenuClick}>
+                  <span style={{ marginRight: '5px' }}>
+                      <img src={tgift} alt="trade SVG" />
+                    </span>
+                    
+                    Log out
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
           {/* <div className="notif_cont ml-3">
             <img
               src={userData.profilePictureURL}
