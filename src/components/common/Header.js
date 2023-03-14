@@ -224,34 +224,46 @@ const Header = ({ info, link, info2, link2 }) => {
               >
                 <ul style={{ listStyle: 'none', padding: 0, margin: '30px' }}>
                   <li style={{ margin: '5px' }} onClick={handleMenuClick}>
+                  <Link to="/mydashboard" className="dropdownlink_txt_links"> 
                     <span style={{ marginRight: '5px' }}>
                       <img src={dropdownrightprofile} alt="trade SVG" />
                     </span>
                     My Account
+
+                    </Link>
                   </li>
                   <li style={{ margin: '5px' }} onClick={handleMenuClick}>
+                  <Link to="/mydashboard" className="dropdownlink_txt_links"> 
                   <span style={{ marginRight: '5px' }}>
                       <img src={dropdownrightbank} alt="trade SVG" />
                     </span>
                     Bank Accounts
+                    </Link>
                   </li>
                   <li style={{ margin: '5px' }} onClick={handleMenuClick}>
+                  <Link to="/reset-password" className="dropdownlink_txt_links"> 
                   <span style={{ marginRight: '5px' }}>
                       <img src={dropdownrightpassword} alt="trade SVG" />
                     </span>
                     Change Password
+
+                    </Link>
                   </li>
                   <li style={{ margin: '5px' }} onClick={handleMenuClick}>
+                  <Link to="/mydashboard" className="dropdownlink_txt_links"> 
                   <span style={{ marginRight: '5px' }}>
                       <img src={dropdownrightphone} alt="trade SVG" />
                     </span>
                     Support
+                    </Link>
                   </li>
                   <li style={{ margin: '5px' }} onClick={handleMenuClick}>
+                  <Link to="/auth" className="dropdownlink_txt_links"> 
                   <span style={{ marginRight: '5px' }}>
                       <img src={dropdownrightlogout} alt="trade SVG" />
                     </span>
                     Log out
+                  </Link>
                   </li>
                 </ul>
               </div>
